@@ -1,0 +1,122 @@
+<?php
+
+namespace BlueSpice\FlaggedRevsConnector\Renderer\PageHeader;
+
+use Config;
+use Revision;
+use WikiPage;
+use IContextSource;
+use RequestContext;
+use FlaggableWikiPage;
+use MediaWiki\Linker\LinkRenderer;
+use BlueSpice\Services;
+use BlueSpice\UtilityFactory;
+use BlueSpice\Renderer;
+use BlueSpice\Renderer\Params;
+use BlueSpice\FlaggedRevsConnector\Utils;
+use BlueSpice\Calumma\Renderer\PageHeader\LastEdit as CalummaLastEdit;
+
+class LastEdit extends CalummaLastEdit {
+
+	/**
+	 *
+	 * @var Utils
+	 */
+	public $frcUtils = null;
+
+	/**
+	 * LastEdit constructor.
+	 * @param Config $config
+	 * @param Params $params
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param IContextSource|null $context
+	 * @param string $name
+	 * @param UtilityFactory|null $util
+	 * @param Utils|null $frcUtils
+	 */
+	protected function __construct( Config $config, Params $params,
+		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		$name = '', UtilityFactory $util = null, Utils $frcUtils = null ) {
+		parent::__construct( $config, $params, $linkRenderer, $context, $name, $util );
+
+		$this->frcUtils = $frcUtils;
+	}
+
+	/**
+	 *
+	 * @param string $name
+	 * @param Services $services
+	 * @param Config $config
+	 * @param Params $params
+	 * @param IContextSource|null $context
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param UtilityFactory|null $util
+	 * @param Utils|null $frcUtils
+	 * @return Renderer
+	 */
+	public static function factory( $name, Services $services, Config $config, Params $params,
+		IContextSource $context = null, LinkRenderer $linkRenderer = null,
+		UtilityFactory $util = null, Utils $frcUtils = null ) {
+		if ( !$context ) {
+			$context = $params->get(
+				static::PARAM_CONTEXT,
+				false
+			);
+			if ( !$context instanceof IContextSource ) {
+				$context = RequestContext::getMain();
+			}
+		}
+		if ( !$linkRenderer ) {
+			$linkRenderer = $services->getLinkRenderer();
+		}
+		if ( !$util ) {
+			$util = $services->getBSUtilityFactory();
+		}
+		if ( !$frcUtils ) {
+			$frcUtils = new Utils( $config );
+		}
+
+		return new static( $config, $params, $linkRenderer, $context, $name, $util, $frcUtils );
+	}
+
+	/**
+	 * @param WikiPage $wikiPage
+	 * @return Revision|null
+	 */
+	protected function getCurrentRevision( WikiPage $wikiPage ) {
+		$title = $wikiPage->getTitle();
+		$currentRevision = null;
+
+		if( $this->getOldId() ) {
+			$currentRevision = Revision::newFromId( $this->getOldId() );
+		} else if( $this->frcUtils->isFlaggableNamespace( $title ) &&  $this->isStable() ) {
+			$flaggableWikiPage = FlaggableWikiPage::getTitleInstance( $title );
+			$currentRevision = Revision::newFromId( $flaggableWikiPage->getStable() );
+		}
+
+		$currentRevision = $currentRevision ? $currentRevision : $wikiPage->getRevision();
+
+		return $currentRevision;
+	}
+
+	/**
+	 * @return bool
+	 */
+	private function isStable() {
+		$stable = $this->getContext()->getRequest()->getVal( 'stable' );
+
+		if( $stable === NULL ) {
+			return true;
+		}
+
+		return (bool)$stable;
+	}
+
+	/**
+	 * @return int|null
+	 */
+	private function getOldId() {
+		return $this->getContext()->getRequest()->getIntOrNull( 'oldid' );
+	}
+}
+

@@ -1,0 +1,11 @@
+<?php
+
+namespace BlueSpice\FlaggedRevsConnector\Data;
+
+class Record extends \BlueSpice\Data\Record {
+	const PAGE_ID = 'page_id';
+	const PAGE_TITLE = 'page_title';
+	const PAGE_LINK = 'page_link';
+	const REVISION_STATE = 'revision_state';
+	const REVISIONS_SINCE_STABLE = 'revs_since_stable';
+}

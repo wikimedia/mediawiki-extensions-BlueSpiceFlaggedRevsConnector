@@ -1,0 +1,16 @@
+{
+    "@metadata": {
+        "authors": [
+            "Giftpflanze",
+            "Imre",
+            "Merlissimo",
+            "Umherirrender"
+        ]
+    },
+    "reviewedversions": "Freigegebene Versionen",
+    "reviewedversions-leg1": "Liste der freigegebenen Versionen für eine Seite",
+    "reviewedversions-page": "Seitenname:",
+    "reviewedversions-none": "„[[:$1]]“ hat keine freigegebenen Versionen.",
+    "reviewedversions-list": "Dies ist die Liste der {{PLURAL:$2|einzigen Version|Versionen}} von [[:$1]], die freigegeben {{PLURAL:$2|wurde|wurden}}:",
+    "reviewedversions-review": "Freigegeben am <i>$1</i> durch $2"
+}

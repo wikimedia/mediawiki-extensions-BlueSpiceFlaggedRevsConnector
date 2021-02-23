@@ -1,0 +1,43 @@
+==FlaggedRevsConnector.class==
+
+'BSFlaggedRevsConnectorCollectFlagInfo':
+$oCurrentTitle:
+ &$aFlagInfo:
+
+'BSFlaggedRevsConnectorCollectFlagInfo':
+$oCurrentTitle:
+ &$aFlagInfo:
+
+'BSFlaggedRevsConnectorCollectFlagInfo':
+$oCurrentTitle:
+ &$aFlagInfo:
+
+'BSFlaggedRevsConnectorCollectFlagInfo':
+$oCurrentTitle:
+ &$aFlagInfo :
+
+
+==FlaggedRevs.class==
+
+'FlaggedRevs::AutoReviewComplete':
+$title:
+ $user:
+
+
+==RevisionReview_body.php==
+
+'FlaggedRevs::AjaxReviewComplete':
+$form->getPage():
+$wgUser:
+
+
+==FlaggedRevs.class==
+'FlaggedRevs::AutoReviewComplete':
+$title:
+ $user:
+
+==RevisionReview_body.php==
+
+'FlaggedRevs::AjaxReviewComplete':
+$form->getPage():
+ $wgUser:

@@ -1,0 +1,28 @@
+{
+	"name": "bluespice/flaggedrevsconnector",
+	"type": "mediawiki-extension",
+	"description": "Adds support for FlaggedRevs to a range of bluespice extensions",
+	"license": "GPL-3.0-only",
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"require-dev": {
+		"mediawiki/mediawiki-codesniffer": "31.0.0",
+		"mediawiki/minus-x": "1.1.0",
+		"php-parallel-lint/php-console-highlighter": "0.5.0",
+		"php-parallel-lint/php-parallel-lint": "1.2.0"
+	},
+	"extra": {
+		"installer-name": "BlueSpiceFlaggedRevsConnector"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor --exclude node_modules",
+			"minus-x check ."
+		],
+		"fix": [
+			"minus-x fix .",
+			"phpcbf"
+		]
+	}
+}

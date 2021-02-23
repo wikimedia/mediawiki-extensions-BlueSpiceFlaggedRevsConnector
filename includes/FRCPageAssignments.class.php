@@ -1,0 +1,139 @@
+<?php
+
+use BlueSpice\FlaggedRevsConnector\Notifications\PageReview;
+
+class FRCPageAssignments {
+	/**
+	 * Augment store data
+	 * @param BSApiMyPageAssignmentStore $oApiModule
+	 * @param array $aData
+	 * @return boolean
+	 */
+	public function onBSApiExtJSStoreBaseBeforePostProcessData( $oApiModule, &$aData ) {
+		if( $oApiModule instanceof BSApiMyPageAssignmentStore ) {
+			$this->extendBSApiMyPageAssignmentStore( $aData );
+		}
+		return true;
+	}
+
+	/**
+	 * Append "last_stable_date" field to each dataset
+	 * @param array $aData
+	 * @return boolean
+	 */
+	protected function extendBSApiMyPageAssignmentStore( &$aData ) {
+		$aPageIds = array();
+		foreach( $aData as $oDataSet ) {
+			$oDataSet->last_stable_date = null;
+			$aPageIds[] = $oDataSet->page_id;
+		}
+		if( empty( $aPageIds ) ) {
+			return;
+		}
+
+		$dbr = wfGetDB( DB_REPLICA );
+		$res = $dbr->select(
+			'flaggedpages',
+			array( 'fp_page_id', 'fp_stable' ),
+			array(
+				'fp_page_id' => $aPageIds
+			),
+			__METHOD__
+		);
+
+		$aStableRevisions = array();
+		foreach( $res as $row ) {
+			$aStableRevisions[] = $row->fp_stable;
+		}
+
+		if( empty( $aStableRevisions ) ) {
+			return true;
+		}
+
+		$res = $dbr->select(
+			'flaggedrevs',
+			array( 'fr_page_id', 'fr_timestamp' ),
+			array(
+				'fr_rev_id' => $aStableRevisions,
+			),
+			__METHOD__
+		);
+
+		$aStablePages = array();
+		foreach( $res as $row ) {
+			$aStablePages[$row->fr_page_id] = $row->fr_timestamp;
+		}
+
+		foreach( $aData as $oDataSet ) {
+			if( isset( $aStablePages[$oDataSet->page_id] ) ) {
+				$oDataSet->last_stable_date = $aStablePages[$oDataSet->page_id];
+			}
+		}
+	}
+
+	public function onBSPageAssignmentsOverview( $oSender, &$aDeps ) {
+		$aDeps[] = 'bluespice.flaggedRevsConnector.pageassignmentintegration';
+		return true;
+	}
+
+	/**
+	 * Notify assignees about successfull review
+	 * @param ApiBase $module
+	 * @return boolean
+	 */
+	public function onAPIAfterExecute( $module ) {
+		if( $module instanceof ApiReview === false ) {
+			return true;
+		}
+
+		$aResult = $module->getResult()->getResultData();
+
+		if( !isset( $aResult['review'] ) || !isset( $aResult['review']['result'] ) ) {
+			return true;
+		}
+
+		//Only send in case of successfull action
+		if( strtolower( $aResult['review']['result'] ) !== 'success' ) {
+			return true;
+		}
+
+		$oTitle = self::getTitleFromAPIParam( $module->getRequest() );
+		if( $oTitle === null ) {
+			return true;
+		}
+
+		$factory = \MediaWiki\MediaWikiServices::getInstance()->getService(
+			'BSPageAssignmentsAssignmentFactory'
+		);
+		if( !$factory ) {
+			return true;
+		}
+		if( !$target = $factory->newFromTargetTitle( $oTitle ) ) {
+			return true;
+		}
+
+		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notifier = $notificationsManager->getNotifier();
+
+		$notification = new PageReview( $module->getUser(), $oTitle, $target );
+		$notifier->notify( $notification );
+
+
+		return true;
+	}
+
+	/**
+	 * When in APIReview context this extracts the 'revid' parameter and
+	 * builds a Title object
+	 * @param WebRequest $oWebRequest
+	 * @return Title|null
+	 */
+	protected static function getTitleFromAPIParam( $oWebRequest ){
+		$iRevId = $oWebRequest->getVal( 'revid', -1 );
+		$oRevision = Revision::newFromId( $iRevId );
+		if( $oRevision === null ) {
+			return null;
+		}
+		return $oRevision->getTitle();
+	}
+}
