@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stephan Muggli <muggli@hallowelt.biz>"
+		]
+	},
+	"bs-flaggedrevsconnector-response-failure": "Bei der Freigabe ist ein Fehler aufgetreten. Bitte kontaktieren Sie Ihren Administrator.",
+	"bs-responsibleeditors-mail-text-re-article-changed": "Die Seite \"$1\", für die Sie als verantwortlicher Redakteur eingetragen sind, wurde von $2 begutachtet\n\nNach Anmeldung können Sie die Seite mit folgendem Link erreichen:\n\t$3",
+	"bs-flaggedrevsconnector-flyout-intro": "Hier können Sie den Freigabestatus einsehen und neue Versionen freigeben.",
+	"bs-flaggedrevsconnector-review-help": "Nach der Freigabe wird diese Entwurfsversion die aktuelle freigegebene Version der Seite ersetzen. Wollen Sie den Enwurf freigeben?"
+}

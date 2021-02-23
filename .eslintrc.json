@@ -1,0 +1,26 @@
+{
+	"root": true,
+	"extends": [
+		"eslint:recommended"
+	],
+	"globals": {
+		"$": "readonly",
+		"OO": "readonly",
+		"mw": "readonly",
+		"Ext": "readonly",
+		"jQuery": "readonly",
+		"BS": "readonly",
+		"bs": "readonly",
+		"mediaWiki": "readonly",
+		"blueSpice": "readonly"
+	},
+	"rules": {
+		"no-console": "error",
+		"no-alert": "error",
+		"no-unused-vars": "off"
+	},
+	"env": {
+		"browser": true,
+		"es6": true
+	}
+}

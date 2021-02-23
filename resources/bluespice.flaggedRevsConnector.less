@@ -1,0 +1,179 @@
+/**
+ * Stylesheet for FlaggedRevsConnector
+ *
+ * Part of BlueSpice MediaWiki
+ *
+ * @author     Markus Glaser <glaser@hallowelt.com>
+ * @author     Robert Vogel <vogel@hallowelt.com>
+ * @package    BlueSpice_Extensions
+ * @subpackage FlaggedRevsConnector
+ * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
+ * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
+ * @filesource
+ */
+
+
+/*
+We just hide the UI components of Flagged Revs,
+because we need some of the information they hold for our own logic
+*/
+#mw-revisiontag,
+#mw-reviewform,
+#mw-fr-revisiontag,
+#mw-fr-reviewform,
+#mw-fr-reviewnotice,
+.flaggedrevs_notes{
+	display: none;
+}
+
+/* Standard User Interface */
+div.flaggedrevs_basic,
+div.flaggedrevs_quality,
+div.flaggedrevs_pristine,
+div.flaggedrevs_notice {
+	border: none !important;
+	padding: 0px !important;
+	font-weight: normal;
+	line-height: 1.5em;
+	margin: .5em 1em 0em 0em;
+	text-align: left !important;
+	clear: both;
+}
+
+div.flaggedrevs_short {
+	float:none !important;
+	max-width:none !important;
+}
+
+
+div.flaggedrevs_basic {
+	/* background-color: #f0f8ff; */
+	background-color: transparent !important;
+	background: none !important;
+}
+div.flaggedrevs_quality {
+	/* background-color: #f0fff0; */
+	background-color: transparent;
+	background: none !important;
+}
+div.flaggedrevs_pristine {
+	/* background-color: #fffff0; */
+	background-color: transparent;
+	background: none !important;
+}
+div.flaggedrevs_notice {
+	/* background-color: #f9f9f9; */
+	background-color: transparent;
+	background: none !important;
+}
+
+#sb-FlaggedRevsStateIcon {
+	cursor: pointer;
+}
+/* Both User Interfaces */
+img.flaggedrevs-icon {
+	margin-right: .6em !important;
+	margin-left: .2em !important;
+	margin-bottom: .4em !important;
+}
+
+input#bs-frc-comment  {
+	width: 240px !important;
+}
+
+.flaggedrevs-pending {
+	background-color: #F7E1B2 !important;
+}
+
+.flaggedrevs-color-2 {
+	background-color: #BDDFDF !important;
+}
+
+.flaggedrevs-color-3 {
+	background-color: #aaffaa !important;
+}
+
+//.updatedmarker {}
+
+/* Remove standard FR info in history view */
+.fr-hist-quality-user {
+	display: none;
+}
+
+/* BS3 flaggedRevision states */
+.bs-frc-state-unmarked-info .bs-frc-state-unmarked {
+	color: @bs-frc-unmarked-color;
+}
+.bs-frc-state-draft-info .bs-frc-state-draft {
+	color: @bs-frc-draft-color;
+}
+.bs-frc-state-stable-info .bs-frc-state-stable {
+	color: @bs-frc-stable-color;
+}
+
+.flyout-body-hint.drafts {
+	color: @bs-color-destructive;
+}
+
+.bs-frc-pageinfo-page-first-draft{
+	color: @bs-frc-draft-color;
+}
+
+.bs-frc-pageinfo-page-draft {
+	color: @bs-frc-draft-color;
+}
+
+.bs-frc-pageinfo-page-stable {
+	color: @bs-frc-stable-color;
+}
+
+a,
+a:link {
+	&.bs-frc-pageinfo-page-first-draft{
+		&,
+		&:link {
+			color: @bs-frc-draft-color !important;
+
+			&:hover,
+			&:focus{
+				color: @bs-frc-draft-color !important;
+				text-decoration: none !important;
+			}
+		}
+	}
+	&.bs-frc-pageinfo-page-draft{
+		&,
+		&:link {
+			color: @bs-frc-draft-color !important;
+
+			&:hover,
+			&:focus{
+				color: @bs-frc-draft-color !important;
+				text-decoration: none !important;
+			}
+		}
+	}
+
+	&.bs-frc-pageinfo-page-stable{
+		&,
+		&:link {
+			color: @bs-frc-stable-color !important;
+
+			&:hover,
+			&:focus{
+				color: @bs-frc-stable-color !important;
+				text-decoration: none !important;
+			}
+		}
+	}
+}
+
+.dropdown-menu a > .bs-frc-review {
+	display: inline-block;
+	width: 100%;
+}
+
+div[data-bs-alert-id="bs-flaggedrevsconnector-revisionstate"] a {
+	background: none;
+	padding-right: 0;
+}
