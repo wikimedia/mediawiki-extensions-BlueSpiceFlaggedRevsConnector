@@ -125,11 +125,12 @@ class RevisionState extends AlertProviderBase {
 			return;
 		}
 
-
 		$hasStable = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )
 				->getStableRev() instanceof FlaggedRevision;
 		$showingStable = $this->utils->isShowingStable( $this->skin->getContext() );
-		$pendingCount = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )->getPendingRevCount();
+		$inSync = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )->stableVersionIsSynced();
+		$pendingCount = (int) $this->utils->getFlaggableWikiPage( $this->skin->getContext() )->getPendingRevCount();
+		$userCanSeeDrafts = $this->utils->userCanAccessDrafts( $this->getUser() );
 
 		if ( !$hasStable ) {
 			$this->revisionStateMessage =
@@ -138,20 +139,35 @@ class RevisionState extends AlertProviderBase {
 		}
 
 		if ( $showingStable ) {
-			$this->revisionStateMessage =
-				$this->skin->msg( 'bs-flaggedrevsconnector-state-stable-desc' );
-			$this->revisionStateMessageType = IAlertProvider::TYPE_SUCCESS;
+			if ( !$inSync && $pendingCount === 0 && $userCanSeeDrafts ) {
+				$this->revisionStateMessage = $this->skin->msg(
+					'bs-flaggedrevsconnector-state-implicit-draft-desc'
+				);
+				$this->revisionStateMessageType = IAlertProvider::TYPE_WARNING;
+			} else {
+				$this->revisionStateMessage =
+					$this->skin->msg( 'bs-flaggedrevsconnector-state-stable-desc' );
+				$this->revisionStateMessageType = IAlertProvider::TYPE_SUCCESS;
+			}
 		}
 
-		if ( !$showingStable && $pendingCount > 0 ) {
-			$this->revisionStateMessage = $this->skin->msg(
-				'bs-flaggedrevsconnector-state-draft-desc',
-				$pendingCount,
-				$this->skin->getContext()->getLanguage()->date(
-					$this->flaggableWikiPage->getStableRev()->getTimestamp()
-				)
-			);
-			$this->revisionStateMessageType = IAlertProvider::TYPE_WARNING;
+		if ( !$showingStable ) {
+			if ( $pendingCount > 0 ) {
+				$this->revisionStateMessage = $this->skin->msg(
+					'bs-flaggedrevsconnector-state-draft-desc',
+					$pendingCount,
+					$this->skin->getContext()->getLanguage()->date(
+						$this->flaggableWikiPage->getStableRev()->getTimestamp()
+					)
+				);
+				$this->revisionStateMessageType = IAlertProvider::TYPE_WARNING;
+			}
+			if ( !$inSync ) {
+				$this->revisionStateMessage = $this->skin->msg(
+					'bs-flaggedrevsconnector-state-draft-resources-desc'
+				);
+				$this->revisionStateMessageType = IAlertProvider::TYPE_WARNING;
+			}
 		}
 	}
 

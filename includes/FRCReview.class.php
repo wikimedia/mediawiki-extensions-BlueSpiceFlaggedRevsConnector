@@ -3,6 +3,7 @@
 use BlueSpice\Review\IReviewProcess;
 use BlueSpice\Review\ReviewProcessFactory;
 use MediaWiki\MediaWikiServices;
+use BS\ExtendedSearch\Source\Job\UpdateRepoFile;
 
 class FRCReview {
 	public static $reviewablePages = [];
@@ -54,6 +55,21 @@ class FRCReview {
 
 		$processFactory->delete( $reviewProcess );
 
+		static::updateSearchIndex( $title );
 		return true;
+	}
+
+	/**
+	 * @param Title $title
+	 */
+	protected static function updateSearchIndex( $title ) {
+		\JobQueueGroup::singleton()->push(
+			new \BS\ExtendedSearch\Source\Job\UpdateWikiPage( $title )
+		);
+		if ( $title->getNamespace() === NS_FILE ) {
+			JobQueueGroup::singleton()->push(
+				new UpdateRepoFile( $title )
+			);
+		}
 	}
 }

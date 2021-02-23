@@ -119,17 +119,16 @@ input#bs-frc-comment  {
 	color: @bs-frc-draft-color;
 }
 
-.bs-frc-pageinfo-page-draft{
+.bs-frc-pageinfo-page-draft {
 	color: @bs-frc-draft-color;
 }
 
-.bs-frc-pageinfo-page-stable{
+.bs-frc-pageinfo-page-stable {
 	color: @bs-frc-stable-color;
 }
 
 a,
-a:link,
-{
+a:link {
 	&.bs-frc-pageinfo-page-first-draft{
 		&,
 		&:link {
@@ -168,6 +167,12 @@ a:link,
 		}
 	}
 }
+
+.dropdown-menu a > .bs-frc-review {
+	display: inline-block;
+	width: 100%;
+}
+
 div[data-bs-alert-id="bs-flaggedrevsconnector-revisionstate"] a {
 	background: none;
 	padding-right: 0;

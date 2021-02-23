@@ -16,6 +16,8 @@ class PageStatusDropdown extends FlaggedPageElement {
 	public $state = 'undefined';
 	/** @var bool  */
 	public $needApproval = false;
+	/** @var bool  */
+	public $implicitDraft = false;
 
 	/**
 	 *
@@ -67,15 +69,19 @@ class PageStatusDropdown extends FlaggedPageElement {
 		$hasStable = $this->utils->getFlaggableWikiPage( $context )->getStableRev() instanceof FlaggedRevision;
 		$showingStable = $this->utils->isShowingStable( $context );
 		$hasDrafts = $this->utils->getFlaggableWikiPage( $context )->getPendingRevCount() > 0;
+		$inSync = $this->utils->getFlaggableWikiPage( $context )->stableVersionIsSynced();
 
-		if ( $showingStable ) {
+		if ( $showingStable && ( !$inSync || $hasDrafts ) ) {
 			$this->state = 'stable';
 		} elseif ( !$hasStable ) {
 			$this->state = 'first-draft';
 			$this->needApproval = true;
-		} elseif ( $hasDrafts ) {
+		} elseif ( $hasDrafts || !$inSync ) {
 			$this->state = 'draft';
 			$this->needApproval = true;
+			if ( !$inSync ) {
+				$this->implicitDraft = true;
+			}
 		}
 
 		return true;

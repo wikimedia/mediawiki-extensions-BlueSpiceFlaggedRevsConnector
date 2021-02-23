@@ -1,6 +1,6 @@
 {
 	"name": "BlueSpiceFlaggedRevsConnector",
-	"version": "3.4.0-alpha",
+	"version": "4.1.0-alpha",
 	"license-name": "GPL-3.0-only",
 	"url": "https://en.wiki.bluespice.com/wiki/Reference:FlaggedRevsConnector",
 	"author": [
@@ -11,7 +11,7 @@
 	"requires": {
 		"MediaWiki": ">= 1.36.0",
 		"extensions": {
-			"BlueSpiceFoundation": ">= 3.4"
+			"BlueSpiceFoundation": ">= 4.0"
 		}
 	},
 	"type": "bluespice",
@@ -26,11 +26,12 @@
 						"FlaggedRevsConnectorautoReview": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoReview::getInstance",
 						"FlaggedRevsConnectorautoDeleteWorkflow": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoDeleteWorkflow::getInstance",
 						"FlaggedRevsConnectorDraftGroups": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\DraftGroups::getInstance",
-						"FlaggedRevsConnectorindexingStableOnly": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\IndexingStableOnly::getInstance",
+						"FlaggedRevsConnectorIndexStableOnly": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\IndexingStableOnly::getInstance",
 						"FlaggedRevsConnectorBookshelfShowStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowStable::getInstance",
 						"FlaggedRevsConnectorBookshelfShowNoStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowNoStable::getInstance",
 						"FlaggedRevsConnectorBookshelfShowNoFR": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowNoFR::getInstance",
-						"FlaggedRevsConnectorUEModulePDFShowFRTag": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\UEModulePDFShowFRTag::getInstance"
+						"FlaggedRevsConnectorUEModulePDFShowFRTag": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\UEModulePDFShowFRTag::getInstance",
+						"FlaggedRevsConnectorFlaggedRevsHandleIncludes": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\HandleIncludes::getInstance"
 					}
 				}
 			},
@@ -230,11 +231,11 @@
 		"BSFlaggedRevsConnectorRemoveTMPGroup": "maintenance/BSFlaggedRevsConnectorRemoveTMPGroup.php"
 	},
 	"ResourceModules": {
-		"ext.bluespice.flaggedRevsConnector.styles": {
+		"bluespice.flaggedRevsConnector.styles": {
 			"styles": "bluespice.flaggedRevsConnector.less",
 			"class": "\\BlueSpice\\ResourceModule\\LessVars"
 		},
-		"ext.bluespice.flaggedRevsConnector.js": {
+		"bluespice.flaggedRevsConnector.js": {
 			"scripts": "bluespice.flaggedRevsConnector.js",
 			"messages": [
 				"bs-flaggedrevsconnector-response-success",
@@ -269,7 +270,7 @@
 				"bs-flaggedrevsconnector-state-pending-desc"
 			],
 			"dependencies": [
-				"ext.bluespice.flaggedRevsConnector.js",
+				"bluespice.flaggedRevsConnector.js",
 				"ext.bluespice.extjs",
 				"ext.bluespice"
 			]
@@ -286,9 +287,6 @@
 				"bs-flaggedrevsconnector-grid-rev-state",
 				"bs-flaggedrevsconnector-grid-pending-revs"
 			]
-		},
-		"ext.bs.flaggedrevsconnector.editversion": {
-			"scripts": "bluespice.flaggedrevsconnector.editversion.js"
 		},
 		"ext.bs.flaggedrevsconnector.editversion": {
 			"scripts": "bluespice.flaggedrevsconnector.editversion.js"
@@ -311,7 +309,11 @@
 				"bs-flaggedrevsconnector-collection-var-firstdraftpages",
 				"bs-flaggedrevsconnector-collection-var-approvedpages",
 				"bs-flaggedrevsconnector-collection-var-notenabledpages"
-			]		}
+			]
+		},
+		"ext.bluespice.flaggedRevsConnector.filepage.styles": {
+			"styles": "ext.bluespice.flaggedRevsConnector.filepage.styles.css"
+		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
@@ -334,7 +336,7 @@
 			"descriptionmsg": "bs-flaggedrevsconnector-pref-DraftGroups",
 			"public": true
 		},
-		"FlaggedRevsConnectorindexingStableOnly": {
+		"FlaggedRevsConnectorIndexStableOnly": {
 			"value": false,
 			"descriptionmsg": "bs-flaggedrevsconnector-pref-indexingStableOnly",
 			"public": true
@@ -366,6 +368,12 @@
 		"FlaggedRevsConnectorPageApprovedReminderDelay": {
 			"@note": "After how many hours we want to resend notification",
 			"value": 168
+		},
+		"FlaggedRevsConnectorFlaggedRevsHandleIncludes": {
+			"@note": "Default is FR_INCLUDES_STABLE",
+			"value": 2,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-handleincludes",
+			"public": true
 		}
 	},
 	"Hooks": {
@@ -377,19 +385,32 @@
 		"OutputPageBeforeHTML": "FRCDiffView::onOutputPageBeforeHTML",
 		"PageHistoryLineEnding": "FRCHistoryView::onPageHistoryLineEnding",
 		"checkPageIsReviewable": "FRCReview::onCheckPageIsReviewable",
-		"FlaggedRevsRevisionReviewFormAfterDoSubmit": "FRCReview::onFlaggedRevsRevisionReviewFormAfterDoSubmit",
+		"FlaggedRevsRevisionReviewFormAfterDoSubmit": [
+			"FRCReview::onFlaggedRevsRevisionReviewFormAfterDoSubmit",
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\UpdateSearchIndexAfterSetStable::callback"
+		],
 		"ChameleonSkinTemplateOutputPageBeforeExec": [
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddFlyout::callback"
 		],
+		"ImagePageFileHistoryLine": [
+			"BlueSpice\\FlaggedRevsConnector\\Hook\\ImagePageFileHistoryLine\\HideDraftVersions::callback"
+		],
 		"BeforePageDisplay": [
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\AddResources::callback",
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\ChangeRevisionForEdit::callback",
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\HideFileDraftResources::callback",
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\ChangeRevisionForEdit::callback"
 		],
 		"SMW::RevisionGuard::IsApprovedRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SMWRevisionGuard\\IsApprovedFlaggedRevision::callback",
 		"SMW::RevisionGuard::ChangeRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SMWRevisionGuard\\ChangeFlaggedRevision::callback",
 		"SMW::RevisionGuard::ChangeRevisionID": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SMWRevisionGuard\\ChangeFlaggedRevisionId::callback",
 		"LoadExtensionSchemaUpdates": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\LoadExtensionSchemaUpdates\\AddRemoveTMPGroupMaintenanceScript::callback",
-		"ImgAuthBeforeStream": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\ImgAuthBeforeStream\\LockdownDraft::callback"
+		"ImgAuthBeforeStream": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\ImgAuthBeforeStream\\LockdownDraft::callback",
+		"BlueSpiceEchoConnectorUserLocatorValidUsers": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\BlueSpiceEchoConnectorUserLocatorValidUsers\\LockdownNotifications::callback",
+		"BSExtendedSearchWikipageFetchRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\BSExtendedSearchWikipageFetchRevision\\GetStableRevision::callback",
+		"BSExtendedSearchRepoFileGetRepoFile": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\BSExtendedSearchRepoFileGetRepoFile\\GetStableFile::callback",
+		"EditPageGetCheckboxesDefinition": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\EditPageGetCheckboxesDefinition\\ReplaceVisualEditorAutoReview::callback",
+		"PageSaveComplete": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\PageSaveComplete\\AutoReviewAfterVisualEditorEdit::callback"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2

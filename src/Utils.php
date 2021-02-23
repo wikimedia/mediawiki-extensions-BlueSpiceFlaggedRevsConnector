@@ -81,6 +81,14 @@ class Utils {
 	 * @return bool
 	 */
 	public function isShowingStable( $context ) {
+		// FR does check if stable is requested in the request,
+		// but not if draft is
+		$request = $context->getRequest();
+		$draftByRequest = $request->getBool( 'stable', true ) === false;
+		if ( $draftByRequest ) {
+			return false;
+		}
+
 		return FlaggablePageView::singleton()->showingStable() ||
 			$this->currentPageIsStable( $context );
 	}
@@ -100,7 +108,7 @@ class Utils {
 				__METHOD__
 			);
 
-		if ( $row === null ) {
+		if ( !$row ) {
 			return null;
 		}
 

@@ -80,6 +80,7 @@
 	"bs-flaggedrevsconnector-flyout-form-title": "Seite freigeben",
 	"bs-flaggedrevsconnector-flyout-badge-draft": "Entwurf",
 	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1 {{PLURAL:$1|Entwurf|Entwürfe}} ($2)",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft-implicit": "Änderungen an Ressourcen",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "Entwurfsversion",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "Auf die letzte Entwurfsversion dieser Seite wechseln",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "Freigegebene Version",
@@ -94,7 +95,7 @@
 	"bs-flaggedrevsconnector-grid-pending-revs": "Revisionen seit freigegebener Version",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Sie haben die Seite $1 (Revision $2) am $3 markiert [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Qualitätsmanagement Überblick",
-	"bs-flaggedrevsconnector-draft-lockdown-reason": "Die Aktion „$1“ ist nur für {{PLURAL:$2|den|die}} Bevollmächtigten $3 verfügbar",
+	"bs-flaggedrevsconnector-draft-lockdown-reason": "Die Aktion „$1“ für die Entwurfsversion ist nur für {{PLURAL:$2|den|die}} Bevollmächtigten $3 verfügbar",
 	"bs-frc-pageinfoelement-label-stable": "freigegeben",
 	"bs-frc-pageinfoelement-label-draft": "ein Entwurf",
 	"bs-frc-pageinfoelement-label-first-draft": "ein Erstentwurf",
@@ -121,5 +122,11 @@
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "Freigegeben",
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Nicht aktiviert",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Differenz anzeigen",
-	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Differenz anzeigen"
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Differenz anzeigen",
+	"bs-flaggedrevsconnector-pref-handleincludes": "Einbindung von Ressourcen",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuelle Versionen",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versionen einfrieren",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabile Versionen",
+	"bs-flaggedrevsconnector-state-implicit-draft-desc": "Die Seite ist freigegeben aber es gibt Änderungen an eingebundenen Ressourcen",
+	"bs-flaggedrevsconnector-state-draft-resources-desc": "Die Seite ist eine Entwurfsversion aufgrund von Änderungen an eingebundenen Ressourcen"
 }

@@ -177,6 +177,10 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 		if( in_array( $requAction, $this->allowedRequestActions ) ) {
 			return false;
 		}
+		$diffId = $this->context->getRequest()->getInt( 'diff', 0 );
+		if( $diffId > 0 && !in_array( $diffId, $this->getStableVersions( $title ) ) ) {
+			return true;
+		}
 		if ( $this->isRequestedRevStable( $title ) ) {
 			return false;
 		}
@@ -229,6 +233,9 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 	}
 
 	protected function isRequestedRevStable( Title $title ) {
+		if ( $this->context->getRequest()->getInt( 'stable', 0 ) === 1 ) {
+			return true;
+		}
 		$oldId = $this->context->getRequest()->getInt( 'oldid', 0 )
 			?: $this->context->getRequest()->getInt( 'stableid', 0 );
 		if ( $oldId === 0 ) {

@@ -14,9 +14,12 @@ use MediaWiki\MediaWikiServices;
 
 class VersionSwitch extends FlaggedPageElement {
 
+	/** @var bool  */
 	public $hasSwitchToDraft = false;
-
+	/** @var bool  */
 	public $hasSwitchToStable = false;
+	/** @var bool  */
+	protected $hasImplicitDraft = false;
 
 	/**
 	 *
@@ -69,6 +72,8 @@ class VersionSwitch extends FlaggedPageElement {
 				'bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title'
 			);
 		}
+
+		return '';
 	}
 
 	/**
@@ -89,6 +94,8 @@ class VersionSwitch extends FlaggedPageElement {
 		} elseif ( $this->hasSwitchToStable ) {
 			return $this->context->getTitle()->getFullUrl( 'stable=1' );
 		}
+
+		return '';
 	}
 
 	/**
@@ -101,6 +108,8 @@ class VersionSwitch extends FlaggedPageElement {
 		} elseif ( $this->hasSwitchToStable ) {
 			return 'bs-frc-pageinfo-page-stable';
 		}
+
+		return '';
 	}
 
 	/**
@@ -131,11 +140,18 @@ class VersionSwitch extends FlaggedPageElement {
 		$hasStable = $this->utils->getFlaggableWikiPage( $context )->getStableRev() instanceof FlaggedRevision;
 		$showingStable = $this->utils->isShowingStable( $context );
 		$hasDrafts = $this->utils->getFlaggableWikiPage( $context )->getPendingRevCount() > 0;
+		$inSync = $this->utils->getFlaggableWikiPage( $context )->stableVersionIsSynced();
 
-		if ( $showingStable && $hasDrafts ) {
+		if ( $showingStable && ( $hasDrafts || !$inSync ) ) {
 			$this->hasSwitchToDraft = true;
-		} elseif ( !$showingStable && $hasDrafts && $hasStable ) {
+			if ( !$inSync ) {
+				$this->hasImplicitDraft = true;
+			}
+		} elseif ( ( !$showingStable && $hasStable ) && ( $hasDrafts || !$inSync )  ) {
 			$this->hasSwitchToStable = true;
+			if ( !$inSync ) {
+				$this->hasImplicitDraft = true;
+			}
 		} else {
 			return false;
 		}
@@ -155,7 +171,13 @@ class VersionSwitch extends FlaggedPageElement {
 	 * @return string
 	 */
 	public function getMenu() {
-		return $this->makeMenu();
+		// We cannot show diff view if draft is only
+		// caused by a change to resources (same rev)
+		if ( !$this->hasImplicitDraft ) {
+			return $this->makeMenu();
+		}
+
+		return '';
 	}
 
 	/**
@@ -182,7 +204,7 @@ class VersionSwitch extends FlaggedPageElement {
 		$flaggableWikiPage = FlaggableWikiPage::getTitleInstance( $this->context->getTitle() );
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 
-		$diffLInk = $linkRenderer->makeLink(
+		return $linkRenderer->makeLink(
 				$this->context->getTitle(),
 				$this->msg( 'bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label' ),
 				[
@@ -193,7 +215,5 @@ class VersionSwitch extends FlaggedPageElement {
 					'diff' => $flaggableWikiPage->getLatest()
 				]
 			);
-
-		return $diffLInk;
 	}
 }

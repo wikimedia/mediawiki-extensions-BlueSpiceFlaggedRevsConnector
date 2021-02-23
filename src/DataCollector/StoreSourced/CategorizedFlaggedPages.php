@@ -79,7 +79,7 @@ class CategorizedFlaggedPages extends StoreSourced\CategoryCollector {
 		}
 
 		if ( !$lb ) {
-			$lb = Services::getInstance()->getDBLoadBalancer();
+			$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		}
 
 		return new static(

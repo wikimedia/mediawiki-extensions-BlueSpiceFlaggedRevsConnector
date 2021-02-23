@@ -5,8 +5,10 @@ namespace BlueSpice\FlaggedRevsConnector\Panel;
 use BlueSpice\Calumma\Panel\BasePanel;
 use BlueSpice\Calumma\IFlyout;
 use FlaggableWikiPage;
-use BlueSpice\FlaggedRevsConnector\Utils;
 use MediaWiki\MediaWikiServices;
+use BlueSpice\FlaggedRevsConnector\Utils;
+use Html;
+use Message;
 
 class Flyout extends BasePanel implements IFlyout {
 
@@ -65,16 +67,25 @@ class Flyout extends BasePanel implements IFlyout {
 			$links[] = '...';
 		}
 
+		if ( $numLinks === 0 ) {
+			$hint =  Message::newFromKey(
+				'bs-flaggedrevsconnector-flyout-body-hint-draft-implicit'
+			)->text();
+		}
+		else {
+			$hint = Message::newFromKey(
+				'bs-flaggedrevsconnector-flyout-body-hint-draft',
+				count( $this->draftRevisionsAfterCurrentStable ),
+				implode( ', ', $links )
+			)->text();
+		}
+
 		return \Html::rawElement(
 			'div',
 			[
 				'class' => 'flyout-body-hint drafts'
 			],
-			wfMessage(
-				'bs-flaggedrevsconnector-flyout-body-hint-draft',
-				count( $this->draftRevisionsAfterCurrentStable ),
-				implode( ', ', $links )
-			)->text()
+			$hint
 		);
 	}
 

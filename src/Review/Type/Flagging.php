@@ -14,9 +14,9 @@ use FRInclusionCache;
 use Hooks;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use Message;
 use MWException;
-use Revision;
 use RevisionReviewForm;
 use Title;
 use User;
@@ -103,6 +103,14 @@ class Flagging extends BsReviewProcess {
 			return;
 		}
 
+		if ( !$this->isAbortWhenDenied() ) {
+			foreach ( $this->steps as $st ) {
+				if ( (int) $st->status === 0 ) {
+					return true;
+				}
+			}
+		}
+
 		$target = $this->getTarget();
 		if ( !$target instanceof \BlueSpice\Review\Target\Title ) {
 			return;
@@ -112,18 +120,24 @@ class Flagging extends BsReviewProcess {
 			return;
 		}
 		$bResult = true;
-		Hooks::run( 'checkPageIsReviewable', array( $title, &$bResult ) );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'checkPageIsReviewable', [
+			$title,
+			&$bResult
+		] );
 		if( !$bResult ) {
 			return;
 		}
 
 		$oldValue = $GLOBALS['wgFlaggedRevsAutoReview'];
 		$GLOBALS['wgFlaggedRevsAutoReview'] = true;
+		$revision = MediaWikiServices::getInstance()->getRevisionLookUp()->getRevisionByTitle(
+			$title
+		);
 		// TODO: error handling with real \Status obects and transform $status result
 		$status = $this->doOwnWorkingReview(
 			$context->getUser(),
 			$title,
-			$title->getLatestRevID(),
+			$revision,
 			$data['comment']
 		);
 
@@ -135,18 +149,17 @@ class Flagging extends BsReviewProcess {
 	/**
 	 * @param User $oUser
 	 * @param Title $oTitle
-	 * @param int $revId
+	 * @param RevisionRecord $revision
 	 * @param string $sComment
 	 * @return bool|string
 	 */
-	protected function doOwnWorkingReview( User $oUser, Title $oTitle, $revId, $sComment = '' ) {
-		// Have to use deprecated class, since FR expects it... :(
-		$rev = Revision::newFromId( $revId );
+	protected function doOwnWorkingReview( User $oUser, Title $oTitle,
+		RevisionRecord $revision, $sComment = '' ) {
 
 		// Construct submit form...
 		$form = new PermissionLessReviewForm( $oUser );
 		$form->setPage( $oTitle );
-		$form->setOldId( $revId );
+		$form->setOldId( $revision->getId() );
 		$form->setApprove( true );
 		$form->setUnapprove( false );
 		$form->setComment( $sComment );
@@ -168,7 +181,7 @@ class Flagging extends BsReviewProcess {
 		}
 		// Now get the template and image parameters needed
 		list( $templateIds, $fileTimeKeys ) =
-			FRInclusionCache::getRevIncludes( $article, $rev, $oUser );
+			FRInclusionCache::getRevIncludes( $article, $revision, $oUser );
 		// Get version parameters for review submission (flat strings)
 		list( $templateParams, $imageParams, $fileParam ) =
 			RevisionReviewForm::getIncludeParams( $templateIds, $fileTimeKeys, $fileVer );

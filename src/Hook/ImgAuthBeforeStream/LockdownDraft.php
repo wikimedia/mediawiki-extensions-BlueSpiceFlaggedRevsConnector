@@ -31,6 +31,7 @@ class LockdownDraft extends ImgAuthBeforeStream {
 		if ( count( $groupInters ) > 0 ) {
 			return true;
 		}
+
 		$repo = RepoGroup::singleton()->getRepo( 'local' );
 		$bits = explode( '!', $this->name, 2 );
 		$archive = substr( $this->path, 0, 9 ) === '/archive/'
@@ -48,6 +49,7 @@ class LockdownDraft extends ImgAuthBeforeStream {
 		if ( !$file->getTimestamp() ) {
 			return true;
 		}
+
 		if ( !$this->isDraft( $file ) ) {
 			return true;
 		}
@@ -59,10 +61,10 @@ class LockdownDraft extends ImgAuthBeforeStream {
 	 * @param File $file
 	 * @return bool
 	 */
-	private function isDraft( File $file ) {
+	protected function isDraft( File $file ) {
 		$res = $this->getServices()->getDBLoadBalancer()->getConnection( DB_REPLICA )->selectField(
 			'flaggedrevs',
-			'fr_img_timestamp',
+			'MAX(fr_img_timestamp)',
 			[
 				'fr_page_id' => $file->getTitle()->getArticleId(),
 				// Show all with some degree of stability
@@ -84,6 +86,7 @@ class LockdownDraft extends ImgAuthBeforeStream {
 			$file->getTimestamp(),
 			new DateTimeZone( 'UTC' )
 		);
+
 		return $reqTimestamp > $flagDate;
 	}
 

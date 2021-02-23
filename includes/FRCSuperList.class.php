@@ -4,7 +4,7 @@ class FRCSuperList {
 
 	public function onSuperListGetFieldDefinitions(&$aFields) {
 		$aFields[] = array(
-			'name' => 'flaggedrevs_state', 
+			'name' => 'flaggedrevs_state',
 			'type' => 'boolean',
 		);
 		$aFields[] = array(
@@ -12,7 +12,7 @@ class FRCSuperList {
 			//'type' => 'date',
 		);
 		$aFields[] = array(
-			'name' => 'flaggedrevs_is_new_available', 
+			'name' => 'flaggedrevs_is_new_available',
 			'type' => 'boolean',
 		);
 		return true;
@@ -113,7 +113,7 @@ class FRCSuperList {
 			$bHasStableRevision = $row->fp_stable != '';
 			$aRows[$row->page_id]['flaggedrevs_state'] = $bHasStableRevision;
 			$aRows[$row->page_id]['flaggedrevs_date'] = $bHasStableRevision 
-				? wfTimestamp(TS_UNIX, $row->fr_timestamp) 
+				? wfTimestamp( TS_MW, $row->fr_timestamp )
 				: '';
 			$aRows[$row->page_id]['flaggedrevs_is_new_available'] 
 				= $row->page_latest != $row->fp_stable;

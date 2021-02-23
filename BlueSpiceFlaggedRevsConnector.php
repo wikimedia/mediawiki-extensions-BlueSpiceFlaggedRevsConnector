@@ -48,7 +48,7 @@ class FlaggedRevsConnector extends Extension {
 	 * extension.json callback
 	 */
 	public static function onRegistration() {
-		global $wgFlaggedRevsNamespaces, $wgHooks;
+		global $wgHooks;
 
 		if( isset($wgHooks['ArticleUpdateBeforeRedirect']) && is_array($wgHooks['ArticleUpdateBeforeRedirect']) ) {
 			$i = array_search('FlaggedRevsHooksUI::injectPostEditURLParams', $wgHooks['ArticleUpdateBeforeRedirect']);
@@ -65,7 +65,7 @@ class FlaggedRevsConnector extends Extension {
 		$GLOBALS['wgExtensionFunctions'][] = function() {
 			global
 			$wgSimpleFlaggedRevsUI,
-			$wgFlaggedRevsTags, $wgFlaggedRevValues, $wgFlaggedRevsExceptions,
+			$wgFlaggedRevsTags, $wgFlaggedRevValues,
 			$wgFlaggedRevsComments, $wgFlaggedRevsLowProfile;
 
 			$wgSimpleFlaggedRevsUI = false;
@@ -73,7 +73,6 @@ class FlaggedRevsConnector extends Extension {
 				'accuracy' => [ 'levels' => 1, 'quality' => 1, 'pristine' => 2 ] //We only have one tag with zero levels
 			];
 			$wgFlaggedRevValues = 1;
-			$wgFlaggedRevsExceptions = array ();
 			$wgFlaggedRevsComments = true;  //As we have a own form now we save comments now without having the ugly textbox in the standard form
 			$wgFlaggedRevsLowProfile = false; //Displays box even on stables
 			//PW: TODO: Connect to templates/files-version-functionallity
@@ -149,7 +148,13 @@ class FlaggedRevsConnector extends Extension {
 		$bResult = false;
 		if ( !in_array( $oCurrentTitle->getNamespace(), $wgFlaggedRevsNamespaces )
 			|| FRCReview::onCheckPageIsReviewable( $oCurrentTitle, $bResult ) === false ) {
-			\Hooks::run('BSFlaggedRevsConnectorCollectFlagInfo', array( $oCurrentTitle, &$aFlagInfo ) );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSFlaggedRevsConnectorCollectFlagInfo',
+				[
+					$oCurrentTitle,
+					&$aFlagInfo
+				]
+			);
 			$this->mFlagInfo[ $oCurrentTitle->getArticleID() ] = $aFlagInfo;
 			return $aFlagInfo;
 		}
@@ -173,7 +178,13 @@ class FlaggedRevsConnector extends Extension {
 
 		if ( $res === false ) {
 			$aFlagInfo[ 'state' ] = 'unmarked';
-			\Hooks::run('BSFlaggedRevsConnectorCollectFlagInfo', array( $oCurrentTitle, &$aFlagInfo ) );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSFlaggedRevsConnectorCollectFlagInfo',
+				[
+					$oCurrentTitle,
+					&$aFlagInfo
+				]
+			);
 			$this->mFlagInfo[ $oCurrentTitle->getArticleID() ] = $aFlagInfo;
 			return $aFlagInfo;
 		}
@@ -192,14 +203,26 @@ class FlaggedRevsConnector extends Extension {
 					}
 				}
 
-			\Hooks::run('BSFlaggedRevsConnectorCollectFlagInfo', array( $oCurrentTitle, &$aFlagInfo ) );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSFlaggedRevsConnectorCollectFlagInfo',
+				[
+					$oCurrentTitle,
+					&$aFlagInfo
+				]
+			);
 			$this->mFlagInfo[ $oCurrentTitle->getArticleID() ] = $aFlagInfo;
 			return $aFlagInfo;
 		}
 
 		$aFlagInfo[ 'state' ] = 'draft';
 
-		\Hooks::run('BSFlaggedRevsConnectorCollectFlagInfo', array( $oCurrentTitle, &$aFlagInfo ) );
+		MediaWikiServices::getInstance()->getHookContainer()->run(
+			'BSFlaggedRevsConnectorCollectFlagInfo',
+			[
+				$oCurrentTitle,
+				&$aFlagInfo
+			]
+		);
 		$this->mFlagInfo[ $oCurrentTitle->getArticleID() ] = $aFlagInfo;
 		return $aFlagInfo;
 	}

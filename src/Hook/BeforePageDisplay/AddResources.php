@@ -18,8 +18,8 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 	}
 
 	protected function doProcess() {
-		$this->out->addModuleStyles( 'ext.bluespice.flaggedRevsConnector.styles' );
-		$this->out->addModules( 'ext.bluespice.flaggedRevsConnector.js' );
+		$this->out->addModuleStyles( 'bluespice.flaggedRevsConnector.styles' );
+		$this->out->addModules( 'bluespice.flaggedRevsConnector.js' );
 	}
 
 }

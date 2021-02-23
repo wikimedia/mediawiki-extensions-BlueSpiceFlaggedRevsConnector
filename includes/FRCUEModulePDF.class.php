@@ -14,6 +14,7 @@ class FRCUEModulePDF {
 
 		//PW(04.12.2013): Ugly, but works so far
 		//RV(04.02.2015): Still ugly, but works so far
+		//PW(04.02.2021): Still very ugly, but still seems to work
 		if( $wgRequest->getInt( 'stable', 1 ) === 0 ) {
 			return true;
 		}
@@ -45,6 +46,9 @@ class FRCUEModulePDF {
 		}
 
 		$aParams[ 'oldid' ] = $res->fp_stable;
+		// let everyone know, that the current request was changed to the stable
+		// version!
+		$wgRequest->setVal( 'stable', 1 );
 
 		wfDebugLog(
 			'BS::FlaggedRevsConnector',

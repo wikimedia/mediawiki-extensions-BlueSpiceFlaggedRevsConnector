@@ -1,4 +1,4 @@
-(function( mw, $, bs, undefined ) {
+(function( mw, $, bs ) {
 	bs.util.registerNamespace( 'bs.flaggedrevsconnector' );
 
 	bs.flaggedrevsconnector.flyoutCallback = function( $body, data ) {

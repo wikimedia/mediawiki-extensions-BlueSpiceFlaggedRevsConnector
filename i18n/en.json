@@ -42,9 +42,9 @@
 	"bs-flaggedrevsconnector-pref-bookshelfshownostable": "Bookshelf: List pages without stable revision",
 	"bs-flaggedrevsconnector-pref-bookshelfshownofr": "Bookshelf: List pages without FlaggedRevs",
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag": "UEModulePDF: Show FlaggedRevs info below main heading",
-	"bs-flaggedrevsconnector-sl_flaggedrevs_state": "Released",
-	"bs-flaggedrevsconnector-sl_flaggedrevs_date": "Release date",
-	"bs-flaggedrevsconnector-sl_flaggedrevs_is_new_available": "New version waits for release",
+	"bs-flaggedrevsconnector-sl_flaggedrevs_state": "Approved",
+	"bs-flaggedrevsconnector-sl_flaggedrevs_date": "Approval date",
+	"bs-flaggedrevsconnector-sl_flaggedrevs_is_new_available": "Approval pending",
 	"bs-notifications-email-review-complete-subject": "Page <b>$1</b> reviewed by <b>$2</b>",
 	"bs-responsibleeditors-pref-EReview-complete": "Notify when page has been reviewed",
 	"bs-responsibleeditors-mail-subject-re-article-reviewed-complete": "The page \"$1\" has been reviewed by $2",
@@ -79,6 +79,7 @@
 	"bs-flaggedrevsconnector-flyout-form-title": "Accept the page",
 	"bs-flaggedrevsconnector-flyout-badge-draft": "Draft",
 	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1 {{PLURAL:$1|Draft|Drafts}} ($2)",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft-implicit": "Changes to resources",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "Draft version",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "Switch to the latest draft version of this page",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "Accepted version",
@@ -120,5 +121,11 @@
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "Accepted",
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Not enabled",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Show difference",
-	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Show difference"
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Show difference",
+	"bs-flaggedrevsconnector-state-implicit-draft-desc": "Page is approved, but there are changes in included resources",
+	"bs-flaggedrevsconnector-state-draft-resources-desc": "Page is a draft due to changes in included resources",
+	"bs-flaggedrevsconnector-pref-handleincludes": "Include handling",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "Current versions",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Freeze versions",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stable versions"
 }

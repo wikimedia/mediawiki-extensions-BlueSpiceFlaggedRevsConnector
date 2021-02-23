@@ -90,14 +90,19 @@ class FRCBookshelf {
 
 			//Get the data
 			$res = $dbr->select(
-				'logging',
-				array( 'log_timestamp', 'log_comment', 'log_page' ),
-				array(
+				[ 'logging', 'comment' ],
+				[
+					'log_timestamp',
+					'comment_text AS log_comment',
+					'log_page'
+				],
+				[
 					'log_type' => 'review',
 					'log_page' => $aArticleIds,
 					'log_timestamp >= ' . $sDateLimit,
-					'log_action ' . $dbr->buildLike( 'approve', $dbr->anyString() )
-				),
+					'log_action ' . $dbr->buildLike( 'approve', $dbr->anyString() ),
+					'log_comment_id = comment_id'
+				],
 				__METHOD__,
 				array( 'ORDER BY' => 'log_timestamp DESC' )
 			);
@@ -114,21 +119,21 @@ class FRCBookshelf {
 		$oNoStableDiv = null;
 		$oNoFRDiv     = null;
 
-		\Hooks::run(
+		MediaWikiServices::getInstance()->getHookContainer()->run(
 			'BSFlaggedRecsConnectorBookshelfBeforeHistoryPage',
-			array(
+			[
 				&$aTemplate, &$aBookPage, &$aArticles,
 				&$bShowStable, &$bShowNoStable, &$bShowNoFR,
 				&$aStables, &$aNoStables, &$aNoFalggedRevs
-			)
+			]
 		);
-		\Hooks::run(
+		MediaWikiServices::getInstance()->getHookContainer()->run(
 			'BSFRCBookshelfBeforeHistoryPage',
-			array(
+			[
 				&$aTemplate, &$aBookPage, &$aArticles,
 				&$bShowStable, &$bShowNoStable, &$bShowNoFR,
 				&$aStables, &$aNoStables, &$aNoFalggedRevs
-			)
+			]
 		);
 
 		if( $bShowStable && !empty( $aStables ) ) {
