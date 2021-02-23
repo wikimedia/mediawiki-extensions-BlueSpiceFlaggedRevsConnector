@@ -1,0 +1,51 @@
+.bs-flaggedrevshistorypage-laststable-tag,
+.bs-flaggedrevshistorypage-stablerevisiondate-tag {
+	font-size: 0.8em;
+	font-style: oblique;
+	color: #555555;
+	position: relative;
+	top: -0.3cm;
+}
+
+.bs-flaggedrevshistorypage-stables-list thead tr {
+	background-color: #D7E4F3;
+}
+
+.bs-flaggedrevshistorypage-stables-list td {
+	padding: 0.2cm;
+	vertical-align: top;
+}
+
+.bs-flaggedrevshistorypage-stables-list tr.odd {
+	background-color: #F5F8FA;
+}
+
+.bs-flaggedrevshistorypage-stables-list tr.even {
+	background-color: #FCFCFC;
+}
+
+.bs-flaggedrevshistorypage-laststable-tag > .nostable,
+.bs-flaggedrevshistorypage-no-stables-list {
+	font-style: oblique;
+	font-weight: bold;
+	color: #FF0000;
+}
+
+table.fr-diff-ratings {
+	width: 100%;
+}
+
+table.fr-diff-ratings td {
+	width: 50%;
+}
+
+span.flaggedrevs-color-0 {
+	background-color: #F9F9F9;
+}
+span.flaggedrevs-color-2 {
+	background-color: #E1FFE1;
+}
+
+span.flaggedrevs-color-3 {
+	background-color: #aaffaa;
+}

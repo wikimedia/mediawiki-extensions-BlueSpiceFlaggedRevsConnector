@@ -1,0 +1,12 @@
+{
+	"name": "bluespice/flaggedrevsconnector",
+	"type": "mediawiki-extension",
+	"description": "Adds support for FlaggedRevs to a range of bluespice extensions",
+	"license": "GPL-3.0-only",
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"installer-name": "BlueSpiceFlaggedRevsConnector"
+	}
+}

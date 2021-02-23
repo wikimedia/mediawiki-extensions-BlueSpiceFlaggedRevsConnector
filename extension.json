@@ -1,0 +1,396 @@
+{
+	"name": "BlueSpiceFlaggedRevsConnector",
+	"version": "3.4.0-alpha",
+	"license-name": "GPL-3.0-only",
+	"url": "https://en.wiki.bluespice.com/wiki/Reference:FlaggedRevsConnector",
+	"author": [
+		"Patric Wirth",
+		"Robert Vogel"
+	],
+	"descriptionmsg": "bs-flaggedrevsconnector-extension-description",
+	"requires": {
+		"MediaWiki": ">= 1.36.0",
+		"extensions": {
+			"BlueSpiceFoundation": ">= 3.4"
+		}
+	},
+	"type": "bluespice",
+	"attributes": {
+		"BlueSpiceFoundation": {
+			"Extensions": {
+				"BlueSpiceFlaggedRevsConnector": {
+					"className": "FlaggedRevsConnector",
+					"extPath": "/BlueSpiceFlaggedRevsConnector",
+					"package": "BlueSpice Pro",
+					"configDefinitions": {
+						"FlaggedRevsConnectorautoReview": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoReview::getInstance",
+						"FlaggedRevsConnectorautoDeleteWorkflow": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoDeleteWorkflow::getInstance",
+						"FlaggedRevsConnectorDraftGroups": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\DraftGroups::getInstance",
+						"FlaggedRevsConnectorindexingStableOnly": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\IndexingStableOnly::getInstance",
+						"FlaggedRevsConnectorBookshelfShowStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowStable::getInstance",
+						"FlaggedRevsConnectorBookshelfShowNoStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowNoStable::getInstance",
+						"FlaggedRevsConnectorBookshelfShowNoFR": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowNoFR::getInstance",
+						"FlaggedRevsConnectorUEModulePDFShowFRTag": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\UEModulePDFShowFRTag::getInstance"
+					}
+				}
+			},
+			"PageInfoElementRegistry": {
+				"bs-frc-versionswitch": "\\BlueSpice\\FlaggedRevsConnector\\PageInfoElement\\VersionSwitch::factory",
+				"bs-frc-pagestatus-dropdown": "\\BlueSpice\\FlaggedRevsConnector\\PageInfoElement\\PageStatusDropdown::factory"
+			},
+			"PermissionRegistry": {
+				"autoreview": {
+					"type": "global",
+					"roles": [
+						"bot",
+						"maintenanceadmin"
+					]
+				},
+				"autoreviewrestore": {
+					"type": "global",
+					"roles": [
+						"bot",
+						"maintenanceadmin"
+					]
+				},
+				"movestable": {
+					"type": "global",
+					"roles": [
+						"admin",
+						"editor",
+						"maintenanceadmin",
+						"reviewer",
+						"structuremanager"
+					]
+				},
+				"review": {
+					"type": "global",
+					"roles": [
+						"admin",
+						"maintenanceadmin",
+						"reviewer"
+					]
+				},
+				"stablesettings": {
+					"type": "global",
+					"roles": [
+						"admin",
+						"maintenanceadmin",
+						"reader"
+					]
+				},
+				"unreviewedpages": {
+					"type": "global",
+					"roles": [
+						"admin",
+						"editor",
+						"maintenanceadmin",
+						"reviewer"
+					]
+				},
+				"validate": {
+					"type": "global",
+					"roles": [
+						"admin",
+						"maintenanceadmin",
+						"reviewer"
+					]
+				}
+			},
+			"PermissionLockdownRegistry": {
+				"flaggedrevsconnector-draft": "\\BlueSpice\\FlaggedRevsConnector\\Permission\\Lockdown\\Module\\Draft::getInstance"
+			},
+			"NotificationRegistrationFunctions": [
+				"\\BlueSpice\\FlaggedRevsConnector\\Notifications\\Registrator::registerNotifications"
+			],
+			"AlertProviderRegistry": {
+				"bs-flaggedrevsconnector-revisionstate": "\\BlueSpice\\FlaggedRevsConnector\\AlertProvider\\RevisionState::factory"
+			},
+			"AdminToolRegistry": {
+				"bs-qm-overview": "BlueSpice\\FlaggedRevsConnector\\AdminTool\\QMOverview"
+			},
+			"RendererRegistry": {
+				"pageheader-lastedit": "\\BlueSpice\\FlaggedRevsConnector\\Renderer\\PageHeader\\LastEdit::factory"
+			},
+			"LessVarsRegistry": {
+				"bs-frc-unmarked-color": "#ff8080",
+				"bs-frc-stable-color": "#38c748",
+				"bs-frc-draft-color": "#e49c00"
+			},
+			"EntityRegistry": {
+				"flaggedpages-ns": "\\BlueSpice\\FlaggedRevsConnector\\EntityConfig\\Collection\\NamespacedFlaggedPages::factory",
+				"flaggedpages-cat": "\\BlueSpice\\FlaggedRevsConnector\\EntityConfig\\Collection\\CategorizedFlaggedPages::factory"
+			}
+		},
+		"BlueSpiceExtendedStatistics": {
+			"SnapshotDataCollectorRegistry": {
+				"flaggedpages-ns": "\\BlueSpice\\FlaggedRevsConnector\\DataCollector\\StoreSourced\\NamespacedFlaggedPages::factory",
+				"flaggedpages-cat": "\\BlueSpice\\FlaggedRevsConnector\\DataCollector\\StoreSourced\\CategorizedFlaggedPages::factory"
+			}
+		},
+		"BlueSpicePrivacy": {
+			"Handlers": [
+				"\\BlueSpice\\FlaggedRevsConnector\\Privacy\\Handler"
+			]
+		},
+		"BlueSpiceSMWConnector": {
+			"ExtraPropertyRegistry": {
+				"docstatefields": "\\BlueSpice\\FlaggedRevsConnector\\DocumentStatePropertyValueProvider::factory",
+				"docsversionfields": "\\BlueSpice\\FlaggedRevsConnector\\DocumentVersionPropertyValueProvider::factory",
+				"approvaldatefields": "\\BlueSpice\\FlaggedRevsConnector\\ApprovalDatePropertyValueProvider::factory",
+				"approvaluserfields": "\\BlueSpice\\FlaggedRevsConnector\\ApprovalUserPropertyValueProvider::factory"
+			}
+		},
+		"BlueSpiceReview": {
+			"ReviewTypeRegistry": {
+				"flagging": "BlueSpice\\FlaggedRevsConnector\\Review\\Type\\Flagging::factory"
+			}
+		}
+	},
+	"callback": "FlaggedRevsConnector::onRegistration",
+	"GroupPermissions": {
+		"sysop": {
+			"review": true,
+			"validate": true,
+			"autoreview": true,
+			"autoreviewrestore": true,
+			"unreviewedpages": true,
+			"stablesettings": true,
+			"movestable": true
+		}
+	},
+	"SpecialPages": {
+		"QMOverview": "\\BlueSpice\\FlaggedRevsConnector\\Special\\QMOverview"
+	},
+	"APIModules": {
+		"bs-flaggedpages-store": "\\BlueSpice\\FlaggedRevsConnector\\Api\\Store\\FlaggedPages"
+	},
+	"ExtensionFunctions": [
+		"FlaggedRevsConnector::setupFlaggedRevsConnector"
+	],
+	"MessagesDirs": {
+		"BlueSpiceFlaggedRevsConnector": [
+			"i18n"
+		],
+		"FRCFlaggedRevs": [
+			"i18n/flaggedrevs/flaggedrevs"
+		],
+		"FRCRevisionReview": [
+			"i18n/flaggedrevs/revisionreview"
+		],
+		"FRCStabilization": [
+			"i18n/flaggedrevs/stabilization"
+		],
+		"FRCReviewedVersions": [
+			"i18n/flaggedrevs/reviewedversions"
+		],
+		"FRCUnreviewedPages": [
+			"i18n/flaggedrevs/unreviewedpages"
+		],
+		"FRCPendingChanges": [
+			"i18n/flaggedrevs/pendingchanges"
+		],
+		"FRCProblemChanges": [
+			"i18n/flaggedrevs/problemchanges"
+		],
+		"FRCReviewedPages": [
+			"i18n/flaggedrevs/reviewedpages"
+		],
+		"FRCStablePages": [
+			"i18n/flaggedrevs/stablepages"
+		],
+		"FRCConfiguredPages": [
+			"i18n/flaggedrevs/configuredpages"
+		],
+		"FRCQualityOversight": [
+			"i18n/flaggedrevs/qualityoversight"
+		],
+		"FRCValidationStatistics": [
+			"i18n/flaggedrevs/validationstatistics"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"BlueSpiceQMOverviewAdminAlias": "languages/SpecialQMOverview.alias.php"
+	},
+	"AutoloadNamespaces": {
+		"BlueSpice\\FlaggedRevsConnector\\": "src/"
+	},
+	"AutoloadClasses": {
+		"FlaggedRevsConnector": "BlueSpiceFlaggedRevsConnector.php",
+		"FRCBookshelf": "includes/FRCBookshelf.class.php",
+		"FRCInfobox": "includes/FRCInfobox.class.php",
+		"FRCNamespaceManager": "includes/FRCNamespaceManager.class.php",
+		"FRCReview": "includes/FRCReview.class.php",
+		"FRCSemanticMediaWiki": "includes/FRCSemanticMediaWiki.class.php",
+		"FRCSuperList": "includes/FRCSuperList.class.php",
+		"FRCUEModulePDF": "includes/FRCUEModulePDF.class.php",
+		"FRCDiffView": "includes/FRCDiffView.class.php",
+		"FRCHistoryView": "includes/FRCHistoryView.class.php",
+		"FRCPageAssignments": "includes/FRCPageAssignments.class.php",
+		"BSFlaggedRevsConnectorRemoveTMPGroup": "maintenance/BSFlaggedRevsConnectorRemoveTMPGroup.php"
+	},
+	"ResourceModules": {
+		"ext.bluespice.flaggedRevsConnector.styles": {
+			"styles": "bluespice.flaggedRevsConnector.less",
+			"class": "\\BlueSpice\\ResourceModule\\LessVars"
+		},
+		"ext.bluespice.flaggedRevsConnector.js": {
+			"scripts": "bluespice.flaggedRevsConnector.js",
+			"messages": [
+				"bs-flaggedrevsconnector-response-success",
+				"bs-flaggedrevsconnector-response-failure",
+				"bs-flaggedrevsconnector-review-heading",
+				"bs-flaggedrevsconnector-review-help",
+				"bs-flaggedrevsconnector-review-comment-label",
+				"bs-extjs-title-success"
+			],
+			"dependencies": "ext.bluespice"
+		},
+		"bluespice.flaggedRevsConnector.pageassignmentintegration": {
+			"scripts": "bluespice.flaggedRevsConnector.pageassignmentintegration.js",
+			"messages": [
+				"bs-flaggedrevsconnector-column-last-stable",
+				"bs-flaggedrevsconnector-no-stable"
+			]
+		},
+		"ext.bluespice.flaggedRevsConnector.flyout": {
+			"scripts": "bluespice.flaggedrevsconnector.flyout.js",
+			"messages": [
+				"bs-flaggedrevsconnector-flyout-title",
+				"bs-flaggedrevsconnector-flyout-intro",
+				"bs-flaggedrevsconnector-nav-link-title",
+				"bs-flaggedrevsconnector-flyout-state-intro",
+				"bs-flaggedrevsconnector-state-unmarked",
+				"bs-flaggedrevsconnector-state-stable",
+				"bs-flaggedrevsconnector-state-draft",
+				"bs-flaggedrevsconnector-flyout-state-intro",
+				"bs-flaggedrevsconnector-flyout-form-title",
+				"bs-flaggedrevsconnector-state-pending",
+				"bs-flaggedrevsconnector-state-pending-desc"
+			],
+			"dependencies": [
+				"ext.bluespice.flaggedRevsConnector.js",
+				"ext.bluespice.extjs",
+				"ext.bluespice"
+			]
+		},
+		"ext.bs.flaggedrevsconnector.flaggedpages": {
+			"scripts": "bluespice.flaggedrevsconnector.flaggedpages.js",
+			"dependencies": [
+				"ext.bluespice.extjs",
+				"ext.bluespice"
+			],
+			"messages": [
+				"bs-flaggedrevsconnector-grid-page-id",
+				"bs-flaggedrevsconnector-grid-page-title",
+				"bs-flaggedrevsconnector-grid-rev-state",
+				"bs-flaggedrevsconnector-grid-pending-revs"
+			]
+		},
+		"ext.bs.flaggedrevsconnector.editversion": {
+			"scripts": "bluespice.flaggedrevsconnector.editversion.js"
+		},
+		"ext.bs.flaggedrevsconnector.editversion": {
+			"scripts": "bluespice.flaggedrevsconnector.editversion.js"
+		},
+		"ext.bluespice.flaggedrevsconnector.collection.flaggedpages.cat": {
+			"messages": [
+				"bs-flaggedrevsconnector-collection-type-flaggedpages-cat",
+				"bs-flaggedrevsconnector-collection-var-categoryname",
+				"bs-flaggedrevsconnector-collection-var-draftpages",
+				"bs-flaggedrevsconnector-collection-var-firstdraftpages",
+				"bs-flaggedrevsconnector-collection-var-approvedpages",
+				"bs-flaggedrevsconnector-collection-var-notenabledpages"
+			]
+		},
+		"ext.bluespice.flaggedrevsconnector.collection.flaggedpages.ns": {
+			"messages": [
+				"bs-flaggedrevsconnector-collection-type-flaggedpages-ns",
+				"bs-flaggedrevsconnector-collection-var-namespacename",
+				"bs-flaggedrevsconnector-collection-var-draftpages",
+				"bs-flaggedrevsconnector-collection-var-firstdraftpages",
+				"bs-flaggedrevsconnector-collection-var-approvedpages",
+				"bs-flaggedrevsconnector-collection-var-notenabledpages"
+			]		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "BlueSpiceFlaggedRevsConnector/resources"
+	},
+	"config_prefix": "bsg",
+	"config": {
+		"FlaggedRevsConnectorautoReview": {
+			"value": true,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-autoreview",
+			"public": true
+		},
+		"FlaggedRevsConnectorautoDeleteWorkflow": {
+			"value": true,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-autodeleteworkflow",
+			"public": true
+		},
+		"FlaggedRevsConnectorDraftGroups": {
+			"value": [ "user" ],
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-DraftGroups",
+			"public": true
+		},
+		"FlaggedRevsConnectorindexingStableOnly": {
+			"value": false,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-indexingStableOnly",
+			"public": true
+		},
+		"FlaggedRevsConnectorBookshelfShowStable": {
+			"value": true,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-bookshelfshowstable",
+			"public": true
+		},
+		"FlaggedRevsConnectorBookshelfShowNoStable": {
+			"value": true,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-bookshelfshownostable",
+			"public": true
+		},
+		"FlaggedRevsConnectorBookshelfShowNoFR": {
+			"value": true,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-bookshelfshownofr",
+			"public": true
+		},
+		"FlaggedRevsConnectorUEModulePDFShowFRTag": {
+			"value": true,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag",
+			"public": true
+		},
+		"FlaggedRevsConnectorFlaggedPagesStore": {
+			"value": "BlueSpice\\FlaggedRevsConnector\\Data\\FlaggedPages\\Store",
+			"public": false
+		},
+		"FlaggedRevsConnectorPageApprovedReminderDelay": {
+			"@note": "After how many hours we want to resend notification",
+			"value": 168
+		}
+	},
+	"Hooks": {
+		"ArticleViewHeader":[
+			"FRCDiffView::onArticleViewHeader",
+			"FRCUEModulePDF::onArticleViewHeader"
+		],
+		"ArticleContentOnDiff": "FRCDiffView::onArticleContentOnDiff",
+		"OutputPageBeforeHTML": "FRCDiffView::onOutputPageBeforeHTML",
+		"PageHistoryLineEnding": "FRCHistoryView::onPageHistoryLineEnding",
+		"checkPageIsReviewable": "FRCReview::onCheckPageIsReviewable",
+		"FlaggedRevsRevisionReviewFormAfterDoSubmit": "FRCReview::onFlaggedRevsRevisionReviewFormAfterDoSubmit",
+		"ChameleonSkinTemplateOutputPageBeforeExec": [
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddFlyout::callback"
+		],
+		"BeforePageDisplay": [
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\AddResources::callback",
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\ChangeRevisionForEdit::callback"
+		],
+		"SMW::RevisionGuard::IsApprovedRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SMWRevisionGuard\\IsApprovedFlaggedRevision::callback",
+		"SMW::RevisionGuard::ChangeRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SMWRevisionGuard\\ChangeFlaggedRevision::callback",
+		"SMW::RevisionGuard::ChangeRevisionID": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SMWRevisionGuard\\ChangeFlaggedRevisionId::callback",
+		"LoadExtensionSchemaUpdates": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\LoadExtensionSchemaUpdates\\AddRemoveTMPGroupMaintenanceScript::callback",
+		"ImgAuthBeforeStream": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\ImgAuthBeforeStream\\LockdownDraft::callback"
+	},
+	"load_composer_autoloader": true,
+	"manifest_version": 2
+}
