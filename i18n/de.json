@@ -128,5 +128,6 @@
 	"bs-flaggedrevsconnector-pref-handleincludes": "Einbindung von Ressourcen",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuelle Versionen",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versionen einfrieren",
-	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabile Versionen"
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabile Versionen",
+	"bs-flaggedrevsconnector-resource-changes": "Änderungen an eingebundenden Ressourcen seit der letzten Seitenfreigabe"
 }

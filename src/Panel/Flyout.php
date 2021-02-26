@@ -7,10 +7,26 @@ use BlueSpice\Calumma\IFlyout;
 use FlaggableWikiPage;
 use BlueSpice\Services;
 use BlueSpice\FlaggedRevsConnector\Utils;
+use FormatJson;
 use Html;
+use MediaWiki\MediaWikiServices;
 use Message;
+use QuickTemplate;
+use Title;
 
 class Flyout extends BasePanel implements IFlyout {
+	/** @var \Wikimedia\Rdbms\LoadBalancer  */
+	private $loadBalancer = null;
+	/** @var \MediaWiki\Linker\LinkRenderer  */
+	private $linkRenderer = null;
+
+	public function __construct( QuickTemplate $skintemplate ) {
+		parent::__construct( $skintemplate );
+
+		$services = MediaWikiServices::getInstance();
+		$this->loadBalancer = $services->getDBLoadBalancer();
+		$this->linkRenderer = $services->getLinkRenderer();
+	}
 
 	public function getHtmlId() {
 		return 'bs-flaggedrevs-flyout';
@@ -39,15 +55,82 @@ class Flyout extends BasePanel implements IFlyout {
 
 	/**
 	 *
-	 * @return bool
+	 * @return array
 	 */
 	public function getContainerData() {
 		$flagInfo = $this->getFlagInfo();
 		$flagInfo['pendingchanges'] = false;
 		if( $this->hasPendingChanges() ) {
 			$flagInfo['pendingchanges'] = true;
+			if ( $this->getFlaggableWikiPage()->onlyTemplatesOrFilesPending() ) {
+				$flagInfo['resource_changes'] = FormatJson::encode(
+					$this->getResourceChangesLinks()
+				);
+			}
 		}
+
 		return $flagInfo;
+	}
+
+	/**
+	 * @return array
+	 */
+	private function getResourceChangesLinks() {
+		$wp = $this->getFlaggableWikiPage();
+		$lastRevID = $wp->getTitle()->getLatestRevID();
+		$links = [];
+		$this->makeTemplateResourceLinks( $lastRevID, $links );
+		$this->makeFileResourceLinks( $lastRevID, $links );
+
+		return $links;
+	}
+
+	/**
+	 * @param int $lastRevID
+	 * @param array &$links
+	 */
+	private function makeTemplateResourceLinks( $lastRevID, &$links ) {
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$res = $dbr->select( 'flaggedtemplates', [
+			'ft_namespace', 'ft_title', 'ft_tmp_rev_id'
+		], [
+			'ft_rev_id' => $lastRevID
+		], __METHOD__ );
+
+		foreach ( $res as $row ) {
+			$title = Title::makeTitle( $row->ft_namespace, $row->ft_title );
+			if ( $title->getLatestRevID() === (int) $row->ft_tmp_rev_id ) {
+				continue;
+			}
+			$links[$title->getPrefixedDBkey()] = $this->linkRenderer->makeLink( $title, null, [], [
+				'diff' => $title->getLatestRevID(),
+				'oldid' => $row->ft_tmp_rev_id
+			] );
+		}
+	}
+
+	/**
+	 * @param int $lastRevID
+	 * @param array &$links
+	 */
+	private function makeFileResourceLinks( $lastRevID, &$links ) {
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$res = $dbr->select( 'flaggedimages', [
+			'fi_name', 'fi_img_timestamp'
+		], [
+			'fi_rev_id' => $lastRevID
+		], __METHOD__ );
+
+		foreach ( $res as $row ) {
+			$title = Title::makeTitle( NS_FILE, $row->fi_name );
+			$rev = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
+				$title->getLatestRevID()
+			);
+			if ( $rev->getTimestamp() === $row->fi_img_timestamp ) {
+				continue;
+			}
+			$links[$title->getPrefixedDBkey()] = $this->linkRenderer->makeLink( $title );
+		}
 	}
 
 	/**
@@ -123,7 +206,7 @@ class Flyout extends BasePanel implements IFlyout {
 		$linkRenderer = Services::getInstance()->getLinkRenderer();
 		$links = [];
 		foreach( $usernames as $username ) {
-			$target = \Title::makeTitle( NS_USER , $username );
+			$target = Title::makeTitle( NS_USER , $username );
 			$links[] = $linkRenderer->makeLink( $target, $username );
 		}
 

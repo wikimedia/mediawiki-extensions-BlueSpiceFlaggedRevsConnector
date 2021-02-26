@@ -262,7 +262,8 @@
 				"bs-flaggedrevsconnector-flyout-state-intro",
 				"bs-flaggedrevsconnector-flyout-form-title",
 				"bs-flaggedrevsconnector-state-pending",
-				"bs-flaggedrevsconnector-state-pending-desc"
+				"bs-flaggedrevsconnector-state-pending-desc",
+				"bs-flaggedrevsconnector-resource-changes"
 			],
 			"dependencies": [
 				"bluespice.flaggedRevsConnector.js",

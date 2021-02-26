@@ -128,5 +128,6 @@
 	"bs-flaggedrevsconnector-pref-handleincludes": "Include handling",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Current versions",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Freeze versions",
-	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stable versions"
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stable versions",
+	"bs-flaggedrevsconnector-resource-changes": "Changes to included resources since the last page approval"
 }
