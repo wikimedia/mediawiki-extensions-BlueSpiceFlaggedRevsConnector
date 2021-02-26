@@ -52,6 +52,23 @@ Ext.define( 'BS.FlaggedRevsConnector.flyout.Base', {
 			} );
 		}
 
+		this.flagInfo.resource_changes = this.flagInfo.resource_changes || {};
+		if ( Object.keys( this.flagInfo.resource_changes ).length ) {
+			var $resourceChanges = $( '<ul>' );
+			for ( var title in this.flagInfo.resource_changes ) {
+				if ( !this.flagInfo.resource_changes.hasOwnProperty( title ) ) {
+					continue;
+				}
+				var $link = this.flagInfo.resource_changes[title];
+				$resourceChanges.append( $( '<li>' ).html( $link ) );
+			}
+
+			panels.push( {
+				title: mw.message( 'bs-flaggedrevsconnector-resource-changes' ).plain(),
+				html: $( '<div>' ).append( $resourceChanges ).html()
+			} );
+		}
+
 		return panels;
 	},
 
