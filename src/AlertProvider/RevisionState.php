@@ -143,12 +143,11 @@ class RevisionState extends AlertProviderBase {
 				$this->revisionStateMessage = $this->skin->msg(
 					'bs-flaggedrevsconnector-state-implicit-draft-desc'
 				);
-				$this->revisionStateMessageType = IAlertProvider::TYPE_WARNING;
 			} else {
 				$this->revisionStateMessage =
 					$this->skin->msg( 'bs-flaggedrevsconnector-state-stable-desc' );
-				$this->revisionStateMessageType = IAlertProvider::TYPE_SUCCESS;
 			}
+			$this->revisionStateMessageType = IAlertProvider::TYPE_SUCCESS;
 		}
 
 		if ( !$showingStable ) {
@@ -161,7 +160,9 @@ class RevisionState extends AlertProviderBase {
 					)
 				);
 				$this->revisionStateMessageType = IAlertProvider::TYPE_WARNING;
+				return;
 			}
+
 			if ( !$inSync ) {
 				$this->revisionStateMessage = $this->skin->msg(
 					'bs-flaggedrevsconnector-state-draft-resources-desc'

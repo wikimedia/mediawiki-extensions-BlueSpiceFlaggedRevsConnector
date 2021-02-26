@@ -46,10 +46,9 @@ Ext.define( 'BS.FlaggedRevsConnector.flyout.Base', {
 			var $alert = $( '<div class="alert alert-info" role="alert">' );
 			$alert.append( pending );
 
-
 			panels.push( {
 				title: mw.message( 'bs-flaggedrevsconnector-state-pending' ).plain(),
-				html: $('<div>').append($alert).html()
+				html: $( '<div>' ).append( $alert ).html()
 			} );
 		}
 

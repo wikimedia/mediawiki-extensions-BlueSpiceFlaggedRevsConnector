@@ -23,7 +23,6 @@
 					"extPath": "/BlueSpiceFlaggedRevsConnector",
 					"package": "BlueSpice Pro",
 					"configDefinitions": {
-						"FlaggedRevsConnectorautoReview": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoReview::getInstance",
 						"FlaggedRevsConnectorautoDeleteWorkflow": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoDeleteWorkflow::getInstance",
 						"FlaggedRevsConnectorDraftGroups": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\DraftGroups::getInstance",
 						"FlaggedRevsConnectorIndexStableOnly": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\IndexingStableOnly::getInstance",
@@ -321,11 +320,6 @@
 	},
 	"config_prefix": "bsg",
 	"config": {
-		"FlaggedRevsConnectorautoReview": {
-			"value": true,
-			"descriptionmsg": "bs-flaggedrevsconnector-pref-autoreview",
-			"public": true
-		},
 		"FlaggedRevsConnectorautoDeleteWorkflow": {
 			"value": true,
 			"descriptionmsg": "bs-flaggedrevsconnector-pref-autodeleteworkflow",
@@ -410,7 +404,8 @@
 		"BSExtendedSearchWikipageFetchRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\BSExtendedSearchWikipageFetchRevision\\GetStableRevision::callback",
 		"BSExtendedSearchRepoFileGetRepoFile": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\BSExtendedSearchRepoFileGetRepoFile\\GetStableFile::callback",
 		"EditPageGetCheckboxesDefinition": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\EditPageGetCheckboxesDefinition\\ReplaceVisualEditorAutoReview::callback",
-		"PageSaveComplete": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\PageSaveComplete\\AutoReviewAfterVisualEditorEdit::callback"
+		"PageSaveComplete": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\PageSaveComplete\\AutoReviewAfterVisualEditorEdit::callback",
+		"SpecialPage_initList": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SpecialPageInitList\\RemoveDefaultFRPages::callback"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
