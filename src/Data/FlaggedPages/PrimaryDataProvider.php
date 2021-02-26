@@ -27,6 +27,9 @@ class PrimaryDataProvider extends PageDataProvider {
 			}
 			if ( $stableRevID === $title->getLatestRevID() ) {
 				$state = FlaggedRevsConnector::STATE_STABLE;
+				if ( !$flaggablePage->stableVersionIsSynced() ) {
+					$state = FlaggedRevsConnector::STATE_IMPLICIT_DRAFT;
+				}
 			}
 			$revisionsSinceStable = $flaggablePage->getPendingRevCount();
 		}

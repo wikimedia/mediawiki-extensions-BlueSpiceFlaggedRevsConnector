@@ -3,7 +3,6 @@
 namespace BlueSpice\FlaggedRevsConnector\Review\Type;
 
 use BlueSpice\FlaggedRevsConnector\PermissionLessReviewForm;
-use BlueSpice\Review\Config;
 use BlueSpice\Review\IReviewProcess;
 use BlueSpice\Review\Notifications;
 use BsReviewProcess;
@@ -45,8 +44,7 @@ class Flagging extends BsReviewProcess {
 	public function notify( $action, IContextSource $context, array $data = [] ) {
 		if (
 			$action === static::ACTION_VOTE &&
-			$this->isFinished() === 'status' &&
-			$this->shouldAutoReview()
+			$this->isFinished() === 'status'
 		) {
 			/** @var \BlueSpice\NotificationManager $notificationsManager */
 			$notificationsManager = MediaWikiServices::getInstance()->getService( 'BSNotificationManager' );
@@ -61,12 +59,6 @@ class Flagging extends BsReviewProcess {
 		} else {
 			parent::notify( $action, $context, $data );
 		}
-	}
-
-	private function shouldAutoReview() {
-		return $this->getConfig()->has( Config::FLAGGEDREVSCONNECTORAUTOREVIEW ) &&
-			$this->getConfig()->get( Config::FLAGGEDREVSCONNECTORAUTOREVIEW ) === true;
-
 	}
 
 	/**
@@ -90,9 +82,6 @@ class Flagging extends BsReviewProcess {
 	 */
 	private function autoFlag( $action, $context, $data ) {
 		if ( $action !== IReviewProcess::ACTION_VOTE ) {
-			return;
-		}
-		if ( !$this->shouldAutoReview() ) {
 			return;
 		}
 		if ( $data['vote'] !== 'yes' ) {
