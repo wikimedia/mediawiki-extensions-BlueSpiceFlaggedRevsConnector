@@ -42,6 +42,7 @@ class FlaggedRevsConnector extends Extension {
 	const STATE_UNMARKED = 'unmarked';
 	const STATE_DRAFT = 'draft';
 	const STATE_STABLE = 'stable';
+	const STATE_IMPLICIT_DRAFT = 'implicit-draft';
 
 	/**
 	 * extension.json callback

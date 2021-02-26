@@ -33,7 +33,10 @@ class QMOverview extends \BlueSpice\SpecialPage {
 			)->text(),
 			FlaggedRevsConnector::STATE_NOT_ENABLED => wfMessage(
 				"bs-flaggedrevsconnector-state-" . FlaggedRevsConnector::STATE_NOT_ENABLED
-			)->text()
+			)->text(),
+			FlaggedRevsConnector::STATE_IMPLICIT_DRAFT => wfMessage(
+				"bs-flaggedrevsconnector-state-" . FlaggedRevsConnector::STATE_IMPLICIT_DRAFT
+			)->text(),
 		];
 		$this->getOutput()->addJsConfigVars(
 			'bsgFlaggedRevConnectorAvailableStates',
