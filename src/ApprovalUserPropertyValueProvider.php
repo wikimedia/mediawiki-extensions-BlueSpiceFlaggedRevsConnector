@@ -14,7 +14,7 @@ class ApprovalUserPropertyValueProvider extends PropertyValueProvider {
 	 * @return string
 	 */
 	public function getAliasMessageKey() {
-		return "bs-frc-approval-user-sesp-alias";
+		return "bs-flaggedrevsconnector-approval-user-sesp-alias";
 	}
 
 	/**
@@ -22,7 +22,7 @@ class ApprovalUserPropertyValueProvider extends PropertyValueProvider {
 	 * @return string
 	 */
 	public function getDescriptionMessageKey() {
-		return "bs-frc-approval-user-sesp-desc";
+		return "bs-flaggedrevsconnector-approval-user-sesp-desc";
 	}
 
 	/**

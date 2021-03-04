@@ -4,7 +4,7 @@ $specialPageAliases = [];
 
 /** English (English) */
 $specialPageAliases['en'] = [
-	'QMOverview' => [ 'QM overview' ],
+	'QMOverview' => [ 'Quality management overview', 'QM overview' ],
 ];
 
 /** German (Deutsch) */

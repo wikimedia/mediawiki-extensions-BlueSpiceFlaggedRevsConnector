@@ -15,6 +15,6 @@ class IndexingStableOnly extends BooleanSetting {
 	}
 
 	public function getLabelMessageKey() {
-		return 'bs-flaggedrevsconnector-pref-indexingStableOnly';
+		return 'bs-flaggedrevsconnector-pref-indexingstableonly';
 	}
 }
