@@ -5,7 +5,6 @@ namespace BlueSpice\FlaggedRevsConnector\Panel;
 use BlueSpice\Calumma\Panel\BasePanel;
 use BlueSpice\Calumma\IFlyout;
 use FlaggableWikiPage;
-use MediaWiki\MediaWikiServices;
 use BlueSpice\FlaggedRevsConnector\Utils;
 use FormatJson;
 use Html;
