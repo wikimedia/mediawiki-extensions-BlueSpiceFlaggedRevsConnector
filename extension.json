@@ -175,39 +175,6 @@
 		],
 		"FRCFlaggedRevs": [
 			"i18n/flaggedrevs/flaggedrevs"
-		],
-		"FRCRevisionReview": [
-			"i18n/flaggedrevs/revisionreview"
-		],
-		"FRCStabilization": [
-			"i18n/flaggedrevs/stabilization"
-		],
-		"FRCReviewedVersions": [
-			"i18n/flaggedrevs/reviewedversions"
-		],
-		"FRCUnreviewedPages": [
-			"i18n/flaggedrevs/unreviewedpages"
-		],
-		"FRCPendingChanges": [
-			"i18n/flaggedrevs/pendingchanges"
-		],
-		"FRCProblemChanges": [
-			"i18n/flaggedrevs/problemchanges"
-		],
-		"FRCReviewedPages": [
-			"i18n/flaggedrevs/reviewedpages"
-		],
-		"FRCStablePages": [
-			"i18n/flaggedrevs/stablepages"
-		],
-		"FRCConfiguredPages": [
-			"i18n/flaggedrevs/configuredpages"
-		],
-		"FRCQualityOversight": [
-			"i18n/flaggedrevs/qualityoversight"
-		],
-		"FRCValidationStatistics": [
-			"i18n/flaggedrevs/validationstatistics"
 		]
 	},
 	"ExtensionMessagesFiles": {
@@ -264,7 +231,6 @@
 				"bs-flaggedrevsconnector-state-unmarked",
 				"bs-flaggedrevsconnector-state-stable",
 				"bs-flaggedrevsconnector-state-draft",
-				"bs-flaggedrevsconnector-flyout-state-intro",
 				"bs-flaggedrevsconnector-flyout-form-title",
 				"bs-flaggedrevsconnector-state-pending",
 				"bs-flaggedrevsconnector-state-pending-desc",
@@ -329,12 +295,12 @@
 		},
 		"FlaggedRevsConnectorDraftGroups": {
 			"value": [ "user" ],
-			"descriptionmsg": "bs-flaggedrevsconnector-pref-DraftGroups",
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-draftgroups",
 			"public": true
 		},
 		"FlaggedRevsConnectorIndexStableOnly": {
 			"value": false,
-			"descriptionmsg": "bs-flaggedrevsconnector-pref-indexingStableOnly",
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-indexingstableonly",
 			"public": true
 		},
 		"FlaggedRevsConnectorBookshelfShowStable": {
@@ -372,6 +338,7 @@
 		}
 	},
 	"Hooks": {
+		"MessageCache::get": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\MessageCacheGet\\ApplyBusinessVocabulary::callback",
 		"ArticleViewHeader":[
 			"FRCDiffView::onArticleViewHeader",
 			"FRCUEModulePDF::onArticleViewHeader"

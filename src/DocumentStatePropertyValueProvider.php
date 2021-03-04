@@ -52,7 +52,7 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 	 * @return string
 	 */
 	public function getAliasMessageKey() {
-		return "bs-frc-document-state-sesp-alias";
+		return "bs-flaggedrevsconnector-document-state-sesp-alias";
 	}
 
 	/**
@@ -60,7 +60,7 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 	 * @return string
 	 */
 	public function getDescriptionMessageKey() {
-		return "bs-frc-document-state-sesp-desc";
+		return "bs-flaggedrevsconnector-document-state-sesp-desc";
 	}
 
 	/**
