@@ -56,7 +56,7 @@ Ext.define( 'BS.FlaggedRevsConnector.flyout.Base', {
 		if ( Object.keys( this.flagInfo.resource_changes ).length ) {
 			var $resourceChanges = $( '<ul>' );
 			for ( var title in this.flagInfo.resource_changes ) {
-				if ( !this.flagInfo.resource_changes.hasOwnProperty( title ) ) {
+				if ( !Object.prototype.hasOwnProperty.call( this.flagInfo.resource_changes, title ) ) {
 					continue;
 				}
 				var $link = this.flagInfo.resource_changes[title];

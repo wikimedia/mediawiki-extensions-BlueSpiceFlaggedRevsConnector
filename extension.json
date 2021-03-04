@@ -8,6 +8,12 @@
 		"Robert Vogel"
 	],
 	"descriptionmsg": "bs-flaggedrevsconnector-extension-description",
+	"requires": {
+		"MediaWiki": "~1.31",
+		"extensions": {
+			"BlueSpiceFoundation": "~3.2"
+		}
+	},
 	"type": "bluespice",
 	"attributes": {
 		"BlueSpiceFoundation": {
@@ -357,7 +363,7 @@
 			"public": false
 		},
 		"FlaggedRevsConnectorPageApprovedReminderDelay": {
-			"@note": "After how many hours we want to resend notification",
+			"public": false,
 			"value": 168
 		}
 	},
