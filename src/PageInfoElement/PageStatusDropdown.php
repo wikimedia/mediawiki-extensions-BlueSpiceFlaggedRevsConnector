@@ -37,6 +37,9 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 * @return Message
 	 */
 	public function getLabelMessage() {
+		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text
+		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text
+		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text
 		return $this->msg( 'bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-' . $this->state . '-text' );
 	}
 
@@ -53,6 +56,9 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 * @return Message
 	 */
 	public function getTooltipMessage() {
+		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title
+		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title
+		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title
 		return $this->msg( 'bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-' . $this->state . '-title' );
 	}
 

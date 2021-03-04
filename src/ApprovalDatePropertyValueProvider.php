@@ -14,7 +14,7 @@ class ApprovalDatePropertyValueProvider extends PropertyValueProvider {
 	 * @return string
 	 */
 	public function getAliasMessageKey() {
-		return "bs-frc-approval-date-sesp-alias";
+		return "bs-flaggedrevsconnector-approval-date-sesp-alias";
 	}
 
 	/**
@@ -22,7 +22,7 @@ class ApprovalDatePropertyValueProvider extends PropertyValueProvider {
 	 * @return string
 	 */
 	public function getDescriptionMessageKey() {
-		return "bs-frc-approval-date-sesp-desc";
+		return "bs-flaggedrevsconnector-approval-date-sesp-desc";
 	}
 
 	/**

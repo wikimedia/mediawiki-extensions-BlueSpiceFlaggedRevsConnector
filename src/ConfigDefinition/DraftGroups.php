@@ -15,7 +15,7 @@ class DraftGroups extends ArraySetting {
 	}
 
 	public function getLabelMessageKey() {
-		return 'bs-flaggedrevsconnector-pref-DraftGroups';
+		return 'bs-flaggedrevsconnector-pref-draftgroups';
 	}
 
 	public function getOptions() {
