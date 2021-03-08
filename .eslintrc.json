@@ -1,12 +1,11 @@
 {
 	"root": true,
 	"extends": [
-		"eslint:recommended"
+		"eslint:recommended",
+		"wikimedia/mediawiki",
+		"wikimedia/jquery"
 	],
 	"globals": {
-		"$": "readonly",
-		"OO": "readonly",
-		"mw": "readonly",
 		"Ext": "readonly",
 		"jQuery": "readonly",
 		"BS": "readonly",
