@@ -289,7 +289,11 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 	 * @return FlaggablePageView
 	 */
 	protected function getFlaggablePageView( Title $title ) {
-		return FlaggablePageView::singleton();
+		$view = FlaggablePageView::singleton();
+		// Provide proper object when called for multiple pages in one request
+		// (e.g. book export)
+		$view->clear();
+		return $view;
 	}
 
 }
