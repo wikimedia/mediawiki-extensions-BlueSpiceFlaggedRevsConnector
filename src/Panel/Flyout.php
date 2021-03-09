@@ -126,6 +126,9 @@ class Flyout extends BasePanel implements IFlyout {
 			$rev = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
 				$title->getLatestRevID()
 			);
+			if ( $rev === null ) {
+				continue;
+			}
 			if ( $rev->getTimestamp() === $row->fi_img_timestamp ) {
 				continue;
 			}
