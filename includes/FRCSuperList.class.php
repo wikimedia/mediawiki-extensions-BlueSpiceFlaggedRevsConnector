@@ -41,7 +41,6 @@ class FRCSuperList {
 			'header' => wfMessage('bs-flaggedrevsconnector-sl_flaggedrevs_is_new_available')->plain(), 
 			'dataIndex' => 'flaggedrevs_is_new_available', 
 			'render' => 'boolean', 
-			'hidden' => true,
 			'filter' => array(
 				'type' => 'boolean'
 			),
