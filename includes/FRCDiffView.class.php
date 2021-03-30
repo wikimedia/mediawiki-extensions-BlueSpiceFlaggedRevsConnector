@@ -765,7 +765,8 @@ class FRCDiffView extends ContextSource {
 	protected function getTopDiffToggle( FlaggedRevision $srev, $quality ) {
 		$reqUser = $this->getUser();
 		$this->load();
-		if ( !$reqUser->getBoolOption( 'flaggedrevsviewdiffs' ) ) {
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+		if ( !$userOptionsLookup->getBoolOption( $reqUser, 'flaggedrevsviewdiffs' ) ) {
 			// nothing to do here
 			return false;
 		}
