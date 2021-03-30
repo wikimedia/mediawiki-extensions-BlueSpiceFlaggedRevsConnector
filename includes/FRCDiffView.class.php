@@ -701,7 +701,8 @@ class FRCDiffView extends ContextSource {
 	protected function getTopDiffToggle(FlaggedRevision $srev, $quality) {
 		$reqUser = $this->getUser();
 		$this->load();
-		if (!$reqUser->getBoolOption('flaggedrevsviewdiffs')) {
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+		if (!$userOptionsLookup->getBoolOption($reqUser, 'flaggedrevsviewdiffs')) {
 			return false; // nothing to do here
 		}
 		# Diff should only show for the draft
