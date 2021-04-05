@@ -4,10 +4,9 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 	plugins: 'gridfilters',
 	wasLoaded: false,
 
-	initComponent: function() {
+	initComponent: function () {
 		this.columns = this.makeColumns();
 		this.store = this.makeStore();
-
 
 		this.bbar = this.makeBBar();
 
@@ -15,13 +14,13 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 		this.callParent( arguments );
 	},
 
-	makeColumns: function() {
+	makeColumns: function () {
 		var availableStates = mw.config.get( 'bsgFlaggedRevConnectorAvailableStates' ),
 			defaultValue = [];
 		// Long syntax for IE...
 		for ( var state in availableStates ) {
 			if ( state !== 'notenabled' ) {
-				defaultValue.push( availableStates[state] );
+				defaultValue.push( availableStates[ state ] );
 			}
 		}
 		return [
@@ -42,7 +41,7 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 				filter: {
 					type: 'string'
 				},
-				renderer: function( value, metaData, record, rowIndex, colIndex, store, view ) {
+				renderer: function ( value, metaData, record, rowIndex, colIndex, store, view ) {
 					return record.get( 'page_link' );
 				}
 			}, {
@@ -64,7 +63,7 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 		];
 	},
 
-	makeStore: function() {
+	makeStore: function () {
 		return new BS.store.BSApi( {
 			apiAction: 'bs-flaggedpages-store',
 			sorters: [ {
@@ -72,7 +71,7 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 				direction: 'ASC'
 			} ],
 			remoteFilter: true,
-			proxy:{
+			proxy: {
 				extraParams: {
 					limit: 25
 				}
@@ -80,41 +79,40 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 			remoteSort: true,
 			pageSize: 25,
 			listeners: {
-				beforeLoad: function() {
+				beforeLoad: function () {
 					if ( this.wasLoaded ) {
 						return;
 					}
 					this.mask( mw.message( 'bs-extjs-loading' ).text() );
 					this.wasLoaded = true;
 				}.bind( this ),
-				load: function() {
+				load: function () {
 					this.unmask();
 				}.bind( this )
 			}
 		} );
 	},
 
-	makeBBar: function() {
+	makeBBar: function () {
 		return new Ext.PagingToolbar( {
 			store: this.store,
 			displayInfo: true
 		} );
 	},
 
-	getHTMLTable: function() {
-		var dfd = $.Deferred();
-		var store = this.makeStore();
-		var proxy = store.getProxy();
+	getHTMLTable: function () {
+		var dfd = $.Deferred(),
+			store = this.makeStore(),
+			proxy = store.getProxy();
 		proxy.extraParams.limit = 999999;
 		store.setProxy( proxy );
-		store.load( { callback: function( records, operation, success ) {
+		store.load( { callback: function ( records, operation, success ) {
 			if ( !operation.success ) {
-				return dfd.reject ( operation );
+				return dfd.reject( operation );
 			}
-			var $table = $( '<table>' );
-			var $row = $( '<tr>' );
-
-			var $cell = $( '<td>' );
+			var $table = $( '<table>' ),
+				$row = $( '<tr>' ),
+				$cell = $( '<td>' );
 			$cell.append(
 				mw.message( 'bs-flaggedrevsconnector-grid-page-id' ).text()
 			);
@@ -139,8 +137,8 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 
 			$table.append( $row );
 
-			for( var rid = 0; rid < records.length; rid++ ) {
-				var record = records[rid];
+			for ( var rid = 0; rid < records.length; rid++ ) {
+				var record = records[ rid ];
 				$row = $( '<tr>' );
 
 				$cell = $( '<td>' );
@@ -164,7 +162,6 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 
 			dfd.resolve( '<table>' + $table.html() + '</table>' );
 		} } );
-
 
 		return dfd;
 	}

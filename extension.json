@@ -339,7 +339,7 @@
 	},
 	"Hooks": {
 		"MessageCache::get": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\MessageCacheGet\\ApplyBusinessVocabulary::callback",
-		"ArticleViewHeader":[
+		"ArticleViewHeader": [
 			"FRCDiffView::onArticleViewHeader",
 			"FRCUEModulePDF::onArticleViewHeader"
 		],

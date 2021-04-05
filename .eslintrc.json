@@ -1,7 +1,7 @@
 {
 	"root": true,
 	"extends": [
-		"eslint:recommended",
+		"wikimedia/client",
 		"wikimedia/mediawiki",
 		"wikimedia/jquery"
 	],
@@ -16,7 +16,14 @@
 	"rules": {
 		"no-console": "error",
 		"no-alert": "error",
-		"no-unused-vars": "off"
+		"no-unused-vars": "off",
+		"no-jquery/no-parse-html-literal": "warn",
+		"no-restricted-syntax": "warn",
+		"es/no-object-values": "warn",
+		"compat/compat": "warn",
+		"one-var": "warn",
+		"vars-on-top": "warn",
+		"camelcase": "warn"
 	},
 	"env": {
 		"browser": true,

@@ -3,7 +3,7 @@
 		"authors": [
 			"Robert Vogel"
 		]
-    },
+	},
 	"bsfrc-action-review": "review revisions",
 	"bsfrc-revreview-hist-draft": "unchecked revision",
 	"bsfrc-revreview-hist-pending": "pending revision",

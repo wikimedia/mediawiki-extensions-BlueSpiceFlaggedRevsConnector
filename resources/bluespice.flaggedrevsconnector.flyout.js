@@ -1,10 +1,10 @@
-(function( mw, $, bs ) {
+( function ( mw, $, bs ) {
 	bs.util.registerNamespace( 'bs.flaggedrevsconnector' );
 
-	bs.flaggedrevsconnector.flyoutCallback = function( $body, data ) {
+	bs.flaggedrevsconnector.flyoutCallback = function ( $body, data ) {
 		var dfd = $.Deferred();
 		Ext.create( 'BS.FlaggedRevsConnector.flyout.Base', {
-			renderTo: $body[0],
+			renderTo: $body[ 0 ],
 			flagInfo: data
 		} );
 
@@ -12,4 +12,4 @@
 		return dfd.promise();
 	};
 
-})( mediaWiki, jQuery, blueSpice );
+}( mediaWiki, jQuery, blueSpice ) );
