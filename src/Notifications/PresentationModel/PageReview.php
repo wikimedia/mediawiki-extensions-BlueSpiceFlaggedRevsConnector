@@ -15,11 +15,11 @@ class PageReview extends EchoEventPresentationModel {
 		$bundleKey = '';
 		$bundleParams = [];
 
-		$headerKey = 'notification-bs-frc-pageassignments-pagereview-summary';
+		$headerKey = 'bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary';
 		$headerParams = ['agent', 'title', 'title'];
 
 		if( $this->distributionType == 'email' ) {
-			$headerKey = 'notification-bs-frc-pageassignments-pagereview-subject';
+			$headerKey = 'bs-flaggedrevsconnector-notification-pageassignments-pagereview-subject';
 			$headerParams = ['agent', 'title', 'title'];
 		}
 
@@ -38,11 +38,11 @@ class PageReview extends EchoEventPresentationModel {
 	 * @return array
 	 */
 	public function getBodyMessageContent() {
-		$bodyKey = 'notification-bs-frc-pageassignments-pagereview-body';
+		$bodyKey = 'bs-flaggedrevsconnector-notification-pageassignments-pagereview-body';
 		$bodyParams = ['agent', 'title', 'title'];
 
 		if( $this->distributionType == 'email' ) {
-			$bodyKey = 'notification-bs-frc-pageassignments-pagereview-body';
+			$bodyKey = 'bs-flaggedrevsconnector-notification-pageassignments-pagereview-body';
 			$bodyParams = ['agent', 'title', 'title'];
 		}
 

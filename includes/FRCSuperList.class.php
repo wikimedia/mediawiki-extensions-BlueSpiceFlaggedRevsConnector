@@ -20,7 +20,7 @@ class FRCSuperList {
 
 	public function onSuperListGetColumnDefinitions(&$aColumns) {
 		$aColumns[] = array(
-			'header' => wfMessage('bs-flaggedrevsconnector-sl_flaggedrevs_state')->plain(), 
+			'header' => wfMessage('bs-flaggedrevsconnector-sl-flaggedrevs-state')->plain(), 
 			'dataIndex' => 'flaggedrevs_state', 
 			'render' => 'boolean',
 			'filter' => array(
@@ -28,7 +28,7 @@ class FRCSuperList {
 			),
 		);
 		$aColumns[] = array(
-			'header' => wfMessage('bs-flaggedrevsconnector-sl_flaggedrevs_date')->plain(), 
+			'header' => wfMessage('bs-flaggedrevsconnector-sl-flaggedrevs-date')->plain(), 
 			'dataIndex' => 'flaggedrevs_date', 
 			'render' => 'date', 
 			'hidden' => true,
@@ -38,7 +38,7 @@ class FRCSuperList {
 			),
 		);
 		$aColumns[] = array(
-			'header' => wfMessage('bs-flaggedrevsconnector-sl_flaggedrevs_is_new_available')->plain(), 
+			'header' => wfMessage('bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available')->plain(), 
 			'dataIndex' => 'flaggedrevs_is_new_available', 
 			'render' => 'boolean', 
 			'filter' => array(

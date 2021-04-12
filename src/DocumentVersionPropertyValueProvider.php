@@ -17,7 +17,7 @@ class DocumentVersionPropertyValueProvider extends PropertyValueProvider {
 	 * @return string
 	 */
 	public function getAliasMessageKey() {
-		return "bs-frc-document-version-sesp-alias";
+		return "bs-flaggedrevsconnector-document-version-sesp-alias";
 	}
 
 	/**
@@ -25,7 +25,7 @@ class DocumentVersionPropertyValueProvider extends PropertyValueProvider {
 	 * @return string
 	 */
 	public function getDescriptionMessageKey() {
-		return "bs-frc-document-version-sesp-desc";
+		return "bs-flaggedrevsconnector-document-version-sesp-desc";
 	}
 
 	/**
