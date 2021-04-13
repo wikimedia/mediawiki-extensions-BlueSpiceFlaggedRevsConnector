@@ -21,6 +21,12 @@ class ApplyBusinessVocabulary extends MessageCacheGet{
 	private function getKeyMap() {
 		return [
 			"action-review" => "bsfrc-action-review",
+			"revreview-check-flag-p" => "bsfrc-revreview-check-flag-p",
+			"revreview-check-flag-p-title" => "bsfrc-revreview-check-flag-p-title",
+			"revreview-check-flag-u" => "bsfrc-revreview-check-flag-u",
+			"rrevreview-check-flag-u-title" => "bsfrc-revreview-check-flag-u-title",
+			"revreview-check-flag-y" => "bsfrc-revreview-check-flag-y",
+			"revreview-check-flag-y-title" => "bsfrc-revreview-check-flag-y-title",
 			"revreview-hist-draft" => "bsfrc-revreview-hist-draft",
 			"revreview-hist-pending" => "bsfrc-revreview-hist-pending",
 			"revreview-hist-quality" => "bsfrc-revreview-hist-quality",

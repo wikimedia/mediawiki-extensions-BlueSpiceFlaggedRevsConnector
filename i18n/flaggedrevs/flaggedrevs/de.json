@@ -5,6 +5,12 @@
 		]
 	},
 	"bsfrc-action-review": "Versionen freigeben",
+	"bsfrc-revreview-check-flag-p": "Diese Version freigeben (inklusive {{PLURAL:$1|einer ausstehenden Änderung|$1 ausstehender Änderungen}})",
+	"bsfrc-revreview-check-flag-p-title": "Alle noch nicht freigegebenen Änderungen, zusammen mit deiner Bearbeitung, akzeptieren. Dies sollte nur gemacht werden, sofern bereits alle bislang noch nicht freigegebenen Änderungen angesehen wurden.",
+	"bsfrc-revreview-check-flag-u": "Diese Änderungen freigeben",
+	"bsfrc-revreview-check-flag-u-title": "Diese Seitenversion freigeben. Dies sollte nur gemacht werden, wenn vorher die gesamte Seite angesehen wurde.",
+	"bsfrc-revreview-check-flag-y": "Diese Änderungen freigeben",
+	"bsfrc-revreview-check-flag-y-title": "Freigeben aller Änderungen, die du mit dieser Bearbeitung gemacht hast.",
 	"bsfrc-revreview-hist-draft": "unfreigegebene Version",
 	"bsfrc-revreview-hist-pending": "Freigabe ausstehend",
 	"bsfrc-revreview-hist-quality": "freigegebene Version",
