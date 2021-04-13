@@ -369,7 +369,7 @@
 		"BSExtendedSearchWikipageFetchRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\BSExtendedSearchWikipageFetchRevision\\GetStableRevision::callback",
 		"BSExtendedSearchRepoFileGetRepoFile": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\BSExtendedSearchRepoFileGetRepoFile\\GetStableFile::callback",
 		"EditPageGetCheckboxesDefinition": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\EditPageGetCheckboxesDefinition\\ReplaceVisualEditorAutoReview::callback",
-		"PageSaveComplete": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\PageSaveComplete\\AutoReviewAfterVisualEditorEdit::callback",
+		"PageContentSaveComplete": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\PageContentSaveComplete\\AutoReviewAfterVisualEditorEdit::callback",
 		"SpecialPage_initList": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SpecialPageInitList\\RemoveDefaultFRPages::callback"
 	},
 	"load_composer_autoloader": true,

@@ -1,8 +1,8 @@
 <?php
 
-namespace BlueSpice\FlaggedRevsConnector\Hook\PageSaveComplete;
+namespace BlueSpice\FlaggedRevsConnector\Hook\PageContentSaveComplete;
 
-use BlueSpice\Hook\PageSaveComplete;
+use BlueSpice\Hook\PageContentSaveComplete;
 use BlueSpice\FlaggedRevsConnector\PermissionLessReviewForm;
 use FlaggedRevs;
 use FRInclusionCache;
@@ -10,9 +10,9 @@ use RevisionReviewForm;
 use FlaggableWikiPage;
 use User;
 use Title;
-use MediaWiki\Revision\RevisionRecord;
+use Revision;
 
-class AutoReviewAfterVisualEditorEdit extends PageSaveComplete {
+class AutoReviewAfterVisualEditorEdit extends PageContentSaveComplete {
 
 	/**
 	 *
@@ -22,7 +22,7 @@ class AutoReviewAfterVisualEditorEdit extends PageSaveComplete {
 		if ( !$this->getContext()->getRequest()->getCheck( 'bswpReviewEdit' ) ) {
 			return true;
 		}
-		return !$this->wikiPage->getTitle()->userCan( 'review', $this->user );
+		return !$this->wikipage->getTitle()->userCan( 'review', $this->user );
 	}
 
 	/**
@@ -32,8 +32,8 @@ class AutoReviewAfterVisualEditorEdit extends PageSaveComplete {
 	protected function doProcess() {
 		$res = $this->doOwnWorkingReview(
 			$this->user,
-			$this->wikiPage->getTitle(),
-			$this->revisionRecord,
+			$this->wikipage->getTitle(),
+			$this->revision,
 			$this->summary
 		);
 		return true;
@@ -42,12 +42,12 @@ class AutoReviewAfterVisualEditorEdit extends PageSaveComplete {
 	/**
 	 * @param User $user
 	 * @param Title $title
-	 * @param RevisionRecord $revision
+	 * @param Revision $revision
 	 * @param string $comment
 	 * @return bool|string
 	 */
 	protected function doOwnWorkingReview( User $user, Title $title,
-		RevisionRecord $revision, $comment = '' ) {
+		Revision $revision, $comment = '' ) {
 
 		// Construct submit form...
 		$form = new PermissionLessReviewForm( $user );
