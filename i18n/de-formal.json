@@ -4,7 +4,7 @@
 			"Stephan Muggli <muggli@hallowelt.biz>"
 		]
 	},
+	"bs-flaggedrevsconnector-review-help": "Nach der Freigabe wird diese Entwurfsversion die aktuelle freigegebene Version der Seite ersetzen. Wollen Sie den Enwurf freigeben?",
 	"bs-flaggedrevsconnector-response-failure": "Bei der Freigabe ist ein Fehler aufgetreten. Bitte kontaktieren Sie Ihren Administrator.",
-	"bs-flaggedrevsconnector-flyout-intro": "Hier können Sie den Freigabestatus einsehen und neue Versionen freigeben.",
-	"bs-flaggedrevsconnector-review-help": "Nach der Freigabe wird diese Entwurfsversion die aktuelle freigegebene Version der Seite ersetzen. Wollen Sie den Enwurf freigeben?"
+	"bs-flaggedrevsconnector-flyout-intro": "Hier können Sie den Freigabestatus einsehen und neue Versionen freigeben."
 }

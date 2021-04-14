@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Emmanuel Fernandess"
+		]
+	},
+	"bs-flaggedrevsconnector-state-unmarked": "bangor",
+	"bs-flaggedrevsconnector-document-state-sesp-alias": "QM/Dokumentenstatus",
+	"bs-flaggedrevsconnector-review-type-flagging": "Freigabe",
+	"bs-flaggedrevsconnector-draft-lockdown-reason": "Die Aktion „$1“ für die Entwurfsversion ist nur für {{PLURAL:$2|den|die}} Bevollmächtigten $3 verfügbar"
+}
