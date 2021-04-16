@@ -9,17 +9,13 @@ class FRCDiffView extends ContextSource {
 	protected $oldRevIncludes = null; // ( array of templates, array of file)
 	protected $isReviewableDiff = false;
 	protected $isDiffFromStable = false;
-	protected $isMultiPageDiff = false;
 	protected $reviewNotice = '';
-	protected $diffNoticeBox = '';
-	protected $diffIncChangeBox = '';
-	protected $reviewFormRev = false;
 	protected $loaded = false;
 	protected static $suppressParserOutput = false;
 	protected static $instance = null;
 
 	public static function onArticleViewHeader(&$article, &$outputDone, &$pcache) {
-		if ($outputDone || !class_exists('FlaggablePageView', true)) {
+		if ($outputDone || !class_exists('FlaggablePageView')) {
 			return true;
 		}
 
@@ -28,7 +24,7 @@ class FRCDiffView extends ContextSource {
 		if(!$request->getVal('oldid') || !$request->getVal('diff')) {
 			return true;
 		}
-		$view->addStableLink($outputDone, $useParserCache);
+		$view->addStableLink();
 		$view->setPageContent($outputDone, $useParserCache);
 
 		return true;
@@ -271,13 +267,10 @@ class FRCDiffView extends ContextSource {
 			if ($frev) {
 				$time = $this->getLanguage()->date($frev->getTimestamp(), true);
 				$flags = $frev->getTags();
-				$quality = FlaggedRevs::isQuality($flags);
-				$msg = $quality ? 'revreview-quality-source' : 'revreview-basic-source';
-				$tag = $this->msg($msg, $frev->getRevId(), $time)->parse();
+				$tag = $this->msg('revreview-basic-source', $frev->getRevId(), $time)->parse();
 				# Hide clutter
 				if (!$this->useSimpleUI() && !empty($flags)) {
-					$tag .= FlaggedRevsXML::ratingToggle() .
-							"<div id='mw-fr-revisiondetails'>" .
+					$tag .= "<div id='mw-fr-revisiondetails'>" .
 							$this->msg('revreview-oldrating')->escaped() .
 							FlaggedRevsXML::addTagRatings($flags) . '</div>';
 				}
@@ -410,15 +403,13 @@ class FRCDiffView extends ContextSource {
 		}
 		$flags = $srev->getTags();
 		$time = $this->getLanguage()->date($srev->getTimestamp(), true);
-		# Get quality level
-		$quality = FlaggedRevs::isQuality($flags);
 		# Get stable version sync status
 		$synced = $this->article->stableVersionIsSynced();
 		if ($synced) { // draft == stable
 			$diffToggle = ''; // no diff to show
 		} else { // draft != stable
 			# The user may want the diff (via prefs)
-			$diffToggle = $this->getTopDiffToggle($srev, $quality);
+			$diffToggle = $this->getTopDiffToggle($srev);
 			if ($diffToggle != '')
 				$diffToggle = " $diffToggle";
 			# Make sure there is always a notice bar when viewing the draft.
@@ -463,34 +454,26 @@ class FRCDiffView extends ContextSource {
 				if (!$reqUser->getId()) {
 					$msgHTML = ''; // Anons just see simple icons
 				} elseif ($synced) {
-					$msg = $quality ? 'revreview-quick-quality-same' : 'revreview-quick-basic-same';
-					$msgHTML = $this->msg($msg, $srev->getRevId(), $revsSince)->parse();
+					$msgHTML = $this->msg('revreview-quick-basic-same', $srev->getRevId(), $revsSince)->parse();
 				} else {
-					$msg = $quality ? 'revreview-quick-see-quality' : 'revreview-quick-see-basic';
-					$msgHTML = $this->msg($msg, $srev->getRevId(), $revsSince)->parse();
+					$msgHTML = $this->msg('revreview-quick-see-basic', $srev->getRevId(), $revsSince)->parse();
 				}
 				$icon = '';
 				# For protection based configs, show lock only if it's not redundant.
 				if ($this->showRatingIcon()) {
-					$icon = $synced ? FlaggedRevsXML::stableStatusIcon($quality) : FlaggedRevsXML::draftStatusIcon();
+					$icon = $synced ? FlaggedRevsXML::stableStatusIcon() : FlaggedRevsXML::draftStatusIcon();
 				}
 				$msgHTML = $prot . $icon . $msgHTML;
-				$tag .= FlaggedRevsXML::prettyRatingBox($srev, $msgHTML, $revsSince, 'draft', $synced, false);
+				$tag .= FlaggedRevsXML::prettyRatingBox($srev, $msgHTML, $revsSince, 'draft', $synced);
 				// Standard UI
 			} else {
 				if ($synced) {
-					if ($quality) {
-						$msg = 'revreview-quality-same';
-					} else {
-						$msg = 'revreview-basic-same';
-					}
-					$msgHTML = $this->msg($msg, $srev->getRevId(), $time, $revsSince)->parse();
+					$msgHTML = $this->msg('revreview-basic-same', $srev->getRevId(), $time, $revsSince)->parse();
 				} else {
-					$msg = $quality ? 'revreview-newest-quality' : 'revreview-newest-basic';
-					$msg .= ( $revsSince == 0 ) ? '-i' : '';
+					$msg = 'revreview-newest-basic' . ( $revsSince == 0 ? '-i' : '' );
 					$msgHTML = $this->msg($msg, $srev->getRevId(), $time, $revsSince)->parse();
 				}
-				$icon = $synced ? FlaggedRevsXML::stableStatusIcon($quality) : FlaggedRevsXML::draftStatusIcon();
+				$icon = $synced ? FlaggedRevsXML::stableStatusIcon() : FlaggedRevsXML::draftStatusIcon();
 				$tag .= $prot . $icon . $msgHTML . $diffToggle;
 			}
 		}
@@ -511,8 +494,6 @@ class FRCDiffView extends ContextSource {
 		$time = $this->getLanguage()->date($frev->getTimestamp(), true);
 		# Set display revision ID
 		$this->out->setRevisionId($frev->getRevId());
-		# Get quality level
-		$quality = FlaggedRevs::isQuality($flags);
 
 		# Construct some tagging for non-printable outputs. Note that the pending
 		# notice has all this info already, so don't do this if we added that already.
@@ -522,26 +503,23 @@ class FRCDiffView extends ContextSource {
 				$icon = '';
 				# For protection based configs, show lock only if it's not redundant.
 				if ($this->showRatingIcon()) {
-					$icon = FlaggedRevsXML::stableStatusIcon($quality);
+					$icon = FlaggedRevsXML::stableStatusIcon();
 				}
 				$revsSince = $this->article->getPendingRevCount();
 				if (!$reqUser->getId()) {
 					$msgHTML = ''; // Anons just see simple icons
 				} else {
-					$msg = $quality ? 'revreview-quick-quality-old' : 'revreview-quick-basic-old';
-					$msgHTML = $this->msg($msg, $frev->getRevId(), $revsSince)->parse();
+					$msgHTML = $this->msg('revreview-quick-basic-old', $frev->getRevId(), $revsSince)->parse();
 				}
 				$msgHTML = $prot . $icon . $msgHTML;
 				$tag = FlaggedRevsXML::prettyRatingBox($frev, $msgHTML, $revsSince, 'oldstable', false /* synced */);
 				// Standard UI
 			} else {
-				$icon = FlaggedRevsXML::stableStatusIcon($quality);
-				$msg = $quality ? 'revreview-quality-old' : 'revreview-basic-old';
+				$icon = FlaggedRevsXML::stableStatusIcon();
 				$tag = $prot . $icon;
-				$tag .= $this->msg($msg, $frev->getRevId(), $time)->parse();
+				$tag .= $this->msg('revreview-basic-old', $frev->getRevId(), $time)->parse();
 				# Hide clutter
 				if (!empty($flags)) {
-					$tag .= FlaggedRevsXML::ratingToggle();
 					$tag .= "<div id='mw-fr-revisiondetails'>" .
 							$this->msg('revreview-oldrating')->escaped() .
 							FlaggedRevsXML::addTagRatings($flags) . '</div>';
@@ -583,8 +561,6 @@ class FRCDiffView extends ContextSource {
 		$time = $this->getLanguage()->date($srev->getTimestamp(), true);
 		# Set display revision ID
 		$this->out->setRevisionId($srev->getRevId());
-		# Get quality level
-		$quality = FlaggedRevs::isQuality($flags);
 
 		$synced = $this->article->stableVersionIsSynced();
 		# Construct some tagging
@@ -595,22 +571,21 @@ class FRCDiffView extends ContextSource {
 				$icon = '';
 				# For protection based configs, show lock only if it's not redundant.
 				if ($this->showRatingIcon()) {
-					$icon = FlaggedRevsXML::stableStatusIcon($quality);
+					$icon = FlaggedRevsXML::stableStatusIcon();
 				}
 				if (!$reqUser->getId()) {
 					$msgHTML = ''; // Anons just see simple icons
 				} else {
-					$msg = $quality ? 'revreview-quick-quality' : 'revreview-quick-basic';
 					# Uses messages 'revreview-quick-quality-same', 'revreview-quick-basic-same'
-					$msg = $synced ? "{$msg}-same" : $msg;
+					$msg = 'revreview-quick-basic' . ( $synced ? '-same' : '' );
 					$msgHTML = $this->msg($msg, $srev->getRevId(), $revsSince)->parse();
 				}
 				$msgHTML = $prot . $icon . $msgHTML;
 				$tag = FlaggedRevsXML::prettyRatingBox($srev, $msgHTML, $revsSince, 'stable', $synced);
 				// Standard UI
 			} else {
-				$icon = FlaggedRevsXML::stableStatusIcon($quality);
-				$msg = $quality ? 'revreview-quality' : 'revreview-basic';
+				$icon = FlaggedRevsXML::stableStatusIcon();
+				$msg = 'revreview-basic';
 				if ($synced) {
 					# uses messages 'revreview-quality-same', 'revreview-basic-same'
 					$msg .= '-same';
@@ -621,7 +596,6 @@ class FRCDiffView extends ContextSource {
 				$tag = $prot . $icon;
 				$tag .= $this->msg($msg, $srev->getRevId(), $time, $revsSince)->parse();
 				if (!empty($flags)) {
-					$tag .= FlaggedRevsXML::ratingToggle();
 					$tag .= "<div id='mw-fr-revisiondetails'>" .
 							FlaggedRevsXML::addTagRatings($flags) . '</div>';
 				}
@@ -630,6 +604,7 @@ class FRCDiffView extends ContextSource {
 
 		# Get parsed stable version and output HTML
 		$pOpts = $this->article->makeParserOptions($reqUser);
+		// FIXME: This class doesn't exist any more
 		$parserCache = FRParserCacheStable::singleton();
 		$parserOut = $parserCache->get($this->article, $pOpts);
 
@@ -656,7 +631,7 @@ class FRCDiffView extends ContextSource {
 				$this->out->addParserOutputNoText($parserOut);
 			}
 			# Update the stable version dependancies
-			FlaggedRevs::updateStableOnlyDeps($this->article, $parserOut);
+			FlaggedRevs::updateStableOnlyDeps($this->article, $parserOut, FRDependencyUpdate::IMMEDIATE);
 		}
 
 		# Update page sync status for tracking purposes.
@@ -684,21 +659,15 @@ class FRCDiffView extends ContextSource {
 
 	// Show icons for draft/stable/old reviewed versions
 	protected function showRatingIcon() {
-		if (FlaggedRevs::useOnlyIfProtected()) {
-			// If there is only one quality level and we have tabs to know
-			// which version we are looking at, then just use the lock icon...
-			return FlaggedRevs::qualityVersions();
-		}
-		return true;
+		return !FlaggedRevs::useOnlyIfProtected();
 	}
 
 	/**
 	 * Get collapsible diff-to-stable html to add to the review notice as needed
 	 * @param FlaggedRevision $srev, stable version
-	 * @param bool $quality, revision is quality
 	 * @return string, the html line (either "" or "<diff toggle><diff div>")
 	 */
-	protected function getTopDiffToggle(FlaggedRevision $srev, $quality) {
+	protected function getTopDiffToggle(FlaggedRevision $srev) {
 		$reqUser = $this->getUser();
 		$this->load();
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
@@ -717,10 +686,9 @@ class FRCDiffView extends ContextSource {
 		}
 		$title = $this->article->getTitle(); // convenience
 		# Review status of left diff revision...
-		$leftNote = $quality ? 'revreview-hist-quality' : 'revreview-hist-basic';
-		$lClass = FlaggedRevsXML::getQualityColor((int) $quality);
+		$lClass = FlaggedRevsXML::getQualityColor(0);
 		// @todo FIXME: i18n Hard coded brackets.
-		$leftNote = "<span class='$lClass'>[" . $this->msg($leftNote)->escaped() . "]</span>";
+		$leftNote = "<span class='$lClass'>[" . $this->msg('revreview-hist-basic')->escaped() . "]</span>";
 		# Review status of right diff revision...
 		$rClass = FlaggedRevsXML::getQualityColor(false);
 		// @todo FIXME: i18n Hard coded brackets.
@@ -791,8 +759,7 @@ class FRCDiffView extends ContextSource {
 		$this->load();
 		$time = $this->getLanguage()->date($srev->getTimestamp(), true);
 		$revsSince = $this->article->getPendingRevCount();
-		$msg = $srev->getQuality() ? 'revreview-newest-quality' : 'revreview-newest-basic';
-		$msg .= ( $revsSince == 0 ) ? '-i' : '';
+		$msg = 'revreview-newest-basic' . ( $revsSince == 0 ? '-i' : '' );
 		# Add bar msg to the top of the page...
 		$css = 'flaggedrevs_preview plainlinks';
 		$msgHTML = $this->msg($msg, $srev->getRevId(), $time, $revsSince)->parse();
