@@ -22,18 +22,18 @@
 				"BlueSpiceFlaggedRevsConnector": {
 					"className": "FlaggedRevsConnector",
 					"extPath": "/BlueSpiceFlaggedRevsConnector",
-					"package": "BlueSpice Pro",
-					"configDefinitions": {
-						"FlaggedRevsConnectorautoDeleteWorkflow": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoDeleteWorkflow::getInstance",
-						"FlaggedRevsConnectorDraftGroups": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\DraftGroups::getInstance",
-						"FlaggedRevsConnectorIndexStableOnly": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\IndexingStableOnly::getInstance",
-						"FlaggedRevsConnectorBookshelfShowStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowStable::getInstance",
-						"FlaggedRevsConnectorBookshelfShowNoStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowNoStable::getInstance",
-						"FlaggedRevsConnectorBookshelfShowNoFR": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowNoFR::getInstance",
-						"FlaggedRevsConnectorUEModulePDFShowFRTag": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\UEModulePDFShowFRTag::getInstance",
-						"FlaggedRevsConnectorFlaggedRevsHandleIncludes": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\HandleIncludes::getInstance"
-					}
+					"package": "BlueSpice Pro"
 				}
+			},
+			"ConfigDefinitionRegistry": {
+				"FlaggedRevsConnectorautoDeleteWorkflow": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoDeleteWorkflow::getInstance",
+				"FlaggedRevsConnectorDraftGroups": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\DraftGroups::getInstance",
+				"FlaggedRevsConnectorIndexStableOnly": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\IndexingStableOnly::getInstance",
+				"FlaggedRevsConnectorBookshelfShowStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowStable::getInstance",
+				"FlaggedRevsConnectorBookshelfShowNoStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowNoStable::getInstance",
+				"FlaggedRevsConnectorBookshelfShowNoFR": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowNoFR::getInstance",
+				"FlaggedRevsConnectorUEModulePDFShowFRTag": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\UEModulePDFShowFRTag::getInstance",
+				"FlaggedRevsConnectorFlaggedRevsHandleIncludes": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\HandleIncludes::getInstance"
 			},
 			"PageInfoElementRegistry": {
 				"bs-frc-versionswitch": "\\BlueSpice\\FlaggedRevsConnector\\PageInfoElement\\VersionSwitch::factory",
