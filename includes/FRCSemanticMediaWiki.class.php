@@ -1,32 +1,33 @@
 <?php
 
+// phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCSemanticMediaWiki {
 
-    /**
-     * Update Semantic MediaWiki data when a revision got flagged by a user
-     *
-     * @param $module
-     * @return bool
-     * @throws MWException
-     */
+	/**
+	 * Update Semantic MediaWiki data when a revision got flagged by a user
+	 *
+	 * @param ApiReview|mixed $module
+	 * @return bool
+	 * @throws MWException
+	 */
 	public function onAPIAfterExecute( $module ) {
-		if( $module instanceof ApiReview === false ) {
+		if ( $module instanceof ApiReview === false ) {
 			return true;
 		}
 
 		$aResult = $module->getResult()->getResultData();
 
-		if( !isset( $aResult['review'] ) || !isset( $aResult['review']['result'] ) ) {
+		if ( !isset( $aResult['review'] ) || !isset( $aResult['review']['result'] ) ) {
 			return true;
 		}
 
-		//Only update in case of successfull action
-		if( strtolower( $aResult['review']['result'] ) !== 'success' ) {
+		// Only update in case of successfull action
+		if ( strtolower( $aResult['review']['result'] ) !== 'success' ) {
 			return true;
 		}
 
 		$oTitle = $this->getTitleFromAPIParam( $module->getRequest() );
-		if( $oTitle === null ) {
+		if ( $oTitle === null ) {
 			return true;
 		}
 
@@ -42,10 +43,10 @@ class FRCSemanticMediaWiki {
 	 * @param WebRequest $oWebRequest
 	 * @return Title|null
 	 */
-	protected function getTitleFromAPIParam( $oWebRequest ){
+	protected function getTitleFromAPIParam( $oWebRequest ) {
 		$iRevId = $oWebRequest->getVal( 'revid', -1 );
 		$oRevision = Revision::newFromId( $iRevId );
-		if( $oRevision === null ) {
+		if ( $oRevision === null ) {
 			return null;
 		}
 		return $oRevision->getTitle();

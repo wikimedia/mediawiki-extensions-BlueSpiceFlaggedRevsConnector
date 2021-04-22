@@ -17,8 +17,8 @@ class BSFlaggedRevsConnectorRemoveTMPGroup extends LoggedUpdateMaintenance {
 		);
 		$res = $this->getDB( DB_REPLICA )->select(
 			'user_groups',
-			['ug_group'],
-			['ug_group' => $this->tmpGroupName],
+			[ 'ug_group' ],
+			[ 'ug_group' => $this->tmpGroupName ],
 			__METHOD__
 		);
 		if ( $res->numRows() < 1 ) {
@@ -28,7 +28,7 @@ class BSFlaggedRevsConnectorRemoveTMPGroup extends LoggedUpdateMaintenance {
 		$this->output( "  {$res->numRows()} entries => removing..." );
 		$success = $this->getDB( DB_MASTER )->delete(
 			'user_groups',
-			['ug_group' => $this->tmpGroupName],
+			[ 'ug_group' => $this->tmpGroupName ],
 			__METHOD__
 		);
 		if ( !$success ) {

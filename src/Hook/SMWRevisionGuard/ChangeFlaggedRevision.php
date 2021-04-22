@@ -12,7 +12,7 @@ class ChangeFlaggedRevision extends ChangeRevision {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$flaggedRevsNamespaces = $config->get( 'FlaggedRevsNamespaces' );
 		if ( $this->title->exists() && in_array( $this->title->getNamespace(), $flaggedRevsNamespaces ) ) {
-			$utils = new Utils($config);
+			$utils = new Utils( $config );
 			$latestApprovedRevisionId = $utils->getApprovedRevisionId( $this->title );
 			$approvedRev = Revision::newFromId( $latestApprovedRevisionId );
 			if ( $approvedRev instanceof Revision ) {

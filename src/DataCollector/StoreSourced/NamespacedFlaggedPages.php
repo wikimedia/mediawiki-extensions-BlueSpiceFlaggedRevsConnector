@@ -2,19 +2,19 @@
 
 namespace BlueSpice\FlaggedRevsConnector\DataCollector\StoreSourced;
 
-use BlueSpice\FlaggedRevsConnector\DataCollector\AttributeMapping;
-use Config;
 use BlueSpice\Data\IRecord;
 use BlueSpice\Data\IStore;
 use BlueSpice\Data\RecordSet;
 use BlueSpice\EntityFactory;
-use BlueSpice\ExtendedStatistics\Entity\Snapshot;
 use BlueSpice\ExtendedStatistics\DataCollector\StoreSourced;
+use BlueSpice\ExtendedStatistics\Entity\Snapshot;
 use BlueSpice\ExtendedStatistics\SnapshotFactory;
 use BlueSpice\FlaggedRevsConnector\Data\DataCollector\FlaggedPages\NamespacedRecord as CollectorRecord;
 use BlueSpice\FlaggedRevsConnector\Data\FlaggedPages\Store;
 use BlueSpice\FlaggedRevsConnector\Data\Record;
+use BlueSpice\FlaggedRevsConnector\DataCollector\AttributeMapping;
 use BlueSpice\FlaggedRevsConnector\Entity\Collection\NamespacedFlaggedPages as Collection;
+use Config;
 use FlaggedRevsConnector;
 use MediaWiki\MediaWikiServices;
 use MWException;
@@ -84,6 +84,16 @@ class NamespacedFlaggedPages extends StoreSourced\NamespaceCollector {
 		);
 	}
 
+	/**
+	 *
+	 * @param string $type
+	 * @param Snapshot $snapshot
+	 * @param Config $config
+	 * @param EntityFactory $factory
+	 * @param IStore $store
+	 * @param SnapshotFactory $snapshotFactory
+	 * @param array $namespaces
+	 */
 	protected function __construct( $type, Snapshot $snapshot, Config $config, EntityFactory $factory,
 		IStore $store, SnapshotFactory $snapshotFactory, array $namespaces ) {
 		parent::__construct( $type, $snapshot, $config, $factory, $store, $snapshotFactory, $namespaces );
@@ -127,6 +137,7 @@ class NamespacedFlaggedPages extends StoreSourced\NamespaceCollector {
 		foreach ( $lastCollection as $collection ) {
 			$nsName = $collection->get( Collection::ATTR_NAMESPACE_NAME );
 			foreach ( $this->aggregateMap as $state => $aggItem ) {
+				// phpcs:ignore MediaWiki.Usage.InArrayUsage.Found
 				if ( !in_array( $nsName, array_keys( $$aggItem ) ) ) {
 					array_fill_keys( [ $nsName ], 0 );
 				}
@@ -212,6 +223,10 @@ class NamespacedFlaggedPages extends StoreSourced\NamespaceCollector {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getCollectionClass() {
 		return Collection::class;
 	}
