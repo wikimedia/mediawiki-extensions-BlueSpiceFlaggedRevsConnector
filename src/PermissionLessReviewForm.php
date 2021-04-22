@@ -15,7 +15,7 @@ class PermissionLessReviewForm extends RevisionReviewForm {
 	 */
 	protected function doCheckParameters() {
 		$status = parent::doCheckParameters();
-		if( $status !== 'review_denied' ) {
+		if ( $status !== 'review_denied' ) {
 			return $status;
 		}
 		return true;

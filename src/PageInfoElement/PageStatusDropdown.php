@@ -22,7 +22,8 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 *
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param Utils $utils
+	 * @param Utils|null $utils
+	 * @return IPageInfoElement
 	 */
 	public static function factory( IContextSource $context, Config $config, Utils $utils = null ) {
 		if ( !$utils ) {
@@ -39,7 +40,9 @@ class PageStatusDropdown extends FlaggedPageElement {
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text
-		return $this->msg( 'bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-' . $this->state . '-text' );
+		return $this->msg(
+			"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-$this->state-text"
+		);
 	}
 
 	/**
@@ -58,20 +61,23 @@ class PageStatusDropdown extends FlaggedPageElement {
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title
-		return $this->msg( 'bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-' . $this->state . '-title' );
+		return $this->msg(
+			"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-$this->state-title"
+		);
 	}
 
 	/**
 	 *
 	 * @param IContextSource $context
-	 * @return boolean
+	 * @return bool
 	 */
 	public function shouldShow( $context ) {
 		if ( !parent::shouldShow( $context ) ) {
 			return false;
 		}
 
-		$hasStable = $this->utils->getFlaggableWikiPage( $context )->getStableRev() instanceof FlaggedRevision;
+		$hasStable = $this->utils->getFlaggableWikiPage( $context )->getStableRev()
+			instanceof FlaggedRevision;
 		$showingStable = $this->utils->isShowingStable( $context );
 		$hasDrafts = $this->utils->getFlaggableWikiPage( $context )->getPendingRevCount() > 0;
 		$inSync = $this->utils->getFlaggableWikiPage( $context )->stableVersionIsSynced();
@@ -97,7 +103,7 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 * @return string
 	 */
 	public function getItemClass() {
-		if (  $this->state === 'stable') {
+		if ( $this->state === 'stable' ) {
 			return IPageInfoElement::ITEMCLASS_CONTRA;
 		}
 
@@ -131,11 +137,11 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 * @return string
 	 */
 	public function getMenu() {
-		if( $this->getType() === IPageInfoElement::TYPE_TEXT ) {
+		if ( $this->getType() === IPageInfoElement::TYPE_TEXT ) {
 			return '';
 		}
 
-		if( !$this->needApproval ) {
+		if ( !$this->needApproval ) {
 			return '';
 		}
 

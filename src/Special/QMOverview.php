@@ -10,6 +10,10 @@ class QMOverview extends \BlueSpice\SpecialPage {
 		parent::__construct( 'QMOverview', 'review' );
 	}
 
+	/**
+	 *
+	 * @param string $subPage
+	 */
 	public function execute( $subPage ) {
 		parent::execute( $subPage );
 
@@ -42,7 +46,6 @@ class QMOverview extends \BlueSpice\SpecialPage {
 			'bsgFlaggedRevConnectorAvailableStates',
 			$availableStates
 		);
-
 	}
 
 }

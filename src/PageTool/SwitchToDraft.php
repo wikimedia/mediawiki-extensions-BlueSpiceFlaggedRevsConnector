@@ -20,7 +20,7 @@ class SwitchToDraft extends Base {
 	 * @return string
 	 */
 	protected function doGetHtml() {
-		if( !$this->userMayAccessDrafts() ) {
+		if ( !$this->userMayAccessDrafts() ) {
 			return '';
 		}
 
@@ -28,13 +28,17 @@ class SwitchToDraft extends Base {
 		$flaggableWikiPage = FlaggableWikiPage::getTitleInstance( $this->context->getTitle() );
 		$showingStable = \FlaggablePageView::singleton()->showingStable();
 		$hasDrafts = $flaggableWikiPage->getPendingRevCount() > 0;
-		$stableQuality = $flaggableWikiPage->getStableRev() ? $flaggableWikiPage->getStableRev()->getQuality() : 0;
-		$stableRev = $flaggableWikiPage->getStableRev() ? $flaggableWikiPage->getStableRev()->getRevId() : 0;
+		$stableQuality = $flaggableWikiPage->getStableRev()
+			? $flaggableWikiPage->getStableRev()->getQuality()
+			: 0;
+		$stableRev = $flaggableWikiPage->getStableRev()
+			? $flaggableWikiPage->getStableRev()->getRevId()
+			: 0;
 		$latestRevision = $this->context->getTitle()->getLatestRevID();
 
 		if ( $showingStable && $hasDrafts ) {
 			return $this->makeSwitchToDraftLink();
-		} elseif( $stableRev && $stableRev !== $latestRevision && $stableQuality > 0 ) {
+		} elseif ( $stableRev && $stableRev !== $latestRevision && $stableQuality > 0 ) {
 			return $this->makeSwitchToStableLink();
 		}
 		return '';

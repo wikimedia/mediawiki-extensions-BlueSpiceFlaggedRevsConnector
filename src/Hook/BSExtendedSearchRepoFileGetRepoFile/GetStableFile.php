@@ -51,8 +51,7 @@ class GetStableFile extends BSExtendedSearchRepoFileGetRepoFile {
 	private function indexOnlyApproved() {
 		$config = Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 
-		return
-			$config->has( 'FlaggedRevsConnectorIndexStableOnly' ) &&
+		return $config->has( 'FlaggedRevsConnectorIndexStableOnly' ) &&
 			(bool)$config->get( 'FlaggedRevsConnectorIndexStableOnly' ) === true;
 	}
 }

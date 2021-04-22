@@ -5,9 +5,16 @@ use BlueSpice\Review\ReviewProcessFactory;
 use MediaWiki\MediaWikiServices;
 use BS\ExtendedSearch\Source\Job\UpdateRepoFile;
 
+// phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCReview {
 	public static $reviewablePages = [];
 
+	/**
+	 *
+	 * @param \Title $oTitle
+	 * @param bool &$bResult
+	 * @return bool
+	 */
 	public static function onCheckPageIsReviewable( $oTitle, &$bResult ) {
 		if ( isset( static::$reviewablePages[(int)$oTitle->getArticleId()] ) ) {
 			$bResult = static::$reviewablePages[(int)$oTitle->getArticleId()];
@@ -22,17 +29,18 @@ class FRCReview {
 	/**
 	 * @param RevisionReviewForm $revisionReviewForm
 	 * @param mixed $status - true on success, error string on failure
-	 * @return boolean
+	 * @return bool
 	 */
-	public static function onFlaggedRevsRevisionReviewFormAfterDoSubmit( $revisionReviewForm, $status ) {
+	public static function onFlaggedRevsRevisionReviewFormAfterDoSubmit( $revisionReviewForm,
+		$status ) {
 		$services = MediaWikiServices::getInstance();
 		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
 
-		if( !$config->get( 'FlaggedRevsConnectorautoDeleteWorkflow' ) ) {
+		if ( !$config->get( 'FlaggedRevsConnectorautoDeleteWorkflow' ) ) {
 			return true;
 		}
 		$title = $revisionReviewForm->getPage();
-		if( !$title instanceof Title || !$title->exists() ) {
+		if ( !$title instanceof Title || !$title->exists() ) {
 			return true;
 		}
 
@@ -49,7 +57,7 @@ class FRCReview {
 			$target
 		);
 
-		if( !$reviewProcess instanceof IReviewProcess || $reviewProcess->id < 1 ) {
+		if ( !$reviewProcess instanceof IReviewProcess || $reviewProcess->id < 1 ) {
 			return true;
 		}
 

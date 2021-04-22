@@ -49,6 +49,7 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 	 * @var FlaggableWikiPage
 	 */
 	protected $flaggableWikiPage = null;
+
 	/**
 	 *
 	 * @param Config $config
@@ -75,17 +76,16 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param Services $services
-	 * @param LoadBalancer $loadBalancer
-	 * @param array $allowedRequestActions
-	 * @param array $frNamespaces
-	 * @param array $allowedGroups
+	 * @param LoadBalancer|null $loadBalancer
+	 * @param array|null $allowedRequestActions
+	 * @param array|null $frNamespaces
+	 * @param array|null $allowedGroups
 	 * @return \static
 	 */
 	public static function getInstance( Config $config, IContextSource $context,
 		Services $services, LoadBalancer $loadBalancer = null,
 		array $allowedRequestActions = null, array $frNamespaces = null,
 		array $allowedGroups = null ) {
-
 		if ( !$loadBalancer ) {
 			$loadBalancer = $services->getDBLoadBalancer();
 		}
@@ -107,7 +107,7 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 		}
 
 		// always allowed because of reasons...
-		$allowedGroups = array_merge( $allowedGroups, ['sysop', 'reviewer'] );
+		$allowedGroups = array_merge( $allowedGroups, [ 'sysop', 'reviewer' ] );
 		$allowedGroups = array_unique( $allowedGroups );
 
 		return new static(
@@ -129,12 +129,13 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 	 */
 	public function applies( Title $title, User $user ) {
 		if ( $title instanceof Title === false ) {
-			return false; // I.e. CLI
+			// I.e. CLI
+			return false;
 		}
 		if ( !$title->exists() ) {
 			return false;
 		}
-		if ( !in_array( $title->getNamespace(), $this->frNamespaces ) ){
+		if ( !in_array( $title->getNamespace(), $this->frNamespaces ) ) {
 			return false;
 		}
 		if ( !$this->getContext()->getTitle() ) {
@@ -174,11 +175,11 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 			return false;
 		}
 		$requAction = $this->context->getRequest()->getVal( 'action', 'view' );
-		if( in_array( $requAction, $this->allowedRequestActions ) ) {
+		if ( in_array( $requAction, $this->allowedRequestActions ) ) {
 			return false;
 		}
 		$diffId = $this->context->getRequest()->getInt( 'diff', 0 );
-		if( $diffId > 0 && !in_array( $diffId, $this->getStableVersions( $title ) ) ) {
+		if ( $diffId > 0 && !in_array( $diffId, $this->getStableVersions( $title ) ) ) {
 			return true;
 		}
 		if ( $this->isRequestedRevStable( $title ) ) {
@@ -232,6 +233,11 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 		return $this->stableRevisionIDs;
 	}
 
+	/**
+	 *
+	 * @param Title $title
+	 * @return bool
+	 */
 	protected function isRequestedRevStable( Title $title ) {
 		if ( $this->context->getRequest()->getInt( 'stable', 0 ) === 1 ) {
 			return true;
@@ -251,12 +257,17 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 			return false;
 		}
 
-		if( in_array( $oldId, $this->getStableVersions( $title ) ) ) {
+		if ( in_array( $oldId, $this->getStableVersions( $title ) ) ) {
 			return true;
 		}
 		return false;
 	}
 
+	/**
+	 *
+	 * @param Title $title
+	 * @return bool
+	 */
 	protected function isStableVersion( Title $title ) {
 		$flaggableWikiPage = $this->getFlaggableWikiPage( $title );
 		// Editing stable versions should be available to

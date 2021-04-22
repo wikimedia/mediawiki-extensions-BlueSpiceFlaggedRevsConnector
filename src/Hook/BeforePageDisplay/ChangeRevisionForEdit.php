@@ -35,9 +35,9 @@ class ChangeRevisionForEdit extends BeforePageDisplay {
 		return !$fwp->stableVersionIsSynced();
 	}
 
-	private function showingLatest(){
+	private function showingLatest() {
 		$fpv = FlaggablePageView::singleton();
-		if ( $fpv->showingStable()) {
+		if ( $fpv->showingStable() ) {
 			return false;
 		}
 		$revShown = $this->out->getRevisionId();
@@ -45,9 +45,9 @@ class ChangeRevisionForEdit extends BeforePageDisplay {
 		return $revShown === $latestRev;
 	}
 
-	private function isEdit(){
+	private function isEdit() {
 		$req = $this->out->getRequest();
-		$hasVeAction = !!$req->getVal( 'veaction', false );
+		$hasVeAction = (bool)$req->getVal( 'veaction', false );
 		$isNormalEdit = $req->getVal( 'action', 'view' ) === 'edit';
 
 		return $isNormalEdit || $hasVeAction;

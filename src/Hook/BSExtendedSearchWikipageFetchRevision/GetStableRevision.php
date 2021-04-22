@@ -46,8 +46,7 @@ class GetStableRevision extends BSExtendedSearchWikipageFetchRevision {
 	private function indexOnlyApproved() {
 		$config = Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 
-		return
-			$config->has( 'FlaggedRevsConnectorIndexStableOnly' ) &&
+		return $config->has( 'FlaggedRevsConnectorIndexStableOnly' ) &&
 			(bool)$config->get( 'FlaggedRevsConnectorIndexStableOnly' ) === true;
 	}
 }

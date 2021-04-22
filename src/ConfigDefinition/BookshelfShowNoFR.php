@@ -6,6 +6,10 @@ use BlueSpice\ConfigDefinition\BooleanSetting;
 
 class BookshelfShowNoFR extends BooleanSetting {
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_EXPORT . '/BlueSpiceFlaggedRevsConnector',
@@ -14,6 +18,10 @@ class BookshelfShowNoFR extends BooleanSetting {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-bookshelfshownofr';
 	}
