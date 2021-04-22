@@ -2,14 +2,14 @@
 
 namespace BlueSpice\FlaggedRevsConnector\PageInfoElement;
 
-use IContextSource;
-use Config;
-use BlueSpice\PageInfoElement;
 use BlueSpice\FlaggedRevsConnector\Utils;
+use BlueSpice\PageInfoElement;
+use Config;
+use IContextSource;
 
 abstract class FlaggedPageElement extends PageInfoElement {
 
-	/** @var Utils|null  */
+	/** @var Utils|null */
 	public $utils = null;
 
 	/**
@@ -26,10 +26,10 @@ abstract class FlaggedPageElement extends PageInfoElement {
 	/**
 	 *
 	 * @param IContextSource $context
-	 * @return boolean
+	 * @return bool
 	 */
 	public function shouldShow( $context ) {
-		if( !$this->utils->userCanAccessDrafts( $this->context->getUser() ) ) {
+		if ( !$this->utils->userCanAccessDrafts( $this->context->getUser() ) ) {
 			return false;
 		}
 

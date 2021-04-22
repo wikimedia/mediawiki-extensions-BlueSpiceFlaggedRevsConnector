@@ -5,7 +5,7 @@ namespace BlueSpice\FlaggedRevsConnector\Hook\SpecialPageInitList;
 use BlueSpice\Hook\SpecialPageInitList;
 
 class RemoveDefaultFRPages extends SpecialPageInitList {
-	/** @var string[]  */
+	/** @var string[] */
 	private $toRemove = [
 		'RevisionReview',
 		'Stabilization',
@@ -18,9 +18,9 @@ class RemoveDefaultFRPages extends SpecialPageInitList {
 		'StablePages',
 		'UnreviewedPages',
 		'ValidationStatistics',
-    ];
+	];
 
-    protected function doProcess() {
+	protected function doProcess() {
 		foreach ( $this->toRemove as $page ) {
 			if ( isset( $this->list[$page] ) ) {
 				unset( $this->list[$page] );
@@ -28,5 +28,5 @@ class RemoveDefaultFRPages extends SpecialPageInitList {
 		}
 
 		return true;
-    }
+	}
 }

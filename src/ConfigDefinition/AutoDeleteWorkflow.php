@@ -6,6 +6,10 @@ use BlueSpice\ConfigDefinition\BooleanSetting;
 
 class AutoDeleteWorkflow extends BooleanSetting {
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_QUALITY_ASSURANCE . '/BlueSpiceFlaggedRevsConnector',
@@ -14,6 +18,10 @@ class AutoDeleteWorkflow extends BooleanSetting {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-autodeleteworkflow';
 	}

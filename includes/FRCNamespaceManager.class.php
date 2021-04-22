@@ -1,19 +1,30 @@
 <?php
 
+// phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCNamespaceManager {
 
+	/**
+	 *
+	 * @param array &$aMetaFields
+	 * @return bool
+	 */
 	public function onGetMetaFields( &$aMetaFields ) {
-		$aMetaFields[] = array(
+		$aMetaFields[] = [
 			'name' => 'flaggedrevs',
 			'type' => 'boolean',
 			'label' => wfMessage( 'bs-flaggedrevsconnector-label-flaggedrevs' )->plain(),
-			'filter' => array(
+			'filter' => [
 				'type' => 'boolean'
-			),
-		);
+			],
+		];
 		return true;
 	}
 
+	/**
+	 *
+	 * @param array &$aResults
+	 * @return bool
+	 */
 	public function onGetNamespaceData( &$aResults ) {
 		global $wgFlaggedRevsNamespaces;
 
@@ -27,28 +38,46 @@ class FRCNamespaceManager {
 		return true;
 	}
 
-	public function onEditNamespace( &$aNamespaceDefinitions, &$iNS, $aAdditionalSettings, $bUseInternalDefaults = false ) {
-		if ( MWNamespace::isTalk( $iNS ) ) { //FlaggedRevs can not be activated for TALK namespaces!
+	/**
+	 *
+	 * @param array &$aNamespaceDefinitions
+	 * @param int &$iNS
+	 * @param array $aAdditionalSettings
+	 * @param bool $bUseInternalDefaults
+	 * @return bool
+	 */
+	public function onEditNamespace( &$aNamespaceDefinitions, &$iNS, $aAdditionalSettings,
+		$bUseInternalDefaults = false ) {
+		if ( MWNamespace::isTalk( $iNS ) ) {
+			// FlaggedRevs can not be activated for TALK namespaces!
 			return true;
 		}
 
 		if ( !$bUseInternalDefaults && isset( $aAdditionalSettings['flaggedrevs'] ) ) {
 			$aNamespaceDefinitions[$iNS][ 'flaggedrevs' ] = $aAdditionalSettings['flaggedrevs'];
-		}
-		else {
+		} else {
 			$aNamespaceDefinitions[$iNS][ 'flaggedrevs' ] = false;
 		}
 		return true;
 	}
 
+	/**
+	 *
+	 * @param string &$sSaveContent
+	 * @param string $sConstName
+	 * @param int $iNsID
+	 * @param array $aDefinition
+	 * @return bool
+	 */
 	public function onWriteNamespaceConfiguration( &$sSaveContent, $sConstName, $iNsID, $aDefinition ) {
 		global $wgFlaggedRevsNamespaces;
 
-		if ( $iNsID=== null || MWNamespace::isTalk( $iNsID ) ) { //FlaggedRevs can not be activated for TALK namespaces!
+		if ( $iNsID === null || MWNamespace::isTalk( $iNsID ) ) {
+			// FlaggedRevs can not be activated for TALK namespaces!
 			return true;
 		}
 
-		$bCurrentlyActivated = in_array($iNsID, $wgFlaggedRevsNamespaces);
+		$bCurrentlyActivated = in_array( $iNsID, $wgFlaggedRevsNamespaces );
 
 		$bExplicitlyDeactivated = false;
 		if ( isset( $aDefinition[ 'flaggedrevs' ] ) && $aDefinition[ 'flaggedrevs' ] === false ) {
@@ -60,7 +89,7 @@ class FRCNamespaceManager {
 			$bExplicitlyActivated = true;
 		}
 
-		if( ($bCurrentlyActivated && !$bExplicitlyDeactivated) || $bExplicitlyActivated ) {
+		if ( ( $bCurrentlyActivated && !$bExplicitlyDeactivated ) || $bExplicitlyActivated ) {
 			$sSaveContent .= "\$GLOBALS['wgFlaggedRevsNamespaces'][] = {$sConstName};\n";
 		}
 

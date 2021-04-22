@@ -57,4 +57,3 @@ class ApprovalUserPropertyValueProvider extends PropertyValueProvider {
 		}
 	}
 }
-

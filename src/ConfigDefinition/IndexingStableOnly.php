@@ -6,6 +6,10 @@ use BlueSpice\ConfigDefinition\BooleanSetting;
 
 class IndexingStableOnly extends BooleanSetting {
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_SEARCH . '/BlueSpiceFlaggedRevsConnector',
@@ -14,6 +18,10 @@ class IndexingStableOnly extends BooleanSetting {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-indexingstableonly';
 	}

@@ -36,7 +36,7 @@ class Utils {
 		$currentUserGroups = $user->getEffectiveGroups();
 		$groupIntersect = array_intersect( $permittedGroups, $currentUserGroups );
 
-		if( empty( $groupIntersect ) ) {
+		if ( empty( $groupIntersect ) ) {
 			return false;
 		}
 
@@ -45,7 +45,6 @@ class Utils {
 
 	/**
 	 *
-	 * @global array $wgFlaggedRevsNamespaces
 	 * @param Title $title
 	 * @return bool
 	 */
@@ -57,7 +56,7 @@ class Utils {
 		);
 		$flagInfo = $frc->collectFlagInfo( $title );
 
-		if ( !in_array( $title->getNamespace(), $wgFlaggedRevsNamespaces ) ){
+		if ( !in_array( $title->getNamespace(), $wgFlaggedRevsNamespaces ) ) {
 			return false;
 		}
 
@@ -112,7 +111,7 @@ class Utils {
 			return null;
 		}
 
-		return (int) $row->fp_stable;
+		return (int)$row->fp_stable;
 	}
 
 	/**
@@ -147,6 +146,5 @@ class Utils {
 
 		return (int)$id;
 	}
-
 
 }

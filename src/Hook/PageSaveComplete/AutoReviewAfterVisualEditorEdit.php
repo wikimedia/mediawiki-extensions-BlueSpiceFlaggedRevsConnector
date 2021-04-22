@@ -2,15 +2,15 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Hook\PageSaveComplete;
 
-use BlueSpice\Hook\PageSaveComplete;
 use BlueSpice\FlaggedRevsConnector\PermissionLessReviewForm;
+use BlueSpice\Hook\PageSaveComplete;
+use FlaggableWikiPage;
 use FlaggedRevs;
 use FRInclusionCache;
-use RevisionReviewForm;
-use FlaggableWikiPage;
-use User;
-use Title;
 use MediaWiki\Revision\RevisionRecord;
+use RevisionReviewForm;
+use Title;
+use User;
 
 class AutoReviewAfterVisualEditorEdit extends PageSaveComplete {
 
@@ -52,7 +52,6 @@ class AutoReviewAfterVisualEditorEdit extends PageSaveComplete {
 	 */
 	protected function doOwnWorkingReview( User $user, Title $title,
 		RevisionRecord $revision, $comment = '' ) {
-
 		// Construct submit form...
 		$form = new PermissionLessReviewForm( $user );
 		$form->setPage( $title );
@@ -73,7 +72,7 @@ class AutoReviewAfterVisualEditorEdit extends PageSaveComplete {
 		// Get the file version used for File: pages
 		$file = $article->getFile();
 		if ( $file ) {
-			$fileVer = array( 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() );
+			$fileVer = [ 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() ];
 		} else {
 			$fileVer = null;
 		}

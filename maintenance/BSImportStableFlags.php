@@ -10,7 +10,6 @@ if ( !file_exists( $maintPath ) ) {
 }
 require_once $maintPath;
 
-
 class BSImportStableFlags extends BSBatchFileProcessorBase {
 
 	/**
@@ -27,17 +26,18 @@ class BSImportStableFlags extends BSBatchFileProcessorBase {
 		$this->context = new DerivativeContext( \RequestContext::getMain() );
 		$dummyUser = User::newFromName( 'WikiSysop' );
 		$this->context->setUser( $dummyUser );
-		$GLOBALS['wgUser'] = $dummyUser; //FlaggedRevs uses $wgUser ...
+		// FlaggedRevs uses $wgUser ...
+		$GLOBALS['wgUser'] = $dummyUser;
 
 		$path = $this->getOption( 'src' );
 		$dom = new DOMDocument();
 		$dom->load( $path );
 
 		$stabledates = $dom->getElementsByTagName( 'stabledate' );
-		foreach( $stabledates as $stabledate ) {
+		foreach ( $stabledates as $stabledate ) {
 			$titletext = $this->getTitleText( $stabledate );
 			$title = Title::newFromText( $titletext );
-			if( $title instanceof Title === false ) {
+			if ( $title instanceof Title === false ) {
 				$this->error( "Could not create title from '$titletext'!" );
 				continue;
 			}
@@ -53,6 +53,7 @@ class BSImportStableFlags extends BSBatchFileProcessorBase {
 	 * - page/revision/stabledate
 	 * - page/title
 	 * @param DOMElement $stabledate
+	 * @return string
 	 */
 	protected function getTitleText( $stabledate ) {
 		$page = $stabledate->parentNode->parentNode;
@@ -75,15 +76,19 @@ class BSImportStableFlags extends BSBatchFileProcessorBase {
 		$api->execute();
 		$data = $api->getResult()->getResultData();
 
-		if( isset( $data['review']['result'] )
+		if ( isset( $data['review']['result'] )
 			&& $data['review']['result'] === 'Success' ) {
 			$this->output( 'Success!' );
-		}
-		else {
+		} else {
 			$this->output( 'Failed!' );
 		}
 	}
 
+	/**
+	 *
+	 * @param int $revId
+	 * @return \DerivativeRequest
+	 */
 	protected function makeDerivativeRequest( $revId ) {
 		return new DerivativeRequest(
 			$this->context->getRequest(),
@@ -91,7 +96,7 @@ class BSImportStableFlags extends BSBatchFileProcessorBase {
 				'action' => 'review',
 				'revid' => $revId,
 				'flag_accuracy' => 1,
-				'comment' => "Autoreviewd by ".__CLASS__,
+				'comment' => "Autoreviewd by " . __CLASS__,
 				'token' => $this->context->getUser()->getEditToken()
 			]
 		);
@@ -100,4 +105,4 @@ class BSImportStableFlags extends BSBatchFileProcessorBase {
 }
 
 $maintClass = 'BSImportStableFlags';
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

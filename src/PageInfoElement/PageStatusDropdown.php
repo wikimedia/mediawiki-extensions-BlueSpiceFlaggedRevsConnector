@@ -2,28 +2,29 @@
 
 namespace BlueSpice\FlaggedRevsConnector\PageInfoElement;
 
+use BlueSpice\FlaggedRevsConnector\Utils;
+use BlueSpice\IPageInfoElement;
+use Config;
 use FlaggedRevision;
-use Message;
 use Html;
 use IContextSource;
-use Config;
-use BlueSpice\IPageInfoElement;
-use BlueSpice\FlaggedRevsConnector\Utils;
 use MediaWiki\MediaWikiServices;
+use Message;
 
 class PageStatusDropdown extends FlaggedPageElement {
-	/** @var string  */
+	/** @var string */
 	public $state = 'undefined';
-	/** @var bool  */
+	/** @var bool */
 	public $needApproval = false;
-	/** @var bool  */
+	/** @var bool */
 	public $implicitDraft = false;
 
 	/**
 	 *
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param Utils $utils
+	 * @param Utils|null $utils
+	 * @return FlaggedPageElement
 	 */
 	public static function factory( IContextSource $context, Config $config, Utils $utils = null ) {
 		if ( !$utils ) {
@@ -65,7 +66,7 @@ class PageStatusDropdown extends FlaggedPageElement {
 	/**
 	 *
 	 * @param IContextSource $context
-	 * @return boolean
+	 * @return bool
 	 */
 	public function shouldShow( $context ) {
 		if ( !parent::shouldShow( $context ) ) {
@@ -98,7 +99,7 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 * @return string
 	 */
 	public function getItemClass() {
-		if (  $this->state === 'stable') {
+		if ( $this->state === 'stable' ) {
 			return IPageInfoElement::ITEMCLASS_CONTRA;
 		}
 
@@ -132,11 +133,11 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 * @return string
 	 */
 	public function getMenu() {
-		if( $this->getType() === IPageInfoElement::TYPE_TEXT ) {
+		if ( $this->getType() === IPageInfoElement::TYPE_TEXT ) {
 			return '';
 		}
 
-		if( !$this->needApproval ) {
+		if ( !$this->needApproval ) {
 			return '';
 		}
 

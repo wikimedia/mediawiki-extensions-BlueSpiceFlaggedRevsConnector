@@ -6,6 +6,10 @@ use BlueSpice\ConfigDefinition\BooleanSetting;
 
 class BookshelfShowStable extends BooleanSetting {
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_EXPORT . '/BlueSpiceFlaggedRevsConnector',
@@ -14,6 +18,10 @@ class BookshelfShowStable extends BooleanSetting {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-bookshelfshowstable';
 	}

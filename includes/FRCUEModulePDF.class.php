@@ -2,33 +2,34 @@
 
 use MediaWiki\MediaWikiServices;
 
+// phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCUEModulePDF {
 
 	/**
 	 * Rewrites the 'oldid' parameter to the last stable revision if needed.
-	 * @param array $aParams
-	 * @return boolean
+	 * @param array &$aParams
+	 * @return bool
 	 */
 	public function onBSUEModulePDFbeforeGetPage( &$aParams ) {
 		global $wgRequest;
 
-		//PW(04.12.2013): Ugly, but works so far
+		// PW(04.12.2013): Ugly, but works so far
 		//RV(04.02.2015): Still ugly, but works so far
 		//PW(04.02.2021): Still very ugly, but still seems to work
-		if( $wgRequest->getInt( 'stable', 1 ) === 0 ) {
+		if ( $wgRequest->getInt( 'stable', 1 ) === 0 ) {
 			return true;
 		}
 
-		//We need to skip if the oldid is requested directly
-		if( $wgRequest->getInt( 'oldid', -1 ) !== -1 ) {
+		// We need to skip if the oldid is requested directly
+		if ( $wgRequest->getInt( 'oldid', -1 ) !== -1 ) {
 			return true;
 		}
 
-		//If this function gets called from BookshelfUI export we may not
+		// If this function gets called from BookshelfUI export we may not
 		//have a 'article-id'. But we always have a 'title'
-		if( !isset( $aParams[ 'article-id' ] ) ) {
+		if ( !isset( $aParams[ 'article-id' ] ) ) {
 			$oTitle = Title::newFromText( $aParams[ 'title' ] );
-			if( $oTitle instanceof Title ) {
+			if ( $oTitle instanceof Title ) {
 				$aParams[ 'article-id' ] = $oTitle->getArticleID();
 			}
 		}
@@ -41,7 +42,7 @@ class FRCUEModulePDF {
 			__METHOD__
 		);
 
-		if ( !isset( $res->fp_stable ) || is_null( $res->fp_stable ) ) {
+		if ( !isset( $res->fp_stable ) || $res->fp_stable === null ) {
 			return true;
 		}
 
@@ -52,7 +53,7 @@ class FRCUEModulePDF {
 
 		wfDebugLog(
 			'BS::FlaggedRevsConnector',
-			__METHOD__.': Fetched old revision ' . $res->fp_stable . ' for page_id ' . $aParams[ 'article-id' ]
+			__METHOD__ . ': Fetched old revision ' . $res->fp_stable . ' for page_id ' . $aParams[ 'article-id' ]
 		);
 
 		return true;
@@ -60,9 +61,9 @@ class FRCUEModulePDF {
 
 	/**
 	 * Adds stylings for PDF Export
-	 * @param array $aTemplate
-	 * @param array $aStyleBlocks
-	 * @return boolean Always true to keep hook running
+	 * @param array &$aTemplate
+	 * @param array &$aStyleBlocks
+	 * @return bool Always true to keep hook running
 	 */
 	public function onBSUEModulePDFBeforeAddingStyleBlocks( &$aTemplate, &$aStyleBlocks ) {
 		$aStyleBlocks[ 'FlaggedRevsConnector' ] =
@@ -73,15 +74,13 @@ class FRCUEModulePDF {
 	/**
 	 * Adds dates below headings
 	 * @param Title $oTitle
-	 * @param array $aPage
-	 * @param array $aParams
+	 * @param array &$aPage
+	 * @param array &$aParams
 	 * @param DOMXpath $oDOMXPath
-	 * @global WebRequest $wgRequest
-	 * @global Language $wgLang
-	 * @return boolean Always true to keep hook running
+	 * @return bool Always true to keep hook running
 	 */
 	public function onBSUEModulePDFgetPage( $oTitle, &$aPage, &$aParams, $oDOMXPath ) {
-		global $wgRequest, $wgLang;
+		global $wgLang;
 
 		$config = MediaWikiServices::getInstance()->getConfigFactory()
 			->makeConfig( 'bsg' );
@@ -101,22 +100,23 @@ class FRCUEModulePDF {
 		$oFlaggedRevision = FlaggedRevision::newFromId( $iRevId );
 		$oRevison = Revision::newFromId( $iRevId );
 
-		if( $oRevison instanceof Revision === false ) {
+		if ( $oRevison instanceof Revision === false ) {
 			return true;
 		}
 
-		$aDates = array(
+		$aDates = [
 			'laststabledate' => '',
 			'stablerevisiondate' => ''
-		);
+		];
 
 		$aDates['stablerevisiondate'] = $wgLang->sprintfDate(
 			'd.m.Y - H:i',
 			$wgLang->userAdjust( $oRevison->getTimestamp() )
 		);
 
-		//Is the requested revision id a flagged revision?
-		if( $oFlaggedRevision instanceof FlaggedRevision ) { // No...
+		// Is the requested revision id a flagged revision?
+		if ( $oFlaggedRevision instanceof FlaggedRevision ) {
+			// No...
 			$aDates['laststabledate'] = $wgLang->sprintfDate(
 				'd.m.Y - H:i',
 				$wgLang->userAdjust( $oFlaggedRevision->getTimestamp() )
@@ -128,25 +128,30 @@ class FRCUEModulePDF {
 
 		$oStableTag = $aPage[ 'dom' ]->createElement(
 			'span',
-			wfMessage( 'bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text' )->plain() . ': '
+			wfMessage(
+				'bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text'
+			)->plain() . ': '
 		);
 		$oStableTag->setAttribute( 'class', 'bs-flaggedrevshistorypage-laststable-tag' );
 
 		if ( empty( $aDates[ 'laststabledate' ] ) ) {
 			$sDateNode = $aPage[ 'dom' ]->createElement(
 				'span',
-				wfMessage( 'bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date' )->plain()
+				wfMessage(
+					'bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date'
+				)->plain()
 			);
 			$sDateNode->setAttribute( 'class', 'nostable' );
-		}
-		else {
+		} else {
 			$sDateNode = $aPage[ 'dom' ]->createTextNode( $aDates[ 'laststabledate' ] );
 		}
 
 		$oStableTag->appendChild( $sDateNode );
 		$oStableRevDateTag = $aPage[ 'dom' ]->createElement(
 			'span',
-			' / ' . wfMessage( 'bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text' )->plain() .
+			' / ' . wfMessage(
+				'bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text'
+			)->plain() .
 			': ' . $aDates[ 'stablerevisiondate' ]
 		);
 		$oStableRevDateTag->setAttribute( 'class', 'bs-flaggedrevshistorypage-stablerevisiondate-tag' );
@@ -162,12 +167,19 @@ class FRCUEModulePDF {
 		return true;
 	}
 
+	/**
+	 *
+	 * @param Article &$article
+	 * @param bool &$outputDone
+	 * @param bool &$pcache
+	 * @return bool
+	 */
 	public static function onArticleViewHeader( &$article, &$outputDone, &$pcache ) {
 		if ( !class_exists( 'FlaggablePageView', true ) ) {
 			return true;
 		}
 
-		//Clear FlaggablePageView instance,
+		// Clear FlaggablePageView instance,
 		//for correct subpage export
 		FlaggablePageView::singleton()->clear();
 

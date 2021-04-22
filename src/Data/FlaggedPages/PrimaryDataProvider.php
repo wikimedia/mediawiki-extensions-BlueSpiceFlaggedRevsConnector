@@ -2,14 +2,19 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Data\FlaggedPages;
 
+use BlueSpice\Data\Page\PrimaryDataProvider as PageDataProvider;
 use BlueSpice\FlaggedRevsConnector\Data\Record;
+use FlaggableWikiPage;
 use FlaggedRevsConnector;
 use Title;
-use BlueSpice\Data\Page\PrimaryDataProvider as PageDataProvider;
-use FlaggableWikiPage;
 
 class PrimaryDataProvider extends PageDataProvider {
 
+	/**
+	 *
+	 * @param Title $title
+	 * @return Record
+	 */
 	protected function getRecordFromTitle( Title $title ) {
 		$enabledNamespaces = $this->context->getConfig()->get( 'FlaggedRevsNamespaces' );
 		if ( !in_array( $title->getNamespace(), $enabledNamespaces ) ) {
@@ -33,10 +38,10 @@ class PrimaryDataProvider extends PageDataProvider {
 			}
 			$revisionsSinceStable = $flaggablePage->getPendingRevCount();
 		}
-		$stateMessage = wfMessage("bs-flaggedrevsconnector-state-$state" );
+		$stateMessage = wfMessage( "bs-flaggedrevsconnector-state-$state" );
 
 		$pageData = parent::getRecordFromTitle( $title )->getData();
-		$pageData->{Record::REVISION_STATE} =  $stateMessage->plain();
+		$pageData->{Record::REVISION_STATE} = $stateMessage->plain();
 		$pageData->{Record::REVISION_STATE_RAW} = $state;
 		$pageData->{Record::REVISIONS_SINCE_STABLE} = $revisionsSinceStable;
 
