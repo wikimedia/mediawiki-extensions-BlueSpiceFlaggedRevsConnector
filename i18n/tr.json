@@ -46,6 +46,8 @@
 	"bs-flaggedrevsconnector-column-last-stable": "İncelenmiş",
 	"bs-flaggedrevsconnector-no-stable": "incelenmemiş",
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1, $3 sayfasını inceledi",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-subject": "$2 sayfasının incelemesi",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-body": "$1, $2 sayfasını gözden geçirdi.",
 	"bs-flaggedrevsconnector-document-state-sesp-alias": "QM/Belge durumu",
 	"bs-flaggedrevsconnector-approval-date-sesp-alias": "QM/Onay tarihi",
 	"bs-flaggedrevsconnector-approval-user-sesp-alias": "QM/Onaylayan",
