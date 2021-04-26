@@ -94,5 +94,7 @@
 	"bsfrc-revreview-unlocked-title": "Edits to this page do not require review.",
 	"bsfrc-revreview-locked": "'''Note:''' Edits must be [[{{MediaWiki:Validationpage}}|reviewed]] before being displayed to readers on this page.",
 	"bsfrc-revreview-unlocked": "'''Note:''' Edits do not require [[{{MediaWiki:Validationpage}}|review]] before being displayed to readers on this page.",
-	"bsfrc-validationpage": "{{ns:help}}:Page validation"
+	"bsfrc-validationpage": "{{ns:help}}:Page validation",
+	"bsfrc-revreview-editnotice": "'''Your changes will be displayed to readers once an authorized user accepts them.'''",
+	"bsfrc-copyrightwarning2": "Please note that all contributions to {{SITENAME}} may be edited, altered, or removed by other contributors.\nIf you do not want your writing to be edited mercilessly, then do not submit it here.<br />\nYou are also promising us that you wrote this yourself, or copied it from a public domain or similar free resource.\n<strong>Do not submit copyrighted work without permission!</strong>"
 }
