@@ -117,6 +117,8 @@ class ApplyBusinessVocabulary extends MessageCacheGet {
 			"revreview-locked" => "bsfrc-revreview-locked",
 			"revreview-unlocked" => "bsfrc-revreview-unlocked",
 			"validationpage" => "bsfrc-validationpage",
+			"revreview-editnotice" => "bsfrc-revreview-editnotice",
+			"copyrightwarning2" => "bsfrc-copyrightwarning2",
 		];
 	}
 }
