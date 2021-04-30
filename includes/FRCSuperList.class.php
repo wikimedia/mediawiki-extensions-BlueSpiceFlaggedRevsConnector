@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCSuperList {
 
@@ -9,6 +11,10 @@ class FRCSuperList {
 	 * @return bool
 	 */
 	public function onSuperListGetFieldDefinitions( &$aFields ) {
+		$aFields[] = [
+			'name' => 'is_flaggedrevs_enabled',
+			'type' => 'boolean',
+		];
 		$aFields[] = [
 			'name' => 'flaggedrevs_state',
 			'type' => 'boolean',
@@ -126,6 +132,9 @@ class FRCSuperList {
 			return true;
 		}
 
+		$services = MediaWikiServices::getInstance();
+		$flaggedRevsNamespaces = $services->getMainConfig()->get( 'FlaggedRevsNamespaces' );
+
 		$aPageIds = array_keys( $aRows );
 
 		$dbr = wfGetDB( DB_REPLICA );
@@ -136,7 +145,7 @@ class FRCSuperList {
 			'flaggedpages' => [ 'LEFT OUTER JOIN', 'page_id=fp_page_id' ],
 			'flaggedrevs' => [ 'LEFT OUTER JOIN', 'fp_stable=fr_rev_id' ]
 		];
-		$sField = "page_id, page_latest, fp_stable, fr_timestamp";
+		$sField = "page_id, page_namespace, page_latest, fp_stable, fr_timestamp";
 		$sCondition = "page_id IN (" . implode( ',', $aPageIds ) . ")";
 		$aOptions = [
 			'ORDER BY' => 'page_id'
@@ -153,8 +162,12 @@ class FRCSuperList {
 				: '';
 			$aRows[$row->page_id]['flaggedrevs_is_new_available']
 				= $row->page_latest != $row->fp_stable;
+			if ( in_array( $row->page_namespace, $flaggedRevsNamespaces ) ) {
+				$aRows[$row->page_id]['is_flaggedrevs_enabled'] = true;
+			} else {
+				$aRows[$row->page_id]['is_flaggedrevs_enabled'] = false;
+			}
 		}
-
 		return true;
 	}
 }
