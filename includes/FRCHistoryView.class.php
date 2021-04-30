@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class FRCHistoryView {
 
 	/**
@@ -27,7 +29,10 @@ class FRCHistoryView {
 			$oUser = User::newFromId( $frRow->fr_user );
 			$sUserLink = '';
 			if( $oUser instanceof User ) {
-				$sUserLink = '| '.Linker::link( $oUser->getUserPage(), $oUser->getName() );
+				$sUserLink = '| ' . MediaWikiServices::getInstance()->getLinkRenderer()->makeLink(
+					$oUser->getUserPage(),
+					new HtmlArmor( $oUser->getName() )
+				);
 			}
 			$msg = wfMessage('bs-flaggedrevsconnector-history-row-fr-info')
 				->params(
