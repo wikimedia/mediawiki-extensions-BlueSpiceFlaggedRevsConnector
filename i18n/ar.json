@@ -5,5 +5,7 @@
 		]
 	},
 	"bs-flaggedrevsconnector-state-pending": "التعديلات المعلقة",
+	"bs-flaggedrevsconnector-column-last-stable": "المراجعة",
+	"bs-flaggedrevsconnector-grid-page-title": "عنوان الصفحة",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "نسخة مسودة"
 }

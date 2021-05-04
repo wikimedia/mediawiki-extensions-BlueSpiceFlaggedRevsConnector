@@ -2,11 +2,25 @@
 	"@metadata": {
 		"authors": [
 			"Emmanuel Fernandess",
-			"Matěj Suchánek"
+			"Matěj Suchánek",
+			"Want"
 		]
 	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Stránka",
 	"bs-flaggedrevsconnector-state-unmarked": "bangor",
+	"bs-flaggedrevsconnector-state-stable-desc": "Tato verze je schválena.",
+	"bs-flaggedrevsconnector-column-last-stable": "Zkontrolováno",
+	"bs-flaggedrevsconnector-no-stable": "není zkontrolováno",
 	"bs-flaggedrevsconnector-document-state-sesp-alias": "QM/Dokumentenstatus",
 	"bs-flaggedrevsconnector-review-type-flagging": "Freigabe",
-	"bs-flaggedrevsconnector-draft-lockdown-reason": "Die Aktion „$1“ für die Entwurfsversion ist nur für {{PLURAL:$2|den|die}} Bevollmächtigten $3 verfügbar"
+	"bs-flaggedrevsconnector-grid-page-title": "Název stránky",
+	"bs-flaggedrevsconnector-draft-lockdown-reason": "Die Aktion „$1“ für die Entwurfsversion ist nur für {{PLURAL:$2|den|die}} Bevollmächtigten $3 verfügbar",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "schváleno",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Schválit",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "Jmenný prostor",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategorie",
+	"bs-flaggedrevsconnector-collection-var-approvedpages": "Schváleno",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Zobrazit rozdíly",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Zobrazit rozdíly",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuální verze"
 }
