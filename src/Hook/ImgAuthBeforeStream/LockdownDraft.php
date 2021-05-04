@@ -6,7 +6,7 @@ use BlueSpice\Hook\ImgAuthBeforeStream;
 use DateTime;
 use DateTimeZone;
 use File;
-use RepoGroup;
+use MediaWiki\MediaWikiServices;
 use Title;
 
 class LockdownDraft extends ImgAuthBeforeStream {
@@ -32,7 +32,7 @@ class LockdownDraft extends ImgAuthBeforeStream {
 			return true;
 		}
 
-		$repo = RepoGroup::singleton()->getRepo( 'local' );
+		$repo = MediaWikiServices::getInstance()->getRepoGroup()->getRepo( 'local' );
 		$bits = explode( '!', $this->name, 2 );
 		$archive = substr( $this->path, 0, 9 ) === '/archive/'
 			|| substr( $this->path, 0, 15 ) === '/thumb/archive/';
