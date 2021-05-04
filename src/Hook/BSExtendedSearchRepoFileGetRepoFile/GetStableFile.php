@@ -31,11 +31,13 @@ class GetStableFile extends BSExtendedSearchRepoFileGetRepoFile {
 			return true;
 		}
 
-		$revision = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
+		$services = MediaWikiServices::getInstance();
+
+		$revision = $services->getRevisionStore()->getRevisionById(
 			$revId
 		);
 
-		$this->file = \RepoGroup::singleton()->findFile(
+		$this->file = $services->getRepoGroup()->findFile(
 			$this->file->getTitle(), [ 'time' => $revision->getTimestamp() ]
 		);
 
