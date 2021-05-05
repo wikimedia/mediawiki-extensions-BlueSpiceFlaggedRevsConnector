@@ -77,7 +77,7 @@ class PageStatusDropdown extends FlaggedPageElement {
 		$hasDrafts = $this->utils->getFlaggableWikiPage( $context )->getPendingRevCount() > 0;
 		$inSync = $this->utils->getFlaggableWikiPage( $context )->stableVersionIsSynced();
 
-		if ( $showingStable && ( $inSync || $hasDrafts ) ) {
+		if ( $showingStable ) {
 			$this->state = 'stable';
 		} elseif ( !$hasStable ) {
 			$this->state = 'first-draft';
