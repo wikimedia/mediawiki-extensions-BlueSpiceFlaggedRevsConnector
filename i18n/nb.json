@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"bs-flaggedrevsconnector-extension-description": "Legger til støtte for FlaggedRevs i en rekke andre utvidelser.",
+	"bs-flaggedrevsconnector-pref-draftgroups": "Vis ustabile sider for følgende grupper",
+	"bs-flaggedrevsconnector-pref-autoreview": "Setter automatisk siden til stabil når arbeidsflyten ble fullført",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "Slett arbeidsflyten automatisk når en side merkes som stabil",
+	"bs-flaggedrevsconnector-pref-indexingstableonly": "Indekserer kun stabile versjoner",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "Stabilitetsdato",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Side",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "Stabil kommentar",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "Stabile sider",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "Ustabile sider",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "Ikke et FlaggedRevs-navnerom",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "Ustabil",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "Stabil",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Revisjon",
+	"bs-flaggedrevsconnector-state-unmarked": "Første utkast",
+	"bs-flaggedrevsconnector-state-stable": "Godkjent",
+	"bs-flaggedrevsconnector-state-draft": "Kladd",
+	"bs-flaggedrevsconnector-state-implicit-draft": "Implisitt kladd",
+	"bs-flaggedrevsconnector-state-notenabled": "Ikke aktivert",
+	"bs-flaggedrevsconnector-state-unmarked-desc": "Det er ingen godkjente versjoner av denne siden.",
+	"bs-flaggedrevsconnector-state-pending": "Ventende endringer",
+	"bs-flaggedrevsconnector-state-stable-desc": "Denne versjonen er godkjent.",
+	"bs-flaggedrevsconnector-state-draft-desc": "Dette er en kladdeversjon med [{{fullurl:{{FULLPAGENAMEE}}|action=history}} $1 ventende endringer]ː Den tilsvarende [{{fullurl:{{FULLPAGENAMEE}}|stable=1}} stabile versjonen] ble godkjent $2.",
+	"bs-flaggedrevsconnector-state-notenabled-desc": "FlaggedRevs er ikke aktivert for denne siden",
+	"bs-flaggedrevsconnector-state-pending-desc": "Det er endringer som venter på godkjenning. [$1 Se nå].",
+	"bs-flaggedrevsconnector-review-heading": "Godkjenning"
+}
