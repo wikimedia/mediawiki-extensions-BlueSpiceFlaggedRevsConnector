@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mglaser",
 			"Stephan Muggli <muggli@hallowelt.biz>"
 		]
 	},
@@ -21,6 +22,7 @@
 	"bs-flaggedrevsconnector-state-unmarked": "Erstentwurf",
 	"bs-flaggedrevsconnector-state-stable": "Freigegeben",
 	"bs-flaggedrevsconnector-state-draft": "Entwurf",
+	"bs-flaggedrevsconnector-state-implicit-draft": "Impliziter Entwurf",
 	"bs-flaggedrevsconnector-state-notenabled": "Nicht aktiviert",
 	"bs-flaggedrevsconnector-state-unmarked-desc": "Es gibt bislang keine freigegebene Version dieser Seite.",
 	"bs-flaggedrevsconnector-state-pending": "Unfreigegebene Änderungen",
@@ -108,5 +110,6 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuelle Versionen",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versionen einfrieren",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabile Versionen",
-	"bs-flaggedrevsconnector-resource-changes": "Änderungen an eingebundenden Ressourcen seit der letzten Seitenfreigabe"
+	"bs-flaggedrevsconnector-resource-changes": "Änderungen an eingebundenden Ressourcen seit der letzten Seitenfreigabe",
+	"apihelp-bs-flaggedpages-store-summary": "Stellt Daten für Seiten bereit, die unter Kontrolle des Freigabemechanismus stehen"
 }
