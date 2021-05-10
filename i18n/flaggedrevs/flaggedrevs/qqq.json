@@ -5,6 +5,12 @@
 		]
 	},
 	"bsfrc-action-review": "{{int:action-review}}",
+	"bsfrc-revreview-check-flag-p": "{{int:revreview-check-flag-p}}",
+	"bsfrc-revreview-check-flag-p-title": "{{int:revreview-check-flag-p-title}}",
+	"bsfrc-revreview-check-flag-u": "{{int:revreview-check-flag-u}}",
+	"bsfrc-revreview-check-flag-u-title": "{{int:revreview-check-flag-u-title}}",
+	"bsfrc-revreview-check-flag-y": "{{int:revreview-check-flag-y}}",
+	"bsfrc-revreview-check-flag-y-title": "{{int:revreview-check-flag-y-title}}",
 	"bsfrc-revreview-hist-draft": "{{int:revreview-hist-draft}}",
 	"bsfrc-revreview-hist-pending": "{{int:revreview-hist-pending}}",
 	"bsfrc-revreview-hist-quality": "{{int:revreview-hist-quality}}",
