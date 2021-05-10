@@ -5,6 +5,12 @@
 		]
 	},
 	"bsfrc-action-review": "review revisions",
+	"bsfrc-revreview-check-flag-p": "Accept this version (includes $1 pending {{PLURAL:$1|change|changes}})",
+	"bsfrc-revreview-check-flag-p-title": "Accept the result of the pending changes and the changes you made here. Use this only if you have already seen the entire pending changes diff.",
+	"bsfrc-revreview-check-flag-u": "Accept this unreviewed page",
+	"bsfrc-revreview-check-flag-u-title": "Accept this version of the page. Only use this if you have already seen the entire page.",
+	"bsfrc-revreview-check-flag-y": "Accept my changes",
+	"bsfrc-revreview-check-flag-y-title": "Accept all the changes that you have made here.",
 	"bsfrc-revreview-hist-draft": "unchecked revision",
 	"bsfrc-revreview-hist-pending": "pending revision",
 	"bsfrc-revreview-hist-quality": "quality revision",
