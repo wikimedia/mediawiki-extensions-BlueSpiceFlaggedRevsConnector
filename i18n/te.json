@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Veeven"
+		]
+	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "పేజీ",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "కూర్పు",
+	"bs-flaggedrevsconnector-state-unmarked": "మొదటి ప్రతి",
+	"bs-flaggedrevsconnector-state-draft": "ప్రతి",
+	"bs-flaggedrevsconnector-state-pending": "వేచివున్న మార్పులు",
+	"bs-flaggedrevsconnector-review-comment-label": "వ్యాఖ్య",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "ఆమోదించిన తేదీ",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1 {{PLURAL:$1|ప్రతి|ప్రతులు}} ($2)",
+	"bs-flaggedrevsconnector-review-type-flagging": "ఆమోదం",
+	"bs-flaggedrevsconnector-grid-page-title": "పేజీ శీర్షిక",
+	"bs-flaggedrevsconnector-grid-rev-state": "స్థితి",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "ఆమోదించు",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "పేరుబరి",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "వర్గం",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "ప్రతి",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "తేడా చూపించు",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "తేడా చూపించు"
+}

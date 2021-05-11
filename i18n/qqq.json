@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patric Wirth"
+			"Patric Wirth",
+			"Verdy p"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "{{desc|name=BlueSpiceFlaggedRevsConnector}}",
@@ -37,7 +38,7 @@
 	"bs-flaggedrevsconnector-pref-bookshelfshownostable": "Label for the checkbox configuration that, when checked, lists the non approved pages in the BlueSpiceBookshelf extension",
 	"bs-flaggedrevsconnector-pref-bookshelfshownofr": "Label for the checkbox configuration that, when checked, lists the pages that are not under version control in the BlueSpiceBookshelf extension",
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag": "Label for the checkbox configuration that, when checked, lists the approval state of the inluded pages in the BlueSpiceUniversalExport extension",
-	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Label for column header in BlueSpiceWikiExplorer integration, that lists the approval state of pages.\n{{Identical|Approval}}",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Label for column header in BlueSpiceWikiExplorer integration, that lists the approval state of pages.\n{{Identical|Approved}}",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "Label for column header in BlueSpiceWikiExplorer integration, that lists the approval date of pages.\n{{Identical|Approval date}}",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "Label for column header in BlueSpiceWikiExplorer integration, that lists if the approval state of pages is pending.\n{{Identical|Approval pending}}",
 	"bs-flaggedrevsconnector-response-success": "Response message to the user when the page was successfully reviewed and will now be reloaded.",
