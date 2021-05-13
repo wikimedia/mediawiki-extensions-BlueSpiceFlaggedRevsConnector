@@ -635,7 +635,7 @@ class FRCDiffView extends ContextSource {
 		}
 
 		# Update page sync status for tracking purposes.
-		# NOTE: avoids master hits and doesn't have to be perfect for what it does
+		# NOTE: avoids primary database hits and doesn't have to be perfect for what it does
 		if ($this->article->syncedInTracking() != $synced) {
 			if ( wfGetLB()->safeGetLag( wfGetDB( DB_REPLICA ) ) <= 5 ) { // avoid write-delay cycles
 				$this->article->updateSyncStatus($synced);

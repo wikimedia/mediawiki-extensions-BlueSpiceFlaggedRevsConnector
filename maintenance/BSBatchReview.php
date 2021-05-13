@@ -78,7 +78,7 @@ class BatchReview extends Maintenance {
 		$flags = FlaggedRevs::quickTags( $tier );
 		$this->outputFlags( $flags, $tier );
 
-		$db = wfGetDB( DB_MASTER );
+		$db = wfGetDB( DB_PRIMARY );
 
 		$ids = $this->getPageIds();
 		sort( $ids );

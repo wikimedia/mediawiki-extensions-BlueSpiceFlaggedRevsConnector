@@ -280,7 +280,7 @@ class PageApproved implements IMechanism {
 			'rc_timestamp' => wfTimestampNow()
 		];
 
-		$this->dbLoadBalancer->getConnection( DB_MASTER )->upsert(
+		$this->dbLoadBalancer->getConnection( DB_PRIMARY )->upsert(
 			'bs_readconfirmation',
 			$row,
 			[['rc_rev_id', 'rc_user_id']],

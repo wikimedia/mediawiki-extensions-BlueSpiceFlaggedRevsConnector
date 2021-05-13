@@ -183,7 +183,7 @@ class BSFixReadConfirmations extends Maintenance {
 					$this->output('Reset read confirmation to specified MINOR STABLE revision' . "\n");
 
 					if( !$this->hasOption( 'dry' ) ) {
-						$this->loadBalancer->getConnection( DB_MASTER )->update(
+						$this->loadBalancer->getConnection( DB_PRIMARY )->update(
 							'bs_readconfirmation',
 							['rc_rev_id' => $newerMinorStableRevision],
 							['rc_rev_id' => $revId]
@@ -195,7 +195,7 @@ class BSFixReadConfirmations extends Maintenance {
 					$this->output('Delete read confirmation entry for MAJOR DRAFT revision' . "\n");
 
 					if( !$this->hasOption( 'dry' ) ) {
-						$this->loadBalancer->getConnection( DB_MASTER )->delete(
+						$this->loadBalancer->getConnection( DB_PRIMARY )->delete(
 							'bs_readconfirmation',
 							['rc_rev_id' => $revId]
 						);
@@ -215,7 +215,7 @@ class BSFixReadConfirmations extends Maintenance {
 					$this->output("Deleting of MINOR DRAFT entry...\n");
 
 					if( !$this->hasOption( 'dry' ) ) {
-						$this->loadBalancer->getConnection( DB_MASTER )->delete(
+						$this->loadBalancer->getConnection( DB_PRIMARY )->delete(
 							'bs_readconfirmation',
 							['rc_rev_id' => $revId]
 						);
