@@ -128,8 +128,10 @@ class RevisionState extends AlertProviderBase {
 		$hasStable = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )
 				->getStableRev() instanceof FlaggedRevision;
 		$showingStable = $this->utils->isShowingStable( $this->skin->getContext() );
-		$inSync = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )->stableVersionIsSynced();
-		$pendingCount = (int) $this->utils->getFlaggableWikiPage( $this->skin->getContext() )->getPendingRevCount();
+		$inSync = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )
+			->stableVersionIsSynced();
+		$pendingCount = (int)$this->utils->getFlaggableWikiPage( $this->skin->getContext() )
+			->getPendingRevCount();
 		$userCanSeeDrafts = $this->utils->userCanAccessDrafts( $this->getUser() );
 
 		if ( !$hasStable ) {
@@ -180,12 +182,12 @@ class RevisionState extends AlertProviderBase {
 		if ( !$this->flaggableWikiPage ) {
 			return true;
 		}
-		if( !$this->skin->getTitle()->exists() ) {
+		if ( !$this->skin->getTitle()->exists() ) {
 			return true;
 		}
 
 		$currentAction = $this->skin->getRequest()->getVal( 'action', 'view' );
-		if( $currentAction === 'history') {
+		if ( $currentAction === 'history' ) {
 			return true;
 		}
 

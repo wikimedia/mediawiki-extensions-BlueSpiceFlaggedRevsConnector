@@ -9,15 +9,31 @@ class Handler implements IPrivacyHandler {
 	protected $db;
 	protected $language;
 
+	/**
+	 *
+	 * @param \Database $db
+	 */
 	public function __construct( \Database $db ) {
 		$this->db = $db;
 		$this->language = \RequestContext::getMain()->getLanguage();
 	}
 
+	/**
+	 *
+	 * @param string $oldUsername
+	 * @param string $newUsername
+	 * @return \Status
+	 */
 	public function anonymize( $oldUsername, $newUsername ) {
 		return \Status::newGood();
 	}
 
+	/**
+	 *
+	 * @param \User $userToDelete
+	 * @param \User $deletedUser
+	 * @return \Status
+	 */
 	public function delete( \User $userToDelete, \User $deletedUser ) {
 		$this->db->update(
 			'flaggedrevs',
@@ -29,6 +45,13 @@ class Handler implements IPrivacyHandler {
 		return \Status::newGood();
 	}
 
+	/**
+	 *
+	 * @param array $types
+	 * @param string $format
+	 * @param \User $user
+	 * @return \Status
+	 */
 	public function exportData( array $types, $format, \User $user ) {
 		if ( !in_array( Transparency::DATA_TYPE_WORKING, $types ) ) {
 			return \Status::newGood( [] );
@@ -42,7 +65,7 @@ class Handler implements IPrivacyHandler {
 		);
 
 		$data = [];
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$title = \Title::newFromID( $row->fr_page_id );
 			if ( !$title ) {
 				continue;
@@ -55,7 +78,7 @@ class Handler implements IPrivacyHandler {
 
 			$tags = explode( "\n", $row->fr_tags );
 			$messagizedTags = [];
-			foreach( $tags as $tag ) {
+			foreach ( $tags as $tag ) {
 				if ( empty( $tag ) ) {
 					continue;
 				}

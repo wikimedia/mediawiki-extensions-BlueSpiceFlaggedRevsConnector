@@ -10,6 +10,11 @@ use FlaggableWikiPage;
 
 class PrimaryDataProvider extends PageDataProvider {
 
+	/**
+	 *
+	 * @param Title $title
+	 * @return Record
+	 */
 	protected function getRecordFromTitle( Title $title ) {
 		$enabledNamespaces = $this->context->getConfig()->get( 'FlaggedRevsNamespaces' );
 		if ( !in_array( $title->getNamespace(), $enabledNamespaces ) ) {
@@ -33,10 +38,10 @@ class PrimaryDataProvider extends PageDataProvider {
 			}
 			$revisionsSinceStable = $flaggablePage->getPendingRevCount();
 		}
-		$stateMessage = wfMessage("bs-flaggedrevsconnector-state-$state" );
+		$stateMessage = wfMessage( "bs-flaggedrevsconnector-state-$state" );
 
 		$pageData = parent::getRecordFromTitle( $title )->getData();
-		$pageData->{Record::REVISION_STATE} =  $stateMessage->plain();
+		$pageData->{Record::REVISION_STATE} = $stateMessage->plain();
 		$pageData->{Record::REVISION_STATE_RAW} = $state;
 		$pageData->{Record::REVISIONS_SINCE_STABLE} = $revisionsSinceStable;
 

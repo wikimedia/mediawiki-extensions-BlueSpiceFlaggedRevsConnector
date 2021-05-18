@@ -87,10 +87,10 @@ class PageApproved implements IMechanism {
 
 	/**
 	 * PageApproved constructor.
-	 * @param $dbLoadBalancer
-	 * @param $reminderDelay
-	 * @param $revisionLookup
-	 * @param $enabledNamespaces
+	 * @param LoadBalancer $dbLoadBalancer
+	 * @param int $reminderDelay
+	 * @param RevisionLookup $revisionLookup
+	 * @param array $enabledNamespaces
 	 * @param LoggerInterface $logger
 	 */
 	protected function __construct(
@@ -109,17 +109,18 @@ class PageApproved implements IMechanism {
 	public function wireUpNotificationTrigger() {
 		Hooks::register(
 			'FlaggedRevsRevisionReviewFormAfterDoSubmit',
-			'BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\SendReadConfirmationOnApprove::callback'
+			'BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\'
+				. 'SendReadConfirmationOnApprove::callback'
 		);
 	}
 
 	/**
-	 * @param User $userAgent
 	 * @param Title $title
+	 * @param User $userAgent
 	 * @return array|bool
 	 */
 	public function notify( Title $title, User $userAgent ) {
-		if ( !$title instanceof Title) {
+		if ( !$title instanceof Title ) {
 			return false;
 		}
 
@@ -167,7 +168,9 @@ class PageApproved implements IMechanism {
 		);
 
 		if ( $res->numRows() > 0 ) {
-			$userAgent = Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();;
+			$userAgent = Services::getInstance()->getService( 'BSUtilityFactory' )
+				->getMaintenanceUser()->getUser();
+
 			foreach ( $res as $row ) {
 				$title = Title::newFromID( $row->rev_pid );
 				$this->getAssignedUsers( $row->rev_pid );
@@ -179,7 +182,7 @@ class PageApproved implements IMechanism {
 	/**
 	 * @param Title $title
 	 * @param User $user
-	 * @param int $revId
+	 * @param int|null $revId
 	 * @return bool
 	 */
 	public function canConfirm( Title $title, User $user, $revId = null ) {
@@ -196,7 +199,7 @@ class PageApproved implements IMechanism {
 		}
 
 		if ( $this->isMinorRevision( $revId ) ) {
-			if( $this->hasNoPreviousMajorRevisionDrafts( $revId ) ) {
+			if ( $this->hasNoPreviousMajorRevisionDrafts( $revId ) ) {
 				return false;
 			}
 			$this->logger->debug(
@@ -245,7 +248,7 @@ class PageApproved implements IMechanism {
 		$revision = $this->revisionLookup->getRevisionById( $revId );
 		if ( $revision instanceof RevisionRecord ) {
 			$previousRevision = $this->revisionLookup->getPreviousRevision( $revision );
-			while( $previousRevision instanceof RevisionRecord ) {
+			while ( $previousRevision instanceof RevisionRecord ) {
 				if ( !$previousRevision->isMinor() ) {
 					return false;
 				}
@@ -277,14 +280,14 @@ class PageApproved implements IMechanism {
 
 		$row = [
 			'rc_rev_id' => $this->revisionId,
-			'rc_user_id' =>  $user->getId(),
+			'rc_user_id' => $user->getId(),
 			'rc_timestamp' => wfTimestampNow()
 		];
 
 		$this->dbLoadBalancer->getConnection( DB_MASTER )->upsert(
 			'bs_readconfirmation',
 			$row,
-			[['rc_rev_id', 'rc_user_id']],
+			[ [ 'rc_rev_id', 'rc_user_id' ] ],
 			$row
 		);
 
@@ -305,7 +308,7 @@ class PageApproved implements IMechanism {
 			return false;
 		}
 
-		if( !$this->getRecentMustReadRevision( $title->getArticleID() ) ) {
+		if ( !$this->getRecentMustReadRevision( $title->getArticleID() ) ) {
 			return false;
 		}
 
@@ -313,14 +316,14 @@ class PageApproved implements IMechanism {
 	}
 
 	/**
-	 * @param $pageId
+	 * @param int $pageId
 	 * @return bool|int
 	 */
 	protected function getRecentMustReadRevision( $pageId ) {
-		if ( !isset($this->recentMustReadRevisions[$pageId] ) ) {
+		if ( !isset( $this->recentMustReadRevisions[$pageId] ) ) {
 			$this->recentMustReadRevisions[$pageId] = false;
-			$mustReadRevision = $this->getMustReadRevisions( [$pageId] );
-			if ( isset($mustReadRevision[$pageId]) ) {
+			$mustReadRevision = $this->getMustReadRevisions( [ $pageId ] );
+			if ( isset( $mustReadRevision[$pageId] ) ) {
 				$this->recentMustReadRevisions[$pageId] = $mustReadRevision[$pageId];
 			}
 		}
@@ -328,7 +331,7 @@ class PageApproved implements IMechanism {
 	}
 
 	/**
-	 * @param $pageId
+	 * @param int $pageId
 	 * @return array
 	 */
 	private function getNotifyUsers( $pageId ) {
@@ -345,9 +348,8 @@ class PageApproved implements IMechanism {
 		return $affectedUsers;
 	}
 
-
 	/**
-	 * @param $pageId
+	 * @param int $pageId
 	 * @return array
 	 */
 	private function getAssignedUsers( $pageId ) {
@@ -395,7 +397,7 @@ class PageApproved implements IMechanism {
 
 		$users = [];
 		foreach ( $res as $row ) {
-			$users[] = (int) $row->user_id;
+			$users[] = (int)$row->user_id;
 		}
 
 		return $users;
@@ -428,7 +430,7 @@ class PageApproved implements IMechanism {
 	 * @param array $pageIds
 	 * @return array [ <page_id> => [ <user_id1>, <user_id2>, ...], ... ]
 	 */
-	public function getCurrentReadConfirmations(array $userIds = [], array $pageIds = []) {
+	public function getCurrentReadConfirmations( array $userIds = [], array $pageIds = [] ) {
 		$currentReadConfirmations = [];
 		$userReadRevisions = $this->getUserReadRevisions( $userIds );
 		$recentRevisions = $this->getMustReadRevisions( $pageIds );
@@ -493,7 +495,7 @@ class PageApproved implements IMechanism {
 
 		$readRevisions = [];
 		foreach ( $res as $row ) {
-			$revId = (int) $row->rc_rev_id;
+			$revId = (int)$row->rc_rev_id;
 			if ( !isset( $readRevisions[ $revId ] ) ) {
 				$readRevisions[ $revId ] = [];
 			}
@@ -517,7 +519,7 @@ class PageApproved implements IMechanism {
 		}
 
 		$res = $this->dbLoadBalancer->getConnection( DB_REPLICA )->select(
-			[ 'revision', 'flaggedpages'],
+			[ 'revision', 'flaggedpages' ],
 			[ 'rev_id', 'rev_page', 'rev_minor_edit', 'fp_stable' ],
 			$conds,
 			__METHOD__,

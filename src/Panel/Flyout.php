@@ -8,7 +8,6 @@ use FlaggableWikiPage;
 use BlueSpice\Services;
 use BlueSpice\FlaggedRevsConnector\Utils;
 use FormatJson;
-use Html;
 use MediaWiki\MediaWikiServices;
 use Message;
 use QuickTemplate;
@@ -20,6 +19,10 @@ class Flyout extends BasePanel implements IFlyout {
 	/** @var \MediaWiki\Linker\LinkRenderer  */
 	private $linkRenderer = null;
 
+	/**
+	 *
+	 * @param QuickTemplate $skintemplate
+	 */
 	public function __construct( QuickTemplate $skintemplate ) {
 		parent::__construct( $skintemplate );
 
@@ -28,6 +31,10 @@ class Flyout extends BasePanel implements IFlyout {
 		$this->linkRenderer = $services->getLinkRenderer();
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getHtmlId() {
 		return 'bs-flaggedrevs-flyout';
 	}
@@ -60,7 +67,7 @@ class Flyout extends BasePanel implements IFlyout {
 	public function getContainerData() {
 		$flagInfo = $this->getFlagInfo();
 		$flagInfo['pendingchanges'] = false;
-		if( $this->hasPendingChanges() ) {
+		if ( $this->hasPendingChanges() ) {
 			$flagInfo['pendingchanges'] = true;
 			if ( $this->getFlaggableWikiPage()->onlyTemplatesOrFilesPending() ) {
 				$flagInfo['resource_changes'] = FormatJson::encode(
@@ -99,7 +106,7 @@ class Flyout extends BasePanel implements IFlyout {
 
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->ft_namespace, $row->ft_title );
-			if ( $title->getLatestRevID() === (int) $row->ft_tmp_rev_id ) {
+			if ( $title->getLatestRevID() === (int)$row->ft_tmp_rev_id ) {
 				continue;
 			}
 			$links[$title->getPrefixedDBkey()] = $this->linkRenderer->makeLink( $title, null, [], [
@@ -140,7 +147,7 @@ class Flyout extends BasePanel implements IFlyout {
 	 * @return string
 	 */
 	public function getBody() {
-		if( !$this->hasPendingChanges() ) {
+		if ( !$this->hasPendingChanges() ) {
 			return '';
 		}
 
@@ -148,17 +155,16 @@ class Flyout extends BasePanel implements IFlyout {
 		$links = $this->makeDraftAuthorLinks();
 
 		$numLinks = count( $links );
-		if( $numLinks > 3 ) {
+		if ( $numLinks > 3 ) {
 			$links = array_slice( $links, 0, 3 );
 			$links[] = '...';
 		}
 
 		if ( $numLinks === 0 ) {
-			$hint =  Message::newFromKey(
+			$hint = Message::newFromKey(
 				'bs-flaggedrevsconnector-flyout-body-hint-draft-implicit'
 			)->text();
-		}
-		else {
+		} else {
 			$hint = Message::newFromKey(
 				'bs-flaggedrevsconnector-flyout-body-hint-draft',
 				count( $this->draftRevisionsAfterCurrentStable ),
@@ -184,15 +190,17 @@ class Flyout extends BasePanel implements IFlyout {
 	 *
 	 */
 	protected function fetchDraftRevisionsAfterCurrentStable() {
-		if( !$this->getFlaggableWikiPage()->revsArePending() ) {
+		if ( !$this->getFlaggableWikiPage()->revsArePending() ) {
 			return;
 		}
 		$lookup = Services::getInstance()->getRevisionLookup();
 		$next = $lookup->getRevisionById(
 			$this->getFlaggableWikiPage()->getStable()
 		);
-		while( $next = $lookup->getNextRevision( $next ) ) {
+		$next = $lookup->getNextRevision( $next );
+		while ( $next ) {
 			$this->draftRevisionsAfterCurrentStable[] = $next;
+			$next = $lookup->getNextRevision( $next );
 		}
 	}
 
@@ -201,15 +209,15 @@ class Flyout extends BasePanel implements IFlyout {
 	 */
 	protected function makeDraftAuthorLinks() {
 		$usernames = [];
-		foreach( $this->draftRevisionsAfterCurrentStable as $revisionRecord ) {
+		foreach ( $this->draftRevisionsAfterCurrentStable as $revisionRecord ) {
 			$userIdentity = $revisionRecord->getUser();
 			$usernames[ $userIdentity->getId() ] = $userIdentity->getName();
 		}
 
 		$linkRenderer = Services::getInstance()->getLinkRenderer();
 		$links = [];
-		foreach( $usernames as $username ) {
-			$target = Title::makeTitle( NS_USER , $username );
+		foreach ( $usernames as $username ) {
+			$target = Title::makeTitle( NS_USER, $username );
 			$links[] = $linkRenderer->makeLink( $target, $username );
 		}
 
@@ -254,7 +262,7 @@ class Flyout extends BasePanel implements IFlyout {
 	 * @return \FlaggableWikiPage
 	 */
 	protected function getFlaggableWikiPage() {
-		if( $this->flaggableWikiPage === null ) {
+		if ( $this->flaggableWikiPage === null ) {
 			$this->flaggableWikiPage = FlaggableWikiPage::getTitleInstance(
 				$this->skintemplate->getSkin()->getTitle()
 			);
@@ -270,7 +278,7 @@ class Flyout extends BasePanel implements IFlyout {
 	protected function hasPendingChanges() {
 		$config = Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 		$utils = new Utils( $config );
-		if( !$utils->userCanAccessDrafts( $this->skintemplate->getSkin()->getUser() ) ) {
+		if ( !$utils->userCanAccessDrafts( $this->skintemplate->getSkin()->getUser() ) ) {
 			return false;
 		}
 

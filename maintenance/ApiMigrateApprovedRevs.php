@@ -82,11 +82,11 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 
 		$this->context = new \DerivativeContext( \RequestContext::getMain() );
 		foreach ( $this->data as $pageId => $approvedRev ) {
-			$this->setActor( (int) $approvedRev->approver_id );
+			$this->setActor( (int)$approvedRev->approver_id );
 			$this->flagStable( $approvedRev->rev_id, $pageId );
 		}
 
-		if( !empty( $this->errors ) ) {
+		if ( !empty( $this->errors ) ) {
 			$this->output( "\nERRORS:\n" );
 			foreach ( $this->errors as $error ) {
 				$this->output( "* $error\n" );
@@ -97,8 +97,8 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 * @param $revId
-	 * @param $pageId
+	 * @param int $revId
+	 * @param int $pageId
 	 */
 	protected function flagStable( $revId, $pageId ) {
 		$this->context->setRequest(
@@ -108,11 +108,10 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 		try {
 			$api->execute();
 			$data = $api->getResult()->getResultData();
-			if( isset( $data['review']['result'] )
+			if ( isset( $data['review']['result'] )
 				&& $data['review']['result'] === 'Success' ) {
 				$this->output( "Approved page with ID $pageId" . PHP_EOL );
-			}
-			else {
+			} else {
 				throw new ApiUsageException( null, Status::newFatal( 'Api error' ) );
 			}
 		} catch ( ApiUsageException $exception ) {
@@ -122,11 +121,10 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 				". Reason: " . $exception->getMessage() . PHP_EOL
 			);
 		}
-
 	}
 
 	/**
-	 * @param $revId
+	 * @param int $revId
 	 * @return DerivativeRequest
 	 */
 	protected function makeDerivativeRequest( $revId ) {
@@ -136,7 +134,7 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 				'action' => 'review',
 				'revid' => $revId,
 				'flag_accuracy' => 1,
-				'comment' => "Autoreviewd by ".__CLASS__,
+				'comment' => "Autoreviewd by " . __CLASS__,
 				'token' => $this->context->getUser()->getEditToken()
 			]
 		);
@@ -149,6 +147,10 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 		return 'bs_approved_revs_to_frc_api_migration';
 	}
 
+	/**
+	 *
+	 * @param int $id
+	 */
 	private function setActor( $id = 0 ) {
 		$actor = $this->getOption( 'actor' );
 		$user = null;
@@ -172,4 +174,4 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 }
 
 $maintClass = "ApiMigrateApprovedRevs";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

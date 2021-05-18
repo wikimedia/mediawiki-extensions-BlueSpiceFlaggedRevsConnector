@@ -2,16 +2,16 @@
 
 use MediaWiki\MediaWikiServices;
 
+// phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCHistoryView {
 
 	/**
 	 * Show date of flagging in history view
 	 * @param HistoryPager $pager
-	 * @param object $row
-	 * @param string $s
-	 * @param array $classes
-	 * @global Language $wgLang
-	 * @return boolean
+	 * @param stdClass &$row
+	 * @param string &$s
+	 * @param array &$classes
+	 * @return bool
 	 */
 	public static function onPageHistoryLineEnding( $pager, &$row, &$s, &$classes ) {
 		global $wgLang;
@@ -19,22 +19,22 @@ class FRCHistoryView {
 		$frRow = $dbr->selectRow(
 			'flaggedrevs',
 			'*',
-			array(
+			[
 				'fr_rev_id' => $row->rev_id
-			),
+			],
 			__METHOD__
 		);
 
-		if( $frRow ) {
+		if ( $frRow ) {
 			$oUser = User::newFromId( $frRow->fr_user );
 			$sUserLink = '';
-			if( $oUser instanceof User ) {
+			if ( $oUser instanceof User ) {
 				$sUserLink = '| ' . MediaWikiServices::getInstance()->getLinkRenderer()->makeLink(
 					$oUser->getUserPage(),
 					new HtmlArmor( $oUser->getName() )
 				);
 			}
-			$msg = wfMessage('bs-flaggedrevsconnector-history-row-fr-info')
+			$msg = wfMessage( 'bs-flaggedrevsconnector-history-row-fr-info' )
 				->params(
 					$wgLang->timeanddate( $frRow->fr_timestamp, true ),
 					$sUserLink,
@@ -46,6 +46,12 @@ class FRCHistoryView {
 		return true;
 	}
 
+	/**
+	 *
+	 * @param string $timestamp
+	 * @param int $pageId
+	 * @return string
+	 */
 	protected static function getComment( $timestamp, $pageId ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$logRow = $dbr->selectRow(

@@ -12,7 +12,8 @@ use BlueSpice\EntityFactory;
 use BlueSpice\ExtendedStatistics\Entity\Snapshot;
 use BlueSpice\ExtendedStatistics\DataCollector\StoreSourced;
 use BlueSpice\ExtendedStatistics\SnapshotFactory;
-use BlueSpice\FlaggedRevsConnector\Data\DataCollector\FlaggedPages\CategorizedRecord as CollectorRecord;
+use BlueSpice\FlaggedRevsConnector\Data\DataCollector\FlaggedPages\CategorizedRecord
+	as CollectorRecord;
 use BlueSpice\FlaggedRevsConnector\Data\FlaggedPages\Store;
 use BlueSpice\FlaggedRevsConnector\Data\Record;
 use BlueSpice\FlaggedRevsConnector\Entity\Collection\CategorizedFlaggedPages as Collection;
@@ -94,9 +95,30 @@ class CategorizedFlaggedPages extends StoreSourced\CategoryCollector {
 		);
 	}
 
+	/**
+	 *
+	 * @param string $type
+	 * @param Snapshot $snapshot
+	 * @param Config $config
+	 * @param EntityFactory $factory
+	 * @param IStore $store
+	 * @param SnapshotFactory $snapshotFactory
+	 * @param CategoryStore $categoryStore
+	 * @param LoadBalancer $lb
+	 */
 	protected function __construct( $type, Snapshot $snapshot, Config $config, EntityFactory $factory,
-		IStore $store, SnapshotFactory $snapshotFactory, CategoryStore $categoryStore, LoadBalancer $lb ) {
-		parent::__construct( $type, $snapshot, $config, $factory, $store, $snapshotFactory, $categoryStore, $lb );
+		IStore $store, SnapshotFactory $snapshotFactory, CategoryStore $categoryStore,
+		LoadBalancer $lb ) {
+		parent::__construct(
+			$type,
+			$snapshot,
+			$config,
+			$factory,
+			$store,
+			$snapshotFactory,
+			$categoryStore,
+			$lb
+		);
 
 		$this->collectionItems = AttributeMapping::$collectionItems;
 		$this->stateMap = AttributeMapping::$stateMap;
@@ -142,6 +164,7 @@ class CategorizedFlaggedPages extends StoreSourced\CategoryCollector {
 		foreach ( $lastCollection as $collection ) {
 			$categoryName = $collection->get( Collection::ATTR_CATEGORY_NAME );
 			foreach ( $this->aggregateMap as $state => $aggItem ) {
+				// phpcs:ignore MediaWiki.Usage.InArrayUsage.Found
 				if ( !in_array( $categoryName, array_keys( $$aggItem ) ) ) {
 					array_fill_keys( [ $categoryName ], 0 );
 				}
@@ -224,6 +247,10 @@ class CategorizedFlaggedPages extends StoreSourced\CategoryCollector {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getCollectionClass() {
 		return Collection::class;
 	}

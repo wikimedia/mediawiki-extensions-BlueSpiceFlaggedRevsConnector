@@ -31,7 +31,8 @@ class VersionSwitch extends FlaggedPageElement {
 	 *
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param Utils $utils
+	 * @param Utils|null $utils
+	 * @return IPageInfoElement
 	 */
 	public static function factory( IContextSource $context, Config $config, Utils $utils = null ) {
 		if ( !$utils ) {
@@ -130,14 +131,15 @@ class VersionSwitch extends FlaggedPageElement {
 	/**
 	 *
 	 * @param IContextSource $context
-	 * @return boolean
+	 * @return bool
 	 */
 	public function shouldShow( $context ) {
 		if ( !parent::shouldShow( $context ) ) {
 			return false;
 		}
 
-		$hasStable = $this->utils->getFlaggableWikiPage( $context )->getStableRev() instanceof FlaggedRevision;
+		$hasStable = $this->utils->getFlaggableWikiPage( $context )->getStableRev()
+			instanceof FlaggedRevision;
 		$showingStable = $this->utils->isShowingStable( $context );
 		$hasDrafts = $this->utils->getFlaggableWikiPage( $context )->getPendingRevCount() > 0;
 		$inSync = $this->utils->getFlaggableWikiPage( $context )->stableVersionIsSynced();
@@ -147,7 +149,7 @@ class VersionSwitch extends FlaggedPageElement {
 			if ( !$inSync ) {
 				$this->hasImplicitDraft = true;
 			}
-		} elseif ( ( !$showingStable && $hasStable ) && ( $hasDrafts || !$inSync )  ) {
+		} elseif ( ( !$showingStable && $hasStable ) && ( $hasDrafts || !$inSync ) ) {
 			$this->hasSwitchToStable = true;
 			if ( !$inSync ) {
 				$this->hasImplicitDraft = true;
@@ -208,7 +210,9 @@ class VersionSwitch extends FlaggedPageElement {
 				$this->context->getTitle(),
 				$this->msg( 'bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label' ),
 				[
-					'title' => $this->msg( 'bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip' ),
+					'title' => $this->msg(
+						'bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip'
+					),
 				],
 				[
 					'oldid' => $flaggableWikiPage->getStable(),

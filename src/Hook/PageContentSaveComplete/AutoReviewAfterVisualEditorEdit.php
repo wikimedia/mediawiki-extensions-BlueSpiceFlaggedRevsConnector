@@ -48,7 +48,6 @@ class AutoReviewAfterVisualEditorEdit extends PageContentSaveComplete {
 	 */
 	protected function doOwnWorkingReview( User $user, Title $title,
 		Revision $revision, $comment = '' ) {
-
 		// Construct submit form...
 		$form = new PermissionLessReviewForm( $user );
 		$form->setPage( $title );
@@ -69,7 +68,7 @@ class AutoReviewAfterVisualEditorEdit extends PageContentSaveComplete {
 		// Get the file version used for File: pages
 		$file = $article->getFile();
 		if ( $file ) {
-			$fileVer = array( 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() );
+			$fileVer = [ 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() ];
 		} else {
 			$fileVer = null;
 		}

@@ -3,12 +3,9 @@
 namespace BlueSpice\FlaggedRevsConnector;
 
 use BlueSpice\SMWConnector\PropertyValueProvider;
-use FlaggedRevision;
 use FlaggedRevs;
-use SMW\DIWikiPage;
 use SMWDINumber;
 use SMWDataItem;
-use User;
 
 class DocumentVersionPropertyValueProvider extends PropertyValueProvider {
 
@@ -67,10 +64,11 @@ class DocumentVersionPropertyValueProvider extends PropertyValueProvider {
 		$res = $dbr->select(
 			'flaggedrevs',
 			'*',
-			array(
+			[
 				'fr_page_id' => $title->getArticleID(),
-				'fr_quality > 0' //May be 1 or 2 in our setups
-			),
+				// May be 1 or 2 in our setups
+				'fr_quality > 0'
+			],
 			__METHOD__
 		);
 
@@ -83,4 +81,3 @@ class DocumentVersionPropertyValueProvider extends PropertyValueProvider {
 		}
 	}
 }
-

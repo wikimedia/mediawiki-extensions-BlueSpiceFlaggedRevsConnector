@@ -12,10 +12,11 @@ class AddFlyout extends SkinTemplateOutputPageBeforeExec {
 
 		$title = $this->skin->getSkin()->getTitle();
 
-		$frc = $this->getServices()->getService( 'BSExtensionFactory' )->getExtension( 'BlueSpiceFlaggedRevsConnector' );
+		$frc = $this->getServices()->getService( 'BSExtensionFactory' )
+			->getExtension( 'BlueSpiceFlaggedRevsConnector' );
 		$flagInfo = $frc->collectFlagInfo( $title );
 
-		if ( !in_array( $title->getNamespace(), $wgFlaggedRevsNamespaces ) ){
+		if ( !in_array( $title->getNamespace(), $wgFlaggedRevsNamespaces ) ) {
 			return true;
 		}
 
@@ -28,7 +29,7 @@ class AddFlyout extends SkinTemplateOutputPageBeforeExec {
 			[
 				'flaggedrevs' => [
 					'position' => 60,
-					'callback' => function( $sktemplate ) {
+					'callback' => function ( $sktemplate ) {
 						return new Flyout( $sktemplate );
 					}
 				]

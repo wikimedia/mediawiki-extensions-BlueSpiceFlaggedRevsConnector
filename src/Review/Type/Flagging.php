@@ -88,13 +88,13 @@ class Flagging extends BsReviewProcess {
 			return;
 		}
 
-		if( $this->isFinished() !== 'status' ) {
+		if ( $this->isFinished() !== 'status' ) {
 			return;
 		}
 
 		if ( !$this->isAbortWhenDenied() ) {
 			foreach ( $this->steps as $st ) {
-				if ( (int) $st->status === 0 ) {
+				if ( (int)$st->status === 0 ) {
 					return true;
 				}
 			}
@@ -109,8 +109,8 @@ class Flagging extends BsReviewProcess {
 			return;
 		}
 		$bResult = true;
-		Hooks::run( 'checkPageIsReviewable', array( $title, &$bResult ) );
-		if( !$bResult ) {
+		Hooks::run( 'checkPageIsReviewable', [ $title, &$bResult ] );
+		if ( !$bResult ) {
 			return;
 		}
 
@@ -159,7 +159,7 @@ class Flagging extends BsReviewProcess {
 		// Get the file version used for File: pages
 		$file = $article->getFile();
 		if ( $file ) {
-			$fileVer = array( 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() );
+			$fileVer = [ 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() ];
 		} else {
 			$fileVer = null;
 		}

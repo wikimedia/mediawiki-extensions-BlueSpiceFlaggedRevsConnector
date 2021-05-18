@@ -26,10 +26,10 @@ abstract class FlaggedPageElement extends PageInfoElement {
 	/**
 	 *
 	 * @param IContextSource $context
-	 * @return boolean
+	 * @return bool
 	 */
 	public function shouldShow( $context ) {
-		if( !$this->utils->userCanAccessDrafts( $this->context->getUser() ) ) {
+		if ( !$this->utils->userCanAccessDrafts( $this->context->getUser() ) ) {
 			return false;
 		}
 
