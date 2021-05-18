@@ -2,8 +2,8 @@
 
 namespace BlueSpice\FlaggedRevsConnector\EntityConfig\Collection;
 
-use BlueSpice\ExtendedStatistics\Data\Entity\Collection\Schema;
 use BlueSpice\Data\FieldType;
+use BlueSpice\ExtendedStatistics\Data\Entity\Collection\Schema;
 use BlueSpice\FlaggedRevsConnector\Entity\Collection\CategorizedFlaggedPages as Entity;
 
 class CategorizedFlaggedPages extends FlaggedPages {

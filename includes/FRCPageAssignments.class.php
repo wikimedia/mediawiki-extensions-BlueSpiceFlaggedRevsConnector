@@ -4,15 +4,16 @@ use BlueSpice\FlaggedRevsConnector\Notifications\PageReview;
 
 use MediaWiki\MediaWikiServices;
 
+// phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCPageAssignments {
 	/**
 	 * Augment store data
 	 * @param BSApiMyPageAssignmentStore $oApiModule
-	 * @param array $aData
-	 * @return boolean
+	 * @param array &$aData
+	 * @return bool
 	 */
 	public function onBSApiExtJSStoreBaseBeforePostProcessData( $oApiModule, &$aData ) {
-		if( $oApiModule instanceof BSApiMyPageAssignmentStore ) {
+		if ( $oApiModule instanceof BSApiMyPageAssignmentStore ) {
 			$this->extendBSApiMyPageAssignmentStore( $aData );
 		}
 		return true;
@@ -20,59 +21,65 @@ class FRCPageAssignments {
 
 	/**
 	 * Append "last_stable_date" field to each dataset
-	 * @param array $aData
-	 * @return boolean
+	 * @param array &$aData
+	 * @return bool
 	 */
 	protected function extendBSApiMyPageAssignmentStore( &$aData ) {
-		$aPageIds = array();
-		foreach( $aData as $oDataSet ) {
+		$aPageIds = [];
+		foreach ( $aData as $oDataSet ) {
 			$oDataSet->last_stable_date = null;
 			$aPageIds[] = $oDataSet->page_id;
 		}
-		if( empty( $aPageIds ) ) {
+		if ( empty( $aPageIds ) ) {
 			return;
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'flaggedpages',
-			array( 'fp_page_id', 'fp_stable' ),
-			array(
+			[ 'fp_page_id', 'fp_stable' ],
+			[
 				'fp_page_id' => $aPageIds
-			),
+			],
 			__METHOD__
 		);
 
-		$aStableRevisions = array();
-		foreach( $res as $row ) {
+		$aStableRevisions = [];
+		foreach ( $res as $row ) {
 			$aStableRevisions[] = $row->fp_stable;
 		}
 
-		if( empty( $aStableRevisions ) ) {
+		if ( empty( $aStableRevisions ) ) {
 			return true;
 		}
 
 		$res = $dbr->select(
 			'flaggedrevs',
-			array( 'fr_page_id', 'fr_timestamp' ),
-			array(
+			[ 'fr_page_id', 'fr_timestamp' ],
+			[
 				'fr_rev_id' => $aStableRevisions,
-			),
+			],
 			__METHOD__
 		);
 
-		$aStablePages = array();
-		foreach( $res as $row ) {
+		$aStablePages = [];
+		foreach ( $res as $row ) {
 			$aStablePages[$row->fr_page_id] = $row->fr_timestamp;
 		}
 
-		foreach( $aData as $oDataSet ) {
-			if( isset( $aStablePages[$oDataSet->page_id] ) ) {
+		foreach ( $aData as $oDataSet ) {
+			if ( isset( $aStablePages[$oDataSet->page_id] ) ) {
 				$oDataSet->last_stable_date = $aStablePages[$oDataSet->page_id];
 			}
 		}
 	}
 
+	/**
+	 *
+	 * @param SpecialPageAssignments $oSender
+	 * @param array &$aDeps
+	 * @return bool
+	 */
 	public function onBSPageAssignmentsOverview( $oSender, &$aDeps ) {
 		$aDeps[] = 'bluespice.flaggedRevsConnector.pageassignmentintegration';
 		return true;
@@ -81,36 +88,37 @@ class FRCPageAssignments {
 	/**
 	 * Notify assignees about successfull review
 	 * @param ApiBase $module
-	 * @return boolean
+	 * @return bool
 	 */
 	public function onAPIAfterExecute( $module ) {
-		if( $module instanceof ApiReview === false ) {
+		if ( $module instanceof ApiReview === false ) {
 			return true;
 		}
 
 		$aResult = $module->getResult()->getResultData();
 
-		if( !isset( $aResult['review'] ) || !isset( $aResult['review']['result'] ) ) {
+		if ( !isset( $aResult['review'] ) || !isset( $aResult['review']['result'] ) ) {
 			return true;
 		}
 
-		//Only send in case of successfull action
-		if( strtolower( $aResult['review']['result'] ) !== 'success' ) {
+		// Only send in case of successfull action
+		if ( strtolower( $aResult['review']['result'] ) !== 'success' ) {
 			return true;
 		}
 
 		$oTitle = self::getTitleFromAPIParam( $module->getRequest() );
-		if( $oTitle === null ) {
+		if ( $oTitle === null ) {
 			return true;
 		}
 
 		$factory = MediaWikiServices::getInstance()->getService(
 			'BSPageAssignmentsAssignmentFactory'
 		);
-		if( !$factory ) {
+		if ( !$factory ) {
 			return true;
 		}
-		if( !$target = $factory->newFromTargetTitle( $oTitle ) ) {
+		$target = $factory->newFromTargetTitle( $oTitle );
+		if ( !$target ) {
 			return true;
 		}
 
@@ -119,7 +127,6 @@ class FRCPageAssignments {
 
 		$notification = new PageReview( $module->getUser(), $oTitle, $target );
 		$notifier->notify( $notification );
-
 
 		return true;
 	}
@@ -130,10 +137,10 @@ class FRCPageAssignments {
 	 * @param WebRequest $oWebRequest
 	 * @return Title|null
 	 */
-	protected static function getTitleFromAPIParam( $oWebRequest ){
+	protected static function getTitleFromAPIParam( $oWebRequest ) {
 		$iRevId = $oWebRequest->getVal( 'revid', -1 );
 		$oRevision = Revision::newFromId( $iRevId );
-		if( $oRevision === null ) {
+		if ( $oRevision === null ) {
 			return null;
 		}
 		return $oRevision->getTitle();

@@ -10,7 +10,6 @@ use FatalError;
 use FlaggableWikiPage;
 use FlaggedRevs;
 use FRInclusionCache;
-use Hooks;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -79,6 +78,7 @@ class Flagging extends BsReviewProcess {
 	 * @param array $data
 	 * @throws FatalError
 	 * @throws MWException
+	 * @return void
 	 */
 	private function autoFlag( $action, $context, $data ) {
 		if ( $action !== IReviewProcess::ACTION_VOTE ) {
@@ -88,13 +88,13 @@ class Flagging extends BsReviewProcess {
 			return;
 		}
 
-		if( $this->isFinished() !== 'status' ) {
+		if ( $this->isFinished() !== 'status' ) {
 			return;
 		}
 
 		if ( !$this->isAbortWhenDenied() ) {
 			foreach ( $this->steps as $st ) {
-				if ( (int) $st->status === 0 ) {
+				if ( (int)$st->status === 0 ) {
 					return true;
 				}
 			}
@@ -113,7 +113,7 @@ class Flagging extends BsReviewProcess {
 			$title,
 			&$bResult
 		] );
-		if( !$bResult ) {
+		if ( !$bResult ) {
 			return;
 		}
 
@@ -144,7 +144,6 @@ class Flagging extends BsReviewProcess {
 	 */
 	protected function doOwnWorkingReview( User $oUser, Title $oTitle,
 		RevisionRecord $revision, $sComment = '' ) {
-
 		// Construct submit form...
 		$form = new PermissionLessReviewForm( $oUser );
 		$form->setPage( $oTitle );
@@ -164,7 +163,7 @@ class Flagging extends BsReviewProcess {
 		// Get the file version used for File: pages
 		$file = $article->getFile();
 		if ( $file ) {
-			$fileVer = array( 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() );
+			$fileVer = [ 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() ];
 		} else {
 			$fileVer = null;
 		}

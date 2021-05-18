@@ -6,6 +6,10 @@ use BlueSpice\ConfigDefinition\ArraySetting;
 
 class DraftGroups extends ArraySetting {
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_QUALITY_ASSURANCE . '/BlueSpiceFlaggedRevsConnector',
@@ -14,10 +18,18 @@ class DraftGroups extends ArraySetting {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-draftgroups';
 	}
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	public function getOptions() {
 		global $wgGroupPermissions;
 		$excludeGroups = [
@@ -28,8 +40,8 @@ class DraftGroups extends ArraySetting {
 			'reviewer'
 		];
 		$options = [];
-		foreach( $wgGroupPermissions as $group => $permissions) {
-			if( in_array( $group, $excludeGroups ) )  {
+		foreach ( $wgGroupPermissions as $group => $permissions ) {
+			if ( in_array( $group, $excludeGroups ) ) {
 				continue;
 			}
 			$options[] = $group;

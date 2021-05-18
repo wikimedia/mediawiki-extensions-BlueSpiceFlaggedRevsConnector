@@ -4,7 +4,7 @@ namespace BlueSpice\FlaggedRevsConnector\Hook\MessageCacheGet;
 
 use BlueSpice\Hook\MessageCacheGet;
 
-class ApplyBusinessVocabulary extends MessageCacheGet{
+class ApplyBusinessVocabulary extends MessageCacheGet {
 
 	protected function skipProcessing() {
 		return !isset( $this->getKeyMap()[$this->lckey] );

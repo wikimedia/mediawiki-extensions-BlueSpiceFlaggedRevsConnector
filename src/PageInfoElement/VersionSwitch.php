@@ -2,23 +2,23 @@
 
 namespace BlueSpice\FlaggedRevsConnector\PageInfoElement;
 
-use FlaggedRevision;
-use Message;
-use FlaggableWikiPage;
-use IContextSource;
-use Config;
-use Html;
-use BlueSpice\IPageInfoElement;
 use BlueSpice\FlaggedRevsConnector\Utils;
+use BlueSpice\IPageInfoElement;
+use Config;
+use FlaggableWikiPage;
+use FlaggedRevision;
+use Html;
+use IContextSource;
 use MediaWiki\MediaWikiServices;
+use Message;
 
 class VersionSwitch extends FlaggedPageElement {
 
-	/** @var bool  */
+	/** @var bool */
 	public $hasSwitchToDraft = false;
-	/** @var bool  */
+	/** @var bool */
 	public $hasSwitchToStable = false;
-	/** @var bool  */
+	/** @var bool */
 	protected $hasImplicitDraft = false;
 
 	/**
@@ -31,7 +31,8 @@ class VersionSwitch extends FlaggedPageElement {
 	 *
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param Utils $utils
+	 * @param Utils|null $utils
+	 * @return FlaggedPageElement
 	 */
 	public static function factory( IContextSource $context, Config $config, Utils $utils = null ) {
 		if ( !$utils ) {
@@ -130,7 +131,7 @@ class VersionSwitch extends FlaggedPageElement {
 	/**
 	 *
 	 * @param IContextSource $context
-	 * @return boolean
+	 * @return bool
 	 */
 	public function shouldShow( $context ) {
 		if ( !parent::shouldShow( $context ) ) {
@@ -147,7 +148,7 @@ class VersionSwitch extends FlaggedPageElement {
 			if ( !$inSync ) {
 				$this->hasImplicitDraft = true;
 			}
-		} elseif ( ( !$showingStable && $hasStable ) && ( $hasDrafts || !$inSync )  ) {
+		} elseif ( ( !$showingStable && $hasStable ) && ( $hasDrafts || !$inSync ) ) {
 			$this->hasSwitchToStable = true;
 			if ( !$inSync ) {
 				$this->hasImplicitDraft = true;

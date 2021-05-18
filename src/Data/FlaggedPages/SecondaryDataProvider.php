@@ -6,7 +6,8 @@ use BlueSpice\FlaggedRevsConnector\Data\Record;
 use MediaWiki\MediaWikiServices;
 
 class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
-	public function __construct() {}
+	public function __construct() {
+	}
 
 	/**
 	 *
@@ -14,7 +15,7 @@ class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
 	 * @return \BlueSpice\Data\Record[]
 	 */
 	public function extend( $dataSets ) {
-		foreach( $dataSets as $record ) {
+		foreach ( $dataSets as $record ) {
 
 			$title = \Title::newFromID( $record->get( Record::PAGE_ID ) );
 

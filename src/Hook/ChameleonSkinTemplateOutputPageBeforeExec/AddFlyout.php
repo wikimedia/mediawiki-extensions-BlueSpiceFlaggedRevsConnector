@@ -2,9 +2,9 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 
+use BlueSpice\FlaggedRevsConnector\Panel\Flyout;
 use BlueSpice\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 use BlueSpice\SkinData;
-use BlueSpice\FlaggedRevsConnector\Panel\Flyout;
 
 class AddFlyout extends ChameleonSkinTemplateOutputPageBeforeExec {
 	protected function doProcess() {
@@ -12,10 +12,11 @@ class AddFlyout extends ChameleonSkinTemplateOutputPageBeforeExec {
 
 		$title = $this->skin->getSkin()->getTitle();
 
-		$frc = $this->getServices()->getService( 'BSExtensionFactory' )->getExtension( 'BlueSpiceFlaggedRevsConnector' );
+		$frc = $this->getServices()->getService( 'BSExtensionFactory' )
+			->getExtension( 'BlueSpiceFlaggedRevsConnector' );
 		$flagInfo = $frc->collectFlagInfo( $title );
 
-		if ( !in_array( $title->getNamespace(), $wgFlaggedRevsNamespaces ) ){
+		if ( !in_array( $title->getNamespace(), $wgFlaggedRevsNamespaces ) ) {
 			return true;
 		}
 
@@ -28,7 +29,7 @@ class AddFlyout extends ChameleonSkinTemplateOutputPageBeforeExec {
 			[
 				'flaggedrevs' => [
 					'position' => 60,
-					'callback' => function( $sktemplate ) {
+					'callback' => function ( $sktemplate ) {
 						return new Flyout( $sktemplate );
 					}
 				]

@@ -2,17 +2,17 @@
 
 namespace BlueSpice\FlaggedRevsConnector\AlertProvider;
 
+use BlueSpice\AlertProviderBase;
 use BlueSpice\FlaggedRevsConnector\Utils;
+use BlueSpice\IAlertProvider;
 use Config;
+use FlaggableWikiPage;
 use FlaggedRevision;
+use Language;
+use MediaWiki\MediaWikiServices;
 use Message;
 use Skin;
-use Language;
 use Wikimedia\Rdbms\LoadBalancer;
-use FlaggableWikiPage;
-use BlueSpice\AlertProviderBase;
-use BlueSpice\IAlertProvider;
-use MediaWiki\MediaWikiServices;
 
 class RevisionState extends AlertProviderBase {
 
@@ -129,7 +129,7 @@ class RevisionState extends AlertProviderBase {
 				->getStableRev() instanceof FlaggedRevision;
 		$showingStable = $this->utils->isShowingStable( $this->skin->getContext() );
 		$inSync = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )->stableVersionIsSynced();
-		$pendingCount = (int) $this->utils->getFlaggableWikiPage( $this->skin->getContext() )->getPendingRevCount();
+		$pendingCount = (int)$this->utils->getFlaggableWikiPage( $this->skin->getContext() )->getPendingRevCount();
 		$userCanSeeDrafts = $this->utils->userCanAccessDrafts( $this->getUser() );
 
 		if ( !$hasStable ) {
@@ -180,12 +180,12 @@ class RevisionState extends AlertProviderBase {
 		if ( !$this->flaggableWikiPage ) {
 			return true;
 		}
-		if( !$this->skin->getTitle()->exists() ) {
+		if ( !$this->skin->getTitle()->exists() ) {
 			return true;
 		}
 
 		$currentAction = $this->skin->getRequest()->getVal( 'action', 'view' );
-		if( $currentAction === 'history') {
+		if ( $currentAction === 'history' ) {
 			return true;
 		}
 

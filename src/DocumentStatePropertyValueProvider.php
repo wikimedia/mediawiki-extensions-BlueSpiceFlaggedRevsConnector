@@ -2,8 +2,8 @@
 
 namespace BlueSpice\FlaggedRevsConnector;
 
-use BlueSpice\SMWConnector\PropertyValueProvider;
 use BlueSpice\ExtensionFactory;
+use BlueSpice\SMWConnector\PropertyValueProvider;
 use FlaggedRevs;
 use MediaWiki\MediaWikiServices;
 use Message;
@@ -130,14 +130,14 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 		if ( $this->latestRevisionIsApproved() ) {
 			$value = $this->makeValue( 'approved' );
 		}
-		else if ( $this->someRevisionIsApproved() ) {
+ elseif ( $this->someRevisionIsApproved() ) {
 			$value = $this->makeValue( 'in-revision' );
 
-			//This is ugly, but we need to do this somewhere... And better here than in Review extension
+			// This is ugly, but we need to do this somewhere... And better here than in Review extension
 			if ( $this->reviewWorkflowInProgess() ) {
 				$value = $this->makeValue( 'approval-requested' );
 			}
-		}
+ }
 
 		$semanticData->addPropertyObjectValue(
 			$property, new SMWDIBlob( $value )
@@ -154,7 +154,7 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 			__METHOD__
 		);
 
-		$this->stableRevId = $value === false ? -1 : (int) $value;
+		$this->stableRevId = $value === false ? -1 : (int)$value;
 	}
 
 	private function latestRevisionIsApproved() {
@@ -172,7 +172,7 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 			__METHOD__
 		);
 
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$revIds[] = $row->rev_id;
 		}
 
@@ -181,15 +181,15 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 
 	private function reviewWorkflowInProgess() {
 		$reviewExt = $this->extensionFactory->getExtension( 'BlueSpiceReview' );
-		if( $reviewExt === null ) {
+		if ( $reviewExt === null ) {
 			return false;
 		}
 
 		$reviewProcess = \BsReviewProcess::newFromPid( $this->pageId );
-		if( $reviewProcess instanceof \BsReviewProcess === false ) {
+		if ( $reviewProcess instanceof \BsReviewProcess === false ) {
 			return false;
 		}
-		if( $reviewProcess->getStatus( time() ) === 'approved' ) {
+		if ( $reviewProcess->getStatus( time() ) === 'approved' ) {
 			return true;
 		}
 		return false;
@@ -213,4 +213,3 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 		return $value;
 	}
 }
-

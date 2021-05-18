@@ -2,11 +2,16 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Notifications;
 
-use BlueSpice\FlaggedRevsConnector\Notifications\PresentationModel;
+use BlueSpice\NotificationManager;
 use ExtensionRegistry;
 
 class Registrator {
-	public static function registerNotifications( \BlueSpice\NotificationManager $notificationsManager ) {
+	/**
+	 *
+	 * @param NotificationManager $notificationsManager
+	 * @return void
+	 */
+	public static function registerNotifications( NotificationManager $notificationsManager ) {
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BlueSpicePageAssignments' ) ) {
 			return;
 		}

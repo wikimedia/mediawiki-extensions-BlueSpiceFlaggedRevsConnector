@@ -23,15 +23,22 @@ class SendReadConfirmationOnApprove extends Hook {
 	/**
 	 * @param RevisionReviewForm $revisionReviewForm
 	 * @param mixed $status - true on success, error string on failure
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( RevisionReviewForm $revisionReviewForm, $status ) {
 		$hookHandler = new self( $revisionReviewForm, $status );
 		return $hookHandler->process();
 	}
 
+	/**
+	 *
+	 * @param RevisionReviewForm $revisionReviewForm
+	 * @param mixed $status
+	 * @param \IContextSource|null $context
+	 * @param Config|null $config
+	 */
 	public function __construct( RevisionReviewForm $revisionReviewForm, $status, $context = null, $config = null ) {
-		parent::__construct($context, $config);
+		parent::__construct( $context, $config );
 		$this->revisionReviewForm = $revisionReviewForm;
 		$this->status = $status;
 	}
