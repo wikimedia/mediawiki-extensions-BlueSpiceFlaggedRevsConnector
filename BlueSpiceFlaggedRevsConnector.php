@@ -69,7 +69,7 @@ class FlaggedRevsConnector extends Extension {
 			$GLOBALS['bsgGroupRoles']['reviewer']['reviewer'] = true;
 		}
 
-		$GLOBALS['wgExtensionFunctions'][] = function () {
+		$GLOBALS['wgExtensionFunctions'][] = static function () {
 			global
 			$wgSimpleFlaggedRevsUI,
 			$wgFlaggedRevsTags, $wgFlaggedRevValues,

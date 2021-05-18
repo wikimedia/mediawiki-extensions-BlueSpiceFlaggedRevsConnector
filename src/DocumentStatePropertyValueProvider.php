@@ -89,19 +89,19 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 
 	/**
 	 *
-	 * @var integer
+	 * @var int
 	 */
 	private $pageId = -1;
 
 	/**
 	 *
-	 * @var integer
+	 * @var int
 	 */
 	private $latestRevisionId = -1;
 
 	/**
 	 *
-	 * @var integer
+	 * @var int
 	 */
 	private $stableRevId = -1;
 

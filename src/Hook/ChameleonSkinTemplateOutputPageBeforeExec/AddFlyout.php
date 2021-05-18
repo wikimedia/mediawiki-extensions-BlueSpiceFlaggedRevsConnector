@@ -29,7 +29,7 @@ class AddFlyout extends ChameleonSkinTemplateOutputPageBeforeExec {
 			[
 				'flaggedrevs' => [
 					'position' => 60,
-					'callback' => function ( $sktemplate ) {
+					'callback' => static function ( $sktemplate ) {
 						return new Flyout( $sktemplate );
 					}
 				]
