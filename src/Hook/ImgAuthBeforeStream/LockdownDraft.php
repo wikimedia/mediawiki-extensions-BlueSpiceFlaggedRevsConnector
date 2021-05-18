@@ -42,7 +42,7 @@ class LockdownDraft extends ImgAuthBeforeStream {
 		} else {
 			$file = $repo->newFile( $this->name );
 		}
-		if  ( !$file ) {
+		if ( !$file ) {
 			return true;
 		}
 		$file->load();

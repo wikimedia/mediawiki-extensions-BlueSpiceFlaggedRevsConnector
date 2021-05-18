@@ -38,12 +38,13 @@ use MediaWiki\MediaWikiServices;
  * @package BlueSpice_pro
  * @subpackage FlaggedRevsConnector
  */
+// phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FlaggedRevsConnector extends Extension {
-	const STATE_NOT_ENABLED = 'notenabled';
-	const STATE_UNMARKED = 'unmarked';
-	const STATE_DRAFT = 'draft';
-	const STATE_STABLE = 'stable';
-	const STATE_IMPLICIT_DRAFT = 'implicit-draft';
+	public const STATE_NOT_ENABLED = 'notenabled';
+	public const STATE_UNMARKED = 'unmarked';
+	public const STATE_DRAFT = 'draft';
+	public const STATE_STABLE = 'stable';
+	public const STATE_IMPLICIT_DRAFT = 'implicit-draft';
 
 	/**
 	 * extension.json callback
@@ -51,11 +52,16 @@ class FlaggedRevsConnector extends Extension {
 	public static function onRegistration() {
 		global $wgHooks;
 
-		if( isset($wgHooks['ArticleUpdateBeforeRedirect']) && is_array($wgHooks['ArticleUpdateBeforeRedirect']) ) {
-			$i = array_search('FlaggedRevsHooksUI::injectPostEditURLParams', $wgHooks['ArticleUpdateBeforeRedirect']);
-			unset( $wgHooks['ArticleUpdateBeforeRedirect'][$i] ); //removes function for Preferences tab rendering from the $wgHooks array.
+		if ( isset( $wgHooks['ArticleUpdateBeforeRedirect'] ) && is_array( $wgHooks['ArticleUpdateBeforeRedirect'] ) ) {
+			$i = array_search(
+				'FlaggedRevsHooksUI::injectPostEditURLParams',
+				$wgHooks['ArticleUpdateBeforeRedirect']
+			);
+			// removes function for Preferences tab rendering from the $wgHooks array.
+			unset( $wgHooks['ArticleUpdateBeforeRedirect'][$i] );
 			unset( $i );
-			array_values( $wgHooks['ArticleUpdateBeforeRedirect'] ); //restores index consistency
+			// restores index consistency
+			array_values( $wgHooks['ArticleUpdateBeforeRedirect'] );
 		}
 
 		// If not already set, assign reviewer role to reviewer group
@@ -63,7 +69,7 @@ class FlaggedRevsConnector extends Extension {
 			$GLOBALS['bsgGroupRoles']['reviewer']['reviewer'] = true;
 		}
 
-		$GLOBALS['wgExtensionFunctions'][] = function() {
+		$GLOBALS['wgExtensionFunctions'][] = function () {
 			global
 			$wgSimpleFlaggedRevsUI,
 			$wgFlaggedRevsTags, $wgFlaggedRevValues,
@@ -71,63 +77,101 @@ class FlaggedRevsConnector extends Extension {
 
 			$wgSimpleFlaggedRevsUI = false;
 			$wgFlaggedRevsTags = [
-				'accuracy' => [ 'levels' => 1, 'quality' => 1, 'pristine' => 2 ] //We only have one tag with zero levels
+				// We only have one tag with zero levels
+				'accuracy' => [ 'levels' => 1, 'quality' => 1, 'pristine' => 2 ]
 			];
 			$wgFlaggedRevValues = 1;
-			$wgFlaggedRevsComments = true;  //As we have a own form now we save comments now without having the ugly textbox in the standard form
-			$wgFlaggedRevsLowProfile = false; //Displays box even on stables
-			//PW: TODO: Connect to templates/files-version-functionallity
+			// As we have a own form now we save comments now without having the ugly textbox in the standard form
+			$wgFlaggedRevsComments = true;
+			// Displays box even on stables
+			$wgFlaggedRevsLowProfile = false;
+			// PW: TODO: Connect to templates/files-version-functionallity
 			//$wgFlaggedRevsHandleIncludes = FR_INCLUDES_CURRENT; //Always use the current version of templates/files
 			//Add "Draft" to Top-Menu
 
-
 			global $wgHooks;
 
-			//UniversalExport & Bookshelf
+			// UniversalExport & Bookshelf
 			$oFRCBookshelf = new FRCBookshelf();
 			$oFRCUEModulePDF = new FRCUEModulePDF();
-			$wgHooks['BSUEModulePDFBeforeAddingStyleBlocks'][] = [ $oFRCUEModulePDF, 'onBSUEModulePDFBeforeAddingStyleBlocks' ];
+			$wgHooks['BSUEModulePDFBeforeAddingStyleBlocks'][] = [
+				$oFRCUEModulePDF,
+				'onBSUEModulePDFBeforeAddingStyleBlocks'
+			];
 			$wgHooks['BSUEModulePDFgetPage'][] = [ $oFRCUEModulePDF, 'onBSUEModulePDFgetPage' ];
 			$wgHooks['BSUEModulePDFbeforeGetPage'][] = [ $oFRCUEModulePDF, 'onBSUEModulePDFbeforeGetPage' ];
-			$wgHooks['BSBookshelfExportBeforeArticles'][] = [ $oFRCBookshelf, 'onBSBookshelfExportBeforeArticles' ];
+			$wgHooks['BSBookshelfExportBeforeArticles'][] = [
+				$oFRCBookshelf,
+				'onBSBookshelfExportBeforeArticles'
+			];
 
 			// Hooks for SmartList (former InfoBox) (mode="flaggedrevisions")
 			$oFRCInfobox = new FRCInfobox();
 			$wgHooks['BSSmartListCustomMode'][] = [ $oFRCInfobox, 'onBSInfoBoxCustomMode' ];
-			$wgHooks['BSSmartListBeforeEntryViewAddData'][] = [ $oFRCInfobox, 'onBSInfoBoxBeforeEntryViewAddData' ];
+			$wgHooks['BSSmartListBeforeEntryViewAddData'][] = [
+				$oFRCInfobox,
+				'onBSInfoBoxBeforeEntryViewAddData'
+			];
 
 			// Add Settings to the NamespaceManager
 			$oFRCNamespaceManager = new FRCNamespaceManager();
-			$wgHooks['NamespaceManager::getMetaFields'][] = [ $oFRCNamespaceManager, 'onGetMetaFields' ];
-			$wgHooks['BSApiNamespaceStoreMakeData'][] = [ $oFRCNamespaceManager, 'onGetNamespaceData' ];
-			$wgHooks['NamespaceManager::editNamespace'][] = [$oFRCNamespaceManager, 'onEditNamespace'];
-			$wgHooks['NamespaceManager::writeNamespaceConfiguration'][] = [ $oFRCNamespaceManager, 'onWriteNamespaceConfiguration' ];
+			$wgHooks['NamespaceManager::getMetaFields'][] = [
+				$oFRCNamespaceManager,
+				'onGetMetaFields'
+			];
+			$wgHooks['BSApiNamespaceStoreMakeData'][] = [
+				$oFRCNamespaceManager,
+				'onGetNamespaceData'
+			];
+			$wgHooks['NamespaceManager::editNamespace'][] = [
+				$oFRCNamespaceManager,
+				'onEditNamespace'
+			];
+			$wgHooks['NamespaceManager::writeNamespaceConfiguration'][] = [
+				$oFRCNamespaceManager,
+				'onWriteNamespaceConfiguration'
+			];
 
-			//SuperList
+			// SuperList
 			$oFRCSuperList = new FRCSuperList();
-			$wgHooks['WikiExplorer::getFieldDefinitions'][] = [ $oFRCSuperList, 'onSuperListGetFieldDefinitions' ];
-			$wgHooks['WikiExplorer::getColumnDefinitions'][] = [ $oFRCSuperList, 'onSuperListGetColumnDefinitions' ];
-			$wgHooks['WikiExplorer::queryPagesWithFilter'][] = [ $oFRCSuperList, 'onSuperListQueryPagesWithFilter' ];
+			$wgHooks['WikiExplorer::getFieldDefinitions'][] = [
+				$oFRCSuperList,
+				'onSuperListGetFieldDefinitions'
+			];
+			$wgHooks['WikiExplorer::getColumnDefinitions'][] = [
+				$oFRCSuperList,
+				'onSuperListGetColumnDefinitions'
+			];
+			$wgHooks['WikiExplorer::queryPagesWithFilter'][] = [
+				$oFRCSuperList,
+				'onSuperListQueryPagesWithFilter'
+			];
 			$wgHooks['WikiExplorer::buildDataSets'][] = [ $oFRCSuperList, 'onSuperListBuildDataSets' ];
 
-			//PageAssignments
+			// PageAssignments
 			$oFRCPageAssignments = new FRCPageAssignments();
-			$GLOBALS['wgHooks']['BSApiExtJSStoreBaseBeforePostProcessData'][] = [ $oFRCPageAssignments, 'onBSApiExtJSStoreBaseBeforePostProcessData' ];
-			$GLOBALS['wgHooks']['BSPageAssignmentsOverview'][] = [ $oFRCPageAssignments, 'onBSPageAssignmentsOverview' ];
+			$GLOBALS['wgHooks']['BSApiExtJSStoreBaseBeforePostProcessData'][] = [
+				$oFRCPageAssignments,
+				'onBSApiExtJSStoreBaseBeforePostProcessData'
+			];
+			$GLOBALS['wgHooks']['BSPageAssignmentsOverview'][] = [
+				$oFRCPageAssignments,
+				'onBSPageAssignmentsOverview'
+			];
 			$GLOBALS['wgHooks']['APIAfterExecute'][] = [ $oFRCPageAssignments, 'onAPIAfterExecute' ];
 
-			//SemanticMediaWiki
+			// SemanticMediaWiki
 			$oFRCSemanticMediaWiki = new FRCSemanticMediaWiki();
 			$GLOBALS['wgHooks']['APIAfterExecute'][] = [ $oFRCSemanticMediaWiki, 'onAPIAfterExecute' ];
 		};
 	}
 
-	public static function setupFlaggedRevsConnector(){
+	public static function setupFlaggedRevsConnector() {
 		global $wgHooks;
 		$wgHooks['SkinTemplateNavigation::Universal'][] = "FlaggedRevsConnector::onSkinTemplateNavigationUniversal";
 	}
 
-	protected $mFlagInfo = array( );
+	protected $mFlagInfo = [];
 
 	/**
 	 * Returns info about the flag state of the article
@@ -141,10 +185,10 @@ class FlaggedRevsConnector extends Extension {
 			return $this->mFlagInfo[ $oCurrentTitle->getArticleID() ];
 		}
 
-		$aFlagInfo = array(
+		$aFlagInfo = [
 			'state' => 'notreviewable',
 			'user-can-review' => false
-		);
+		];
 
 		$bResult = false;
 		if ( !in_array( $oCurrentTitle->getNamespace(), $wgFlaggedRevsNamespaces )
@@ -194,15 +238,17 @@ class FlaggedRevsConnector extends Extension {
 			$aFlagInfo[ 'state' ] = 'stable';
 			$aFlagInfo[ 'user-can-review' ] = false;
 
-			//case include has a newer version than the version which was reviewed
+			// case include has a newer version than the version which was reviewed
 			global $wgRequest, $wgFlaggedRevsHandleIncludes;
-			if ( $wgFlaggedRevsHandleIncludes != FR_INCLUDES_CURRENT )
-				if ( $wgRequest->getVal( 'stable', 1 ) == 0 || $wgRequest->getVal( 'oldid' ) && $wgRequest->getVal( 'diff', 'cur' ) ) {
+			if ( $wgFlaggedRevsHandleIncludes != FR_INCLUDES_CURRENT ) {
+				if ( $wgRequest->getVal( 'stable', 1 ) == 0 || $wgRequest->getVal( 'oldid' )
+					&& $wgRequest->getVal( 'diff', 'cur' ) ) {
 					$aFlagInfo[ 'state' ] = 'draft';
 					if ( $userCan ) {
 						$aFlagInfo[ 'user-can-review' ] = true;
 					}
 				}
+			}
 
 			MediaWikiServices::getInstance()->getHookContainer()->run(
 				'BSFlaggedRevsConnectorCollectFlagInfo',
@@ -228,7 +274,13 @@ class FlaggedRevsConnector extends Extension {
 		return $aFlagInfo;
 	}
 
-	function onReorderActionTabs( &$aContentActions, &$aActionsNotInMoreMenu ) {
+	/**
+	 *
+	 * @param array &$aContentActions
+	 * @param array &$aActionsNotInMoreMenu
+	 * @return bool
+	 */
+	public function onReorderActionTabs( &$aContentActions, &$aActionsNotInMoreMenu ) {
 		if ( $aContentActions[ 'current' ] ) {
 			$aContentActions[ 'current' ][ 'text' ] = wfMessage( 'bs-flaggedrevsconnector-state-draft' )->plain();
 			$aActionsNotInMoreMenu[ ] = 'current';
@@ -236,11 +288,17 @@ class FlaggedRevsConnector extends Extension {
 		return true;
 	}
 
+	/**
+	 *
+	 * @param Skin $skin
+	 * @param array &$links
+	 * @return bool
+	 */
 	public static function onSkinTemplateNavigationUniversal( Skin $skin, array &$links ) {
-		if (isset($links['views']['current'])){
+		if ( isset( $links['views']['current'] ) ) {
 			$links['namespaces']['current'] = $links['views']['current'];
-			$links['namespaces']['current']['text'] = wfMessage("bs-flaggedrevsconnector-state-draft")->plain();
-			unset($links['views']['current']);
+			$links['namespaces']['current']['text'] = wfMessage( "bs-flaggedrevsconnector-state-draft" )->plain();
+			unset( $links['views']['current'] );
 		}
 		return true;
 	}

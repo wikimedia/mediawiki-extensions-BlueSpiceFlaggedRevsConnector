@@ -16,11 +16,11 @@ class PageReview extends EchoEventPresentationModel {
 		$bundleParams = [];
 
 		$headerKey = 'bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary';
-		$headerParams = ['agent', 'title', 'title'];
+		$headerParams = [ 'agent', 'title', 'title' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-flaggedrevsconnector-notification-pageassignments-pagereview-subject';
-			$headerParams = ['agent', 'title', 'title'];
+			$headerParams = [ 'agent', 'title', 'title' ];
 		}
 
 		return [
@@ -39,11 +39,11 @@ class PageReview extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-flaggedrevsconnector-notification-pageassignments-pagereview-body';
-		$bodyParams = ['agent', 'title', 'title'];
+		$bodyParams = [ 'agent', 'title', 'title' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-flaggedrevsconnector-notification-pageassignments-pagereview-body';
-			$bodyParams = ['agent', 'title', 'title'];
+			$bodyParams = [ 'agent', 'title', 'title' ];
 		}
 
 		return [
@@ -52,26 +52,34 @@ class PageReview extends EchoEventPresentationModel {
 		];
 	}
 
+	/**
+	 *
+	 * @return \Message
+	 */
 	public function getBodyMessage() {
 		$content = $this->getBodyMessageContent();
 		$msg = $this->msg( $content['key'] );
-		if( empty( $content['params'] ) ) {
+		if ( empty( $content['params'] ) ) {
 			return $msg;
 		}
 
-		foreach( $content['params'] as $param ) {
+		foreach ( $content['params'] as $param ) {
 			$this->paramParser->parseParam( $msg, $param );
 		}
 
 		return $msg;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getSecondaryLinks() {
 		if ( $this->isBundled() ) {
 			// For the bundle, we don't need secondary actions
 			return [];
 		}
 
-		return [$this->getAgentLink()];
+		return [ $this->getAgentLink() ];
 	}
 }

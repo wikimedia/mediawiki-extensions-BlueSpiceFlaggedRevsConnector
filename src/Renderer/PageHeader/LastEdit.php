@@ -2,21 +2,21 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Renderer\PageHeader;
 
+use BlueSpice\Calumma\Renderer\PageHeader\LastEdit as CalummaLastEdit;
+use BlueSpice\FlaggedRevsConnector\Utils;
+use BlueSpice\Renderer;
+use BlueSpice\Renderer\Params;
+use BlueSpice\UtilityFactory;
 use Config;
-use WikiPage;
-use IContextSource;
-use RequestContext;
-use QuickTemplate;
 use FlaggableWikiPage;
+use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\RevisionStore;
-use BlueSpice\UtilityFactory;
-use BlueSpice\Renderer;
-use BlueSpice\Renderer\Params;
-use BlueSpice\FlaggedRevsConnector\Utils;
-use BlueSpice\Calumma\Renderer\PageHeader\LastEdit as CalummaLastEdit;
+use QuickTemplate;
+use RequestContext;
+use WikiPage;
 
 class LastEdit extends CalummaLastEdit {
 
@@ -33,6 +33,7 @@ class LastEdit extends CalummaLastEdit {
 	 * @param LinkRenderer|null $linkRenderer
 	 * @param IContextSource|null $context
 	 * @param string $name
+	 * @param QuickTemplate|null $skinTemplate
 	 * @param UtilityFactory|null $util
 	 * @param RevisionStore|null $revisionStore
 	 * @param Utils|null $frcUtils
@@ -63,9 +64,10 @@ class LastEdit extends CalummaLastEdit {
 	 * @param Params $params
 	 * @param IContextSource|null $context
 	 * @param LinkRenderer|null $linkRenderer
+	 * @param QuickTemplate|null $skinTemplate
 	 * @param UtilityFactory|null $util
-	 * @param Utils|null $frcUtils
 	 * @param RevisionStore|null $revisionStore
+	 * @param Utils|null $frcUtils
 	 * @return Renderer
 	 */
 	public static function factory( $name, MediaWikiServices $services, Config $config,
@@ -124,9 +126,9 @@ class LastEdit extends CalummaLastEdit {
 		$title = $wikiPage->getTitle();
 		$currentRevision = null;
 
-		if( $this->getOldId() ) {
+		if ( $this->getOldId() ) {
 			$currentRevision = $this->revisionStore->getRevisionById( $this->getOldId() );
-		} else if( $this->frcUtils->isFlaggableNamespace( $title ) && $this->isStable() ) {
+		} elseif ( $this->frcUtils->isFlaggableNamespace( $title ) && $this->isStable() ) {
 			$flaggableWikiPage = FlaggableWikiPage::getTitleInstance( $title );
 			$currentRevision = $this->revisionStore->getRevisionById(
 				$flaggableWikiPage->getStable()
@@ -144,7 +146,7 @@ class LastEdit extends CalummaLastEdit {
 	private function isStable() {
 		$stable = $this->getContext()->getRequest()->getVal( 'stable' );
 
-		if( $stable === NULL ) {
+		if ( $stable === null ) {
 			return true;
 		}
 
@@ -158,4 +160,3 @@ class LastEdit extends CalummaLastEdit {
 		return $this->getContext()->getRequest()->getIntOrNull( 'oldid' );
 	}
 }
-

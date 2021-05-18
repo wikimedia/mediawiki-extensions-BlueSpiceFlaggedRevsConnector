@@ -10,12 +10,12 @@
 if ( getenv( 'MW_INSTALL_PATH' ) ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$IP = dirname(__FILE__).'/../../..';
+	$IP = __DIR__ . '/../../..';
 }
 
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
-class BatchReview extends Maintenance {
+class BSBatchReview extends Maintenance {
 
 	/**
 	 *
@@ -48,6 +48,11 @@ class BatchReview extends Maintenance {
 		$this->autoreview_current( $user );
 	}
 
+	/**
+	 *
+	 * @param User $user
+	 * @return void
+	 */
 	protected function autoreview_current( User $user ) {
 		$this->output( "Auto-reviewing...\n" );
 		if ( !$user->getID() ) {
@@ -69,10 +74,10 @@ class BatchReview extends Maintenance {
 
 		$flag = $this->getOption( 'flag', 'quality' );
 		$tier = FR_CHECKED;
-		if( $flag === 'quality' ) {
+		if ( $flag === 'quality' ) {
 			$tier = FR_QUALITY;
 		}
-		if( $flag === 'pristine' ) {
+		if ( $flag === 'pristine' ) {
 			$tier = FR_PRISTINE;
 		}
 		$flags = FlaggedRevs::quickTags( $tier );
@@ -89,7 +94,7 @@ class BatchReview extends Maintenance {
 			$titles[$title->getPrefixedDBkey()] = $title;
 		}
 		ksort( $titles );
-		foreach( $titles as $title ) {
+		foreach ( $titles as $title ) {
 			$this->output( "\nReviewing page {$title->getPrefixedDBkey()}" );
 			$this->flagStable( $title, $flags, $user );
 		}
@@ -97,7 +102,7 @@ class BatchReview extends Maintenance {
 		$count = count( $ids );
 		$this->output( "\nSuccessfully review {$this->processed} out of $count!\n" );
 
-		if( !empty( $this->errors ) ) {
+		if ( !empty( $this->errors ) ) {
 			$this->output( "\nERRORS:\n" );
 			foreach ( $this->errors as $error ) {
 				$this->output( "* $error\n" );
@@ -105,43 +110,51 @@ class BatchReview extends Maintenance {
 		}
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	private function getPageIds() {
 		$path = $this->getOption( 'pageids' );
-		if( $path === null ) {
+		if ( $path === null ) {
 			$path = $this->getOption( 'pages' );
 		}
-		if( $path !== null ) {
+		if ( $path !== null ) {
 			return $this->getPageIdsFromFlatFile( $path );
 		}
 
 		$namespace = $this->getOption( 'namespace' );
-		if( $namespace !== null ) {
+		if ( $namespace !== null ) {
 			return $this->getPageIdsNamespace( (int)$namespace );
 		}
 
 		return [];
 	}
 
+	/**
+	 *
+	 * @param string $path
+	 * @return int[]
+	 */
 	private function getPageIdsFromFlatFile( $path ) {
 		$fileContent = trim( file_get_contents( $path ) );
 		$lines = explode( "\n", $fileContent );
 		$ids = [];
-		foreach( $lines as $linenumber => $line ) {
+		foreach ( $lines as $linenumber => $line ) {
 			$trimmedLine = trim( $line );
-			if( is_int( $trimmedLine ) ) {
+			if ( is_int( $trimmedLine ) ) {
 				$title = \Title::newFromID( $trimmedLine );
-			}
-			else {
+			} else {
 				$title = \Title::newFromText( $trimmedLine );
 			}
 
-			if( $title instanceof \Title === false ) {
+			if ( $title instanceof \Title === false ) {
 				$this->errors[] = "LINE $linenumber: Could not create valid title from"
 					. " '$trimmedLine'!";
 				continue;
 			}
 
-			if( $title->exists() === false ) {
+			if ( $title->exists() === false ) {
 				$this->errors[] = "LINE $linenumber: Title '{$title->getPrefixedDBkey()}' "
 					. " does not exist!";
 				continue;
@@ -151,11 +164,16 @@ class BatchReview extends Maintenance {
 		return $ids;
 	}
 
+	/**
+	 *
+	 * @param int $nsId
+	 * @return int[]
+	 */
 	private function getPageIdsNamespace( $nsId ) {
 		$dbr = $this->getDB( DB_REPLICA );
 		$res = $dbr->select( 'page', 'page_id', [ 'page_namespace' => $nsId ], __METHOD__ );
 		$ids = [];
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$ids[] = $row->page_id;
 		}
 		return $ids;
@@ -194,7 +212,7 @@ class BatchReview extends Maintenance {
 		// Get the file version used for File: pages
 		$file = $article->getFile();
 		if ( $file ) {
-			$fileVer = array( 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() );
+			$fileVer = [ 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() ];
 		} else {
 			$fileVer = null;
 		}
@@ -208,17 +226,18 @@ class BatchReview extends Maintenance {
 		$form->setTemplateParams( $templateParams );
 		$form->setFileParams( $imageParams );
 		$form->setFileVersion( $fileParam );
-		$form->bypassValidationKey(); // always OK; uses current templates/files
+		// always OK; uses current templates/files
+		$form->bypassValidationKey();
 
-		$form->ready(); // all params set
+		// all params set
+		$form->ready();
 
 		# Try to do the actual review
 		$status = $form->submit();
-		if( $status === true ) {
+		if ( $status === true ) {
 			$this->output( " --> OK" );
 			$this->processed++;
-		}
-		else {
+		} else {
 			$this->output( " --> FAILED: $status" );
 			$this->errors[] = "Failed to review {$title->getPrefixedDBkey()}: $status";
 		}
@@ -226,5 +245,5 @@ class BatchReview extends Maintenance {
 
 }
 
-$maintClass = "BatchReview";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+$maintClass = "BSBatchReview";
+require_once RUN_MAINTENANCE_IF_MAIN;
