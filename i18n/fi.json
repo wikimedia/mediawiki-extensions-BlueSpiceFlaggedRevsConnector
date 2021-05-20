@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joquliina"
+		]
+	},
+	"bs-flaggedrevsconnector-response-success": "Sivu arvioitiin onnistuneesti. Sivu uudelleenladataan nyt.",
+	"bs-flaggedrevsconnector-response-failure": "Tapahtui virhe. Ole hyvä ja ota yhteyttä ylläpitäjääsi.",
+	"bs-flaggedrevsconnector-history-row-fr-info": "Arvioitu: $1 $2 $3",
+	"bs-flaggedrevsconnector-column-last-stable": "Arvioitu",
+	"bs-flaggedrevsconnector-no-stable": "ei arvioitu",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1 on arvioinut sivun $3",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "luonnos",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Luonnosversio"
+}
