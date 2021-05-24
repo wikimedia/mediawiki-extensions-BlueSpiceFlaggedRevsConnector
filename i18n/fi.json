@@ -10,6 +10,11 @@
 	"bs-flaggedrevsconnector-column-last-stable": "Arvioitu",
 	"bs-flaggedrevsconnector-no-stable": "ei arvioitu",
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1 on arvioinut sivun $3",
+	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "Ei hyväksytty",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "Hyväksytty",
+	"bs-flaggedrevsconnector-grid-page-title": "Sivun otsikko",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "luonnos",
-	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Luonnosversio"
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Luonnosversio",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "Nimiavaruus",
+	"bs-flaggedrevsconnector-collection-var-approvedpages": "Hyväksytty"
 }
