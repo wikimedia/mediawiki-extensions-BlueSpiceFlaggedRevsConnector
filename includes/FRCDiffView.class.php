@@ -213,7 +213,9 @@ class FRCDiffView extends ContextSource {
 	 * @return bool
 	 */
 	protected function userViewsDraftByDefault( $user ) {
-		$config = \MediaWiki\MediaWikiServices::getInstance()->getMainConfig();
+		$services = MediaWikiServices::getInstance();
+		$config = $services->getMainConfig();
+		$userGroupManager = $services->getUserGroupManager();
 		# Check user preferences ("show stable by default?")
 		if ( $user->getOption( 'flaggedrevsstable' ) ) {
 			return false;
@@ -224,7 +226,7 @@ class FRCDiffView extends ContextSource {
 				if ( $user->getId() ) {
 					return true;
 				}
-			} elseif ( in_array( $group, $user->getGroups() ) ) {
+			} elseif ( in_array( $group, $userGroupManager->getUserGroups( $user ) ) ) {
 				return true;
 			}
 		}

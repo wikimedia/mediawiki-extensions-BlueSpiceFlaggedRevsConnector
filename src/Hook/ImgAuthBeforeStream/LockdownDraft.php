@@ -23,16 +23,21 @@ class LockdownDraft extends ImgAuthBeforeStream {
 		if ( !in_array( $title->getNamespace(), $this->getNamespaceWhitelist() ) ) {
 			return true;
 		}
+		$services = MediaWikiServices::getInstance();
 		$groupInters = array_intersect(
 			$this->getGroupWhitelist(),
-			$this->getContext()->getUser()->getEffectiveGroups( true )
+			$services->getUserGroupManager()->getEffectiveGroups(
+				$this->getContext()->getUser(),
+				UserGroupManager::READ_NORMAL,
+				true
+			)
 		);
 
 		if ( count( $groupInters ) > 0 ) {
 			return true;
 		}
 
-		$repo = MediaWikiServices::getInstance()->getRepoGroup()->getRepo( 'local' );
+		$repo = $services->getRepoGroup()->getRepo( 'local' );
 		$bits = explode( '!', $this->name, 2 );
 		$archive = substr( $this->path, 0, 9 ) === '/archive/'
 			|| substr( $this->path, 0, 15 ) === '/thumb/archive/';
