@@ -33,7 +33,9 @@ class Utils {
 	 */
 	public function userCanAccessDrafts( $user ) {
 		$permittedGroups = $this->config->get( 'FlaggedRevsConnectorDraftGroups' );
-		$currentUserGroups = $user->getEffectiveGroups();
+		$currentUserGroups = MediaWikiServices::getInstance()
+			->getUserGroupManager()
+			->getEffectiveGroups( $user );
 		$groupIntersect = array_intersect( $permittedGroups, $currentUserGroups );
 
 		if ( empty( $groupIntersect ) ) {

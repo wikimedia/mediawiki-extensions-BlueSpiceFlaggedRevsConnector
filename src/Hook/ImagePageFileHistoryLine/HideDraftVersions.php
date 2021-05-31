@@ -6,6 +6,8 @@ use BlueSpice\Hook\ImagePageFileHistoryLine;
 use DateTime;
 use DateTimeZone;
 use File;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserGroupManager;
 
 class HideDraftVersions extends ImagePageFileHistoryLine {
 	/**
@@ -79,7 +81,13 @@ class HideDraftVersions extends ImagePageFileHistoryLine {
 		return !empty(
 			array_intersect(
 				$this->getAllowedGroups(),
-				$this->getContext()->getUser()->getEffectiveGroups( true )
+				MediaWikiServices::getInstance()
+					->getUserGroupManager()
+					->getEffectiveGroups(
+						$this->getContext()->getUser(),
+						UserGroupManager::READ_NORMAL,
+						true
+					)
 			)
 		);
 	}
