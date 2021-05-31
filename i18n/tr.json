@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joseph"
+			"Joseph",
+			"Mim.saitkilic"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Başka bir çok eklenti için FlaggedRevs desteği ekler.",
@@ -21,6 +22,7 @@
 	"bs-flaggedrevsconnector-state-unmarked": "İlk taslak",
 	"bs-flaggedrevsconnector-state-stable": "Onaylandı",
 	"bs-flaggedrevsconnector-state-draft": "Taslak",
+	"bs-flaggedrevsconnector-state-implicit-draft": "örtük taslak",
 	"bs-flaggedrevsconnector-state-notenabled": "Etkinleştirilmedi",
 	"bs-flaggedrevsconnector-state-unmarked-desc": "Bu sayfanın onaylanmış bir sürümü yok.",
 	"bs-flaggedrevsconnector-state-pending": "Bekleyen değişiklikler",
@@ -104,6 +106,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Farkları göster",
 	"bs-flaggedrevsconnector-state-implicit-draft-desc": "Sayfa onaylı, ancak dahil edilen kaynaklarda değişiklik var",
 	"bs-flaggedrevsconnector-state-draft-resources-desc": "Dahil edilen kaynaklardaki değişikliklerden dolayı sayfa bir taslak",
+	"bs-flaggedrevsconnector-pref-handleincludes": "İşlemi dahil et",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Güncel sürümler",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Sürümleri dondur",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Kararlı sürümler",
