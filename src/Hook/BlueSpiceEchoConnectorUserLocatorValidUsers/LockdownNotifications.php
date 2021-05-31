@@ -5,6 +5,8 @@ namespace BlueSpice\FlaggedRevsConnector\Hook\BlueSpiceEchoConnectorUserLocatorV
 use BlueSpice\EchoConnector\Hook\BlueSpiceEchoConnectorUserLocatorValidUsers;
 use DateTime;
 use DateTimeZone;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserGroupManager;
 use Title;
 
 class LockdownNotifications extends BlueSpiceEchoConnectorUserLocatorValidUsers {
@@ -67,10 +69,15 @@ class LockdownNotifications extends BlueSpiceEchoConnectorUserLocatorValidUsers 
 	 * @return bool
 	 */
 	protected function doProcess() {
+		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
 		foreach ( $this->users as $key => $user ) {
 			$groupInters = array_intersect(
 				$this->getGroupWhitelist(),
-				$user->getEffectiveGroups( true )
+				$userGroupManager->getEffectiveGroups(
+					$user,
+					UserGroupManager::READ_NORMAL,
+					true
+				)
 			);
 			if ( count( $groupInters ) > 0 ) {
 				continue;
