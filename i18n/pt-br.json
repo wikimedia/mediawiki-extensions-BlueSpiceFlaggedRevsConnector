@@ -99,5 +99,7 @@
 	"bs-flaggedrevsconnector-state-draft-resources-desc": "A página é um rascunho devido a mudanças nos recursos incluídos",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Versões atuais",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versões estáveis",
-	"bs-flaggedrevsconnector-resource-changes": "Mudanças nos recursos incluídos desde a última aprovação da página"
+	"bs-flaggedrevsconnector-resource-changes": "Mudanças nos recursos incluídos desde a última aprovação da página",
+	"bs-flaggedrevsconnector-state-implicit-draft": "Rascunho implícito",
+	"apihelp-bs-flaggedpages-store-summary": "Fornece dados para páginas que estão sob controle de aprovação"
 }
