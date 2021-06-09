@@ -101,7 +101,7 @@ class Utils {
 
 	/**
 	 * @param Title $title
-	 * @return int
+	 * @return int Stable revision id or `-1` if "first draft"
 	 */
 	public function getApprovedRevisionId( Title $title ) {
 		$row = MediaWikiServices::getInstance()
@@ -115,7 +115,7 @@ class Utils {
 			);
 
 		if ( !$row ) {
-			return null;
+			return -1;
 		}
 
 		return (int)$row->fp_stable;
