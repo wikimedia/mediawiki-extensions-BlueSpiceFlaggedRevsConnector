@@ -332,6 +332,15 @@
 		"FlaggedRevsConnectorPageApprovedReminderDelay": {
 			"public": false,
 			"value": 168
+		},
+		"FlaggedRevsConnectorFlaggedRevsHandleIncludes": {
+			"value": 2,
+			"descriptionmsg": "bs-flaggedrevsconnector-pref-handleincludes",
+			"public": true
+		},
+		"FlaggedRevsConnectorStabilizeSMWPropertyValues": {
+			"public": false,
+			"value": true
 		}
 	},
 	"Hooks": {
