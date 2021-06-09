@@ -23,7 +23,7 @@ class GetStableFile extends BSExtendedSearchRepoFileGetRepoFile {
 		$helper = new Utils( $this->getConfig() );
 
 		$revId = $helper->getApprovedRevisionId( $this->file->getTitle() );
-		if ( !$revId ) {
+		if ( $revId === -1 ) {
 			$this->file = null;
 			return false;
 		}
