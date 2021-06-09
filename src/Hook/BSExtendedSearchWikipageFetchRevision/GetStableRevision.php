@@ -25,7 +25,7 @@ class GetStableRevision extends BSExtendedSearchWikipageFetchRevision {
 		$helper = new Utils( $this->getConfig() );
 
 		$revId = $helper->getApprovedRevisionId( $this->title );
-		if ( !$revId ) {
+		if ( $revId === -1 ) {
 			$this->revision = null;
 			return false;
 		}
