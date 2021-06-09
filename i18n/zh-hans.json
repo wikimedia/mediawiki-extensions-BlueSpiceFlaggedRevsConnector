@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Lakejason0",
-			"Si109"
+			"Si109",
+			"沈澄心"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "页面",
@@ -23,6 +24,7 @@
 	"bs-flaggedrevsconnector-nav-link-title": "批准",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "草稿版本",
 	"bs-flaggedrevsconnector-review-type-flagging": "批准",
+	"bs-flaggedrevsconnector-grid-page-id": "页面ID",
 	"bs-flaggedrevsconnector-grid-page-title": "页面标题",
 	"bs-flaggedrevsconnector-grid-rev-state": "状态",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "草稿",
