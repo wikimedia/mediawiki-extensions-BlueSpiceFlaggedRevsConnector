@@ -169,6 +169,11 @@ class BSFixReadConfirmations extends Maintenance {
 
 			$this->output( 'Current revision ID - ' . $revId . "\n" );
 
+			if ( $revision === null ) {
+				$this->error( "Could not find revision '$revId'!\n" );
+				continue;
+			}
+
 			// If revision was MAJOR STABLE - do nothing
 			if ( !$revision->isMinor() && $this->isRevisionStable( $revId ) ) {
 				$this->output( 'Revision is MAJOR STABLE' . "\n" );
