@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Side",
+	"bs-flaggedrevsconnector-review-comment-label": "Kommentar",
+	"bs-flaggedrevsconnector-grid-page-id": "Side-ID",
+	"bs-flaggedrevsconnector-grid-page-title": "Sidetitel",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "Navnerum",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategori",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Vis forskel"
+}

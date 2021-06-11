@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sabelöga"
+		]
+	},
+	"bs-flaggedrevsconnector-extension-description": "Ger stöd för FlaggedRevs till en rad andra tillägg.",
+	"bs-flaggedrevsconnector-pref-draftgroups": "Visar instabila sidor för följande grupper",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Sida",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Sidversion",
+	"bs-flaggedrevsconnector-state-stable": "Godkänd",
+	"bs-flaggedrevsconnector-state-draft": "Utkast"
+}

@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chirifo"
+		]
+	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Yaɣili",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "dede pahibu",
+	"bs-flaggedrevsconnector-response-success": "yaɣili labiyuli nasara. yaɣili ŋɔ pan kpe saha ŋɔ",
+	"bs-flaggedrevsconnector-flyout-form-title": "saɣiti yaɣili ŋɔ",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1 {{PLURAL:$1|Draft|Drafts}} ($2)",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft-implicit": "nyabili taɣibu"
+}

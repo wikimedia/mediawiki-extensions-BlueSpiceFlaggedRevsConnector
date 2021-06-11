@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Säit",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "Stabil",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Versioun",
+	"bs-flaggedrevsconnector-state-unmarked": "Éischte Brouillon",
+	"bs-flaggedrevsconnector-state-draft": "Virbereedung",
+	"bs-flaggedrevsconnector-state-notenabled": "net aktivéiert",
+	"bs-flaggedrevsconnector-review-comment-label": "Bemierkung",
+	"bs-flaggedrevsconnector-grid-page-title": "Titel vun der Säit",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategorie",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "Virbereedung",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Ënnerscheed weisen",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Ënnerscheed weisen",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabil Versiounen"
+}

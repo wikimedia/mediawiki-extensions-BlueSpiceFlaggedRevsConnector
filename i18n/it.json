@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Pagina",
+	"bs-flaggedrevsconnector-state-draft": "Bozza",
+	"bs-flaggedrevsconnector-grid-rev-state": "Stato",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "Namespace",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Categoria"
+}

@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Imre",
-            "Jens Liebenau",
-            "Kghbln",
-            "Umherirrender"
-        ]
-    },
-    "bsfrc-flaggedrevs-watched-pending": "Es gibt momentan [{{fullurl:{{#Special:OldReviewedPages}}|watched=1}} unfreigegebene Bearbeitungen] freigegebener Seiten, die sich auf Ihrer Beobachtungsliste befinden. '''Ihre Aufmerksamkeit wird daher benötigt!'''",
+	"@metadata": {
+		"authors": [
+			"Imre",
+			"Jens Liebenau",
+			"Kghbln",
+			"Umherirrender"
+		]
+	},
+	"bsfrc-flaggedrevs-watched-pending": "Es gibt momentan [{{fullurl:{{#Special:OldReviewedPages}}|watched=1}} unfreigegebene Bearbeitungen] freigegebener Seiten, die sich auf Ihrer Beobachtungsliste befinden. '''Ihre Aufmerksamkeit wird daher benötigt!'''",
 	"bsfrc-revreview-check-flag-y-title": "Freigeben aller Änderungen, die Sie mit dieser Bearbeitung gemacht haben.",
-    "bsfrc-review-edit-diff": "'''Hinweis: Einige der noch nicht freigegebenen Änderungen betreffen den Abschnitt des Textes, den Sie gerade bearbeiten.'''",
-    "bsfrc-revreview-editnotice": "'''Ihre Änderungen werden veröffentlicht, sobald ein dazu berechtigter Benutzer sie akzeptiert hat. ([[{{MediaWiki:Validationpage}}|Hilfe]])'''",
-    "bsfrc-revreview-submitedit-title": "Ihre Änderungen zum Freigeben übertragen",
-    "bsfrc-revreview-edited": "'''Ihre Änderungen werden veröffentlicht, sobald ein dazu berechtigter Benutzer sie akzeptiert hat. ([[{{MediaWiki:Validationpage}}|Hilfe]])'''\n\nMomentan {{PLURAL:$2|gibt|gibt}} es [{{fullurl:{{FULLPAGENAMEE}}|oldid=$1&diff=cur{{MediaWiki:flaggedrevs-diffonly}}}} $2 unfreigegebene {{PLURAL:$2|Änderung|Änderungen}}], die noch freigegeben werden müssen.",
-    "bsfrc-revreview-pending-nosection": "Versuchen Sie die [{{fullurl:{{FULLPAGENAMEE}}|stable=0}} neueste Version], die [{{fullurl:{{FULLPAGENAMEE}}|oldid=$1&diff=cur{{MediaWiki:flaggedrevs-diffonly}}}} $2 freizugebende {{PLURAL:$2|Änderung|Änderungen}}] enthält, anzusehen, um festzustellen, ob der Abschnitt verschoben oder gelöscht wurde."
+	"bsfrc-review-edit-diff": "'''Hinweis: Einige der noch nicht freigegebenen Änderungen betreffen den Abschnitt des Textes, den Sie gerade bearbeiten.'''",
+	"bsfrc-revreview-editnotice": "'''Ihre Änderungen werden veröffentlicht, sobald ein dazu berechtigter Benutzer sie akzeptiert hat. ([[{{MediaWiki:Validationpage}}|Hilfe]])'''",
+	"bsfrc-revreview-submitedit-title": "Ihre Änderungen zum Freigeben übertragen",
+	"bsfrc-revreview-edited": "'''Ihre Änderungen werden veröffentlicht, sobald ein dazu berechtigter Benutzer sie akzeptiert hat. ([[{{MediaWiki:Validationpage}}|Hilfe]])'''\n\nMomentan {{PLURAL:$2|gibt|gibt}} es [{{fullurl:{{FULLPAGENAMEE}}|oldid=$1&diff=cur{{MediaWiki:flaggedrevs-diffonly}}}} $2 unfreigegebene {{PLURAL:$2|Änderung|Änderungen}}], die noch freigegeben werden müssen.",
+	"bsfrc-revreview-pending-nosection": "Versuchen Sie die [{{fullurl:{{FULLPAGENAMEE}}|stable=0}} neueste Version], die [{{fullurl:{{FULLPAGENAMEE}}|oldid=$1&diff=cur{{MediaWiki:flaggedrevs-diffonly}}}} $2 freizugebende {{PLURAL:$2|Änderung|Änderungen}}] enthält, anzusehen, um festzustellen, ob der Abschnitt verschoben oder gelöscht wurde."
 }
