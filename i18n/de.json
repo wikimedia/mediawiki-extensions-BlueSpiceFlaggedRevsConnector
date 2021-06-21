@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mglaser",
+			"Mschlindwein",
 			"Stephan Muggli <muggli@hallowelt.biz>"
 		]
 	},
@@ -29,9 +30,9 @@
 	"bs-flaggedrevsconnector-state-stable-desc": "Diese Version der Seite ist freigegeben.",
 	"bs-flaggedrevsconnector-state-draft-desc": "Das ist eine Entwurfsversion mit [{{fullurl:{{FULLPAGENAMEE}}|action=history}} $1 ungeprüften Änderungen]. Die dazugehörige [{{fullurl:{{FULLPAGENAMEE}}|stable=1}} freigegebene Version] wurde am $2 akzeptiert.",
 	"bs-flaggedrevsconnector-state-notenabled-desc": "Freigaben sind für diese Seite nicht aktiviert",
-	"bs-flaggedrevsconnector-state-pending-desc": "Es gibt unfreigegebene Änderungen auf dieser Seite. [$1 Jetzt begutachten].",
+	"bs-flaggedrevsconnector-state-pending-desc": "Es gibt unfreigegebene Änderungen auf dieser Seite. [$1 Jetzt freigeben].",
 	"bs-flaggedrevsconnector-review-heading": "Freigabe",
-	"bs-flaggedrevsconnector-review-help": "Nach der Freigabe wird diese Entwurfsversion die aktuelle freigegebene Version der Seite ersetzen. Willst du den Enwurf freigeben?",
+	"bs-flaggedrevsconnector-review-help": "Nach der Freigabe wird diese Entwurfsversion die aktuelle freigegebene Version der Seite ersetzen. Willst du den Entwurf freigeben?",
 	"bs-flaggedrevsconnector-review-comment-label": "Kommentar",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "Freigabe",
 	"bs-flaggedrevsconnector-pref-bookshelfshowstable": "Bookshelf: Liste mit Freigabekommentaren zeigen",
