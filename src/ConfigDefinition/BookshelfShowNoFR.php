@@ -25,4 +25,12 @@ class BookshelfShowNoFR extends BooleanSetting {
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-bookshelfshownofr';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-flaggedrevsconnector-pref-bookshelfshownofr-help';
+	}
 }
