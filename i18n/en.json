@@ -122,5 +122,12 @@
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "\"pageId\" provided does not match any valid Title objects",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Page approval status",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Stable",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Draft"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Draft",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Inserts a publishing log at the beginning of the PDF. This log shows, when a page was accepted. If no comment was added during acceptance, the comment field is empty.",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Inserts a log at the beginning of the PDF. This log shows all PDF pages with status \"draft\".",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Inserts a log at the beginning of the PDF. This log shows all PDF pages from namespaces without activated review functionality.",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Prints the timestamp for the latest accepted and draft versions below the title on the PDF.",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "The workflow is deleted automatically and a new workflow can be started.",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Sets the access right to draft versions. If no group is listed, even sysop-user do not see a visual status in the title area. Sysop-users can still access draft in the version history, however.",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Draft versions are excluded from search results. If a page has no stable version, it is not shown in the search results."
 }

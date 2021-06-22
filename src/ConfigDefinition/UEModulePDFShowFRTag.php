@@ -25,4 +25,12 @@ class UEModulePDFShowFRTag extends BooleanSetting {
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help';
+	}
 }

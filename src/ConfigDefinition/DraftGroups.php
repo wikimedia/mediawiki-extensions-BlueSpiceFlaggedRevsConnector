@@ -49,4 +49,12 @@ class DraftGroups extends ArraySetting {
 		}
 		return $options;
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-flaggedrevsconnector-pref-draftgroups-help';
+	}
 }

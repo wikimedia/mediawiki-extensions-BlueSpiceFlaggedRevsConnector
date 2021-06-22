@@ -25,4 +25,12 @@ class BookshelfShowNoStable extends BooleanSetting {
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-bookshelfshownostable';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-flaggedrevsconnector-pref-bookshelfshownostable-help';
+	}
 }
