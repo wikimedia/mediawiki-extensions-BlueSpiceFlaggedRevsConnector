@@ -25,4 +25,12 @@ class IndexingStableOnly extends BooleanSetting {
 	public function getLabelMessageKey() {
 		return 'bs-flaggedrevsconnector-pref-indexingstableonly';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-flaggedrevsconnector-pref-indexingstableonly-help';
+	}
 }

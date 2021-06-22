@@ -121,5 +121,12 @@
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Workflow error when Workflow context contain invalid values for requried items",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Statistics report name",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Label for the \"approved\" axis",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Label for the \"draft\" axis"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Label for the \"draft\" axis",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Description for config variable \"FlaggedRevsConnectorBookshelfShowStable\"",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Description for config variable \"FlaggedRevsConnectorBookshelfShowNoStable\"",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Description for config variable \"FlaggedRevsConnectorBookshelfShowNoFR\"",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Description for config variable \"FlaggedRevsConnectorUEModulePDFShowFRTag\"",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Description for config variable \"FlaggedRevsConnectorautoDeleteWorkflow\"",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Description for config variable \"FlaggedRevsConnectorDraftGroups\"",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Description for config variable \"FlaggedRevsConnectorIndexStableOnly\""
 }
