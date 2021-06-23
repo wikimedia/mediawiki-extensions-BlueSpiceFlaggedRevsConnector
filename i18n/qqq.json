@@ -81,6 +81,7 @@
 	"bs-flaggedrevsconnector-grid-page-title": "Short heading for the page title column in the quality manager overview\n{{Identical|Page title}}",
 	"bs-flaggedrevsconnector-grid-rev-state": "Short heading for the approval state column in the quality manager overview\n{{Identical|State}}",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Short heading for the pending revisions column in the quality manager overview\n{{Identical|Revisions since stable}}",
+	"bs-flaggedrevsconnector-grid-page-categories": "Short heading for page categories column in the quality manager overview",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "Message for combined data per row in BlueSpicePrivacy integration about FlaggedRevs\n* $1 - Name of the page, the user has flagged\n* $2 - Id of the revision that was flagged\n* $3 - Timestamp, when this revision was flagged\n* $4 - Comma seperated string of aliases of flags used in this flagging",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Text of the link to the [[Special:QMOverview]] special page\n{{Identical|Quality management overview}}",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "Used to describe that the requested permission for this page is only available for users, that are member of a group or member of one of a comma separated list of groups\n* $1 - Name of the requested action\n* $2 - Number of allowed groups. Use PLURAL\n* $3 - Single group or comma separated list of groups, that are allowed to access the action on this page",
