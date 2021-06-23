@@ -95,7 +95,7 @@
 	"bsfrc-tooltip-ca-stable": "View the stable version of this page",
 	"bsfrc-tooltip-ca-default": "Quality assurance settings",
 	"bsfrc-flaggedrevs-protect-legend": "Automatic edit review ([[{{MediaWiki:Validationpage}}|help]])",
-	"bsfrc-flaggedrevs-categoryview": "[{{fullurl:Special:UnreviewedPages|category=$1}} Unreviewed pages]{{MediaWiki:pipe-separator}}[{{fullurl:Special:PendingChanges|category=$1}} Pending changes]",
+	"bsfrc-flaggedrevs-categoryview": "[{{fullurl:Special:Quality_management_overview|category=$1&state=unmarked}} Unreviewed pages]{{MediaWiki:pipe-separator}}[{{fullurl:Special:Quality_management_overview|category=$1&state=draft}} Pending changes]",
 	"bsfrc-revreview-locked-title": "Edits to this page require review.",
 	"bsfrc-revreview-unlocked-title": "Edits to this page do not require review.",
 	"bsfrc-revreview-locked": "'''Note:''' Edits must be [[{{MediaWiki:Validationpage}}|reviewed]] before being displayed to readers on this page.",

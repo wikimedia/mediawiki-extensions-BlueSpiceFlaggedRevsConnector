@@ -23,6 +23,20 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 				defaultValue.push( availableStates[ state ] );
 			}
 		}
+
+		var categoryFilter = {
+			type: 'string'
+		};
+
+		if ( mw.util.getParamValue( 'category' ) !== null ) {
+			categoryFilter.value = mw.util.getParamValue( 'category' );
+		}
+
+		if ( mw.util.getParamValue( 'state' ) !== null ) {
+			var explicitState = mw.util.getParamValue( 'state' );
+			defaultValue = [ availableStates[ explicitState ] ];
+		}
+
 		return [
 			{
 				text: mw.message( 'bs-flaggedrevsconnector-grid-page-id' ).text(),
@@ -54,6 +68,16 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 					type: 'list',
 					options: Object.values( availableStates ),
 					value: defaultValue
+				}
+			}, {
+				text: mw.message( 'bs-flaggedrevsconnector-grid-page-categories' ).text(),
+				dataIndex: 'page_categories',
+				sortable: true,
+				filterable: true,
+				width: 200,
+				filter: categoryFilter,
+				renderer: function ( value, metaData, record, rowIndex, colIndex, store, view ) {
+					return record.get( 'page_categories_links' ).join( ', ' );
 				}
 			}, {
 				text: mw.message( 'bs-flaggedrevsconnector-grid-pending-revs' ).text(),
@@ -119,19 +143,26 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 			$row.append( $cell );
 
 			$cell = $( '<td>' );
-
 			$cell.append(
 				mw.message( 'bs-flaggedrevsconnector-grid-page-title' ).plain()
 			);
 			$row.append( $cell );
 
+			$cell = $( '<td>' );
 			$cell.append(
 				mw.message( 'bs-flaggedrevsconnector-grid-rev-state' ).plain()
 			);
 			$row.append( $cell );
 
+			$cell = $( '<td>' );
 			$cell.append(
 				mw.message( 'bs-flaggedrevsconnector-grid-pending-revs' ).plain()
+			);
+			$row.append( $cell );
+
+			$cell = $( '<td>' );
+			$cell.append(
+				mw.message( 'bs-flaggedrevsconnector-grid-page-categories' ).plain()
 			);
 			$row.append( $cell );
 
@@ -155,6 +186,10 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 
 				$cell = $( '<td>' );
 				$cell.append( record.data.revs_since_stable );
+				$row.append( $cell );
+
+				$cell = $( '<td>' );
+				$cell.append( record.data.page_categories_links.join( ', ' ) );
 				$row.append( $cell );
 
 				$table.append( $row );
