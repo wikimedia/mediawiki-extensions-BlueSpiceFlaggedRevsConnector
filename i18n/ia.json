@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-flaggedrevsconnector-extension-description": "Adde supporto pro Marcaversiones (FlaggedRevs) a un gamma de altere extensiones.",
+	"bs-flaggedrevsconnector-pref-draftgroups": "Monstrar paginas instabile pro le sequente gruppos",
+	"bs-flaggedrevsconnector-pref-autoreview": "Automaticamente marcar le pagina como stabile quando le fluxo de labor fini con successo",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "Automaticamente deler le fluxo de labor quando un pagina ha essite marcate como stabile",
+	"bs-flaggedrevsconnector-pref-indexingstableonly": "Indexante solmente le versiones stabile",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "Data de stabilitate",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Pagina",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "Commento de stabilitate",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "Paginas stabile",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "Paginas non stabile",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "Non in spatio de nomines Marcaversiones",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "Non stabile",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "Stabile",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Version",
+	"bs-flaggedrevsconnector-state-unmarked": "Prime version provisori",
+	"bs-flaggedrevsconnector-state-stable": "Approbate",
+	"bs-flaggedrevsconnector-state-draft": "Version provisori",
+	"bs-flaggedrevsconnector-state-implicit-draft": "Version provisori implicite",
+	"bs-flaggedrevsconnector-state-notenabled": "Non activate",
+	"bs-flaggedrevsconnector-state-unmarked-desc": "Il non ha versiones approbate de iste pagina.",
+	"bs-flaggedrevsconnector-state-pending": "Modificationes pendente",
+	"bs-flaggedrevsconnector-state-stable-desc": "Iste version es approbate."
+}
