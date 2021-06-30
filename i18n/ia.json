@@ -25,5 +25,6 @@
 	"bs-flaggedrevsconnector-state-notenabled": "Non activate",
 	"bs-flaggedrevsconnector-state-unmarked-desc": "Il non ha versiones approbate de iste pagina.",
 	"bs-flaggedrevsconnector-state-pending": "Modificationes pendente",
-	"bs-flaggedrevsconnector-state-stable-desc": "Iste version es approbate."
+	"bs-flaggedrevsconnector-state-stable-desc": "Iste version es approbate.",
+	"bs-flaggedrevsconnector-state-draft-desc": "Isto es un version provisori con [{{fullurl:{{FULLPAGENAMEE}}|action=history}} $1 modificationes attendente revision]. Le [{{fullurl:{{FULLPAGENAMEE}}|stable=1}} version stabile] correspondente ha essite approbate le $2."
 }
