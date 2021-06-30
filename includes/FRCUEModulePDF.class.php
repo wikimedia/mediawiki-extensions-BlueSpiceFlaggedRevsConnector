@@ -13,12 +13,18 @@ class FRCUEModulePDF {
 		// PW(04.12.2013): Ugly, but works so far
 		// RV(04.02.2015): Still ugly, but works so far
 		// PW(04.02.2021): Still very ugly, but still seems to work
+		// DS(30.06.2021): Still incredibly ugly, but afraid to remove it at this point
 		if ( $wgRequest->getInt( 'stable', 1 ) === 0 ) {
 			return true;
 		}
 
 		// We need to skip if the oldid is requested directly
 		if ( $wgRequest->getInt( 'oldid', -1 ) !== -1 ) {
+			return true;
+		}
+
+		// Oldid passed though params, dont interfere
+		if ( isset( $aParams['oldid'] ) && (int)$aParams['oldid'] > 0 ) {
 			return true;
 		}
 
@@ -176,7 +182,6 @@ class FRCUEModulePDF {
 		if ( !class_exists( 'FlaggablePageView', true ) ) {
 			return true;
 		}
-
 		// Clear FlaggablePageView instance,
 		// for correct subpage export
 		FlaggablePageView::singleton()->clear();

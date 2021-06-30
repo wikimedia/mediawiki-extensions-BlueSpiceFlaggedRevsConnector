@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCBookshelf {
 
@@ -13,8 +15,7 @@ class FRCBookshelf {
 	 */
 	public function onBSBookshelfExportBeforeArticles( &$aTemplate, &$aBookPage, &$aArticles ) {
 		global $wgLang, $wgFlaggedRevsNamespaces;
-
-		$config = \BlueSpice\Services::getInstance()->getConfigFactory()
+		$config = MediaWikiServices::getInstance()->getConfigFactory()
 			->makeConfig( 'bsg' );
 
 		$bShowStable = $config->get(
@@ -88,8 +89,7 @@ class FRCBookshelf {
 				'BS::FlaggedRevsConnector',
 				'onBSBookshelfExportBeforeArticles: No articles provided.'
 			);
-		}
- else {
+		} else {
 			$dbr = wfGetDB( DB_REPLICA );
 
 			// We only want the last 2 years comments
@@ -115,7 +115,7 @@ class FRCBookshelf {
 				$aStables[] = $oRow->log_page;
 				$aStableRows[] = $oRow;
 			}
-	}
+		}
 
 		// Now, after fetching all neccessary data we build the tables
 		$oStableDiv   = null;
