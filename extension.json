@@ -253,7 +253,8 @@
 				"bs-flaggedrevsconnector-grid-page-id",
 				"bs-flaggedrevsconnector-grid-page-title",
 				"bs-flaggedrevsconnector-grid-rev-state",
-				"bs-flaggedrevsconnector-grid-pending-revs"
+				"bs-flaggedrevsconnector-grid-pending-revs",
+				"bs-flaggedrevsconnector-grid-page-categories"
 			]
 		},
 		"ext.bs.flaggedrevsconnector.editversion": {

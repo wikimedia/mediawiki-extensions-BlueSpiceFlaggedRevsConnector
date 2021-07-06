@@ -83,6 +83,7 @@
 	"bs-flaggedrevsconnector-grid-page-title": "Page title",
 	"bs-flaggedrevsconnector-grid-rev-state": "State",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Revisions since stable",
+	"bs-flaggedrevsconnector-grid-page-categories": "Page categories",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: You flagged page $1 (revision $2) on $3 [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Quality management overview",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "The action \"$1\" for the draft version of this page is only available for the {{PLURAL:$2|group|groups}} $3",
