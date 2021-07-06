@@ -10,4 +10,6 @@ class Record extends \BlueSpice\Data\Record {
 	public const REVISION_STATE = 'revision_state';
 	public const REVISION_STATE_RAW = 'revision_state_raw';
 	public const REVISIONS_SINCE_STABLE = 'revs_since_stable';
+	public const PAGE_CATEGORIES = 'page_categories';
+	public const PAGE_CATEGORIES_LINKS = 'page_categories_links';
 }
