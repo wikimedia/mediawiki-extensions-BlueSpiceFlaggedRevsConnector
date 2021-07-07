@@ -6,8 +6,6 @@ use BlueSpice\FlaggedRevsConnector\Data\Record;
 use MediaWiki\MediaWikiServices;
 
 class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
-	public function __construct() {
-	}
 
 	/**
 	 *
@@ -26,7 +24,7 @@ class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
 
 			$categoryLinks = [];
 
-			$categories = $record->get( Record::PAGE_CATEGORIES );
+			$categories = $record->get( Record::PAGE_CATEGORIES, [] );
 			foreach ( $categories as $category ) {
 				$categoryTitle = \Title::newFromText( $category, NS_CATEGORY );
 				$link = MediaWikiServices::getInstance()->getLinkRenderer()->makeLink(
