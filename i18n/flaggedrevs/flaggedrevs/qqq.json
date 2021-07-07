@@ -100,5 +100,7 @@
 	"bsfrc-revreview-unlocked-title": "{{int:revreview-unlocked-title}}",
 	"bsfrc-revreview-locked": "{{int:revreview-locked}}",
 	"bsfrc-revreview-unlocked": "{{int:revreview-unlocked}}",
-	"bsfrc-validationpage": "{{int:validationpage}}"
+	"bsfrc-validationpage": "{{int:validationpage}}",
+	"bsfrc-revreview-editnotice": "{{int:revreview-editnotice}}",
+	"bsfrc-copyrightwarning2": "{{int:copyrightwarning2}}"
 }
