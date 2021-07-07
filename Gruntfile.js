@@ -1,10 +1,11 @@
 /* eslint-env node, es6 */
 module.exports = function ( grunt ) {
+	var conf;
 	grunt.loadNpmTasks( 'grunt-banana-checker' );
 	grunt.loadNpmTasks( 'grunt-eslint' );
 	grunt.loadNpmTasks( 'grunt-stylelint' );
 
-	var conf = grunt.file.readJSON( 'extension.json' );
+	conf = grunt.file.readJSON( 'extension.json' );
 	grunt.initConfig( {
 		banana: conf.MessagesDirs,
 		eslint: {
