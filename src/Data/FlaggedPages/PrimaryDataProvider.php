@@ -89,7 +89,10 @@ class PrimaryDataProvider extends PageDataProvider {
 		$pageData->{Record::REVISION_STATE} = $stateMessage->plain();
 		$pageData->{Record::REVISION_STATE_RAW} = $state;
 		$pageData->{Record::REVISIONS_SINCE_STABLE} = $revisionsSinceStable;
-		$pageData->{Record::PAGE_CATEGORIES} = $this->categoryMap[$title->getArticleID()];
+		$pageData->{Record::PAGE_CATEGORIES} = [];
+		if ( !empty( $this->categoryMap[$title->getArticleID()] ) ) {
+			$pageData->{Record::PAGE_CATEGORIES} = $this->categoryMap[$title->getArticleID()];
+		}
 
 		return new Record( $pageData );
 	}
