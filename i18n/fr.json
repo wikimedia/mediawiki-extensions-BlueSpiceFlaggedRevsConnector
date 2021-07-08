@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Gomoko",
 			"Verdy p"
 		]
 	},
@@ -79,6 +80,7 @@
 	"bs-flaggedrevsconnector-grid-page-title": "Titre de la page",
 	"bs-flaggedrevsconnector-grid-rev-state": "État",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Révisions depuis la version stable",
+	"bs-flaggedrevsconnector-grid-page-categories": "Catégories de page",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs : vous avez marqué la page $1 (version $2) le $3 [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Vue générale de la gestion de la qualité",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "L’action « $1 » pour la version brouillon de cette page n’est disponible que pour {{PLURAL:$2|le groupe|les groupes}} $3",
