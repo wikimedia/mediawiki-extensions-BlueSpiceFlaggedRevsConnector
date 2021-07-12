@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Gomoko",
 			"Verdy p"
 		]
 	},
@@ -110,5 +111,6 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Geler les versions",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versions stables",
 	"bs-flaggedrevsconnector-resource-changes": "Changements des ressources incluses depuis la dernière approbation de la page",
-	"apihelp-bs-flaggedpages-store-summary": "Fournit des données pour les pages placées sous contrôle d’approbation"
+	"apihelp-bs-flaggedpages-store-summary": "Fournit des données pour les pages placées sous contrôle d’approbation",
+	"bs-flaggedrevsconnector-grid-page-categories": "Catégories de page"
 }

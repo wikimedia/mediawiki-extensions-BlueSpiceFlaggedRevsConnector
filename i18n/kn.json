@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"ಮಲ್ನಾಡಾಚ್ ಕೊಂಕ್ಣೊ"
+		]
+	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "ಸ್ಥಿರ ದಿನಾಂಕ",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "ಪುಟ",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "ಸ್ಥಿರ ಟಿಪ್ಪಣಿ",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "ಸ್ಥಿರ ಪುಟಗಳು",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "ಅಸ್ಥಿರ ಪುಟಗಳು",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "ಅಸ್ಥಿರ",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "ಸ್ಥಿರ",
+	"bs-flaggedrevsconnector-state-unmarked": "ಮೊದಲ ಕರಡು",
+	"bs-flaggedrevsconnector-state-draft": "ಕರಡು",
+	"bs-flaggedrevsconnector-review-comment-label": "ಟಿಪ್ಪಣಿ",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "ಕರಡು ಆವೃತ್ತಿ",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "ಒಂದು ಕರಡು",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "ನಾಮವರ್ಗ",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "ವರ್ಗ",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "ಕರಡು",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "ವ್ಯತ್ಯಾಸ ತೋರಿಸಿ",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "ವ್ಯತ್ಯಾಸ ತೋರಿಸಿ",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "ಪ್ರಸಕ್ತ ಆವೃತ್ತಿಗಳು",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "ಸ್ಥಿರ ಆವೃತ್ತಿಗಳು"
+}

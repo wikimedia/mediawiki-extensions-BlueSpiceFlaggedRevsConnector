@@ -10,5 +10,7 @@
 	"bs-flaggedrevsconnector-grid-page-title": "عنوان الصفحة",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "نسخة مسودة",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "صفحة",
-	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "غير مستقرة"
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "غير مستقرة",
+	"bs-flaggedrevsconnector-approval-user-sesp-desc": "المستخدم الذي راجع الصفحة",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "النطاق"
 }

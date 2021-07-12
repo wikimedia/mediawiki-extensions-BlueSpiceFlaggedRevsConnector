@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hedda",
 			"Joseph",
 			"Mim.saitkilic"
 		]
@@ -111,5 +112,6 @@
 	"bs-flaggedrevsconnector-resource-changes": "Son sayfa onayından beri dahil edilen kaynaklardaki değişiklikler",
 	"apihelp-bs-flaggedpages-store-summary": "Onay kontrolü altındaki sayfalar için veri sağlar",
 	"bs-flaggedrevsconnector-state-implicit-draft": "örtük taslak",
-	"bs-flaggedrevsconnector-pref-handleincludes": "İşlemi dahil et"
+	"bs-flaggedrevsconnector-pref-handleincludes": "İşlemi dahil et",
+	"bs-flaggedrevsconnector-grid-page-categories": "Sayfa kategorileri"
 }

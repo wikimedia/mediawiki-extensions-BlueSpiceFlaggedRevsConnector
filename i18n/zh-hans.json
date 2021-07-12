@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Lakejason0",
-			"Si109"
+			"Si109",
+			"沈澄心"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "页面",
@@ -32,5 +33,6 @@
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "未启用",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "显示差异",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "显示差异",
-	"bs-flaggedrevsconnector-pref-handleinclude-stable": "稳定版本"
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "稳定版本",
+	"bs-flaggedrevsconnector-grid-page-id": "页面ID"
 }
