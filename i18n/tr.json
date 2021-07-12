@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hedda",
 			"Joseph",
 			"Mim.saitkilic"
 		]
@@ -80,6 +81,7 @@
 	"bs-flaggedrevsconnector-grid-page-title": "Sayfa başlığı",
 	"bs-flaggedrevsconnector-grid-rev-state": "Durum",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Kararlıdan bu yana sürümler",
+	"bs-flaggedrevsconnector-grid-page-categories": "Sayfa kategorileri",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: $1 sayfasını ($2 sürümü) $3 tarihinde işaretlediniz [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Kalite yönetimi genel bakış",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "Bu sayfanın taslak sürümü için \"$1\" eylemi sadece şu {{PLURAL:$2|grup|gruplar}} için mevcut $3",

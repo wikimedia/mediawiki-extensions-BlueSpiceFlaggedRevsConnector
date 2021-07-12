@@ -81,6 +81,7 @@
 	"bs-flaggedrevsconnector-grid-page-title": "Seitentitel",
 	"bs-flaggedrevsconnector-grid-rev-state": "Freigabestatus",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Revisionen seit freigegebener Version",
+	"bs-flaggedrevsconnector-grid-page-categories": "Kategorien der Seite",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Sie haben die Seite $1 (Revision $2) am $3 markiert [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Qualitätsmanagement Überblick",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "Die Aktion „$1“ für die Entwurfsversion ist nur für {{PLURAL:$2|den|die}} Bevollmächtigten $3 verfügbar",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Ата"
 		]
 	},
@@ -33,6 +34,10 @@
 	"bs-flaggedrevsconnector-review-help": "Після затвердження, ця версія-чернетка замінить поточну стабільну версію сторінки. Ви хочете прийняти чернетку?",
 	"bs-flaggedrevsconnector-review-comment-label": "Коментар",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "Затвердження",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable": "Книжкова полиця: Список затверджених журналів змін",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable": "Книжкова полиця: Список сторінок без стабільного перегляду",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr": "Книжкова полиця: Сторінки списку без FlaggedRevs",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag": "UEModulePDF: Показати інформацію про FlaggedRevs під основним заголовком",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Затверджено",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "Дата затвердження",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "Очікується затвердження",
@@ -45,6 +50,10 @@
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1 {{GENDER:$1|перевірив|перевірила}} $3",
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-subject": "Перевірка сторінки $2",
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-body": "$1 {{GENDER:$1|перевірив|перевірила}} сторінку $2",
+	"bs-flaggedrevsconnector-document-state-sesp-alias": "QM/Стан документа",
+	"bs-flaggedrevsconnector-approval-date-sesp-alias": "QM/Дата затвердження",
+	"bs-flaggedrevsconnector-approval-user-sesp-alias": "QM/Схвалення",
+	"bs-flaggedrevsconnector-document-version-sesp-alias": "QM/Версія документа",
 	"bs-flaggedrevsconnector-document-state-sesp-desc": "Статус сторінки. Може бути «Затверджено» (останню версію успішно перевірено), «Переглядається» (є чернеткова версія цієї сторінки) або «Запит на затвердження» (розпочато процес розгляду наявної версії-чернетки).",
 	"bs-flaggedrevsconnector-approval-date-sesp-desc": "Дата й час успішного перегляду цієї сторінки",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "Користувач, хто перевірили сторінку",
@@ -65,11 +74,15 @@
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "Затверджена версія",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-title": "Перемкнути на затверджену версію цієї сторінки",
 	"bs-flaggedrevsconnector-review-type-flagging": "Затвердження",
+	"qmoverview": "Огляд управління якістю",
+	"bs-qmoverview-desc": "Сторінки огляду в процесі затвердження",
 	"bs-flaggedrevsconnector-grid-page-id": "ID сторінки",
 	"bs-flaggedrevsconnector-grid-page-title": "Назва сторінки",
 	"bs-flaggedrevsconnector-grid-rev-state": "Статус",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Версій з часу стабілізації",
+	"bs-flaggedrevsconnector-grid-page-categories": "Категорії сторінок",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Ви позначили сторінку $1 (версія $2) $3 [$4]",
+	"bs-flaggedrevsconnector-admin-tool-overview": "Огляд управління якістю",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "Дія «$1» над чернетковою версією цієї сторінки доступна лише для {{PLURAL:$2|групи|груп}} $3",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "має чернеткову версію",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Показати чернеткову версію",
@@ -94,8 +107,10 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Показати відмінності",
 	"bs-flaggedrevsconnector-state-implicit-draft-desc": "Сторінка затверджена, але є зміни у включених ресурсів",
 	"bs-flaggedrevsconnector-state-draft-resources-desc": "Сторінка є чернеткою через зміни до включених ресурсів",
+	"bs-flaggedrevsconnector-pref-handleincludes": "Включіть обробку",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Поточні версії",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Заморозити версії",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Стабільні версії",
-	"bs-flaggedrevsconnector-resource-changes": "Зміни до включених ресурсів з часу останнього затвердження сторінки"
+	"bs-flaggedrevsconnector-resource-changes": "Зміни до включених ресурсів з часу останнього затвердження сторінки",
+	"apihelp-bs-flaggedpages-store-summary": "Надає дані для сторінок, які перебувають під контролем затвердження"
 }
