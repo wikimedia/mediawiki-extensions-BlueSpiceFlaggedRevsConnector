@@ -4,5 +4,29 @@
 			"Ykhwong"
 		]
 	},
-	"bs-flaggedrevsconnector-grid-page-categories": "문서 분류"
+	"bs-flaggedrevsconnector-response-failure": "오류가 발생했습니다. 관리자에게 문의해 주십시오.",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "초안 판",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "이 문서의 최신 초안 판으로 전환하기",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "승인된 판",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-title": "이 문서의 승인된 판으로 전환하기",
+	"bs-flaggedrevsconnector-review-type-flagging": "승인",
+	"qmoverview": "품질 관리 개요",
+	"bs-flaggedrevsconnector-grid-page-id": "문서 ID",
+	"bs-flaggedrevsconnector-grid-page-title": "문서 제목",
+	"bs-flaggedrevsconnector-grid-page-categories": "문서 분류",
+	"bs-flaggedrevsconnector-admin-tool-overview": "품질 관리 개요",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "초안 판 표시",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "초안 판",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "최초 초안 판",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "승인된 판",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "승인",
+	"bs-flaggedrevsconnector-collection-type-flaggedpages-cat": "분류별 승인",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "이름공간",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "분류",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "초안",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "최초 초안",
+	"bs-flaggedrevsconnector-collection-var-approvedpages": "승인됨",
+	"bs-flaggedrevsconnector-collection-var-notenabledpages": "활성화되지 않음",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "차이 보기",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "차이 보기"
 }
