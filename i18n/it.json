@@ -8,5 +8,15 @@
 	"bs-flaggedrevsconnector-state-draft": "Bozza",
 	"bs-flaggedrevsconnector-grid-rev-state": "Stato",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Namespace",
-	"bs-flaggedrevsconnector-collection-var-categoryname": "Categoria"
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Categoria",
+	"bs-flaggedrevsconnector-state-unmarked": "Prima bozza",
+	"bs-flaggedrevsconnector-review-comment-label": "Commento",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Approvato",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "Data approvazione",
+	"bs-flaggedrevsconnector-grid-page-id": "ID della pagina",
+	"bs-flaggedrevsconnector-grid-page-title": "Titolo della pagina",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "una bozza",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Approva",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "Bozza",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Prima bozza"
 }

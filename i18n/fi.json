@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joquliina"
+			"Joquliina",
+			"MITO"
 		]
 	},
 	"bs-flaggedrevsconnector-response-success": "Sivu arvioitiin onnistuneesti. Sivu uudelleenladataan nyt.",
@@ -16,5 +17,6 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "luonnos",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Luonnosversio",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Nimiavaruus",
-	"bs-flaggedrevsconnector-collection-var-approvedpages": "Hyväksytty"
+	"bs-flaggedrevsconnector-collection-var-approvedpages": "Hyväksytty",
+	"bs-flaggedrevsconnector-grid-page-categories": "Sivun luokat"
 }

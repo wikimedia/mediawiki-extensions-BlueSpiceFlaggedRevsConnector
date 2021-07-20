@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hedda",
 			"Joseph",
 			"Mim.saitkilic"
 		]
@@ -111,5 +112,6 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Sürümleri dondur",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Kararlı sürümler",
 	"bs-flaggedrevsconnector-resource-changes": "Son sayfa onayından beri dahil edilen kaynaklardaki değişiklikler",
-	"apihelp-bs-flaggedpages-store-summary": "Onay kontrolü altındaki sayfalar için veri sağlar"
+	"apihelp-bs-flaggedpages-store-summary": "Onay kontrolü altındaki sayfalar için veri sağlar",
+	"bs-flaggedrevsconnector-grid-page-categories": "Sayfa kategorileri"
 }
