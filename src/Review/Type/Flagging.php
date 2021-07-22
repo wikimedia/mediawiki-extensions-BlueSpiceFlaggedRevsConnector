@@ -33,7 +33,7 @@ class Flagging extends BsReviewProcess {
 	 *
 	 * @return Message
 	 */
-	public function getTypeMessage() : Message {
+	public function getTypeMessage(): Message {
 		return Message::newFromKey( 'bs-flaggedrevsconnector-review-type-flagging' );
 	}
 
