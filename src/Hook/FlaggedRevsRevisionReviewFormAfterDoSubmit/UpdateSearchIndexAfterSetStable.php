@@ -5,6 +5,7 @@ namespace BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfter
 use BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfterDoSubmit;
 use BS\ExtendedSearch\Source\Job\UpdateRepoFile;
 use BS\ExtendedSearch\Source\Job\UpdateWikiPage;
+use ExtensionRegistry;
 use JobQueueGroup;
 use Title;
 
@@ -30,6 +31,9 @@ class UpdateSearchIndexAfterSetStable extends FlaggedRevsRevisionReviewFormAfter
 	 * @return bool
 	 */
 	protected function skipProcessing() {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BlueSpiceExtendedSearch' ) ) {
+			return true;
+		}
 		return !$this->revisionReviewForm->getPage() instanceof Title || $this->status !== true;
 	}
 }

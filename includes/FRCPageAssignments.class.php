@@ -91,6 +91,10 @@ class FRCPageAssignments {
 	 * @return bool
 	 */
 	public function onAPIAfterExecute( $module ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BlueSpicePageAssignments' ) ) {
+			return true;
+		}
+
 		if ( $module instanceof ApiReview === false ) {
 			return true;
 		}

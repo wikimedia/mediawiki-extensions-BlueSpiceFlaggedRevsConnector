@@ -33,6 +33,10 @@ class FRCReview {
 	 */
 	public static function onFlaggedRevsRevisionReviewFormAfterDoSubmit( $revisionReviewForm,
 		$status ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'BlueSpiceReview' ) === false ) {
+			return true;
+		}
+
 		$services = MediaWikiServices::getInstance();
 		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
 
