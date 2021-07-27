@@ -44,14 +44,21 @@ class HandleIncludes extends ArraySetting implements IOverwriteGlobal {
 	 * @return array
 	 */
 	protected function getOptions() {
-		return [
+		$options = [
 			// FR_INCLUDES_CURRENT
 			$this->msg( 'bs-flaggedrevsconnector-pref-handleinclude-current' )->plain() => 0,
-			// FR_INCLUDES_FREEZE
-			$this->msg( 'bs-flaggedrevsconnector-pref-handleinclude-freeze' )->plain() => 1,
 			// FR_INCLUDES_STABLE
 			$this->msg( 'bs-flaggedrevsconnector-pref-handleinclude-stable' )->plain() => 2,
 		];
+		if ( $this->getValue() === 1 ) {
+			// @deprecated since version 4.0.2 - not in use anymore. Keep this option
+			// for users, that have already set it up this way to be able to save configs
+			// without changing values
+			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+			// FR_INCLUDES_FREEZE
+			$options[$this->msg( 'bs-flaggedrevsconnector-pref-handleinclude-freeze' )->plain()] = 1;
+		}
+		return $options;
 	}
 
 	/**
