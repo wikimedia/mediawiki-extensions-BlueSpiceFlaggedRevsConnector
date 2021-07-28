@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Dianliang233",
+			"DreamerBlue",
 			"Lakejason0",
 			"Si109",
 			"沈澄心"
@@ -22,6 +23,7 @@
 	"bs-flaggedrevsconnector-state-pending": "待定更改",
 	"bs-flaggedrevsconnector-review-heading": "批准",
 	"bs-flaggedrevsconnector-review-comment-label": "评论",
+	"bs-flaggedrevsconnector-label-flaggedrevs": "批准",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "已批准",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "通过日期",
 	"bs-flaggedrevsconnector-column-last-stable": "已巡查",
