@@ -21,7 +21,6 @@
 		"no-restricted-syntax": "warn",
 		"es/no-object-values": "warn",
 		"compat/compat": "warn",
-		"vars-on-top": "warn",
 		"camelcase": "warn"
 	},
 	"env": {
