@@ -33,7 +33,9 @@ class PrimaryDataProvider extends PageDataProvider {
 		);
 
 		foreach ( $res as $row ) {
-			$this->categoryMap[$row->cl_from][] = $row->cl_to;
+			// This is a filterable field value. It must contain a value a user would set as filter
+			$categoryName = str_replace( '_', ' ', $row->cl_to );
+			$this->categoryMap[$row->cl_from][] = $categoryName;
 		}
 	}
 
@@ -83,6 +85,13 @@ class PrimaryDataProvider extends PageDataProvider {
 			}
 			$revisionsSinceStable = $flaggablePage->getPendingRevCount();
 		}
+
+		// Give grep a chance:
+		// `bs-flaggedrevsconnector-state-unmarked`
+		// `bs-flaggedrevsconnector-state-stable`
+		// `bs-flaggedrevsconnector-state-draft`
+		// `bs-flaggedrevsconnector-state-implicit-draft`
+		// `bs-flaggedrevsconnector-state-notenabled`
 		$stateMessage = wfMessage( "bs-flaggedrevsconnector-state-$state" );
 
 		$pageData = parent::getRecordFromTitle( $title )->getData();
@@ -95,5 +104,14 @@ class PrimaryDataProvider extends PageDataProvider {
 		}
 
 		return new Record( $pageData );
+	}
+
+	/**
+	 * For performance reasons we do not check every page explictily here, but instead rely on
+	 * the build-in pre-filtering of the base class.
+	 * @inheritDoc
+	 */
+	protected function userCanRead( Title $title ) {
+		return true;
 	}
 }
