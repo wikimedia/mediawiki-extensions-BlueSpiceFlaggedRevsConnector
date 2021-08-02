@@ -4,6 +4,7 @@ namespace BlueSpice\FlaggedRevsConnector\Data\FlaggedPages;
 
 use BlueSpice\FlaggedRevsConnector\Data\Record;
 use MediaWiki\MediaWikiServices;
+use Title;
 
 class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
 
@@ -26,7 +27,7 @@ class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
 
 			$categories = $record->get( Record::PAGE_CATEGORIES, [] );
 			foreach ( $categories as $category ) {
-				$categoryTitle = \Title::newFromText( $category, NS_CATEGORY );
+				$categoryTitle = Title::makeTitle( NS_CATEGORY, $category );
 				$link = MediaWikiServices::getInstance()->getLinkRenderer()->makeLink(
 					$categoryTitle,
 					$categoryTitle->getText()
