@@ -101,5 +101,6 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versões estáveis",
 	"bs-flaggedrevsconnector-resource-changes": "Mudanças nos recursos incluídos desde a última aprovação da página",
 	"bs-flaggedrevsconnector-state-implicit-draft": "Rascunho implícito",
-	"apihelp-bs-flaggedpages-store-summary": "Fornece dados para páginas que estão sob controle de aprovação"
+	"apihelp-bs-flaggedpages-store-summary": "Fornece dados para páginas que estão sob controle de aprovação",
+	"bs-flaggedrevsconnector-grid-page-categories": "Categorias de página"
 }

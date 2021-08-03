@@ -1,6 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dianliang233",
+			"DreamerBlue",
 			"Lakejason0",
 			"Si109",
 			"沈澄心"
@@ -34,5 +36,15 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "显示差异",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "显示差异",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "稳定版本",
-	"bs-flaggedrevsconnector-grid-page-id": "页面ID"
+	"bs-flaggedrevsconnector-grid-page-id": "页面ID",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "稳定的页面",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "不稳定的页面",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "不使用FlaggedRevs的名字空间",
+	"bs-flaggedrevsconnector-label-flaggedrevs": "批准",
+	"bs-flaggedrevsconnector-grid-page-categories": "页面分类",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "批准",
+	"bs-flaggedrevsconnector-collection-type-flaggedpages-cat": "按分类批准",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "名字空间",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "分类",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "初稿"
 }
