@@ -338,6 +338,11 @@
 			"public": true
 		}
 	},
+	"HookHandlers": {
+		"main": {
+			"class": "\\BlueSpice\\FlaggedRevsConnector\\HookHandler\\Main"
+		}
+	},
 	"Hooks": {
 		"MessageCache::get": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\MessageCacheGet\\ApplyBusinessVocabulary::callback",
 		"ArticleViewHeader":[
@@ -377,7 +382,8 @@
 		"SpecialPage_initList": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SpecialPageInitList\\RemoveDefaultFRPages::callback",
 		"BeforeParserFetchTemplateAndtitle": [
 			"BlueSpice\\FlaggedRevsConnector\\Hook\\BeforeParserFetchTemplateAndTitle\\SetTransclusionVersion::callback"
-		]
+		],
+		"MWStakeCommonUIRegisterSkinSlotComponents": "main"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
