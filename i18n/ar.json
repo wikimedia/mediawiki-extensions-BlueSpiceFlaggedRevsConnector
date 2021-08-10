@@ -9,8 +9,10 @@
 	"bs-flaggedrevsconnector-state-pending": "التعديلات المعلقة",
 	"bs-flaggedrevsconnector-column-last-stable": "المراجعة",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "المستخدم الذي راجع الصفحة",
+	"bs-flaggedrevsconnector-flyout-title": "قبول الصفحة",
 	"bs-flaggedrevsconnector-grid-page-id": "معرف الصفحة",
 	"bs-flaggedrevsconnector-grid-page-title": "عنوان الصفحة",
+	"bs-flaggedrevsconnector-grid-page-categories": "تصنيفات الصفحة",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "نسخة مسودة",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "النطاق"
 }
