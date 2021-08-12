@@ -95,7 +95,7 @@
 	"bsfrc-tooltip-ca-stable": "Die freigegebene Version dieser Seite ansehen",
 	"bsfrc-tooltip-ca-default": "Einstellungen freigegebene Versionen",
 	"bsfrc-flaggedrevs-protect-legend": "Automatisches freigeben von Bearbeitungen ([[{{MediaWiki:Validationpage}}|Hilfe]])",
-	"bsfrc-flaggedrevs-categoryview": "[{{Fullurl:Spezial:UnreviewedPages|category=$1}} Unfreigegebene Seiten]{{int:pipe-separator}}[{{fullurl:Special:PendingChanges|category=$1}} Seiten mit unfreigegebenen Änderungen]",
+	"bsfrc-flaggedrevs-categoryview": "[{{Fullurl:Spezial:Quality_management_overview|category=$1&state=unmarked}} Unfreigegebene Seiten]{{MediaWiki:pipe-separator}}[{{fullurl:Spezial:Quality_management_overview|category=$1&state=draft}} Seiten mit unfreigegebenen Änderungen]",
 	"bsfrc-revreview-locked-title": "Bearbeitungen dieser Seite müssen freigegeben werden.",
 	"bsfrc-revreview-unlocked-title": "Bearbeitungen dieser Seite müssen nicht freigegeben werden.",
 	"bsfrc-revreview-locked": "'''Hinweis:''' Bearbeitungen müssen [[{{MediaWiki:Validationpage}}|freigegeben]] werden, bevor sie Lesern dieser Seite angezeigt werden.",
