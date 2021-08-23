@@ -146,8 +146,25 @@
 			"ReviewTypeRegistry": {
 				"flagging": "BlueSpice\\FlaggedRevsConnector\\Review\\Type\\Flagging::factory"
 			}
+		},
+		"Workflows": {
+			"LogicObjects": {
+				"ActivityRegistry": {
+					"approve_page": {
+						"class": "\\BlueSpice\\FlaggedRevsConnector\\Workflows\\Activity\\ApprovePageActivity",
+						"services": [
+							"BSFlaggedRevsConnectorUtils",
+							"RevisionStore",
+							"BSUtilityFactory"
+						]
+					}
+				}
+			}
 		}
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"callback": "FlaggedRevsConnector::onRegistration",
 	"GroupPermissions": {
 		"sysop": {
