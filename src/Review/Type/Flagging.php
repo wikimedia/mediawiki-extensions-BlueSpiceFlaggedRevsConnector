@@ -2,24 +2,37 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Review\Type;
 
-use BlueSpice\FlaggedRevsConnector\PermissionLessReviewForm;
+use BlueSpice\FlaggedRevsConnector\Utils;
+use BlueSpice\Review\Data\Review\Record;
 use BlueSpice\Review\IReviewProcess;
+use BlueSpice\Review\ITarget;
 use BlueSpice\Review\Notifications;
 use BsReviewProcess;
+use Config;
 use FatalError;
-use FlaggableWikiPage;
-use FlaggedRevs;
-use FRInclusionCache;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
 use MWException;
-use RevisionReviewForm;
 use Title;
 use User;
 
 class Flagging extends BsReviewProcess {
+	/** @var Utils */
+	private $utils;
+
+	/**
+	 * @inheritDoc
+	 */
+	public function __construct(
+		$type, ITarget $target, Config $config, Record $record, array $steps
+	) {
+		parent::__construct( $type, $target, $config, $record, $steps );
+		$this->utils = MediaWikiServices::getInstance()->getService(
+			'BSFlaggedRevsConnectorUtils'
+		);
+	}
 
 	/**
 	 *
@@ -123,7 +136,7 @@ class Flagging extends BsReviewProcess {
 			$title
 		);
 		// TODO: error handling with real \Status obects and transform $status result
-		$status = $this->doOwnWorkingReview(
+		$status = $this->utils->approveRevision(
 			$context->getUser(),
 			$title,
 			$revision,
@@ -136,56 +149,16 @@ class Flagging extends BsReviewProcess {
 	}
 
 	/**
-	 * @param User $oUser
-	 * @param Title $oTitle
+	 * @param User $user
+	 * @param Title $title
 	 * @param RevisionRecord $revision
-	 * @param string $sComment
+	 * @param string $comment
+	 * @deprecated since 4.1 - Use BlueSpice\FlaggedRevsConnector\Utils::approveRevision instead
 	 * @return bool|string
 	 */
-	protected function doOwnWorkingReview( User $oUser, Title $oTitle,
-		RevisionRecord $revision, $sComment = '' ) {
-		// Construct submit form...
-		$form = new PermissionLessReviewForm( $oUser );
-		$form->setPage( $oTitle );
-		$form->setOldId( $revision->getId() );
-		$form->setApprove( true );
-		$form->setUnapprove( false );
-		$form->setComment( $sComment );
-		// The flagging parameters have the form 'flag_$name'.
-		// Extract them and put the values into $form->dims
-		foreach ( FlaggedRevs::getTags() as $tag ) {
-			if ( FlaggedRevs::binaryFlagging() ) {
-				$form->setDim( $tag, 1 );
-			}
-		}
-
-		$article = new FlaggableWikiPage( $oTitle );
-		// Get the file version used for File: pages
-		$file = $article->getFile();
-		if ( $file ) {
-			$fileVer = [ 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() ];
-		} else {
-			$fileVer = null;
-		}
-		// Now get the template and image parameters needed
-		list( $templateIds, $fileTimeKeys ) =
-			FRInclusionCache::getRevIncludes( $article, $revision, $oUser );
-		// Get version parameters for review submission (flat strings)
-		list( $templateParams, $imageParams, $fileParam ) =
-			RevisionReviewForm::getIncludeParams( $templateIds, $fileTimeKeys, $fileVer );
-		// Set the version parameters...
-		$form->setTemplateParams( $templateParams );
-		$form->setFileParams( $imageParams );
-		$form->setFileVersion( $fileParam );
-		// always OK; uses current templates/files
-		$form->bypassValidationKey();
-
-		// all params set
-		$form->ready();
-
-		# Try to do the actual review
-		$status = $form->submit();
-
-		return $status;
+	protected function doOwnWorkingReview(
+		User $user, Title $title, RevisionRecord $revision, $comment = ''
+	) {
+		return $this->utils->approveRevision( $user, $title, $revision, $comment );
 	}
 }

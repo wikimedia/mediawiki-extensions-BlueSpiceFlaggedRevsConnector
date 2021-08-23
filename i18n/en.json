@@ -115,5 +115,9 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Freeze versions",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stable versions",
 	"bs-flaggedrevsconnector-resource-changes": "Changes to included resources since the last page approval",
-	"apihelp-bs-flaggedpages-store-summary": "Provides data for pages, that are under approval control"
+	"apihelp-bs-flaggedpages-store-summary": "Provides data for pages, that are under approval control",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Failed to approve the page",
+	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Specified revision does not match the title specified",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" and \"revision\" must be present in DefinitionContext",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "\"pageId\" provided does not match any valid Title objects"
 }
