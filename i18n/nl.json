@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"McDutchie",
 			"Romaine"
 		]
 	},
@@ -62,9 +63,9 @@
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Niet ingeschakeld",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Toon verschil",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Toon verschil",
-	"bs-flaggedrevsconnector-state-implicit-draft-desc": "Pagina is goedgekeurd, maar er zijn wijzigingen in de opgenomen bronnen",
-	"bs-flaggedrevsconnector-state-draft-resources-desc": "Pagina is een concept vanwege wijzigingen in opgenomen bronnen",
-	"bs-flaggedrevsconnector-pref-handleincludes": "Inclusief afhandeling",
+	"bs-flaggedrevsconnector-state-implicit-draft-desc": "De pagina is goedgekeurd, maar er zijn wijzigingen in de ingevoegde sjablonen",
+	"bs-flaggedrevsconnector-state-draft-resources-desc": "De pagina is een concept vanwege wijzigingen in de ingevoegde sjablonen",
+	"bs-flaggedrevsconnector-pref-handleincludes": "Afhandeling ingevoegde sjablonen",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Huidige versies",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Bevries versies",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabiele versies",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AYZ04",
 			"Dianliang233",
 			"DreamerBlue",
 			"Lakejason0",
@@ -8,7 +9,9 @@
 			"沈澄心"
 		]
 	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "稳定日期",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "页面",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "稳定的评论",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "稳定的页面",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "不稳定的页面",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "不使用FlaggedRevs的名字空间",
@@ -20,13 +23,21 @@
 	"bs-flaggedrevsconnector-state-draft": "草稿",
 	"bs-flaggedrevsconnector-state-implicit-draft": "隐式草稿",
 	"bs-flaggedrevsconnector-state-notenabled": "未启用",
+	"bs-flaggedrevsconnector-state-unmarked-desc": "此页面没有经过批准的版本。",
 	"bs-flaggedrevsconnector-state-pending": "待定更改",
+	"bs-flaggedrevsconnector-state-stable-desc": "该版本已获批准。",
 	"bs-flaggedrevsconnector-review-heading": "批准",
 	"bs-flaggedrevsconnector-review-comment-label": "评论",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "批准",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "已批准",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "通过日期",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "等待批准",
+	"bs-flaggedrevsconnector-response-failure": "发生了一个的错误。请联系您的管理员。",
+	"bs-flaggedrevsconnector-history-row-fr-info": "已评论：$1 $2 $3",
 	"bs-flaggedrevsconnector-column-last-stable": "已巡查",
+	"bs-flaggedrevsconnector-no-stable": "未审查",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1 已评论 $3",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-body": "$1 已评论 $2",
 	"bs-flaggedrevsconnector-nav-link-title": "批准",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "草稿版本",
 	"bs-flaggedrevsconnector-review-type-flagging": "批准",
