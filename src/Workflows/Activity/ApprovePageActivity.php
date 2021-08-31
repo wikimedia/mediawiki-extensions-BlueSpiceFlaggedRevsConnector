@@ -62,7 +62,7 @@ class ApprovePageActivity extends GenericActivity {
 	 * @throws WorkflowExecutionException
 	 */
 	public function execute( $data, WorkflowContext $context ): ExecutionStatus {
-		$this->setPageData( $context );
+		$this->setPageData( $context, $data );
 		$this->assertApprovable();
 		$comment = $data['comment'] ?? '';
 
@@ -73,12 +73,15 @@ class ApprovePageActivity extends GenericActivity {
 	/**
 	 *
 	 * @param WorkflowContext $context
+	 * @param array $data
 	 * @return void
+	 * @throws WorkflowExecutionException
 	 */
-	private function setPageData( WorkflowContext $context ) {
+	private function setPageData( WorkflowContext $context, $data ) {
+		$revisionId = $data['revision'] ?? $context->getDefinitionContext()->getItem( 'revision' );
 		if (
 			!$context->getDefinitionContext()->getItem( 'pageId' ) ||
-			!$context->getDefinitionContext()->getItem( 'revision' )
+			!$revisionId
 		) {
 			throw new WorkflowExecutionException(
 				Message::newFromKey(
@@ -97,9 +100,7 @@ class ApprovePageActivity extends GenericActivity {
 		}
 		$this->title = $title;
 
-		$revision = $this->revisionStore->getRevisionById(
-			$context->getDefinitionContext()->getItem( 'revision' )
-		);
+		$revision = $this->revisionStore->getRevisionById( (int)$revisionId );
 		if ( $revision === null ) {
 			$revision = $this->revisionStore->getRevisionById( $title->getLatestRevID() );
 		}
@@ -142,7 +143,6 @@ class ApprovePageActivity extends GenericActivity {
 				$this->revision,
 				$comment
 			);
-			error_log( var_export( $status, 1 ) );
 			if ( $status !== true ) {
 				throw new Exception( Message::newFromKey(
 					'bs-flaggedrevsconnector-wfactivity-error-cannot-approve'
