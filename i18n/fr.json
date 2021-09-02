@@ -112,5 +112,9 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Geler les versions",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versions stables",
 	"bs-flaggedrevsconnector-resource-changes": "Changements des ressources incluses depuis la dernière approbation de la page",
-	"apihelp-bs-flaggedpages-store-summary": "Fournit des données pour les pages placées sous contrôle d’approbation"
+	"apihelp-bs-flaggedpages-store-summary": "Fournit des données pour les pages placées sous contrôle d’approbation",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Échec d’approbation de la page",
+	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "La révision spécifiée ne correspond pas au titre spécifié",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "« pageId » et « revision » doivent être présents dans DefinitionContext",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "« pageId » fourni ne correspond à aucun objet Titre valide"
 }
