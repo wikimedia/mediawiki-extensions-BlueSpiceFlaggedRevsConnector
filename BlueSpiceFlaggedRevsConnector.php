@@ -52,6 +52,8 @@ class FlaggedRevsConnector extends Extension {
 	public static function onRegistration() {
 		global $wgHooks;
 
+		require_once __DIR__ . '/includes/Defines.php';
+
 		if ( isset( $wgHooks['ArticleUpdateBeforeRedirect'] ) && is_array( $wgHooks['ArticleUpdateBeforeRedirect'] ) ) {
 			$i = array_search(
 				'FlaggedRevsHooksUI::injectPostEditURLParams',
