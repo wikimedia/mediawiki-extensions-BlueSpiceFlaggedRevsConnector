@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Patric Wirth",
+			"Umherirrender",
 			"Verdy p"
 		]
 	},
@@ -114,6 +115,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Label for the \"stable\" option in the handle type dropdown for the extension \"FlaggedRevs\"\n{{Identical|Stable versions}}",
 	"bs-flaggedrevsconnector-resource-changes": "Section title for the list of included resources that changed since the last page approval",
 	"apihelp-bs-flaggedpages-store-summary": "{{doc-apihelp-summary|bs-flaggedpages-store}}",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Workflow error when cannot approve the page",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Workflow error when title and revision dont match",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "Workflow error when Workflow context does not contain required items",
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Workflow error when Workflow context contain invalid values for requried items"
