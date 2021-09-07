@@ -150,7 +150,7 @@
 		"Workflows": {
 			"LogicObjects": {
 				"ActivityRegistry": {
-					"approve_page": {
+					"approve_revision": {
 						"class": "\\BlueSpice\\FlaggedRevsConnector\\Workflows\\Activity\\ApprovePageActivity",
 						"services": [
 							"BSFlaggedRevsConnectorUtils",
