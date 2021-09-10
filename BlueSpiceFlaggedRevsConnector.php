@@ -63,19 +63,23 @@ class FlaggedRevsConnector extends Extension {
 			// restores index consistency
 			array_values( $wgHooks['ArticleUpdateBeforeRedirect'] );
 		}
-		if ( isset( $wgHooks['CategoryPageView'] ) && is_array( $wgHooks['CategoryPageView'] ) ) {
+		$GLOBALS['wgExtensionFunctions'][] = function () {
+			if ( !isset( $GLOBALS['wgHooks']['CategoryPageView'] )
+				|| !is_array( $GLOBALS['wgHooks']['CategoryPageView'] ) ) {
+				return;
+			}
 			// remove links to now unlisted specialpages on category pages
 			$i = array_search(
 				'FlaggedRevsUIHooks::onCategoryPageView',
-				$wgHooks['CategoryPageView']
+				$GLOBALS['wgHooks']['CategoryPageView']
 			);
 			if ( $i !== false ) {
-				unset( $wgHooks['CategoryPageView'][$i] );
+				unset( $GLOBALS['wgHooks']['CategoryPageView'][$i] );
 				unset( $i );
 				// restores index consistency
-				array_values( $wgHooks['CategoryPageView'] );
+				array_values( $GLOBALS['wgHooks']['CategoryPageView'] );
 			}
-		}
+		};
 
 		$GLOBALS['wgExtensionFunctions'][] = function () {
 			global
