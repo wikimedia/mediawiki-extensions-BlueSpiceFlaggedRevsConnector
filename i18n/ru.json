@@ -1,10 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Okras"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Страница",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Пространство имён",
-	"bs-flaggedrevsconnector-grid-page-categories": "Категории страниц"
+	"bs-flaggedrevsconnector-grid-page-categories": "Категории страниц",
+	"bs-flaggedrevsconnector-state-draft": "Черновик",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "Черновая версия",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "Перейти на последнюю черновую версию этой страницы",
+	"bs-flaggedrevsconnector-grid-page-title": "Заголовок страницы",
+	"bs-flaggedrevsconnector-grid-rev-state": "Статус",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Показать черновую версию",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "черновик",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "первый черновик",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Категория",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "Черновик",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Первый черновик"
 }
