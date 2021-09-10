@@ -353,6 +353,10 @@
 			"value": 2,
 			"descriptionmsg": "bs-flaggedrevsconnector-pref-handleincludes",
 			"public": true
+		},
+		"FlaggedRevsConnectorStabilizeSMWPropertyValues": {
+			"public": false,
+			"value": true
 		}
 	},
 	"HookHandlers": {
