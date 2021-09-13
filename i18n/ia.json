@@ -109,5 +109,11 @@
 	"bs-flaggedrevsconnector-pref-handleincludes": "Gestion de inclusiones",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Versiones actual",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Gelar versiones",
-	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versiones stabile"
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versiones stabile",
+	"bs-flaggedrevsconnector-resource-changes": "Cambiamentos de ressources includite post le ultime approbation del pagina",
+	"apihelp-bs-flaggedpages-store-summary": "Forni datos pro paginas placiate sub controlo de approbation",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Fallimento de approbation del pagina",
+	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Le version specificate non corresponde al titulo specificate",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" e \"revision\" debe esser presente in DefinitionContext",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Le \"pageId\" fornite non corresponde a alcun objecto Title valide"
 }
