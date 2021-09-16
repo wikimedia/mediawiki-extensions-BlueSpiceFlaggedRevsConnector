@@ -2,7 +2,7 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Special;
 
-use FlaggedRevsConnector;
+use BlueSpice\FlaggedRevsConnector\Extension as FlaggedRevsConnector;
 
 class QMOverview extends \BlueSpice\SpecialPage {
 

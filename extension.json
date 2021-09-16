@@ -20,7 +20,7 @@
 		"BlueSpiceFoundation": {
 			"Extensions": {
 				"BlueSpiceFlaggedRevsConnector": {
-					"className": "FlaggedRevsConnector",
+					"className": "\\BlueSpice\\FlaggedRevsConnector\\Extension",
 					"extPath": "/BlueSpiceFlaggedRevsConnector",
 					"package": "BlueSpice Pro"
 				}
@@ -168,7 +168,7 @@
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
 	],
-	"callback": "FlaggedRevsConnector::onRegistration",
+	"callback": "\\BlueSpice\\FlaggedRevsConnector\\Extension::onRegistration",
 	"GroupPermissions": {
 		"sysop": {
 			"review": true,
