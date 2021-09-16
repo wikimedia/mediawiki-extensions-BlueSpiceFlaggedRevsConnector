@@ -183,11 +183,6 @@ class FlaggedRevsConnector extends Extension {
 		};
 	}
 
-	public static function setupFlaggedRevsConnector() {
-		global $wgHooks;
-		$wgHooks['SkinTemplateNavigation::Universal'][] = "FlaggedRevsConnector::onSkinTemplateNavigationUniversal";
-	}
-
 	protected $mFlagInfo = [];
 
 	/**
@@ -291,18 +286,4 @@ class FlaggedRevsConnector extends Extension {
 		return $aFlagInfo;
 	}
 
-	/**
-	 *
-	 * @param Skin $skin
-	 * @param array &$links
-	 * @return bool
-	 */
-	public static function onSkinTemplateNavigationUniversal( Skin $skin, array &$links ) {
-		if ( isset( $links['views']['current'] ) ) {
-			$links['namespaces']['current'] = $links['views']['current'];
-			$links['namespaces']['current']['text'] = wfMessage( "bs-flaggedrevsconnector-state-draft" )->plain();
-			unset( $links['views']['current'] );
-		}
-		return true;
-	}
 }
