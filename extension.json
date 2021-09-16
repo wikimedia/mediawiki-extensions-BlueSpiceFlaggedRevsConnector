@@ -170,9 +170,6 @@
 	"APIModules": {
 		"bs-flaggedpages-store": "\\BlueSpice\\FlaggedRevsConnector\\Api\\Store\\FlaggedPages"
 	},
-	"ExtensionFunctions": [
-		"FlaggedRevsConnector::setupFlaggedRevsConnector"
-	],
 	"MessagesDirs": {
 		"BlueSpiceFlaggedRevsConnector": [
 			"i18n"
@@ -378,6 +375,7 @@
 		"SkinTemplateOutputPageBeforeExec": [
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\SkinTemplateOutputPageBeforeExec\\AddFlyout::callback"
 		],
+		"SkinTemplateNavigation::Universal": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SkinTemplateNavigationUniversal\\ChangePendingActionText::callback",
 		"ImagePageFileHistoryLine": [
 			"BlueSpice\\FlaggedRevsConnector\\Hook\\ImagePageFileHistoryLine\\HideDraftVersions::callback"
 		],
