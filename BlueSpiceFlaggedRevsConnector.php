@@ -295,20 +295,6 @@ class FlaggedRevsConnector extends Extension {
 
 	/**
 	 *
-	 * @param array &$aContentActions
-	 * @param array &$aActionsNotInMoreMenu
-	 * @return bool
-	 */
-	public function onReorderActionTabs( &$aContentActions, &$aActionsNotInMoreMenu ) {
-		if ( $aContentActions[ 'current' ] ) {
-			$aContentActions[ 'current' ][ 'text' ] = wfMessage( 'bs-flaggedrevsconnector-state-draft' )->plain();
-			$aActionsNotInMoreMenu[ ] = 'current';
-		}
-		return true;
-	}
-
-	/**
-	 *
 	 * @param Skin $skin
 	 * @param array &$links
 	 * @return bool
