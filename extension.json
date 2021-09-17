@@ -118,16 +118,6 @@
 				"bs-frc-unmarked-color": "#ff8080",
 				"bs-frc-stable-color": "#38c748",
 				"bs-frc-draft-color": "#e49c00"
-			},
-			"EntityRegistry": {
-				"flaggedpages-ns": "\\BlueSpice\\FlaggedRevsConnector\\EntityConfig\\Collection\\NamespacedFlaggedPages::factory",
-				"flaggedpages-cat": "\\BlueSpice\\FlaggedRevsConnector\\EntityConfig\\Collection\\CategorizedFlaggedPages::factory"
-			}
-		},
-		"BlueSpiceExtendedStatistics": {
-			"SnapshotDataCollectorRegistry": {
-				"flaggedpages-ns": "\\BlueSpice\\FlaggedRevsConnector\\DataCollector\\StoreSourced\\NamespacedFlaggedPages::factory",
-				"flaggedpages-cat": "\\BlueSpice\\FlaggedRevsConnector\\DataCollector\\StoreSourced\\CategorizedFlaggedPages::factory"
 			}
 		},
 		"BlueSpicePrivacy": {
@@ -146,6 +136,19 @@
 		"BlueSpiceReview": {
 			"ReviewTypeRegistry": {
 				"flagging": "BlueSpice\\FlaggedRevsConnector\\Review\\Type\\Flagging::factory"
+			}
+		},
+		"BlueSpiceExtendedStatistics": {
+			"SnapshotProviders": {
+				"frc-flaggedpages": {
+					"class": "\\BlueSpice\\FlaggedRevsConnector\\Statistics\\SnapshotProvider\\FlaggedPages",
+					"services": [ "DBLoadBalancer", "MainConfig" ]
+				}
+			},
+			"Reports": {
+				"frc-flaggedpages": {
+					"class": "\\BlueSpice\\FlaggedRevsConnector\\Statistics\\Report\\FlaggedPages"
+				}
 			}
 		}
 	},
@@ -282,6 +285,20 @@
 		},
 		"ext.bluespice.flaggedRevsConnector.filepage.styles": {
 			"styles": "ext.bluespice.flaggedRevsConnector.filepage.styles.css"
+		},
+		"ext.bluespice.flaggedrevsconnector.statistics": {
+			"scripts": [
+				"statistics/FlaggedPagesReport.js"
+			],
+			"dependencies": [
+				"ext.bluespice",
+				"ext.oOJSPlus.widgets"
+			],
+			"messages": [
+				"bs-flaggedrevsconnector-statistics-report-flagged-pages",
+				"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable",
+				"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
