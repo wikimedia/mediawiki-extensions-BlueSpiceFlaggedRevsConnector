@@ -119,5 +119,8 @@
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Failed to approve the page",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Specified revision does not match the title specified",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" and \"revision\" must be present in DefinitionContext",
-	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "\"pageId\" provided does not match any valid Title objects"
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "\"pageId\" provided does not match any valid Title objects",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Page approval status",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Approved",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Draft"
 }
