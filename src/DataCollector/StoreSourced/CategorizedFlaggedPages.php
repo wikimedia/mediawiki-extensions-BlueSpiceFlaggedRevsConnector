@@ -18,9 +18,9 @@ use BlueSpice\FlaggedRevsConnector\DataCollector\AttributeMapping;
 use BlueSpice\FlaggedRevsConnector\Entity\Collection\CategorizedFlaggedPages as Collection;
 use Config;
 use FlaggedRevsConnector;
-use LoadBalancer;
 use MediaWiki\MediaWikiServices;
 use MWException;
+use Wikimedia\Rdbms\LoadBalancer;
 
 class CategorizedFlaggedPages extends StoreSourced\CategoryCollector {
 
