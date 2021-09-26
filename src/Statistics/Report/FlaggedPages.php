@@ -4,7 +4,7 @@ namespace BlueSpice\FlaggedRevsConnector\Statistics\Report;
 
 use BlueSpice\ExtendedStatistics\ClientReportHandler;
 use BlueSpice\ExtendedStatistics\IReport;
-use MWNamespace;
+use MediaWiki\MediaWikiServices;
 
 class FlaggedPages implements IReport {
 
@@ -27,7 +27,9 @@ class FlaggedPages implements IReport {
 				if ( (int)$id === 0 ) {
 					return '-';
 				}
-				return MWNamespace::getCanonicalName( $id );
+				return MediaWikiServices::getInstance()
+					->getNamespaceInfo()
+					->getCanonicalName( $id );
 			}, $filterValues );
 		}
 		if ( isset( $filterData['categories'] ) && !empty( $filterData['categories'] ) ) {
