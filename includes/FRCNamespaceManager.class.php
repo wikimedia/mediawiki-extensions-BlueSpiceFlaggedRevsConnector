@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCNamespaceManager {
 
@@ -48,7 +50,7 @@ class FRCNamespaceManager {
 	 */
 	public function onEditNamespace( &$aNamespaceDefinitions, &$iNS, $aAdditionalSettings,
 		$bUseInternalDefaults = false ) {
-		if ( MWNamespace::isTalk( $iNS ) ) {
+		if ( MediaWikiServices::getInstance()->getNamespaceInfo()->isTalk( $iNS ) ) {
 			// FlaggedRevs can not be activated for TALK namespaces!
 			return true;
 		}
@@ -72,7 +74,7 @@ class FRCNamespaceManager {
 	public function onWriteNamespaceConfiguration( &$sSaveContent, $sConstName, $iNsID, $aDefinition ) {
 		global $wgFlaggedRevsNamespaces;
 
-		if ( $iNsID === null || MWNamespace::isTalk( $iNsID ) ) {
+		if ( $iNsID === null || MediaWikiServices::getInstance()->getNamespaceInfo()->isTalk( $iNsID ) ) {
 			// FlaggedRevs can not be activated for TALK namespaces!
 			return true;
 		}

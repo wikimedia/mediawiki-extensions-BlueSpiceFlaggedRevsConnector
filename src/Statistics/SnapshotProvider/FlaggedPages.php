@@ -6,7 +6,7 @@ use BlueSpice\ExtendedStatistics\ISnapshotProvider;
 use BlueSpice\ExtendedStatistics\Snapshot;
 use BlueSpice\ExtendedStatistics\SnapshotDate;
 use Config;
-use MWNamespace;
+use MediaWiki\MediaWikiServices;
 use Title;
 use Wikimedia\Rdbms\LoadBalancer;
 
@@ -62,7 +62,9 @@ class FlaggedPages implements ISnapshotProvider {
 			if ( (int)$row->page_namespace === 0 ) {
 				$namespace = '-';
 			} else {
-				$namespace = MWNamespace::getCanonicalName( $row->page_namespace );
+				$namespace = MediaWikiServices::getInstance()
+					->getNamespaceInfo()
+					->getCanonicalName( $row->page_namespace );
 			}
 			$category = $row->cl_to;
 			$approved = (bool)$row->fr_rev_id;
