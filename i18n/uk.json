@@ -116,5 +116,15 @@
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Не вдалося затвердити сторінку",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Вказана версія не відповідає зазначеному заголовку",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "«PageId» та «revision» повинні бути присутніми у DefinitionContext",
-	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "«PageId» не відповідає жодним дійсним об'єктам заголовка"
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "«PageId» не відповідає жодним дійсним об'єктам заголовка",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Статус затвердження сторінки",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Затверджено",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Чернетка",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Вставляє журнал публікацій на початку PDF-файлу. Цей журнал показує, коли сторінка була прийнята. Якщо під час прийняття не було додано жодного коментаря, поле коментаря порожнє.",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Вставляє журнал на початку PDF-файлу. У цьому журналі відображаються всі сторінки PDF зі статусом «чернетка».",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Вставляє журнал на початку PDF-файлу. У цьому журналі відображаються всі сторінки PDF із просторів назв без активованих функцій перегляду.",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Друкує позначку часу для останніх прийнятих та чернечих версій під заголовком у PDF.",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Робочий процес автоматично видаляється, і можна розпочати новий робочий процес.",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Встановлює право доступу до чернечих версій. Якщо немає жодної групи в списку, навіть користувач-адміністратор не бачить візуального стану в області заголовка. Однак користувачі-адміністратори все ще можуть отримати доступ до чернетки в історії версій.",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Проєкти версій виключені з результатів пошуку. Якщо сторінка не має стабільної версії, вона не відображатиметься в результатах пошуку."
 }

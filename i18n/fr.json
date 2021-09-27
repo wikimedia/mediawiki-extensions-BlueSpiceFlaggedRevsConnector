@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DreZhsh",
 			"Gomoko",
 			"Verdy p"
 		]
@@ -116,5 +117,7 @@
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Échec d’approbation de la page",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "La révision spécifiée ne correspond pas au titre spécifié",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "« pageId » et « revision » doivent être présents dans DefinitionContext",
-	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "« pageId » fourni ne correspond à aucun objet Titre valide"
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "« pageId » fourni ne correspond à aucun objet Titre valide",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Approuvé",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Brouillon"
 }
