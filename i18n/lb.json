@@ -17,5 +17,7 @@
 	"bs-flaggedrevsconnector-collection-var-draftpages": "Virbereedung",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Ënnerscheed weisen",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Ënnerscheed weisen",
-	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabil Versiounen"
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabil Versiounen",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Akzeptéiert",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Virbereedung"
 }

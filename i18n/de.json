@@ -3,7 +3,8 @@
 		"authors": [
 			"Mglaser",
 			"Mschlindwein",
-			"Stephan Muggli <muggli@hallowelt.biz>"
+			"Stephan Muggli <muggli@hallowelt.biz>",
+			"Umlaut"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Stattet andere Erweiterungen mit Kompatibilität zu FlaggedRevs aus.",
@@ -113,5 +114,6 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versionen einfrieren",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabile Versionen",
 	"bs-flaggedrevsconnector-resource-changes": "Änderungen an eingebundenden Ressourcen seit der letzten Seitenfreigabe",
-	"apihelp-bs-flaggedpages-store-summary": "Stellt Daten für Seiten bereit, die unter Kontrolle des Freigabemechanismus stehen"
+	"apihelp-bs-flaggedpages-store-summary": "Stellt Daten für Seiten bereit, die unter Kontrolle des Freigabemechanismus stehen",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Entwurf"
 }

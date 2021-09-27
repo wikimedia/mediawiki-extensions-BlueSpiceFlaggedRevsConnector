@@ -19,5 +19,6 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Luonnosversio",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Nimiavaruus",
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "Hyväksytty",
-	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Sivun hyväksyminen epäonnistui"
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Sivun hyväksyminen epäonnistui",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Hyväksytty"
 }
