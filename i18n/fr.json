@@ -118,6 +118,8 @@
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "La révision spécifiée ne correspond pas au titre spécifié",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "« pageId » et « revision » doivent être présents dans DefinitionContext",
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "« pageId » fourni ne correspond à aucun objet Titre valide",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Statut d'approbation de la page",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Approuvé",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Brouillon"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Brouillon",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Insère un journal de publication au début du PDF. Ce journal indique quand une page a été acceptée. Si aucun commentaire n'a été ajouté lors de l'acceptation, le champ de commentaire est vide."
 }
