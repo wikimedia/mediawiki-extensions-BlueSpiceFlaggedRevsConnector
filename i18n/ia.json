@@ -109,5 +109,21 @@
 	"bs-flaggedrevsconnector-pref-handleincludes": "Gestion de inclusiones",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Versiones actual",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Gelar versiones",
-	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versiones stabile"
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versiones stabile",
+	"bs-flaggedrevsconnector-resource-changes": "Cambiamentos de ressources includite post le ultime approbation del pagina",
+	"apihelp-bs-flaggedpages-store-summary": "Forni datos pro paginas placiate sub controlo de approbation",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Fallimento de approbation del pagina",
+	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Le version specificate non corresponde al titulo specificate",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" e \"revision\" debe esser presente in DefinitionContext",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Le \"pageId\" fornite non corresponde a alcun objecto Title valide",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Stato de approbation del pagina",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Approbate",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Provisori",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Insere un registro de publication al initio del PDF. Iste registro monstra quando un pagina ha essite acceptate. Si nulle commento ha essite addite durante le acceptation, le campo de commento es vacue.",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Insere un registro al initio del PDF. Iste registro monstra tote le paginas PDF con stato \"version provisori\".",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Insere un registro al initio del PDF. Iste registro monstra tote le paginas PDF que proveni de spatios de nomines sin functionalitate de recension activate.",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime le data e hora pro le ultime versiones acceptate e provisori infra le titulo in le PDF.",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Le fluxo de labor se elimina automaticamente e un nove fluxo de labor pote esser comenciate.",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Defini le derecto de accesso a versiones provisori. Si nulle gruppo es listate, mesmo usatores administrative non videra un stato visual in le area de titulo. Totevia, usatores administrative pote acceder al versiones provisori in le historia de versiones.",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Versiones provisori es excludite de resultatos de recerca. Si un pagina non ha version stabile, illo non appare in le resultatos de recerca."
 }

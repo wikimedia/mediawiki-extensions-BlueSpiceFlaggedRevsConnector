@@ -120,7 +120,7 @@
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "Workflow error when Workflow context does not contain required items",
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Workflow error when Workflow context contain invalid values for requried items",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Statistics report name",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Label for the \"stable\" axis",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Label for the \"approved\" axis",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Label for the \"draft\" axis",
 	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Description for config variable \"FlaggedRevsConnectorBookshelfShowStable\"",
 	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Description for config variable \"FlaggedRevsConnectorBookshelfShowNoStable\"",
