@@ -27,14 +27,22 @@ class FRCSemanticMediaWiki {
 		}
 
 		$oTitle = $this->getTitleFromAPIParam( $module->getRequest() );
-		if ( $oTitle === null ) {
+		if ( !$oTitle || $oTitle->getNamespace() < NS_MAIN ) {
 			return true;
 		}
-
-		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContent() != null ) {
-			DataUpdate::runUpdates( $oWikiPage->getContent()->getSecondaryDataUpdates( $oTitle ) );
+		try {
+			$wikiPage = WikiPage::factory( $oTitle );
+		} catch ( Exception $e ) {
+			return true;
 		}
+		if ( !$wikiPage ) {
+			return true;
+		}
+		$wikiPage->doSecondaryDataUpdates( [
+			'recursive' => false,
+			'defer' => DeferredUpdates::POSTSEND,
+		] );
+		return true;
 	}
 
 	/**
