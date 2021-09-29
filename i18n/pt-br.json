@@ -105,5 +105,8 @@
 	"apihelp-bs-flaggedpages-store-summary": "Fornece dados para páginas que estão sob controle de aprovação",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Falha ao aprovar a página",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "A revisão especificada não corresponde ao título especificado",
-	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" e \"revision\" deve estar presente em DefinitionContext"
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" e \"revision\" deve estar presente em DefinitionContext",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Aprovado",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Esboço",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime o carimbo de data/hora das versões aceitas e de rascunho mais recentes abaixo do título no PDF."
 }
