@@ -30,6 +30,7 @@
  * @filesource
  */
 
+use BlueSpice\ConfigDefinitionFactory;
 use BlueSpice\Extension;
 use MediaWiki\MediaWikiServices;
 
@@ -182,6 +183,18 @@ class FlaggedRevsConnector extends Extension {
 			// SemanticMediaWiki
 			$oFRCSemanticMediaWiki = new FRCSemanticMediaWiki();
 			$GLOBALS['wgHooks']['APIAfterExecute'][] = [ $oFRCSemanticMediaWiki, 'onAPIAfterExecute' ];
+
+			/** @var ConfigDefinitionFactory $cfgDfn */
+			$cfgDfn = MediaWikiServices::getInstance()->getService( 'BSConfigDefinitionFactory' );
+			$global = $cfgDfn->factory( 'FlaggedRevsConnectorDraftGroups' );
+			if ( $global ) {
+				$allowedGroups = $global->getValue();
+				// TODO: Put that as fixed items in the pickers,
+				// so user can see that these are always set
+				$allowedGroups[] = [ 'sysop', 'reviewer' ];
+				// Let FR know who can see drafts
+				$GLOBALS['wgFlaggedRevsExceptions'] = $allowedGroups;
+			}
 		};
 	}
 
