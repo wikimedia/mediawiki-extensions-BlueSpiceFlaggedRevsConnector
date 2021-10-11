@@ -32,6 +32,7 @@
 
 use BlueSpice\ConfigDefinitionFactory;
 use BlueSpice\Extension;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Base class for FlaggedRevsConnector extension
