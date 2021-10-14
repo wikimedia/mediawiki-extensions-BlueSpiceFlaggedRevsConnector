@@ -36,7 +36,10 @@ class VersionSwitch extends FlaggedPageElement {
 	 */
 	public static function factory( IContextSource $context, Config $config, Utils $utils = null ) {
 		if ( !$utils ) {
-			$utils = new Utils( $config );
+			// we need instance of bsg config. since 4.0.1 this $config is main config
+			$utils = new Utils(
+				MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' )
+			);
 		}
 		return new static( $context, $config, $utils );
 	}
