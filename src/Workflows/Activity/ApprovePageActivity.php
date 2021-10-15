@@ -5,14 +5,13 @@ namespace BlueSpice\FlaggedRevsConnector\Workflows\Activity;
 use BlueSpice\FlaggedRevsConnector\Utils;
 use BlueSpice\UtilityFactory;
 use Exception;
+use MediaWiki\Extension\Workflows\Activity\ExecutionStatus;
+use MediaWiki\Extension\Workflows\Activity\GenericActivity;
+use MediaWiki\Extension\Workflows\Definition\ITask;
+use MediaWiki\Extension\Workflows\Exception\WorkflowExecutionException;
+use MediaWiki\Extension\Workflows\WorkflowContext;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\RevisionStore;
-use MediaWiki\Workflows\Activity\ExecutionStatus;
-use MediaWiki\Workflows\Activity\GenericActivity;
-use MediaWiki\Workflows\Definition\ITask;
-use MediaWiki\Workflows\Exception\WorkflowExecutionException;
-use MediaWiki\Workflows\ISpecialLogLogger;
-use MediaWiki\Workflows\WorkflowContext;
 use Message;
 use MWTimestamp;
 use Title;
@@ -43,13 +42,12 @@ class ApprovePageActivity extends GenericActivity {
 	 * @param RevisionStore $revisionStore
 	 * @param UtilityFactory $utilityFactory
 	 * @param ITask $task
-	 * @param ISpecialLogLogger $logger
 	 */
 	public function __construct(
 		Utils $utils, RevisionStore $revisionStore,
-		UtilityFactory $utilityFactory, ITask $task, ISpecialLogLogger $logger
+		UtilityFactory $utilityFactory, ITask $task
 	) {
-		parent::__construct( $task, $logger );
+		parent::__construct( $task );
 		$this->util = $utils;
 		$this->revisionStore = $revisionStore;
 		$this->user = $utilityFactory->getMaintenanceUser()->getUser();
@@ -78,11 +76,7 @@ class ApprovePageActivity extends GenericActivity {
 	 * @throws WorkflowExecutionException
 	 */
 	private function setPageData( WorkflowContext $context, $data ) {
-		$revisionId = $data['revision'] ?? $context->getDefinitionContext()->getItem( 'revision' );
-		if (
-			!$context->getDefinitionContext()->getItem( 'pageId' ) ||
-			!$revisionId
-		) {
+		if ( !$context->getDefinitionContext()->getItem( 'pageId' ) ) {
 			throw new WorkflowExecutionException(
 				Message::newFromKey(
 					'bs-flaggedrevsconnector-wfactivity-error-context-data-missing'
@@ -91,6 +85,10 @@ class ApprovePageActivity extends GenericActivity {
 		}
 
 		$title = Title::newFromID( $context->getDefinitionContext()->getItem( 'pageId' ) );
+		$revisionId = $data['revision'] ?? $context->getDefinitionContext()->getItem( 'revision' );
+		if ( !$revisionId ) {
+			$revisionId = $title->getLatestRevID();
+		}
 		if ( !$title instanceof Title || !$title->exists() ) {
 			throw new WorkflowExecutionException(
 				Message::newFromKey(
