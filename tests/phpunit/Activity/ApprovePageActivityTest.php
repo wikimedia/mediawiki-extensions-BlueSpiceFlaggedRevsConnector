@@ -4,12 +4,11 @@ namespace BlueSpice\FlaggedRevsConnector\Tests\Activity;
 
 use BlueSpice\FlaggedRevsConnector\Utils;
 use BlueSpice\FlaggedRevsConnector\Workflows\Activity\ApprovePageActivity;
+use MediaWiki\Extension\Workflows\Activity\ExecutionStatus;
+use MediaWiki\Extension\Workflows\Definition\DefinitionContext;
+use MediaWiki\Extension\Workflows\Definition\Element\Task;
+use MediaWiki\Extension\Workflows\WorkflowContext;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Workflows\Activity\ExecutionStatus;
-use MediaWiki\Workflows\Definition\DefinitionContext;
-use MediaWiki\Workflows\Definition\Element\Task;
-use MediaWiki\Workflows\ISpecialLogLogger;
-use MediaWiki\Workflows\WorkflowContext;
 use MediaWikiIntegrationTestCase;
 use Title;
 
@@ -51,14 +50,11 @@ class ApprovePageActivityTest extends MediaWikiIntegrationTestCase {
 		);
 		$task = new Task( 'Approve1', 'Approve page', [], [], 'automaticTask' );
 		$services = MediaWikiServices::getInstance();
-		$spclLogLoggerMock = $this->createMock( ISpecialLogLogger::class );
-		$spclLogLoggerMock->expects( $this->once() )->method( 'addEntry' );
 		$activity = new ApprovePageActivity(
 			$services->getService( 'BSFlaggedRevsConnectorUtils' ),
 			$services->getRevisionStore(),
 			$services->getService( 'BSUtilityFactory' ),
-			$task,
-			$spclLogLoggerMock
+			$task
 		);
 
 		$this->assertNotEquals( $this->title->getLatestRevID(), $this->utils->getApprovedRevisionId( $this->title ) );
