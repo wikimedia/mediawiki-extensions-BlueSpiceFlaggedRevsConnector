@@ -374,8 +374,8 @@
 		}
 	},
 	"HookHandlers": {
-		"main": {
-			"class": "\\BlueSpice\\FlaggedRevsConnector\\HookHandler\\Main"
+		"common-user-interface": {
+			"class": "\\BlueSpice\\FlaggedRevsConnector\\HookHandler\\CommonUserInterface"
 		}
 	},
 	"Hooks": {
@@ -419,7 +419,7 @@
 		"BeforeParserFetchTemplateAndtitle": [
 			"BlueSpice\\FlaggedRevsConnector\\Hook\\BeforeParserFetchTemplateAndTitle\\SetTransclusionVersion::callback"
 		],
-		"MWStakeCommonUIRegisterSkinSlotComponents": "main"
+		"MWStakeCommonUIRegisterSkinSlotComponents": "common-user-interface"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
