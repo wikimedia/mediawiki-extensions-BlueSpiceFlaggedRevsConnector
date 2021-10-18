@@ -77,6 +77,7 @@
 	"bs-flaggedrevsconnector-grid-page-id": "Side-ID",
 	"bs-flaggedrevsconnector-grid-page-title": "Sidetittel",
 	"bs-flaggedrevsconnector-grid-rev-state": "Status",
+	"bs-flaggedrevsconnector-grid-page-categories": "Sidekategorier",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "en kladd",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Kladdeversjon",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "godkjent",

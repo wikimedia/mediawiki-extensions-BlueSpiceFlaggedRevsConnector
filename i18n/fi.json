@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joquliina",
-			"MITO"
+			"MITO",
+			"Rönttönen"
 		]
 	},
 	"bs-flaggedrevsconnector-response-success": "Sivu arvioitiin onnistuneesti. Sivu uudelleenladataan nyt.",
@@ -20,5 +21,6 @@
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Nimiavaruus",
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "Hyväksytty",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Sivun hyväksyminen epäonnistui",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Hyväksytty"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Hyväksytty",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Luonnos"
 }
