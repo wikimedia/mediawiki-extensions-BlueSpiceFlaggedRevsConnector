@@ -2,10 +2,10 @@
 
 namespace BlueSpice\FlaggedRevsConnector\ReadConfirmation\Mechanism;
 
-use BlueSpice\ReadConfirmation\Notifications\Remind;
-use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\NotificationManager;
-use BlueSpice\Services;
+use BlueSpice\PageAssignments\AssignmentFactory;
+use BlueSpice\ReadConfirmation\IMechanism;
+use BlueSpice\ReadConfirmation\Notifications\Remind;
 use Hooks;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -67,6 +67,16 @@ class PageApproved implements IMechanism {
 	private $recentMustReadRevisions = [];
 
 	/**
+	 * @var AssignmentFactory
+	 */
+	protected $assignmentFactory = null;
+
+	/**
+	 * @var NotificationManager
+	 */
+	protected $notificationsManager = null;
+
+	/**
 	 * @return PageApproved
 	 */
 	public static function factory() {
@@ -76,12 +86,20 @@ class PageApproved implements IMechanism {
 		$dbLoadBalancer = Services::getInstance()->getDBLoadBalancer();
 		$revisionLookup = Services::getInstance()->getRevisionLookup();
 		$logger = LoggerFactory::getInstance( 'BlueSpiceFlaggedRevsConnector' );
+		$assignmentFactory = MediaWikiServices::getInstance()->getService(
+			'BSPageAssignmentsAssignmentFactory'
+		);
+		$notificationsManager = MediaWikiServices::getInstance()->getService(
+			'BSNotificationManager'
+		);
 		return new self(
 			$dbLoadBalancer,
 			$reminderDelay,
 			$revisionLookup,
 			$wgNamespacesWithEnabledReadConfirmation,
-			$logger
+			$logger,
+			$assignmentFactory,
+			$notificationsManager
 		);
 	}
 
@@ -92,15 +110,18 @@ class PageApproved implements IMechanism {
 	 * @param RevisionLookup $revisionLookup
 	 * @param array $enabledNamespaces
 	 * @param LoggerInterface $logger
+	 * @param AssignmentFactory $assignmentFactory
+	 * @param NotificationManager $notificationsManager
 	 */
-	protected function __construct(
-		$dbLoadBalancer, $reminderDelay, $revisionLookup, $enabledNamespaces, $logger
-	) {
+	protected function __construct( $dbLoadBalancer, $reminderDelay, $revisionLookup,
+		$enabledNamespaces, $logger, $assignmentFactory, $notificationsManager ) {
 		$this->dbLoadBalancer = $dbLoadBalancer;
 		$this->reminderDelay = $reminderDelay;
 		$this->revisionLookup = $revisionLookup;
 		$this->enabledNamespaces = $enabledNamespaces;
 		$this->logger = $logger;
+		$this->assignmentFactory = $assignmentFactory;
+		$this->notificationsManager = $notificationsManager;
 	}
 
 	/**
@@ -117,37 +138,21 @@ class PageApproved implements IMechanism {
 	/**
 	 * @param Title $title
 	 * @param User $userAgent
-	 * @return array|bool
+	 * @return bool
 	 */
 	public function notify( Title $title, User $userAgent ) {
-		if ( !$title instanceof Title ) {
+		if ( !$title->exists() ) {
+			return false;
+		}
+		if ( $this->isMinorRevision( $title->getArticleID() )
+			&& $this->hasNoPreviousMajorRevisionDrafts( $title->getArticleID() ) ) {
 			return false;
 		}
 
-		if ( $this->isMinorRevision( $title->getArticleID() ) ) {
-			if ( $this->hasNoPreviousMajorRevisionDrafts( $title->getArticleID() ) ) {
-				return false;
-			}
-		}
-
-		/** @var NotificationManager $notificationsManager */
-		$notificationsManager = Services::getInstance()->getService( 'BSNotificationManager' );
-		$notifier = $notificationsManager->getNotifier();
 		$notifyUsers = $this->getNotifyUsers( $title->getArticleID() );
 		$notification = new Remind( $userAgent, $title, [], $notifyUsers );
-		$notifier->notify( $notification );
-
-		$notifiedUsers = [];
-		foreach ( $notifyUsers as $userId ) {
-			$user = User::newFromId( $userId );
-			if ( !$user ) {
-				continue;
-			}
-			$notifiedUsers[] = $user;
-
-		}
-
-		return $notifiedUsers;
+		$this->notificationsManager->getNotifier()->notify( $notification );
+		return true;
 	}
 
 	/**
@@ -168,14 +173,17 @@ class PageApproved implements IMechanism {
 		);
 
 		if ( $res->numRows() > 0 ) {
-			$userAgent = Services::getInstance()->getService( 'BSUtilityFactory' )
-				->getMaintenanceUser()->getUser();
+			return;
+		}
+		$userAgent = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getMaintenanceUser()->getUser();
 
-			foreach ( $res as $row ) {
-				$title = Title::newFromID( $row->rev_pid );
-				$this->getAssignedUsers( $row->rev_pid );
-				$this->notify( $title, $userAgent );
+		foreach ( $res as $row ) {
+			$title = Title::newFromID( $row->rev_pid );
+			if ( !$title ) {
+				continue;
 			}
+			$this->notify( $title, $userAgent );
 		}
 	}
 
@@ -336,16 +344,17 @@ class PageApproved implements IMechanism {
 	 */
 	private function getNotifyUsers( $pageId ) {
 		$affectedUsers = $this->getAssignedUsers( $pageId );
-		if ( count( $affectedUsers ) > 0 ) {
-			$revId = $this->getRecentMustReadRevision( $pageId );
-			if ( $revId ) {
-				$usersAlreadyReadRevision = $this->usersAlreadyReadRevision( $revId, $affectedUsers );
-				if ( is_array( $usersAlreadyReadRevision ) ) {
-					$affectedUsers = array_diff( $affectedUsers, $usersAlreadyReadRevision );
-				}
-			}
+		if ( count( $affectedUsers ) < 1 ) {
+			return [];
 		}
-		return $affectedUsers;
+		$revId = $this->getRecentMustReadRevision( $pageId );
+		if ( !$revId ) {
+			return [];
+		}
+		return array_diff(
+			$affectedUsers,
+			$this->usersAlreadyReadRevision( $revId, $affectedUsers )
+		);
 	}
 
 	/**
@@ -353,54 +362,15 @@ class PageApproved implements IMechanism {
 	 * @return array
 	 */
 	private function getAssignedUsers( $pageId ) {
-		$res = $this->dbLoadBalancer->getConnection( DB_REPLICA )->select(
-			'bs_pageassignments',
-			[ 'pa_assignee_key', 'pa_assignee_type' ],
-			[
-				'pa_page_id' => $pageId,
-			]
-		);
-		$userIds = [];
-		if ( $res->numRows() > 0 ) {
-			foreach ( $res as $row ) {
-				switch ( $row->pa_assignee_type ) {
-					case 'group':
-						$userIds = array_merge( $userIds, $this->getUsersInGroup( $row->pa_assignee_key ) );
-						break;
-					case 'user':
-						$userIds[] = ( User::newFromName( $row->pa_assignee_key ) )->getId();
-						break;
-				}
-			}
+		$title = Title::newFromID( $pageId );
+		if ( !$title || !$title->exists() ) {
+			return [];
 		}
-
-		return $userIds;
-	}
-
-	/**
-	 * @param $group
-	 * @return array
-	 */
-	private function getUsersInGroup( $group ) {
-		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection(
-			DB_REPLICA
-		);
-		$res = $db->select(
-			[ 'user', 'user_groups' ],
-			[ 'user_id', 'user_name' ],
-			[
-				'ug_group' => $group,
-				'ug_user = user_id'
-			],
-			__METHOD__
-		);
-
-		$users = [];
-		foreach ( $res as $row ) {
-			$users[] = (int)$row->user_id;
+		$target = $this->assignmentFactory->newFromTargetTitle( $title );
+		if ( !$target ) {
+			return [];
 		}
-
-		return $users;
+		return $target->getAssignedUserIDs();
 	}
 
 	/**
