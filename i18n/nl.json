@@ -116,7 +116,7 @@
 	"apihelp-bs-flaggedpages-store-summary": "Biedt gegevens voor pagina's die onder goedkeuringscontrole staan",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Kan de pagina niet goedkeuren",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Opgegeven versie komt niet overeen met de opgegeven titel",
-	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" en \"revision\" moeten aanwezig zijn in DefinitionContext",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" moet aanwezig zijn in DefinitionContext",
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Er zijn geen geldige titelobjecten gevonden voor de opgegeven \"pageId\"",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Goedgekeurd",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Concept"
