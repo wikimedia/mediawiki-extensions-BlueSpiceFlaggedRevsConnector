@@ -1,10 +1,28 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"DDPAT",
+			"Kareyac",
+			"Okras"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Страница",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Пространство имён",
-	"bs-flaggedrevsconnector-grid-page-categories": "Категории страниц"
+	"bs-flaggedrevsconnector-grid-page-categories": "Категории страниц",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Версия",
+	"bs-flaggedrevsconnector-state-draft": "Черновик",
+	"bs-flaggedrevsconnector-review-comment-label": "Комментарий",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "Черновая версия",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "Перейти на последнюю черновую версию этой страницы",
+	"bs-flaggedrevsconnector-grid-page-id": "Идентификатор страницы",
+	"bs-flaggedrevsconnector-grid-page-title": "Заголовок страницы",
+	"bs-flaggedrevsconnector-grid-rev-state": "Статус",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Показать черновую версию",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "черновик",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "первый черновик",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Категория",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "Черновик",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Первый черновик",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Черновик",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Вставляет журнал публикации в начало PDF-файла. Этот журнал показывает, когда страница была принята. Если при принятии комментариев не было добавлено, поле комментария пусто."
 }

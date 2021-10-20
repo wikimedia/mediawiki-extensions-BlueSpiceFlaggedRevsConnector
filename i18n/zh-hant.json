@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "頁面",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "修訂",
+	"bs-flaggedrevsconnector-state-draft": "草稿",
+	"bs-flaggedrevsconnector-state-notenabled": "未啟用",
+	"bs-flaggedrevsconnector-review-comment-label": "評論",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "草稿版本",
+	"bs-flaggedrevsconnector-grid-page-id": "頁面 ID",
+	"bs-flaggedrevsconnector-grid-page-title": "頁面標題",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "命名空間",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "草稿",
+	"bs-flaggedrevsconnector-collection-var-notenabledpages": "未啟用"
+}

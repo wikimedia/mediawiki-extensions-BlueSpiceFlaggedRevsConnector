@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajeje Brazorf"
+			"Ajeje Brazorf",
+			"Stefano"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Pagina",
@@ -18,5 +19,25 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "una bozza",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Approva",
 	"bs-flaggedrevsconnector-collection-var-draftpages": "Bozza",
-	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Prima bozza"
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Prima bozza",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Revisione",
+	"bs-flaggedrevsconnector-state-notenabled": "Non attivato",
+	"bs-flaggedrevsconnector-review-heading": "Approvazione",
+	"bs-flaggedrevsconnector-label-flaggedrevs": "Approvazione",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "In attesa di approvazione",
+	"bs-flaggedrevsconnector-column-last-stable": "Revisionato",
+	"bs-flaggedrevsconnector-no-stable": "Non revisionato",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1 ha revisionato $3",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-body": "$1 ha revisionato pagina $2",
+	"bs-flaggedrevsconnector-approval-user-sesp-desc": "Utente che ha revisionato la pagina",
+	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "Non approvato",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "Approvato",
+	"bs-flaggedrevsconnector-smw-prop-document-state-in-revision": "In revisione",
+	"bs-flaggedrevsconnector-flyout-title": "Approvazione pagina",
+	"bs-flaggedrevsconnector-nav-link-title": "Approvazione",
+	"bs-flaggedrevsconnector-flyout-form-title": "Approvazione pagina",
+	"bs-flaggedrevsconnector-review-type-flagging": "Approvazione",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "ha una versione approvata",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Versione approvata",
+	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Non attivato"
 }
