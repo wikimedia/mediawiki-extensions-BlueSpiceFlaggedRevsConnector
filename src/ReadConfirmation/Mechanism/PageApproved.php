@@ -5,6 +5,7 @@ namespace BlueSpice\FlaggedRevsConnector\ReadConfirmation\Mechanism;
 use BlueSpice\NotificationManager;
 use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\ReadConfirmation\IMechanism;
+use BlueSpice\ReadConfirmation\Notifications\DailyRemind;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
 use Hooks;
 use MediaWiki\Logger\LoggerFactory;
@@ -141,6 +142,25 @@ class PageApproved implements IMechanism {
 	 * @param User $userAgent
 	 * @return bool
 	 */
+	private function notifyDaily( Title $title, User $userAgent ) {
+		if ( !$title->exists() ) {
+			return false;
+		}
+		if ( $this->isMinorRevision( $title->getArticleID() )
+			&& $this->hasNoPreviousMajorRevisionDrafts( $title->getArticleID() ) ) {
+			return false;
+		}
+		$notifyUsers = $this->getNotifyUsers( $title->getArticleID() );
+		$notification = new DailyRemind( $userAgent, $title, [], $notifyUsers );
+		$this->notificationsManager->getNotifier()->notify( $notification );
+		return true;
+	}
+
+	/**
+	 * @param Title $title
+	 * @param User $userAgent
+	 * @return bool
+	 */
 	public function notify( Title $title, User $userAgent ) {
 		if ( !$title->exists() ) {
 			return false;
@@ -183,7 +203,7 @@ class PageApproved implements IMechanism {
 			if ( !$title ) {
 				continue;
 			}
-			$this->notify( $title, $userAgent );
+			$this->notifyDaily( $title, $userAgent );
 		}
 	}
 
