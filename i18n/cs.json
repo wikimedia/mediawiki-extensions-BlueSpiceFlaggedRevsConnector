@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Emmanuel Fernandess",
+			"Fraxinus.cs",
 			"Matěj Suchánek",
 			"Want"
 		]
@@ -22,5 +23,7 @@
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "Schváleno",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Zobrazit rozdíly",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Zobrazit rozdíly",
-	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuální verze"
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuální verze",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Stav schválení stránky",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Schváleno"
 }
