@@ -3,6 +3,7 @@
 		"authors": [
 			"Hedda",
 			"Joseph",
+			"Melissadilara",
 			"Mim.saitkilic"
 		]
 	},
@@ -113,5 +114,8 @@
 	"apihelp-bs-flaggedpages-store-summary": "Onay kontrolü altındaki sayfalar için veri sağlar",
 	"bs-flaggedrevsconnector-state-implicit-draft": "örtük taslak",
 	"bs-flaggedrevsconnector-pref-handleincludes": "İşlemi dahil et",
-	"bs-flaggedrevsconnector-grid-page-categories": "Sayfa kategorileri"
+	"bs-flaggedrevsconnector-grid-page-categories": "Sayfa kategorileri",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Sayfa onaylanamadı",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Onaylandı",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Taslak"
 }

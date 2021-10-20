@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Akakiiri",
+			"Akandee1",
 			"Ayire Adongo"
 		]
 	},
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "La wan printɛ saŋa daaluŋɔ iŋɛ gɔnsɛto n kilise ba’asɛ, la sɛka n nan kiliseri la, gɔŋɔ la zuo yɛla pulin PDF.",
-	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Tuuma fɔla la ta’am saalum di mɛŋa gee ti tumfɔlepaalega mɛ ta’am le pi’ilum."
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Tuuma fɔla la ta’am saalum di mɛŋa gee ti tumfɔlepaalega mɛ ta’am le pi’ilum.",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Sakiya",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Gɔlesrgɔ"
 }

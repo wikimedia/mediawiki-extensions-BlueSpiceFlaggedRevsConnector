@@ -87,5 +87,6 @@
 	"bs-flaggedrevsconnector-nav-link-title": "Godkjenning",
 	"bs-flaggedrevsconnector-flyout-state-intro": "Godkjenningsstatus for denne siden",
 	"bs-flaggedrevsconnector-flyout-form-title": "Godkjenn siden",
-	"bs-qmoverview-desc": "Oversikt over sider under godkjenning"
+	"bs-qmoverview-desc": "Oversikt over sider under godkjenning",
+	"bs-flaggedrevsconnector-grid-page-categories": "Sidekategorier"
 }

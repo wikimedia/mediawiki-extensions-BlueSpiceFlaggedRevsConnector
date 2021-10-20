@@ -118,5 +118,7 @@
 	"bs-flaggedrevsconnector-state-implicit-draft": "Impliziter Entwurf",
 	"apihelp-bs-flaggedpages-store-summary": "Stellt Daten für Seiten bereit, die unter Kontrolle des Freigabemechanismus stehen",
 	"bs-flaggedrevsconnector-grid-page-categories": "Kategorien der Seite",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Entwurf"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Entwurf",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Status der Seitenfreigabe",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Freigegeben"
 }
