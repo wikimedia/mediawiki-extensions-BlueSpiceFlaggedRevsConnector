@@ -6,7 +6,6 @@ use BlueSpice\NotificationManager;
 use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
-use Hooks;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Storage\RevisionLookup;
@@ -128,11 +127,6 @@ class PageApproved implements IMechanism {
 	 * @return void
 	 */
 	public function wireUpNotificationTrigger() {
-		Hooks::register(
-			'FlaggedRevsRevisionReviewFormAfterDoSubmit',
-			'BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\'
-				. 'SendReadConfirmationOnApprove::callback'
-		);
 	}
 
 	/**

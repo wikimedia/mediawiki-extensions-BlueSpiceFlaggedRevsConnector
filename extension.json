@@ -370,7 +370,8 @@
 		"FlaggedRevsRevisionReviewFormAfterDoSubmit": [
 			"FRCReview::onFlaggedRevsRevisionReviewFormAfterDoSubmit",
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\RunUpdatesWhenSetStable::callback",
-			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\UpdateSearchIndexAfterSetStable::callback"
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\UpdateSearchIndexAfterSetStable::callback",
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\SendReadConfirmationOnApprove::callback"
 		],
 		"SkinTemplateOutputPageBeforeExec": [
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\SkinTemplateOutputPageBeforeExec\\AddFlyout::callback"
