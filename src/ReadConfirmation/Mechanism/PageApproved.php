@@ -5,7 +5,6 @@ namespace BlueSpice\FlaggedRevsConnector\ReadConfirmation\Mechanism;
 use BlueSpice\NotificationManager;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
-use Hooks;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Storage\RevisionLookup;
@@ -106,12 +105,6 @@ class PageApproved implements IMechanism {
 	 * @return void
 	 */
 	public function wireUpNotificationTrigger() {
-		// TODO: Fix bad design
-		Hooks::register(
-			'FlaggedRevsRevisionReviewFormAfterDoSubmit',
-			'BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\'
-				. 'SendReadConfirmationOnApprove::callback'
-		);
 	}
 
 	/**
