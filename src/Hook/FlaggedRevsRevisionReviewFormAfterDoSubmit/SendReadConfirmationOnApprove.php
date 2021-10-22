@@ -2,66 +2,24 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfterDoSubmit;
 
-use BlueSpice\Hook;
-use BlueSpice\ReadConfirmation\IMechanism;
-use BlueSpice\ReadConfirmation\MechanismFactory;
+use BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfterDoSubmit;
+use BlueSpice\FlaggedRevsConnector\ReadConfirmation\Mechanism\PageApproved;
 use ExtensionRegistry;
-use RevisionReviewForm;
 
-class SendReadConfirmationOnApprove extends Hook {
-
-	/**
-	 * @var RevisionReviewForm
-	 */
-	protected $revisionReviewForm;
-
-	/**
-	 * @var mixed
-	 */
-	protected $status;
-
-	/**
-	 * @param RevisionReviewForm $revisionReviewForm
-	 * @param mixed $status - true on success, error string on failure
-	 * @return bool
-	 */
-	public static function callback( RevisionReviewForm $revisionReviewForm, $status ) {
-		$hookHandler = new self( $revisionReviewForm, $status );
-		return $hookHandler->process();
-	}
-
-	/**
-	 *
-	 * @param RevisionReviewForm $revisionReviewForm
-	 * @param mixed $status
-	 * @param \IContextSource|null $context
-	 * @param Config|null $config
-	 */
-	public function __construct( RevisionReviewForm $revisionReviewForm, $status, $context = null, $config = null ) {
-		parent::__construct( $context, $config );
-		$this->revisionReviewForm = $revisionReviewForm;
-		$this->status = $status;
-	}
+class SendReadConfirmationOnApprove extends FlaggedRevsRevisionReviewFormAfterDoSubmit {
 
 	/**
 	 * @return bool
 	 */
 	protected function doProcess() {
-		$userAgent = $this->getServices()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();
-		$this->getReadConfirmationMechanism()->notify( $this->revisionReviewForm->getPage(), $userAgent );
-		return true;
-	}
-
-	/**
-	 * @return IMechanism
-	 */
-	private function getReadConfirmationMechanism() {
-		/** @var MechanismFactory $factory */
-		$factory = $this->getServices()->getService(
-			'BSReadConfirmationMechanismFactory'
+		$this->getServices()->getService( 'BSReadConfirmationMechanismFactory' )
+			->getMechanismInstance()
+			->notify(
+				$this->revisionReviewForm->getPage(),
+				$this->revisionReviewForm->getUser()
 		);
 
-		return $factory->getMechanismInstance();
+		return true;
 	}
 
 	/**
@@ -69,6 +27,11 @@ class SendReadConfirmationOnApprove extends Hook {
 	 */
 	protected function skipProcessing() {
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BlueSpiceReadConfirmation' ) ) {
+			return true;
+		}
+		$machanism = $this->getServices()->getService( 'BSReadConfirmationMechanismFactory' )
+			->getMechanismInstance();
+		if ( !$machanism instanceof PageApproved ) {
 			return true;
 		}
 		return false;
