@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Avengium",
 			"Fewasser Traduce"
 		]
 	},
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" debe estar presente en DefinitionContext",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Aprobado"
 }
