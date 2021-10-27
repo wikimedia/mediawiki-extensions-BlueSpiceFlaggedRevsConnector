@@ -3,9 +3,6 @@
 namespace BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfterDoSubmit;
 
 use BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfterDoSubmit;
-use DeferredUpdates;
-use Exception;
-use WikiPage;
 
 class RunUpdatesWhenSetStable extends FlaggedRevsRevisionReviewFormAfterDoSubmit {
 
@@ -13,18 +10,8 @@ class RunUpdatesWhenSetStable extends FlaggedRevsRevisionReviewFormAfterDoSubmit
 	 * @return bool
 	 */
 	protected function doProcess() {
-		try {
-			$wikiPage = WikiPage::factory( $this->revisionReviewForm->getPage() );
-		} catch ( Exception $e ) {
-			return true;
-		}
-		if ( !$wikiPage ) {
-			return true;
-		}
-		$wikiPage->doSecondaryDataUpdates( [
-			'recursive' => false,
-			'defer' => DeferredUpdates::POSTSEND
-		] );
+		$dataUpdater = $this->getServices()->getService( 'BSSecondaryDataUpdater' );
+		$dataUpdater->run( $this->revisionReviewForm->getPage() );
 
 		return true;
 	}
