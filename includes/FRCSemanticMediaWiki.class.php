@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCSemanticMediaWiki {
 
@@ -27,21 +29,11 @@ class FRCSemanticMediaWiki {
 		}
 
 		$oTitle = $this->getTitleFromAPIParam( $module->getRequest() );
-		if ( !$oTitle || $oTitle->getNamespace() < NS_MAIN ) {
+		if ( !$oTitle ) {
 			return true;
 		}
-		try {
-			$wikiPage = WikiPage::factory( $oTitle );
-		} catch ( Exception $e ) {
-			return true;
-		}
-		if ( !$wikiPage ) {
-			return true;
-		}
-		$wikiPage->doSecondaryDataUpdates( [
-			'recursive' => false,
-			'defer' => DeferredUpdates::POSTSEND,
-		] );
+		$dataUpdater = MediaWikiServices::getInstance()->getService( 'BSSecondaryDataUpdater' );
+		$dataUpdater->run( $oTitle );
 		return true;
 	}
 
