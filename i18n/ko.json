@@ -67,7 +67,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "차이 보기",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "문서 승인을 실패했습니다",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "지정된 판이 지정된 제목과 일치하지 않습니다",
-	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\"와 \"revision\"은 DefinitionContext에 존재해야 합니다",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\"는 DefinitionContext에 존재해야 합니다",
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "지정된 \"pageId\"는 유효한 Title 객체와 일치하지 않습니다",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "문서 승인 상태",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "승인됨",
