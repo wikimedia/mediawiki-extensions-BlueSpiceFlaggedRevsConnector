@@ -3,7 +3,6 @@
 namespace BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfterDoSubmit;
 
 use BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfterDoSubmit;
-use WikiPage;
 
 class RunUpdatesWhenSetStable extends FlaggedRevsRevisionReviewFormAfterDoSubmit {
 
@@ -11,15 +10,8 @@ class RunUpdatesWhenSetStable extends FlaggedRevsRevisionReviewFormAfterDoSubmit
 	 * @return bool
 	 */
 	protected function doProcess() {
-		$wikipage = WikiPage::factory( $this->revisionReviewForm->getPage() );
-		$content = $wikipage->getContent();
-		if ( !$content ) {
-		   return;
-		}
-		$updates = $content->getSecondaryDataUpdates( $this->revisionReviewForm->getPage() );
-		foreach ( $updates as $update ) {
-			$update->doUpdate();
-		}
+		$dataUpdater = $this->getServices()->getService( 'BSSecondaryDataUpdater' );
+		$dataUpdater->run( $this->revisionReviewForm->getPage() );
 
 		return true;
 	}

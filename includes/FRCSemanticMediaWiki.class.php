@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCSemanticMediaWiki {
 
@@ -27,14 +29,12 @@ class FRCSemanticMediaWiki {
 		}
 
 		$oTitle = $this->getTitleFromAPIParam( $module->getRequest() );
-		if ( $oTitle === null ) {
+		if ( !$oTitle ) {
 			return true;
 		}
-
-		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContent() != null ) {
-			DataUpdate::runUpdates( $oWikiPage->getContent()->getSecondaryDataUpdates( $oTitle ) );
-		}
+		$dataUpdater = MediaWikiServices::getInstance()->getService( 'BSSecondaryDataUpdater' );
+		$dataUpdater->run( $oTitle );
+		return true;
 	}
 
 	/**
