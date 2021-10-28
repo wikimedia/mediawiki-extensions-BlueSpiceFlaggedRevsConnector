@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Pàggina",
+	"bs-flaggedrevsconnector-review-comment-label": "Cummentu",
+	"bs-flaggedrevsconnector-grid-page-id": "ID dâ pàggina",
+	"bs-flaggedrevsconnector-grid-page-title": "Tìtulu dâ pàggina",
+	"bs-flaggedrevsconnector-grid-rev-state": "Statu",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "Namespace",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Catigurìa"
+}

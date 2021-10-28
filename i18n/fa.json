@@ -79,5 +79,11 @@
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "نسخهٔ تعیین‌شده با عنوان تعیین‌شده منطبق نیست",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "وضعیت تأیید صفحه",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "تأییدشده",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "پیش‌نویس"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "پیش‌نویس",
+	"bs-flaggedrevsconnector-state-pending-desc": "تغییراتی در انتظار بازبینی هستند. [$1 همین حالا آن‌ها را ببینید].",
+	"bs-flaggedrevsconnector-response-success": "صفحه با موفقیت بازبینی شد. صفحه اکنون دوباره بارگیری خواهد شد.",
+	"bs-flaggedrevsconnector-response-failure": "خطایی رخ داد. لطفاً با مدیر خود تماس بگیرید.",
+	"bs-flaggedrevsconnector-invalid-namespaces": "{{PLURAL:$1|فضای نام|فضاهای نام}} مشخص‌شده نامعتبر {{PLURAL:$1|است|هستند}}: $2.",
+	"bs-flaggedrevsconnector-approval-user-sesp-desc": "کاربری که صفحه را بازبینی کرده‌است",
+	"bs-flaggedrevsconnector-document-version-sesp-desc": "تعداد نسخه‌های بازبینی‌شده در تاریخچهٔ صفحه"
 }
