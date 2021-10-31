@@ -237,12 +237,7 @@ class FRCDiffView extends ContextSource {
 	 * @return bool
 	 */
 	protected function isPageViewOrDiff( WebRequest $request ) {
-		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
-		global $mediaWiki;
-		$action = isset( $mediaWiki )
-			// cli
-			? $mediaWiki->getAction( $request )
-			: $request->getVal( 'action', 'view' );
+		$action = Action::getActionName( $this->getContext() );
 		return self::isViewAction( $action );
 	}
 
@@ -261,12 +256,7 @@ class FRCDiffView extends ContextSource {
 	 * @return bool
 	 */
 	protected function isDefaultPageView( WebRequest $request ) {
-		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
-		global $mediaWiki;
-		$action = isset( $mediaWiki )
-			// cli
-			? $mediaWiki->getAction( $request )
-			: $request->getVal( 'action', 'view' );
+		$action = Action::getActionName( $this->getContext() );
 		return (
 			self::isViewAction( $action ) && $request->getVal( 'oldid' ) === null
 			&& $request->getVal( 'stable' ) === null && $request->getVal( 'stableid' ) === null
