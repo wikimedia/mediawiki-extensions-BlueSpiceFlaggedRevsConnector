@@ -39,6 +39,7 @@
 	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "等待批准",
 	"bs-flaggedrevsconnector-response-failure": "发生了一个的错误。请联系您的管理员。",
 	"bs-flaggedrevsconnector-history-row-fr-info": "已评论：$1 $2 $3",
+	"bs-flaggedrevsconnector-invalid-namespaces": "指定的{{PLURAL:$1|命名空间}}无效：$2。",
 	"bs-flaggedrevsconnector-column-last-stable": "已巡查",
 	"bs-flaggedrevsconnector-no-stable": "未审查",
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1 已评论 $3",
