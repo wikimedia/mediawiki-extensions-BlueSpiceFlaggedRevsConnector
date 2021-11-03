@@ -90,7 +90,7 @@ class Utils {
 		}
 
 		return FlaggablePageView::singleton()->showingStable() ||
-			$this->currentPageIsStable( $context );
+			( $this->currentPageIsStable( $context ) && $this->currentPageInSync( $context ) );
 	}
 
 	/**
@@ -129,6 +129,14 @@ class Utils {
 			return false;
 		}
 		return $stableRev->getRevId() === $this->getCurrentPageRevId( $context );
+	}
+
+	/**
+	 * @param IContextSource $context
+	 * @return bool
+	 */
+	private function currentPageInSync( $context ) {
+		return $this->getFlaggableWikiPage( $context )->stableVersionIsSynced();
 	}
 
 	/**
