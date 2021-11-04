@@ -385,7 +385,8 @@
 		"checkPageIsReviewable": "FRCReview::onCheckPageIsReviewable",
 		"FlaggedRevsRevisionReviewFormAfterDoSubmit": [
 			"FRCReview::onFlaggedRevsRevisionReviewFormAfterDoSubmit",
-			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\UpdateSearchIndexAfterSetStable::callback"
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\UpdateSearchIndexAfterSetStable::callback",
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\FlaggedRevsRevisionReviewFormAfterDoSubmit\\SendReadConfirmationOnApprove::callback"
 		],
 		"ChameleonSkinTemplateOutputPageBeforeExec": [
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddFlyout::callback"
