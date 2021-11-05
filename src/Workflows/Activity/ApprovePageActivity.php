@@ -5,6 +5,7 @@ namespace BlueSpice\FlaggedRevsConnector\Workflows\Activity;
 use BlueSpice\FlaggedRevsConnector\Utils;
 use BlueSpice\UtilityFactory;
 use Exception;
+use MediaWiki\Extension\Workflows\Activity\ActivityPropertyValidator;
 use MediaWiki\Extension\Workflows\Activity\ExecutionStatus;
 use MediaWiki\Extension\Workflows\Activity\GenericActivity;
 use MediaWiki\Extension\Workflows\Definition\ITask;
@@ -149,5 +150,21 @@ class ApprovePageActivity extends GenericActivity {
 		} catch ( Exception $ex ) {
 			throw new WorkflowExecutionException( $ex->getMessage(), $this->task );
 		}
+	}
+
+	/**
+	 * @return array[]|null
+	 */
+	public function getPropertySpecification(): ?array {
+		return [
+			'comment' => [
+				ActivityPropertyValidator::TYPE => ActivityPropertyValidator::TYPE_STRING,
+				ActivityPropertyValidator::REQUIRED => false
+			],
+			'revision' => [
+				ActivityPropertyValidator::TYPE => ActivityPropertyValidator::TYPE_INT,
+				ActivityPropertyValidator::REQUIRED => false
+			]
+		];
 	}
 }
