@@ -6,6 +6,7 @@ use BlueSpice\AlertProviderBase;
 use BlueSpice\FlaggedRevsConnector\Utils;
 use BlueSpice\IAlertProvider;
 use Config;
+use ExtensionRegistry;
 use FlaggableWikiPage;
 use FlaggedRevision;
 use Language;
@@ -177,6 +178,13 @@ class RevisionState extends AlertProviderBase {
 	 * @return bool
 	 */
 	protected function skipForContextReasons() {
+		if ( $this->skin->getSkinName() !== 'BlueSpiceCalumma'
+			&& ExtensionRegistry::getInstance()->isLoaded( 'PageHeader' ) ) {
+			// ERM:25780 Remove banner if PageHeader extension provides the status
+			// sentence and the skin is not BlueSpiceCalumma.
+			// This is not a good way, but the only one it seems :/
+			return true;
+		}
 		if ( !$this->flaggableWikiPage ) {
 			return true;
 		}
