@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Avengium",
-			"Fewasser Traduce"
+			"Fewasser Traduce",
+			"Whovian Biologist"
 		]
 	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Página",
+	"bs-flaggedrevsconnector-state-stable": "Aprobado",
+	"bs-flaggedrevsconnector-review-comment-label": "Comentario",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Aprobado",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" debe estar presente en DefinitionContext",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Aprobado"
 }
