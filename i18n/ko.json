@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Underbaaar",
 			"Ykhwong"
 		]
 	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "페이지",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "불안정",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "안정적",
 	"bs-flaggedrevsconnector-state-unmarked": "최초 초안",
