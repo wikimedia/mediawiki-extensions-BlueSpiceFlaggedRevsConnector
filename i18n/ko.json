@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Underbaaar",
 			"Ykhwong"
 		]
 	},
@@ -71,5 +72,6 @@
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "지정된 \"pageId\"는 유효한 Title 객체와 일치하지 않습니다",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "문서 승인 상태",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "승인됨",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "초안"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "초안",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "페이지"
 }

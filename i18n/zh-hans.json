@@ -85,5 +85,6 @@
 	"bs-flaggedrevsconnector-flyout-title": "页面批准",
 	"bs-flaggedrevsconnector-flyout-intro": "您在这里可以看到这个页面目前的批准状态或者批准新的版本。",
 	"bs-flaggedrevsconnector-flyout-state-intro": "这个页面的批准状态：",
-	"bs-flaggedrevsconnector-flyout-form-title": "批准此页"
+	"bs-flaggedrevsconnector-flyout-form-title": "批准此页",
+	"bs-flaggedrevsconnector-invalid-namespaces": "指定的{{PLURAL:$1|命名空间}}无效：$2。"
 }
