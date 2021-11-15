@@ -81,10 +81,10 @@ class PageApproved implements IMechanism {
 	 */
 	public static function factory() {
 		global $wgNamespacesWithEnabledReadConfirmation;
-		$reminderDelay = \BlueSpice\Services::getInstance()->getConfigFactory()
+		$reminderDelay = MediaWikiServices::getInstance()->getConfigFactory()
 			->makeConfig( 'bsg' )->get( 'FlaggedRevsConnectorPageApprovedReminderDelay' );
-		$dbLoadBalancer = Services::getInstance()->getDBLoadBalancer();
-		$revisionLookup = Services::getInstance()->getRevisionLookup();
+		$dbLoadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
+		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
 		$logger = LoggerFactory::getInstance( 'BlueSpiceFlaggedRevsConnector' );
 		$assignmentFactory = MediaWikiServices::getInstance()->getService(
 			'BSPageAssignmentsAssignmentFactory'
