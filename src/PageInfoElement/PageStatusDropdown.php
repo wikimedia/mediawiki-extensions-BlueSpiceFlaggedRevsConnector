@@ -183,7 +183,8 @@ class PageStatusDropdown extends FlaggedPageElement {
 		);
 		$html = Html::openElement( 'a', [
 			'href' => '#',
-			'data-user-can-review' => $canReview
+			'data-user-can-review' => $canReview,
+			'class' => 'dropdown-item'
 		] );
 
 		$html .= Html::element(
