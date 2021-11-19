@@ -149,6 +149,12 @@
 						]
 					}
 				}
+			},
+			"PropertyValidators": {
+				"valid-reviewer": {
+					"class":  "\\BlueSpice\\FlaggedRevsConnector\\Workflows\\PropertyValidator\\ValidReviewer",
+					"services": [ "UserFactory", "PermissionManager" ]
+				}
 			}
 		},
 		"BlueSpiceExtendedStatistics": {

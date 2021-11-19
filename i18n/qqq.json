@@ -128,5 +128,6 @@
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Description for config variable \"FlaggedRevsConnectorUEModulePDFShowFRTag\"",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Description for config variable \"FlaggedRevsConnectorautoDeleteWorkflow\"",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Description for config variable \"FlaggedRevsConnectorDraftGroups\"",
-	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Description for config variable \"FlaggedRevsConnectorIndexStableOnly\""
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Description for config variable \"FlaggedRevsConnectorIndexStableOnly\"",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Exception text when user is not a valid reviewer\n$1 - username\n$2 - count of require permission\n$3 - required permissions"
 }
