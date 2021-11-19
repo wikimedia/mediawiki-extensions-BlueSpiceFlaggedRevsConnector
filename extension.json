@@ -376,7 +376,10 @@
 		"SkinTemplateOutputPageBeforeExec": [
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\SkinTemplateOutputPageBeforeExec\\AddFlyout::callback"
 		],
-		"SkinTemplateNavigation::Universal": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SkinTemplateNavigationUniversal\\ChangePendingActionText::callback",
+		"SkinTemplateNavigation::Universal": [
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\SkinTemplateNavigationUniversal\\ChangePendingActionText::callback",
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\SkinTemplateNavigationUniversal\\RemoveFlaggedRevsContentActions::callback"
+		],
 		"ImagePageFileHistoryLine": [
 			"BlueSpice\\FlaggedRevsConnector\\Hook\\ImagePageFileHistoryLine\\HideDraftVersions::callback"
 		],
