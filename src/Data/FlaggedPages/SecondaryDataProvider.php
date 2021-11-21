@@ -2,12 +2,12 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Data\FlaggedPages;
 
+use BlueSpice\Data\ISecondaryDataProvider;
 use BlueSpice\FlaggedRevsConnector\Data\Record;
-use BlueSpice\Services;
 use MediaWiki\MediaWikiServices;
 use Title;
 
-class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
+class SecondaryDataProvider implements ISecondaryDataProvider {
 
 	/**
 	 *
@@ -17,9 +17,9 @@ class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
 	public function extend( $dataSets ) {
 		foreach ( $dataSets as $record ) {
 
-			$title = \Title::newFromID( $record->get( Record::PAGE_ID ) );
+			$title = Title::newFromID( $record->get( Record::PAGE_ID ) );
 
-			$link = Services::getInstance()->getLinkRenderer()->makeLink(
+			$link = MediaWikiServices::getInstance()->getLinkRenderer()->makeLink(
 				$title
 			);
 			$record->set( Record::PAGE_LINK, $link );
