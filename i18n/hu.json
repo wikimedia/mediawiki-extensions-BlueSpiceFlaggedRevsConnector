@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luckylukee81"
+		]
+	},
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "A(z) \"$1\" felhasználónak {{GENDER:$1|szükséges}} {{PLURAL:$2|\"$3\" engedéllyel kell rendelkeznie a szükséges feladat elvégzéséhez|a következő engedélyekkel a szükséges feladat elvégzéséhez: $3}}"
+}

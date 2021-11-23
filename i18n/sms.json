@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yupik"
+		]
+	},
+	"bs-flaggedrevsconnector-state-unmarked": "Vuõssmõs häämas",
+	"bs-flaggedrevsconnector-state-draft": "Häämas",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "Häämasversio",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Čuäʹjet häämasversio",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "häämas",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Häämasversio",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "vuõssmõs häämas",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "Vuõssmõs häämasversio",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "Häämas",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Vuõssmõs häämas",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Häämas"
+}

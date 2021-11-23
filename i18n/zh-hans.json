@@ -85,5 +85,7 @@
 	"bs-flaggedrevsconnector-pref-handleincludes": "包括处理",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "当前版本",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已批准",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
+	"bs-flaggedrevsconnector-invalid-namespaces": "指定的{{PLURAL:$1|命名空间}}无效：$2。",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "被批准版本"
 }

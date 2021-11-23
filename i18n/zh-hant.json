@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Weather Top Wizard",
 			"Winston Sung"
 		]
 	},
@@ -14,5 +15,6 @@
 	"bs-flaggedrevsconnector-grid-page-title": "頁面標題",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "命名空間",
 	"bs-flaggedrevsconnector-collection-var-draftpages": "草稿",
-	"bs-flaggedrevsconnector-collection-var-notenabledpages": "未啟用"
+	"bs-flaggedrevsconnector-collection-var-notenabledpages": "未啟用",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿"
 }
