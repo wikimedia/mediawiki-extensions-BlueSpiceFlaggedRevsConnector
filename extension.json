@@ -26,7 +26,6 @@
 				}
 			},
 			"ConfigDefinitionRegistry": {
-				"FlaggedRevsConnectorautoDeleteWorkflow": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\AutoDeleteWorkflow::getInstance",
 				"FlaggedRevsConnectorDraftGroups": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\DraftGroups::getInstance",
 				"FlaggedRevsConnectorIndexStableOnly": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\IndexingStableOnly::getInstance",
 				"FlaggedRevsConnectorBookshelfShowStable": "\\BlueSpice\\FlaggedRevsConnector\\ConfigDefinition\\BookshelfShowStable::getInstance",
