@@ -4,6 +4,7 @@
 			"AYZ04",
 			"Dianliang233",
 			"DreamerBlue",
+			"GuoPC",
 			"Lakejason0",
 			"LaoShuBaby",
 			"Si109",
@@ -87,5 +88,6 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已批准",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
 	"bs-flaggedrevsconnector-invalid-namespaces": "指定的{{PLURAL:$1|命名空间}}无效：$2。",
-	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "被批准版本"
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "被批准版本",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}"
 }
