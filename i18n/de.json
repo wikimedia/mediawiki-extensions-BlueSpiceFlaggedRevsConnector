@@ -120,5 +120,17 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Kategorien der Seite",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Entwurf",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Status der Seitenfreigabe",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Freigegeben"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Freigegeben",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Freigabe der Seite fehlgeschlagen",
+	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Die angegebenen Revision passt nicht zum angegebenen Titel",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" muss im DefinitionContext angegeben werden",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Die angegebene \"pageId\" passt zu keinem gültigen Title Objekt",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Fügt am Anfang des PDFs ein Freigabe-Log ein. Dieses Log zeigt an, wann eine Seite freigegeben wurde. Wenn während der Freigabe kein Kommentar angegeben wurde, bleibt das Kommentarfeld leer.",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Fügt am Anfang eines PDFs ein Log ein. Dieses Log zeigt alle PDF Seiten mit Status \"Entwurfsversion\"",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Fügt am Anfang eines PDFs ein Log ein. Dieses Log zeigt alle PDF Seiten aus den Namensräumen ohne aktivierter Freigabefunktion.",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Gibt den Zeitstempel für die letzte freigegebene und Entwurfsversion unter dem Titel im PDF aus.",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Der Workflow wird automatisch gelöscht und ein neuer Workflow kann gestartet werden.",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Setzt die Zugriffsrechte für Entwurfsversionen. Wenn keine Gruppe angegeben ist, wird selbst für Sysop-Nutzer keine Status im Titelbereich angezeigt. Sysop-Nutzer können die Entwurfsversion jedoch immer noch über die Versionsgeschichte erreichen.",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Entwurfsversionen werden aus der Suche ausgeschlossen. Wenn eine Seite keine freigegebene Version hat, wird sie in der Suche generell nicht angezeigt.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Benutzer \"$1\" {{GENDER:$1|muss}} {{PLURAL:$2|die Berechtigung \"$3\" haben, um die angeforderte Aufgabe zu erfüllen|die folgenden Berechtigungen haben um die angeforderte Aufgabe zu erfüllen: $3}}"
 }

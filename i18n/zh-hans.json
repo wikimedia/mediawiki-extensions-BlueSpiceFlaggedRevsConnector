@@ -4,6 +4,7 @@
 			"AYZ04",
 			"Dianliang233",
 			"DreamerBlue",
+			"GuoPC",
 			"Lakejason0",
 			"LaoShuBaby",
 			"Si109",
@@ -86,5 +87,7 @@
 	"bs-flaggedrevsconnector-flyout-intro": "您在这里可以看到这个页面目前的批准状态或者批准新的版本。",
 	"bs-flaggedrevsconnector-flyout-state-intro": "这个页面的批准状态：",
 	"bs-flaggedrevsconnector-flyout-form-title": "批准此页",
-	"bs-flaggedrevsconnector-invalid-namespaces": "指定的{{PLURAL:$1|命名空间}}无效：$2。"
+	"bs-flaggedrevsconnector-invalid-namespaces": "指定的{{PLURAL:$1|命名空间}}无效：$2。",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "被批准版本",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}"
 }
