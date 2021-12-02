@@ -86,6 +86,7 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Page categories",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: You flagged page $1 (revision $2) on $3 [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Quality management overview",
+	"bs-flaggedrevsconnector-global-actions-entry": "Quality assurance",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "The action \"$1\" for the draft version of this page is only available for the {{PLURAL:$2|group|groups}} $3",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "has a draft version",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Show draft version",

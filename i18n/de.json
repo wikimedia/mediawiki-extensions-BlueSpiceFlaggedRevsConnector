@@ -85,6 +85,7 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Kategorien der Seite",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Sie haben die Seite $1 (Revision $2) am $3 markiert [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Qualitätsmanagement Überblick",
+	"bs-flaggedrevsconnector-global-actions-entry": "Qualitätssicherung",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "Die Aktion „$1“ für die Entwurfsversion ist nur für {{PLURAL:$2|den|die}} Bevollmächtigten $3 verfügbar",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "hat eine Entwurfsversion",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Zeige die Entwurfsversion",

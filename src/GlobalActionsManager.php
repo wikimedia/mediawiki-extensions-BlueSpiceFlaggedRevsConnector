@@ -46,7 +46,7 @@ class GlobalActionsManager extends RestrictedTextLink {
 	 * @return Message
 	 */
 	public function getText(): Message {
-		return Message::newFromKey( 'bs-flaggedrevsconnector-admin-tool-overview' );
+		return Message::newFromKey( 'bs-flaggedrevsconnector-global-actions-entry' );
 	}
 
 	/**
@@ -60,6 +60,6 @@ class GlobalActionsManager extends RestrictedTextLink {
 	 * @return Message
 	 */
 	public function getAriaLabel(): Message {
-		return Message::newFromKey( 'bs-flaggedrevsconnector-admin-tool-overview' );
+		return Message::newFromKey( 'bs-flaggedrevsconnector-global-actions-entry' );
 	}
 }
