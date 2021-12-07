@@ -74,5 +74,6 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "승인됨",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "초안",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "페이지",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "\"$1\" 사용자는 {{PLURAL:$2|요청 작업을 마치기 위해 \"$3\" 권한이 필요합니다|요청 작업을 마치기 위해 다음의 권한이 필요합니다: $3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "\"$1\" 사용자는 {{PLURAL:$2|요청 작업을 마치기 위해 \"$3\" 권한이 필요합니다|요청 작업을 마치기 위해 다음의 권한이 필요합니다: $3}}",
+	"bs-flaggedrevsconnector-global-actions-entry": "품질 보증"
 }
