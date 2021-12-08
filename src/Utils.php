@@ -40,7 +40,7 @@ class Utils {
 		$permittedGroups = $this->config->get( 'FlaggedRevsConnectorDraftGroups' );
 		$currentUserGroups = MediaWikiServices::getInstance()
 			->getUserGroupManager()
-			->getEffectiveGroups( $user );
+			->getUserImplicitGroups( $user );
 		$groupIntersect = array_intersect( $permittedGroups, $currentUserGroups );
 
 		if ( empty( $groupIntersect ) ) {
