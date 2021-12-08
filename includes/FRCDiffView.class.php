@@ -28,17 +28,18 @@ class FRCDiffView extends ContextSource {
 	 * @return bool
 	 */
 	public static function onArticleViewHeader( &$article, &$outputDone, &$pcache ) {
-		if ( $outputDone || !class_exists( 'FlaggablePageView', true ) ) {
+		if ( $outputDone || !class_exists( 'FlaggablePageView' ) ) {
 			return true;
 		}
 
+		$useParserCacheStub = false;
 		$view = self::singleton();
 		$request = $view->getRequest();
 		if ( !$request->getVal( 'oldid' ) || !$request->getVal( 'diff' ) ) {
 			return true;
 		}
-		$view->addStableLink( $outputDone, $useParserCache );
-		$view->setPageContent( $outputDone, $useParserCache );
+		$view->addStableLink();
+		$view->setPageContent( $outputDone, $useParserCacheStub );
 
 		return true;
 	}
@@ -215,7 +216,7 @@ class FRCDiffView extends ContextSource {
 	protected function userViewsDraftByDefault( $user ) {
 		$services = MediaWikiServices::getInstance();
 		$config = $services->getMainConfig();
-		$userGroupManager = $services->getUserGroupManager();
+		$userGroupManager = $services->getUserImplicitGroups();
 		# Check user preferences ("show stable by default?")
 		if ( $user->getOption( 'flaggedrevsstable' ) ) {
 			return false;
@@ -369,7 +370,7 @@ class FRCDiffView extends ContextSource {
 		}
 		// $reqId is null if nothing requested, false if invalid
 		if ( $reqId === false ) {
-			$this->out->addWikiText( $this->msg( 'revreview-invalid' )->text() );
+			$this->out->addWikiTextAsContent( $this->msg( 'revreview-invalid' )->text() );
 			$this->out->returnToMain( false, $this->article->getTitle() );
 			# Tell MW that parser output is done
 			$outputDone = true;
@@ -714,7 +715,11 @@ class FRCDiffView extends ContextSource {
 				$this->out->addParserOutputNoText( $parserOut );
 			}
 			# Update the stable version dependancies
-			FlaggedRevs::updateStableOnlyDeps( $this->article, $parserOut );
+			FlaggedRevs::updateStableOnlyDeps(
+				$this->article,
+				$parserOut,
+				FRDependencyUpdate::IMMEDIATE
+			);
 		}
 
 		# Update page sync status for tracking purposes.
