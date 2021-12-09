@@ -83,7 +83,7 @@ class HideDraftVersions extends ImagePageFileHistoryLine {
 				$this->getAllowedGroups(),
 				MediaWikiServices::getInstance()
 					->getUserGroupManager()
-					->getEffectiveGroups(
+					->getUserEffectiveGroups(
 						$this->getContext()->getUser(),
 						UserGroupManager::READ_NORMAL,
 						true

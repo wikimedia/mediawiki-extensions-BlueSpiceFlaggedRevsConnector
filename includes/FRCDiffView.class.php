@@ -216,7 +216,7 @@ class FRCDiffView extends ContextSource {
 	protected function userViewsDraftByDefault( $user ) {
 		$services = MediaWikiServices::getInstance();
 		$config = $services->getMainConfig();
-		$userGroupManager = $services->getUserImplicitGroups();
+		$userGroupManager = $services->getUserGroupManager();
 		# Check user preferences ("show stable by default?")
 		if ( $user->getOption( 'flaggedrevsstable' ) ) {
 			return false;

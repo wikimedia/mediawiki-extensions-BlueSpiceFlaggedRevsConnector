@@ -26,7 +26,7 @@ class LockdownDraft extends ImgAuthBeforeStream {
 		$services = MediaWikiServices::getInstance();
 		$groupInters = array_intersect(
 			$this->getGroupWhitelist(),
-			$services->getUserGroupManager()->getUserImplicitGroups(
+			$services->getUserGroupManager()->getUserEffectiveGroups(
 				$this->getContext()->getUser(),
 				UserGroupManager::READ_NORMAL,
 				true
