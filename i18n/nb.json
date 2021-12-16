@@ -80,6 +80,7 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Sidekategorier",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "en kladd",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Kladdeversjon",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "et førsteutkast",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "godkjent",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Godkjent versjon",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Godkjenn",
