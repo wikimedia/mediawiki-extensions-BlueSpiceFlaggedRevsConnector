@@ -10,5 +10,7 @@
 	"bs-flaggedrevsconnector-grid-page-title": "Tìtulu dâ pàggina",
 	"bs-flaggedrevsconnector-grid-rev-state": "Statu",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Namespace",
-	"bs-flaggedrevsconnector-collection-var-categoryname": "Catigurìa"
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Catigurìa",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Ammustra diffirenza",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Ammustra diffirenza"
 }
