@@ -11,6 +11,7 @@
 			"TsuyaMarisa",
 			"Xiplus",
 			"列维劳德",
+			"孟天皓",
 			"沈澄心",
 			"落花有意12138"
 		]
@@ -87,6 +88,7 @@
 	"bs-flaggedrevsconnector-pref-handleincludes": "包括处理",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "当前版本",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "稳定版本",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "页面审批状态",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已批准",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}"
