@@ -1,12 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ericliu1912",
 			"Weather Top Wizard",
 			"Winston Sung"
 		]
 	},
 	"bs-flaggedrevsconnector-pref-indexingstableonly": "僅索引穩定版",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "穩定日期",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "頁面",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "穩定頁面",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "不穩定頁面",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "不穩定",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "穩定",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "修訂",
 	"bs-flaggedrevsconnector-state-unmarked": "初稿",
