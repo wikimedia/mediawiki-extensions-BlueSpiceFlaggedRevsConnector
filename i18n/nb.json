@@ -89,5 +89,8 @@
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Navnerom",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategori",
 	"bs-flaggedrevsconnector-collection-var-draftpages": "Kladd",
-	"bs-flaggedrevsconnector-collection-var-approvedpages": "Godkjent"
+	"bs-flaggedrevsconnector-collection-var-approvedpages": "Godkjent",
+	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Ikke aktivert",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Vis forskjell",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Vis forskjell"
 }
