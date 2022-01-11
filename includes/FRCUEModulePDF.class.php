@@ -56,6 +56,7 @@ class FRCUEModulePDF {
 		// let everyone know, that the current request was changed to the stable
 		// version!
 		$wgRequest->setVal( 'stable', 1 );
+		$wgRequest->setVal( 'pdfstablepageid', $aParams[ 'article-id' ] );
 
 		wfDebugLog(
 			'BS::FlaggedRevsConnector',
