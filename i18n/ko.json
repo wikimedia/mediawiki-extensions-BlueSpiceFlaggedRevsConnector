@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Underbaaar",
-			"Ykhwong"
+			"Ykhwong",
+			"Yunbj"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "페이지",
@@ -47,6 +48,7 @@
 	"bs-flaggedrevsconnector-grid-page-id": "문서 ID",
 	"bs-flaggedrevsconnector-grid-page-title": "문서 제목",
 	"bs-flaggedrevsconnector-grid-rev-state": "상태",
+	"bs-flaggedrevsconnector-grid-pending-revs": "안정 버전 이후 개정판",
 	"bs-flaggedrevsconnector-grid-page-categories": "문서 분류",
 	"bs-flaggedrevsconnector-admin-tool-overview": "품질 관리 개요",
 	"bs-flaggedrevsconnector-global-actions-entry": "품질 보증",
@@ -68,6 +70,9 @@
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "활성화되지 않음",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "차이 보기",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "차이 보기",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "현재 판",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "고정된 판",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "안정판",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "문서 승인을 실패했습니다",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "지정된 판이 지정된 제목과 일치하지 않습니다",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\"는 DefinitionContext에 존재해야 합니다",
