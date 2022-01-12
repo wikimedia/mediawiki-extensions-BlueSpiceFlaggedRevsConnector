@@ -214,7 +214,6 @@
 		"FRCSemanticMediaWiki": "includes/FRCSemanticMediaWiki.class.php",
 		"FRCSuperList": "includes/FRCSuperList.class.php",
 		"FRCUEModulePDF": "includes/FRCUEModulePDF.class.php",
-		"FRCDiffView": "includes/FRCDiffView.class.php",
 		"FRCHistoryView": "includes/FRCHistoryView.class.php",
 		"FRCPageAssignments": "includes/FRCPageAssignments.class.php",
 		"BSFlaggedRevsConnectorRemoveTMPGroup": "maintenance/BSFlaggedRevsConnectorRemoveTMPGroup.php"
@@ -385,12 +384,7 @@
 	},
 	"Hooks": {
 		"MessageCache::get": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\MessageCacheGet\\ApplyBusinessVocabulary::callback",
-		"ArticleViewHeader":[
-			"FRCDiffView::onArticleViewHeader",
-			"FRCUEModulePDF::onArticleViewHeader"
-		],
-		"ArticleContentOnDiff": "FRCDiffView::onArticleContentOnDiff",
-		"OutputPageBeforeHTML": "FRCDiffView::onOutputPageBeforeHTML",
+		"ArticleViewHeader": "FRCUEModulePDF::onArticleViewHeader",
 		"PageHistoryLineEnding": "FRCHistoryView::onPageHistoryLineEnding",
 		"checkPageIsReviewable": "FRCReview::onCheckPageIsReviewable",
 		"FlaggedRevsRevisionReviewFormAfterDoSubmit": [
