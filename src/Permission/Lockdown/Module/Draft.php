@@ -284,7 +284,11 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 		}
 
 		$view = $this->getFlaggablePageView( $title );
-		return $view->showingStable() && $flaggableWikiPage->getStableRev()->getQuality() > 0;
+		$flaggedRev = $flaggableWikiPage->getStableRev();
+		if ( $flaggedRev === null ) {
+			return false;
+		}
+		return $view->showingStable() && $flaggedRev->getQuality() > 0;
 	}
 
 	/**
