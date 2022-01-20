@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Can",
 			"Hedda",
 			"Joseph",
 			"Melissadilara",
@@ -116,6 +117,7 @@
 	"bs-flaggedrevsconnector-resource-changes": "Son sayfa onayından beri dahil edilen kaynaklardaki değişiklikler",
 	"apihelp-bs-flaggedpages-store-summary": "Onay kontrolü altındaki sayfalar için veri sağlar",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Sayfa onaylanamadı",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Sayfa onay durumu",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Onaylandı",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Taslak"
 }
