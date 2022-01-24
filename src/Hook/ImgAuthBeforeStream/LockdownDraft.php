@@ -7,6 +7,7 @@ use DateTime;
 use DateTimeZone;
 use File;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserGroupManager;
 use Title;
 
 class LockdownDraft extends ImgAuthBeforeStream {
