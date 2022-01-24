@@ -4,7 +4,8 @@
 			"Hedda",
 			"Joseph",
 			"Melissadilara",
-			"Mim.saitkilic"
+			"Mim.saitkilic",
+			"Can"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Başka bir çok eklenti için FlaggedRevs desteği ekler.",
@@ -82,6 +83,7 @@
 	"bs-flaggedrevsconnector-grid-page-title": "Sayfa başlığı",
 	"bs-flaggedrevsconnector-grid-rev-state": "Durum",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Kararlıdan bu yana sürümler",
+	"bs-flaggedrevsconnector-grid-page-categories": "Sayfa kategorileri",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: $1 sayfasını ($2 sürümü) $3 tarihinde işaretlediniz [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Kalite yönetimi genel bakış",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "Bu sayfanın taslak sürümü için \"$1\" eylemi sadece şu {{PLURAL:$2|grup|gruplar}} için mevcut $3",
@@ -114,8 +116,8 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Kararlı sürümler",
 	"bs-flaggedrevsconnector-resource-changes": "Son sayfa onayından beri dahil edilen kaynaklardaki değişiklikler",
 	"apihelp-bs-flaggedpages-store-summary": "Onay kontrolü altındaki sayfalar için veri sağlar",
-	"bs-flaggedrevsconnector-grid-page-categories": "Sayfa kategorileri",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Sayfa onaylanamadı",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Sayfa onay durumu",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Onaylandı",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Taslak"
 }
