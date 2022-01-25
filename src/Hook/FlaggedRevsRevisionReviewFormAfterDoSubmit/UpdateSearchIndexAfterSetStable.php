@@ -6,7 +6,7 @@ use BlueSpice\FlaggedRevsConnector\Hook\FlaggedRevsRevisionReviewFormAfterDoSubm
 use BS\ExtendedSearch\Source\Job\UpdateRepoFile;
 use BS\ExtendedSearch\Source\Job\UpdateWikiPage;
 use ExtensionRegistry;
-use JobQueueGroup;
+use MediaWiki\MediaWikiServices;
 use Title;
 
 class UpdateSearchIndexAfterSetStable extends FlaggedRevsRevisionReviewFormAfterDoSubmit {
@@ -15,14 +15,13 @@ class UpdateSearchIndexAfterSetStable extends FlaggedRevsRevisionReviewFormAfter
 	 * @return bool
 	 */
 	protected function doProcess() {
-		JobQueueGroup::singleton()->push(
+		$jobs = [
 			new UpdateWikiPage( $this->revisionReviewForm->getPage() )
-		);
+		];
 		if ( $this->revisionReviewForm->getPage()->getNamespace() === NS_FILE ) {
-			JobQueueGroup::singleton()->push(
-				new UpdateRepoFile( $this->revisionReviewForm->getPage() )
-			);
+			$jobs[] = new UpdateRepoFile( $this->revisionReviewForm->getPage() );
 		}
+		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
 
 		return true;
 	}

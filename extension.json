@@ -9,7 +9,7 @@
 	],
 	"descriptionmsg": "bs-flaggedrevsconnector-extension-description",
 	"requires": {
-		"MediaWiki": ">= 1.36.0",
+		"MediaWiki": ">= 1.37.0",
 		"extensions": {
 			"BlueSpiceFoundation": ">= 4.0",
 			"FlaggedRevs": "*"
