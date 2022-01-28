@@ -14,5 +14,6 @@
 	"bs-flaggedrevsconnector-grid-page-title": "عنوان الصفحة",
 	"bs-flaggedrevsconnector-grid-page-categories": "تصنيفات الصفحة",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "نسخة مسودة",
-	"bs-flaggedrevsconnector-collection-var-namespacename": "النطاق"
+	"bs-flaggedrevsconnector-collection-var-namespacename": "النطاق",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "أظهر الفروق"
 }
