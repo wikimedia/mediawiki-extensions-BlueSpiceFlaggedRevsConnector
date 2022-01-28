@@ -73,13 +73,12 @@ class FRCReview {
 	 * @param Title $title
 	 */
 	protected static function updateSearchIndex( $title ) {
-		\JobQueueGroup::singleton()->push(
+		$jobs = [
 			new \BS\ExtendedSearch\Source\Job\UpdateWikiPage( $title )
-		);
+		];
 		if ( $title->getNamespace() === NS_FILE ) {
-			JobQueueGroup::singleton()->push(
-				new UpdateRepoFile( $title )
-			);
+			$jobs[] = new UpdateRepoFile( $title );
 		}
+		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
 	}
 }
