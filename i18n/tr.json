@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Can",
 			"Hedda",
 			"Joseph",
 			"Melissadilara",
-			"Mim.saitkilic",
-			"Can"
+			"Mim.saitkilic"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Başka bir çok eklenti için FlaggedRevs desteği ekler.",
