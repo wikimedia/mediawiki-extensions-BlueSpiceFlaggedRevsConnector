@@ -114,6 +114,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuelle Versionen",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versionen einfrieren",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabile Versionen",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Legt fest, welche Version bei von Ressourcen verwendet werden sollen, wenn die stabile Version einer Seite gerendert wird",
 	"bs-flaggedrevsconnector-state-implicit-draft-desc": "Die Seite ist freigegeben aber es gibt Änderungen an eingebundenen Ressourcen",
 	"bs-flaggedrevsconnector-state-draft-resources-desc": "Die Seite ist eine Entwurfsversion aufgrund von Änderungen an eingebundenen Ressourcen",
 	"bs-flaggedrevsconnector-resource-changes": "Änderungen an eingebundenden Ressourcen seit der letzten Seitenfreigabe",

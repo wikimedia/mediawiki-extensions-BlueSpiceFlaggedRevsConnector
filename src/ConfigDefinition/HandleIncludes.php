@@ -77,4 +77,12 @@ class HandleIncludes extends ArraySetting implements IOverwriteGlobal {
 		return (int)parent::getValue();
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-flaggedrevsconnector-pref-handleincludes-help';
+	}
+
 }

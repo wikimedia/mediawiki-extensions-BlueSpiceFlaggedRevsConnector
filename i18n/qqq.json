@@ -114,6 +114,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Label for the \"current\" option in the handle type dropdown for the extension \"FlaggedRevs\"\n{{Identical|Current versions}}",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Label for the \"freeze\" option in the handle type dropdown for the extension \"FlaggedRevs\"\n{{Identical|Freeze versions}}",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Label for the \"stable\" option in the handle type dropdown for the extension \"FlaggedRevs\"\n{{Identical|Stable versions}}",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Help text for config value that determines which version of resources should be used when rendering the stable version of a page",
 	"bs-flaggedrevsconnector-resource-changes": "Section title for the list of included resources that changed since the last page approval",
 	"apihelp-bs-flaggedpages-store-summary": "{{doc-apihelp-summary|bs-flaggedpages-store}}",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Workflow error when cannot approve the page",
