@@ -115,6 +115,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuelle Versionen",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versionen einfrieren",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabile Versionen",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Legt fest, welche Version bei von Ressourcen verwendet werden sollen, wenn die stabile Version einer Seite gerendert wird",
 	"bs-flaggedrevsconnector-resource-changes": "Änderungen an eingebundenden Ressourcen seit der letzten Seitenfreigabe",
 	"apihelp-bs-flaggedpages-store-summary": "Stellt Daten für Seiten bereit, die unter Kontrolle des Freigabemechanismus stehen",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Freigabe der Seite fehlgeschlagen",
