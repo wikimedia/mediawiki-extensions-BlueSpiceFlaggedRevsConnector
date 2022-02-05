@@ -72,7 +72,7 @@ class DocumentVersionPropertyValueProvider extends PropertyValueProvider {
 			__METHOD__
 		);
 
-		$numberOfStableRevisions = $dbr->numRows( $res );
+		$numberOfStableRevisions = $res->numRows();
 
 		if ( $numberOfStableRevisions > 0 ) {
 			$semanticData->addPropertyObjectValue(
