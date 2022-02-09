@@ -113,6 +113,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Versions actuelles",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Geler les versions",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versions stables",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Détermine quelle version des ressources devrait être utilisée pour effectuer le rendu de la version stable d’une page",
 	"bs-flaggedrevsconnector-resource-changes": "Changements des ressources incluses depuis la dernière approbation de la page",
 	"apihelp-bs-flaggedpages-store-summary": "Fournit des données pour les pages placées sous contrôle d’approbation",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Échec d’approbation de la page",
