@@ -402,7 +402,8 @@
 		"SpecialPage_initList": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SpecialPageInitList\\RemoveDefaultFRPages::callback",
 		"BeforeParserFetchTemplateAndtitle": [
 			"BlueSpice\\FlaggedRevsConnector\\Hook\\BeforeParserFetchTemplateAndtitle\\SetTransclusionVersion::callback"
-		]
+		],
+		"DrawioGetFile": "BlueSpice\\FlaggedRevsConnector\\Hook\\DrawioGetFile\\GetStableFile::callback"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
