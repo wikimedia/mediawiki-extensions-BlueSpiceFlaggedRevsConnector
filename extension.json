@@ -380,6 +380,10 @@
 	"HookHandlers": {
 		"common-user-interface": {
 			"class": "\\BlueSpice\\FlaggedRevsConnector\\HookHandler\\CommonUserInterface"
+		},
+		"getStableFile": {
+			"class": "\\BlueSpice\\FlaggedRevsConnector\\HookHandler\\GetStableFile",
+			"services": [ "BSFlaggedRevsConnectorUtils", "RevisionStore" ]
 		}
 	},
 	"Hooks": {
@@ -422,7 +426,8 @@
 		"BeforeParserFetchTemplateAndtitle": [
 			"BlueSpice\\FlaggedRevsConnector\\Hook\\BeforeParserFetchTemplateAndTitle\\SetTransclusionVersion::callback"
 		],
-		"MWStakeCommonUIRegisterSkinSlotComponents": "common-user-interface"
+		"MWStakeCommonUIRegisterSkinSlotComponents": "common-user-interface",
+		"DrawioGetFile": "getStableFile"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
