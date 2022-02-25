@@ -126,6 +126,9 @@ class RevisionState extends AlertProviderBase {
 			return;
 		}
 
+		$message = $type = '';
+		$implicitDraft = false;
+
 		$hasStable = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )
 				->getStableRev() instanceof FlaggedRevision;
 		$showingStable = $this->utils->isShowingStable( $this->skin->getContext() );
@@ -134,43 +137,47 @@ class RevisionState extends AlertProviderBase {
 		$userCanSeeDrafts = $this->utils->userCanAccessDrafts( $this->getUser() );
 
 		if ( !$hasStable ) {
-			$this->revisionStateMessage =
-				$this->skin->msg( 'bs-flaggedrevsconnector-state-unmarked-desc' );
-			$this->revisionStateMessageType = IAlertProvider::TYPE_DANGER;
+			$message = $this->skin->msg( 'bs-flaggedrevsconnector-state-unmarked-desc' );
+			$type = IAlertProvider::TYPE_DANGER;
 		}
 
 		if ( $showingStable ) {
 			if ( !$inSync && $pendingCount === 0 && $userCanSeeDrafts ) {
-				$this->revisionStateMessage = $this->skin->msg(
+				$message = $this->skin->msg(
 					'bs-flaggedrevsconnector-state-implicit-draft-desc'
 				);
+				$implicitDraft = true;
 			} else {
-				$this->revisionStateMessage =
-					$this->skin->msg( 'bs-flaggedrevsconnector-state-stable-desc' );
+				$message = $this->skin->msg( 'bs-flaggedrevsconnector-state-stable-desc' );
 			}
-			$this->revisionStateMessageType = IAlertProvider::TYPE_SUCCESS;
+			$type = IAlertProvider::TYPE_SUCCESS;
 		}
 
 		if ( !$showingStable ) {
 			if ( $pendingCount > 0 ) {
-				$this->revisionStateMessage = $this->skin->msg(
+				$message = $this->skin->msg(
 					'bs-flaggedrevsconnector-state-draft-desc',
 					$pendingCount,
 					$this->skin->getContext()->getLanguage()->date(
 						$this->flaggableWikiPage->getStableRev()->getTimestamp()
 					)
 				);
-				$this->revisionStateMessageType = IAlertProvider::TYPE_WARNING;
-				return;
-			}
-
-			if ( !$inSync ) {
-				$this->revisionStateMessage = $this->skin->msg(
+				$type = IAlertProvider::TYPE_WARNING;
+			} elseif ( !$inSync ) {
+				$message = $this->skin->msg(
 					'bs-flaggedrevsconnector-state-draft-resources-desc'
 				);
-				$this->revisionStateMessageType = IAlertProvider::TYPE_WARNING;
+				$type = IAlertProvider::TYPE_WARNING;
+				$implicitDraft = true;
 			}
 		}
+
+		if ( $this->skipOnSkins( $this->skin->getSkinName() ) && !$implicitDraft ) {
+			return;
+		}
+
+		$this->revisionStateMessage = $message;
+		$this->revisionStateMessageType = $type;
 	}
 
 	/**
@@ -178,13 +185,6 @@ class RevisionState extends AlertProviderBase {
 	 * @return bool
 	 */
 	protected function skipForContextReasons() {
-		if ( $this->skin->getSkinName() !== 'BlueSpiceCalumma'
-			&& ExtensionRegistry::getInstance()->isLoaded( 'PageHeader' ) ) {
-			// ERM:25780 Remove banner if PageHeader extension provides the status
-			// sentence and the skin is not BlueSpiceCalumma.
-			// This is not a good way, but the only one it seems :/
-			return true;
-		}
 		if ( !$this->flaggableWikiPage ) {
 			return true;
 		}
@@ -200,4 +200,19 @@ class RevisionState extends AlertProviderBase {
 		return false;
 	}
 
+	/**
+	 * @param string $skinName
+	 * @return bool
+	 */
+	protected function skipOnSkins( $skinName ) {
+		if ( $skinName !== 'BlueSpiceCalumma'
+			&& ExtensionRegistry::getInstance()->isLoaded( 'PageHeader' ) ) {
+			// ERM:25780 Remove banner if PageHeader extension provides the status
+			// sentence and the skin is not BlueSpiceCalumma.
+			// This is not a good way, but the only one it seems :/
+			return true;
+		}
+
+		return false;
+	}
 }
