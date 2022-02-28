@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"DDPAT",
-			"Ата"
+			"Ата",
+			"Ice bulldog",
+			"Samflint"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Додає підтримку FlaggedRevs до ряду інших розширень.",
@@ -83,6 +85,7 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Категорії сторінок",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Ви позначили сторінку $1 (версія $2) $3 [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Огляд управління якістю",
+	"bs-flaggedrevsconnector-global-actions-entry": "Гарантія якості",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "Дія «$1» над чернетковою версією цієї сторінки доступна лише для {{PLURAL:$2|групи|груп}} $3",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "має чернеткову версію",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Показати чернеткову версію",
@@ -111,6 +114,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Поточні версії",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Заморозити версії",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Стабільні версії",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Визначає, яку версію ресурсів слід використовувати під час відтворення стабільної версії сторінки",
 	"bs-flaggedrevsconnector-resource-changes": "Зміни до включених ресурсів з часу останнього затвердження сторінки",
 	"apihelp-bs-flaggedpages-store-summary": "Надає дані для сторінок, які перебувають під контролем затвердження",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Не вдалося затвердити сторінку",
@@ -126,5 +130,6 @@
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Друкує позначку часу для останніх прийнятих та чернечих версій під заголовком у PDF.",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Робочий процес автоматично видаляється, і можна розпочати новий робочий процес.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Встановлює право доступу до чернечих версій. Якщо немає жодної групи в списку, навіть користувач-адміністратор не бачить візуального стану в області заголовка. Однак користувачі-адміністратори все ще можуть отримати доступ до чернетки в історії версій.",
-	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Проєкти версій виключені з результатів пошуку. Якщо сторінка не має стабільної версії, вона не відображатиметься в результатах пошуку."
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Проєкти версій виключені з результатів пошуку. Якщо сторінка не має стабільної версії, вона не відображатиметься в результатах пошуку.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Користувач «$1» {{GENDER:$1|повинен мати}} {{PLURAL:$2|дозвіл «$3» щоб виконати необхідне завдання|наступні дозволи для виконання необхідного завдання: $3}}"
 }
