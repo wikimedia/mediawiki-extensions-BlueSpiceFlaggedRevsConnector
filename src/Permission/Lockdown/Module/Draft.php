@@ -242,7 +242,7 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 		$pdfStablePageId = $this->context->getRequest()->getInt( 'pdfstablepageid', -1 );
 		// Do explicit, global webrequest independent checks on this title, as it is requested by
 		// PageContentProvider from the server side, rather than by a user from a client.
-		if ( $pdfStablePageId !== $title->getArticleID() ) {
+		if ( $pdfStablePageId !== -1 && $pdfStablePageId !== $title->getArticleID() ) {
 			return $this->isStableVersion( $title );
 		}
 		if ( $this->context->getRequest()->getInt( 'stable', 0 ) === 1 ) {
