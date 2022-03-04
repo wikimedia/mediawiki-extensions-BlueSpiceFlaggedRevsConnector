@@ -122,5 +122,12 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Status de aprovação da página",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Aprovado",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Esboço",
-	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime o carimbo de data/hora das versões aceitas e de rascunho mais recentes abaixo do título no PDF."
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Insere um registro de publicação no início do PDF. Este registro mostra quando uma página foi aceita. Se nenhum comentário foi adicionado durante a aceitação, o campo de comentário está vazio.",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Insere um registro no início do PDF. Este registro mostra todas as páginas PDF com status \"rascunho\".",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Insere um registro no início do PDF. Este registro mostra todas as páginas PDF de namespaces sem a funcionalidade de revisão ativada.",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime o carimbo de data/hora das versões aceitas e de rascunho mais recentes abaixo do título no PDF.",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "O fluxo de trabalho é excluído automaticamente e um novo fluxo de trabalho pode ser iniciado.",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Define o direito de acesso às versões de rascunho. Se nenhum grupo estiver listado, mesmo o usuário sysop não verá um status visual na área de título. Os usuários de Sysop ainda podem acessar o rascunho no histórico de versões, no entanto.",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "As versões de rascunho são excluídas dos resultados da pesquisa. Se uma página não tiver uma versão estável, ela não será exibida nos resultados da pesquisa.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Usuário \"$1\" {{GENDER:$1|deve ter}} {{PLURAL:$2|permissão \"$3\" para completar a tarefa requerida|as seguintes permissões para completar a tarefa requerida: $3}}"
 }
