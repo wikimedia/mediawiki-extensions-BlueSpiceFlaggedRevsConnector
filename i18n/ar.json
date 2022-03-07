@@ -1,19 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
+			"FiberAhmed",
 			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "صفحة",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "غير مستقرة",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "مستقرة",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "مراجعة",
+	"bs-flaggedrevsconnector-state-unmarked": "المسودة الأولى",
+	"bs-flaggedrevsconnector-state-stable": "مقبول",
 	"bs-flaggedrevsconnector-state-pending": "التعديلات المعلقة",
+	"bs-flaggedrevsconnector-review-comment-label": "تعليق",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "مقبول",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "تاريخ الموافقة",
 	"bs-flaggedrevsconnector-column-last-stable": "المراجعة",
+	"bs-flaggedrevsconnector-no-stable": "غير مراجعة",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "المستخدم الذي راجع الصفحة",
+	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "لم تتم الموافقة",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "مقبول",
 	"bs-flaggedrevsconnector-flyout-title": "قبول الصفحة",
 	"bs-flaggedrevsconnector-grid-page-id": "معرف الصفحة",
 	"bs-flaggedrevsconnector-grid-page-title": "عنوان الصفحة",
+	"bs-flaggedrevsconnector-grid-rev-state": "الحالة",
 	"bs-flaggedrevsconnector-grid-page-categories": "تصنيفات الصفحة",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "نسخة مسودة",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "النطاق",
-	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "أظهر الفروق"
+	"bs-flaggedrevsconnector-collection-var-categoryname": "تصنيف",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "أظهر الفروق",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "مقبول"
 }

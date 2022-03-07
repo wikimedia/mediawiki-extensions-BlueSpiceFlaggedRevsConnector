@@ -82,6 +82,7 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Categorias del pagina",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "Marcaversiones: Tu ha marcate le pagina $1 (version $2) sur $3 [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Vista general del gestion de qualitate",
+	"bs-flaggedrevsconnector-global-actions-entry": "Controlo de qualitate",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "Le action \"$1\" pro le version provisori de iste pagina es solmente disponibile pro le gruppo{{PLURAL:$2||s}} $3",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "ha un version provisori",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Monstrar version provisori",
@@ -110,6 +111,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Versiones actual",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Gelar versiones",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versiones stabile",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Determina qual version de ressources debe esser usate durante le rendition del version stabile de un pagina.",
 	"bs-flaggedrevsconnector-resource-changes": "Cambiamentos de ressources includite post le ultime approbation del pagina",
 	"apihelp-bs-flaggedpages-store-summary": "Forni datos pro paginas placiate sub controlo de approbation",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Fallimento de approbation del pagina",
@@ -125,5 +127,6 @@
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime le data e hora pro le ultime versiones acceptate e provisori infra le titulo in le PDF.",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Le fluxo de labor se elimina automaticamente e un nove fluxo de labor pote esser comenciate.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Defini le derecto de accesso a versiones provisori. Si nulle gruppo es listate, mesmo usatores administrative non videra un stato visual in le area de titulo. Totevia, usatores administrative pote acceder al versiones provisori in le historia de versiones.",
-	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Versiones provisori es excludite de resultatos de recerca. Si un pagina non ha version stabile, illo non appare in le resultatos de recerca."
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Versiones provisori es excludite de resultatos de recerca. Si un pagina non ha version stabile, illo non appare in le resultatos de recerca.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Le usator \"$1\" debe haber le sequente permission{{PLURAL:$2||es}} pro terminar le carga requirite: $3"
 }
