@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Abuluntu",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Vukky"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Legger til støtte for FlaggedRevs i en rekke andre utvidelser.",
@@ -88,5 +89,11 @@
 	"bs-flaggedrevsconnector-flyout-state-intro": "Godkjenningsstatus for denne siden",
 	"bs-flaggedrevsconnector-flyout-form-title": "Godkjenn siden",
 	"bs-qmoverview-desc": "Oversikt over sider under godkjenning",
-	"bs-flaggedrevsconnector-grid-page-categories": "Sidekategorier"
+	"bs-flaggedrevsconnector-grid-page-categories": "Sidekategorier",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "et førsteutkast",
+	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Ikke aktivert",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Vis forskjell",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Vis forskjell",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Godkjent",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Kladd"
 }

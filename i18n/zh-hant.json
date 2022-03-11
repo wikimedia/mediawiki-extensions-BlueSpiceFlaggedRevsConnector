@@ -1,6 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ericliu1912",
+			"Madeleinemcc",
 			"Weather Top Wizard",
 			"Winston Sung"
 		]
@@ -24,5 +26,13 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "顯示差異",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "顯示差異",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "目前版本",
-	"bs-flaggedrevsconnector-pref-handleinclude-stable": "穩定版本"
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "穩定版本",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "穩定日期",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "穩定頁面",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "不穩定頁面",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "不穩定",
+	"bs-flaggedrevsconnector-state-unmarked": "初稿",
+	"bs-flaggedrevsconnector-state-stable": "已批准",
+	"bs-flaggedrevsconnector-state-pending": "待審查的變更",
+	"bs-flaggedrevsconnector-state-stable-desc": "這個版本已被批准"
 }

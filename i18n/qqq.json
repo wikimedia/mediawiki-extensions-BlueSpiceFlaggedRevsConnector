@@ -129,5 +129,7 @@
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Description for config variable \"FlaggedRevsConnectorautoDeleteWorkflow\"",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Description for config variable \"FlaggedRevsConnectorDraftGroups\"",
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Description for config variable \"FlaggedRevsConnectorIndexStableOnly\"",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Exception text when user is not a valid reviewer\n$1 - username\n$2 - count of require permission\n$3 - required permissions"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Exception text when user is not a valid reviewer\n$1 - username\n$2 - count of require permission\n$3 - required permissions",
+	"bs-flaggedrevsconnector-global-actions-entry": "Label of entry in global actions menu",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Help text for config value that determines which version of resources should be used when rendering the stable version of a page"
 }

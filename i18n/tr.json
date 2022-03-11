@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Can",
 			"Hedda",
 			"Joseph",
 			"Melissadilara",
@@ -117,5 +118,6 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Sayfa kategorileri",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Sayfa onaylanamadı",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Onaylandı",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Taslak"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Taslak",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Sayfa onay durumu"
 }

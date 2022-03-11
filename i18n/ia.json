@@ -125,5 +125,8 @@
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime le data e hora pro le ultime versiones acceptate e provisori infra le titulo in le PDF.",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Le fluxo de labor se elimina automaticamente e un nove fluxo de labor pote esser comenciate.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Defini le derecto de accesso a versiones provisori. Si nulle gruppo es listate, mesmo usatores administrative non videra un stato visual in le area de titulo. Totevia, usatores administrative pote acceder al versiones provisori in le historia de versiones.",
-	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Versiones provisori es excludite de resultatos de recerca. Si un pagina non ha version stabile, illo non appare in le resultatos de recerca."
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Versiones provisori es excludite de resultatos de recerca. Si un pagina non ha version stabile, illo non appare in le resultatos de recerca.",
+	"bs-flaggedrevsconnector-global-actions-entry": "Controlo de qualitate",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Determina qual version de ressources debe esser usate durante le rendition del version stabile de un pagina.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Le usator \"$1\" debe haber le sequente permission{{PLURAL:$2||es}} pro terminar le carga requirite: $3"
 }

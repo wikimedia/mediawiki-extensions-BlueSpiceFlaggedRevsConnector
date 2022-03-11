@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Underbaaar",
-			"Ykhwong"
+			"Ykhwong",
+			"Yunbj"
 		]
 	},
 	"bs-flaggedrevsconnector-grid-page-categories": "문서 분류",
@@ -74,5 +75,10 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "승인됨",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "초안",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "페이지",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "\"$1\" 사용자는 {{PLURAL:$2|요청 작업을 마치기 위해 \"$3\" 권한이 필요합니다|요청 작업을 마치기 위해 다음의 권한이 필요합니다: $3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "\"$1\" 사용자는 {{PLURAL:$2|요청 작업을 마치기 위해 \"$3\" 권한이 필요합니다|요청 작업을 마치기 위해 다음의 권한이 필요합니다: $3}}",
+	"bs-flaggedrevsconnector-grid-pending-revs": "안정 버전 이후 개정판",
+	"bs-flaggedrevsconnector-global-actions-entry": "품질 보증",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "현재 판",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "고정된 판",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "안정판"
 }

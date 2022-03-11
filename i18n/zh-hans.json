@@ -11,6 +11,7 @@
 			"TsuyaMarisa",
 			"Xiplus",
 			"列维劳德",
+			"孟天皓",
 			"沈澄心",
 			"落花有意12138"
 		]
@@ -89,5 +90,6 @@
 	"bs-flaggedrevsconnector-flyout-form-title": "批准此页",
 	"bs-flaggedrevsconnector-invalid-namespaces": "指定的{{PLURAL:$1|命名空间}}无效：$2。",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "被批准版本",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "页面审批状态"
 }

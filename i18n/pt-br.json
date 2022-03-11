@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduardoaddad"
+			"Eduardoaddad",
+			"Juan90264"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Adiciona suporte para FlaggedRevs a uma série de outras extensões.",
@@ -105,8 +106,28 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Categorias de página",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Falha ao aprovar a página",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "A revisão especificada não corresponde ao título especificado",
-	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" e \"revision\" deve estar presente em DefinitionContext",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" deve estar presente em DefinitionContext",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Aprovado",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Esboço",
-	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime o carimbo de data/hora das versões aceitas e de rascunho mais recentes abaixo do título no PDF."
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime o carimbo de data/hora das versões aceitas e de rascunho mais recentes abaixo do título no PDF.",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "namespace Not FlaggedRevs",
+	"bs-flaggedrevsconnector-state-draft-desc": "Esta é uma versão de rascunho com [{{fullurl:{{FULLPAGENAMEE}}|action=history}} $1 alterações em revisão]. A correspondente [{{fullurl:{{FULLPAGENAMEE}}|stable=1}} versão estável] foi aprovada em $2.",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable": "Estante: listar o registro de revisões aprovadas",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable": "Estante: Listar páginas sem revisão estável",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr": "Estante: listar páginas sem FlaggedRevs",
+	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Você sinalizou a página $1 (revisão $2) em $3 [$4]",
+	"bs-flaggedrevsconnector-global-actions-entry": "Garantia da qualidade",
+	"bs-flaggedrevsconnector-draft-lockdown-reason": "A ação \"$1\" para a versão de rascunho desta página só está disponível para {{PLURAL:$2|o grupo|os grupos}} $3",
+	"bs-flaggedrevsconnector-pref-handleincludes": "Incluir manuseio",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Congelar versões",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Determina qual versão de recursos deve ser usada ao renderizar a versão estável de uma página",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "\"pageId\" fornecido não corresponde a nenhum objeto Title válido",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Status de aprovação da página",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Insere um registro de publicação no início do PDF. Este registro mostra quando uma página foi aceita. Se nenhum comentário foi adicionado durante a aceitação, o campo de comentário está vazio.",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Insere um registro no início do PDF. Este registro mostra todas as páginas PDF com status \"rascunho\".",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Insere um registro no início do PDF. Este registro mostra todas as páginas PDF de namespaces sem a funcionalidade de revisão ativada.",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "O fluxo de trabalho é excluído automaticamente e um novo fluxo de trabalho pode ser iniciado.",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Define o direito de acesso às versões de rascunho. Se nenhum grupo estiver listado, mesmo o usuário sysop não verá um status visual na área de título. Os usuários de Sysop ainda podem acessar o rascunho no histórico de versões, no entanto.",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "As versões de rascunho são excluídas dos resultados da pesquisa. Se uma página não tiver uma versão estável, ela não será exibida nos resultados da pesquisa.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Usuário \"$1\" {{GENDER:$1|deve ter}} {{PLURAL:$2|permissão \"$3\" para completar a tarefa requerida|as seguintes permissões para completar a tarefa requerida: $3}}"
 }

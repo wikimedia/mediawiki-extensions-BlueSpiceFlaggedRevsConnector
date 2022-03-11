@@ -2,6 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"DDPAT",
+			"Ice bulldog",
+			"Samflint",
 			"Ата"
 		]
 	},
@@ -126,5 +128,8 @@
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Друкує позначку часу для останніх прийнятих та чернечих версій під заголовком у PDF.",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Робочий процес автоматично видаляється, і можна розпочати новий робочий процес.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Встановлює право доступу до чернечих версій. Якщо немає жодної групи в списку, навіть користувач-адміністратор не бачить візуального стану в області заголовка. Однак користувачі-адміністратори все ще можуть отримати доступ до чернетки в історії версій.",
-	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Проєкти версій виключені з результатів пошуку. Якщо сторінка не має стабільної версії, вона не відображатиметься в результатах пошуку."
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Проєкти версій виключені з результатів пошуку. Якщо сторінка не має стабільної версії, вона не відображатиметься в результатах пошуку.",
+	"bs-flaggedrevsconnector-global-actions-entry": "Гарантія якості",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Визначає, яку версію ресурсів слід використовувати під час відтворення стабільної версії сторінки",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Користувач «$1» {{GENDER:$1|повинен мати}} {{PLURAL:$2|дозвіл «$3» щоб виконати необхідне завдання|наступні дозволи для виконання необхідного завдання: $3}}"
 }
