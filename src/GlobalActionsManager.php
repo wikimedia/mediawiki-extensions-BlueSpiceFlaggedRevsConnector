@@ -29,7 +29,7 @@ class GlobalActionsManager extends RestrictedTextLink {
 	 */
 	public function getPermissions(): array {
 		$permissions = [
-			"review"
+			"read"
 		];
 		return $permissions;
 	}
