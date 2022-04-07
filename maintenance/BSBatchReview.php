@@ -7,6 +7,9 @@
 /**
  * @ingroup Maintenance
  */
+
+use MediaWiki\MediaWikiServices;
+
 if ( getenv( 'MW_INSTALL_PATH' ) ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
@@ -22,6 +25,11 @@ class BSBatchReview extends Maintenance {
 	 * @var array
 	 */
 	private $errors = [];
+
+	/**
+	 * @var MediaWikiServices
+	 */
+	private $services;
 
 	/**
 	 *
@@ -45,6 +53,9 @@ class BSBatchReview extends Maintenance {
 
 	public function execute() {
 		$user = User::newFromName( $this->getOption( 'username' ) );
+
+		$this->services = MediaWikiServices::getInstance();
+
 		$this->autoreview_current( $user );
 	}
 
@@ -59,7 +70,7 @@ class BSBatchReview extends Maintenance {
 			$this->output( "Invalid user specified.\n" );
 			return;
 		} else {
-			$allowedReview = MediaWikiServices::getInstance()->getPermissionManager()->userHasRight(
+			$allowedReview = $this->services->getPermissionManager()->userHasRight(
 				$user,
 				'review'
 			);
@@ -196,7 +207,8 @@ class BSBatchReview extends Maintenance {
 	 * @param \User $user
 	 */
 	private function flagStable( $title, $flags, $user ) {
-		$deprecatedRevision = \Revision::newFromId( $title->getLatestRevID() );
+		$lookup = $this->services->getRevisionLookup();
+		$deprecatedRevision = $lookup->getRevisionById( $title->getLatestRevID() );
 
 		$form = new \RevisionReviewForm( $user );
 		$form->setPage( $title );
