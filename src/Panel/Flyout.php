@@ -182,7 +182,7 @@ class Flyout extends BasePanel implements IFlyout {
 	}
 
 	/**
-	 * @var \MediaWiki\Storage\RevisionRecord
+	 * @var \MediaWiki\Revision\RevisionRecord
 	 */
 	protected $draftRevisionsAfterCurrentStable = [];
 
