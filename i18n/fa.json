@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jeeputer"
+			"Jeeputer",
+			"LordProfo"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "تاریخ نسخهٔ پایدار",
@@ -20,7 +21,9 @@
 	"bs-flaggedrevsconnector-state-pending": "تغییرات در انتظار بازبینی",
 	"bs-flaggedrevsconnector-state-stable-desc": "این نسخه تأیید شده‌است.",
 	"bs-flaggedrevsconnector-state-pending-desc": "تغییراتی در انتظار بازبینی هستند. [$1 همین حالا آن‌ها را ببینید].",
+	"bs-flaggedrevsconnector-review-heading": "تأییدیه",
 	"bs-flaggedrevsconnector-review-comment-label": "نظر",
+	"bs-flaggedrevsconnector-label-flaggedrevs": "تأییدیه",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "تأییدشده",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "تاریخ تأیید",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "در انتظار تأیید",
