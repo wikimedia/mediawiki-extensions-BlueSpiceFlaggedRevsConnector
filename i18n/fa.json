@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jeeputer"
+			"Jeeputer",
+			"LordProfo"
 		]
 	},
 	"bs-flaggedrevsconnector-collection-var-categoryname": "رده",
@@ -85,5 +86,7 @@
 	"bs-flaggedrevsconnector-response-failure": "خطایی رخ داد. لطفاً با مدیر خود تماس بگیرید.",
 	"bs-flaggedrevsconnector-invalid-namespaces": "{{PLURAL:$1|فضای نام|فضاهای نام}} مشخص‌شده نامعتبر {{PLURAL:$1|است|هستند}}: $2.",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "کاربری که صفحه را بازبینی کرده‌است",
-	"bs-flaggedrevsconnector-document-version-sesp-desc": "تعداد نسخه‌های بازبینی‌شده در تاریخچهٔ صفحه"
+	"bs-flaggedrevsconnector-document-version-sesp-desc": "تعداد نسخه‌های بازبینی‌شده در تاریخچهٔ صفحه",
+	"bs-flaggedrevsconnector-review-heading": "تأییدیه",
+	"bs-flaggedrevsconnector-label-flaggedrevs": "تأییدیه"
 }
