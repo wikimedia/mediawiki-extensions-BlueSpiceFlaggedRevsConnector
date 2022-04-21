@@ -12,6 +12,7 @@ use MediaWiki\Extension\Workflows\Exception\WorkflowExecutionException;
 use MediaWiki\Extension\Workflows\WorkflowContext;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\RevisionStore;
+use MediaWiki\User\UserFactory;
 use Message;
 use MWTimestamp;
 use Title;
@@ -29,10 +30,14 @@ class ApprovePageActivity extends GenericActivity {
 	private $util;
 	/** @var RevisionStore */
 	private $revisionStore;
+	/** @var UserFactory */
+	private $userFactory;
 	/** @var Title */
 	private $title;
 	/** @var RevisionRecord */
 	private $revision;
+	/** @var User */
+	private $maintenanceUser;
 	/** @var User */
 	private $user;
 
@@ -41,16 +46,19 @@ class ApprovePageActivity extends GenericActivity {
 	 * @param Utils $utils
 	 * @param RevisionStore $revisionStore
 	 * @param UtilityFactory $utilityFactory
+	 * @param UserFactory $userFactory
 	 * @param ITask $task
+	 * @throws \MWException
 	 */
 	public function __construct(
 		Utils $utils, RevisionStore $revisionStore,
-		UtilityFactory $utilityFactory, ITask $task
+		UtilityFactory $utilityFactory, UserFactory $userFactory, ITask $task
 	) {
 		parent::__construct( $task );
 		$this->util = $utils;
 		$this->revisionStore = $revisionStore;
-		$this->user = $utilityFactory->getMaintenanceUser()->getUser();
+		$this->userFactory = $userFactory;
+		$this->maintenanceUser = $utilityFactory->getMaintenanceUser()->getUser();
 	}
 
 	/**
@@ -110,6 +118,30 @@ class ApprovePageActivity extends GenericActivity {
 			);
 		}
 		$this->revision = $revision;
+
+		if ( isset( $data['user'] ) ) {
+			// If user is explicitly set, use that. Definition is responsible
+			// to make sure this user can approve pages (use propertyValidator)
+			$this->user = $this->userFactory->newFromName( $data['user'] );
+			if ( !( $this->user instanceof User ) || !$this->user->isRegistered() ) {
+				throw new WorkflowExecutionException(
+					Message::newFromKey(
+						'bs-flaggedrevsconnector-wfactivity-error-provided-user', $data['user']
+					)->text(),  $this->getTask()
+				);
+			}
+		} elseif ( $context->isRunningAsBot() ) {
+			// If we are running a workflow as a bot (no user interaction), use maintenance user
+			$this->user = $this->maintenanceUser;
+		}
+
+		if ( !( $this->user instanceof User ) ) {
+			throw new WorkflowExecutionException(
+				Message::newFromKey(
+					'bs-flaggedrevsconnector-wfactivity-error-no-user'
+				)->text(),  $this->getTask()
+			);
+		}
 	}
 
 	/**

@@ -144,7 +144,8 @@
 						"services": [
 							"BSFlaggedRevsConnectorUtils",
 							"RevisionStore",
-							"BSUtilityFactory"
+							"BSUtilityFactory",
+							"UserFactory"
 						]
 					}
 				}

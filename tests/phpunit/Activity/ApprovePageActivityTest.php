@@ -8,6 +8,7 @@ use MediaWiki\Extension\Workflows\Activity\ExecutionStatus;
 use MediaWiki\Extension\Workflows\Definition\DefinitionContext;
 use MediaWiki\Extension\Workflows\Definition\Element\Task;
 use MediaWiki\Extension\Workflows\WorkflowContext;
+use MediaWiki\Extension\Workflows\WorkflowContextMutable;
 use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 use Title;
@@ -42,18 +43,19 @@ class ApprovePageActivityTest extends MediaWikiIntegrationTestCase {
 	 *
 	 */
 	public function testExecute() {
-		$context = new WorkflowContext(
-			new DefinitionContext( [
-				'pageId' => $this->title->getArticleID(),
-				'revision' => $this->title->getLatestRevID()
-			] )
-		);
+		$mutable = new WorkflowContextMutable( MediaWikiServices::getInstance()->getTitleFactory() );
+		$mutable->setDefinitionContext( new DefinitionContext( [
+			'pageId' => $this->title->getArticleID(),
+			'revision' => $this->title->getLatestRevID()
+		] ) );
+		$context = new WorkflowContext( $mutable );
 		$task = new Task( 'Approve1', 'Approve page', [], [], 'automaticTask' );
 		$services = MediaWikiServices::getInstance();
 		$activity = new ApprovePageActivity(
 			$services->getService( 'BSFlaggedRevsConnectorUtils' ),
 			$services->getRevisionStore(),
 			$services->getService( 'BSUtilityFactory' ),
+			$services->getUserFactory(),
 			$task
 		);
 
