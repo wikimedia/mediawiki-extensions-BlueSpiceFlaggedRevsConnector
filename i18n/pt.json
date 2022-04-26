@@ -111,5 +111,22 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Versões atuais",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versões congeladas",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versões estáveis",
-	"bs-flaggedrevsconnector-pref-handleincludes-help": "Determina que versão dos recursos deve ser usada ao compor a versão estável de uma página"
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Determina que versão dos recursos deve ser usada ao compor a versão estável de uma página",
+	"bs-flaggedrevsconnector-resource-changes": "Mudanças nos recursos incluídos desde a última aprovação da página",
+	"apihelp-bs-flaggedpages-store-summary": "Fornece dados para páginas que estão sob controlo de aprovação",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Não foi possível aprovar a página",
+	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "A revisão especificada não corresponde ao título especificado",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" tem de estar presente em DefinitionContext",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "O \"pageId\" fornecido não corresponde a nenhum objeto Title válido",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Estado de aprovação da página",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Aprovada",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Rascunho",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Insere um registo de publicações no início do PDF. Este registo mostra quando ocorreram aceitações de uma página. Se não foi adicionado nenhum comentário durante a aceitação, o campo de comentário está vazio.",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Insere um registo no início do PDF. Este registo mostra todas as páginas PDF que têm o estado \"rascunho\".",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Insere um registo no início do PDF. Este registo mostra todas as páginas PDF de espaços nominais que não têm a funcionalidade de revisão ativada.",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime a data e hora das versões aceite e de rascunho mais recentes por baixo do título no PDF.",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "O fluxo de trabalho é eliminado automaticamente e pode ser iniciado um novo fluxo de trabalho.",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Define o direito de acesso às versões de rascunho. Se nenhum grupo estiver listado, nem mesmo um administrador verá um estado visual na área do título. No entanto, os administradores podem ainda assim aceder ao rascunho no historial de versões.",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "As versões de rascunho são excluídas dos resultados da pesquisa. Se uma página não tiver nenhuma versão estável não aparece nos resultados da pesquisa.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "{{GENDER:$1|O utilizador|A utilizadora}} \"$1\" tem de ter {{PLURAL:$2|a permissão \"$3\" para executar a tarefa requerida|as seguintes permissões para executar a tarefa requerida: $3}}"
 }
