@@ -124,7 +124,7 @@ class FRCBookshelf {
 			}
 		}
 
-		// Now, after fetching all neccessary data we build the tables
+		// Now, after fetching all necessary data we build the tables
 		$oStableDiv   = null;
 		$oNoStableDiv = null;
 		$oNoFRDiv     = null;
