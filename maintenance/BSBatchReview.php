@@ -1,7 +1,7 @@
 <?php
 
 // How to use:
-// Create a TXT file containing the page id's which you wish to review seperated by line breaks
+// Create a TXT file containing the page id's which you wish to review separated by line breaks
 // Run the script by "BSBatchReview.php --username <Username> --pageids /path/to/txt/file.txt"
 
 /**
@@ -42,9 +42,9 @@ class BSBatchReview extends Maintenance {
 		$this->addOption( 'username',
 			'The user name of the existing user to use as the "reviewer"', true, true );
 		$this->addOption( 'pageids',
-			'Flat file containing page ids seperated by line break', false, true );
+			'Flat file containing page ids separated by line break', false, true );
 		$this->addOption( 'pages',
-			'Flat file containing page names seperated by line break', false, true );
+			'Flat file containing page names separated by line break', false, true );
 		$this->addOption( 'namespace',
 			'Id of namespace to flag entirely', false, true );
 		$this->addOption( 'flag',
