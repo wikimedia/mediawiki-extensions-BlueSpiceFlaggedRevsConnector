@@ -150,6 +150,12 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 
 			$cell = $( '<td>' );
 			$cell.append(
+				mw.message( 'bs-flaggedrevsconnector-grid-page-namespace' ).plain()
+			);
+			$row.append( $cell );
+
+			$cell = $( '<td>' );
+			$cell.append(
 				mw.message( 'bs-flaggedrevsconnector-grid-rev-state' ).plain()
 			);
 			$row.append( $cell );
@@ -178,6 +184,10 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 
 				$cell = $( '<td>' );
 				$cell.append( record.data.page_title );
+				$row.append( $cell );
+
+				$cell = $( '<td>' );
+				$cell.append( record.data.page_namespace );
 				$row.append( $cell );
 
 				$cell = $( '<td>' );
