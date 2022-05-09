@@ -135,5 +135,6 @@
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Workflow error when user specified cannot be resolved to a valid User object.\n$1 - provided username",
 	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Workflow error when no valid user can be set to perform the action",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Title of button to show more information about changed resources",
-	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Title of popup which shows list of changed resources"
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Title of popup which shows list of changed resources",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Short heading for the page title namespace column in the quality manager overview\n{{Identical|Page title}}"
 }
