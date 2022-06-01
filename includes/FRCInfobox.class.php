@@ -28,15 +28,21 @@ class FRCInfobox {
 
 		$dbr         = wfGetDB( DB_REPLICA );
 		$sOrderSQL   = 'rc_timestamp DESC';
-		$aConditions = [ 'rc_cur_id = ' . $iPageId ];
+		$aConditions = [
+			'rc_cur_id = ' . $iPageId,
+			'rc_comment_id = comment_id'
+		];
 		$res = $dbr->selectRow(
-			[ 'recentchanges' ],
-			[ 'rc_comment' ],
+			[ 'recentchanges', 'comment' ],
+			[ 'comment_text as rc_comment' ],
 			$aConditions,
 			__METHOD__,
 			[ 'ORDER BY' => $sOrderSQL, 'LIMIT' => 1 ]
 		);
 
+		if ( !$res ) {
+			return true;
+		}
 		$sComment = '';
 		if ( !empty( $res->rc_comment ) ) {
 			$sComment = $res->rc_comment;
