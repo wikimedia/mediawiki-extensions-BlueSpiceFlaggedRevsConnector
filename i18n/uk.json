@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"DDPAT",
-			"Ата",
 			"Ice bulldog",
-			"Samflint"
+			"Samflint",
+			"Ата"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Додає підтримку FlaggedRevs до ряду інших розширень.",
