@@ -99,10 +99,9 @@ class RevisionState extends AlertProviderBase {
 
 	/**
 	 *
-	 * @param Skin $skin
-	 * @return IAlertProvider
+	 * @inheritDoc
 	 */
-	public static function factory( $skin ) {
+	public static function factory( $skin = null ) {
 		$loadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 		$utils = new Utils( $config );
