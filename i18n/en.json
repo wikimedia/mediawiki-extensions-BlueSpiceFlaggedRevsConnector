@@ -132,5 +132,7 @@
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "The workflow is deleted automatically and a new workflow can be started.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Sets the access right to draft versions. If no group is listed, even sysop-user do not see a visual status in the title area. Sysop-users can still access draft in the version history, however.",
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Draft versions are excluded from search results. If a page has no stable version, it is not shown in the search results.",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "User \"$1\" {{GENDER:$1|must have}} {{PLURAL:$2|permission \"$3\" to complete required task|the following permissions to complete required task: $3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "User \"$1\" {{GENDER:$1|must have}} {{PLURAL:$2|permission \"$3\" to complete required task|the following permissions to complete required task: $3}}",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Invalid user specified: $1",
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "No valid user can be asserted to perform the approval"
 }
