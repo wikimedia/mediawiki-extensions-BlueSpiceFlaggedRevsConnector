@@ -10,9 +10,7 @@ class AddRemoveTMPGroupMaintenanceScript extends LoadExtensionSchemaUpdates {
 	 * @return bool
 	 */
 	protected function doProcess() {
-		$this->updater->addPostDatabaseUpdateMaintenance(
-			'BSFlaggedRevsConnectorRemoveTMPGroup'
-		);
+		$this->updater->addPostDatabaseUpdateMaintenance( \BSFlaggedRevsConnectorRemoveTMPGroup::class );
 		return true;
 	}
 

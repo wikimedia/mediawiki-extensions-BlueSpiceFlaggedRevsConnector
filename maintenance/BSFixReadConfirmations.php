@@ -234,5 +234,5 @@ class BSFixReadConfirmations extends Maintenance {
 	}
 }
 
-$maintClass = "BSFixReadConfirmations";
+$maintClass = BSFixReadConfirmations::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

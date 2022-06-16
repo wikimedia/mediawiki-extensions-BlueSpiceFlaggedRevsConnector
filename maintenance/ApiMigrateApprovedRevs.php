@@ -173,5 +173,5 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 	}
 }
 
-$maintClass = "ApiMigrateApprovedRevs";
+$maintClass = ApiMigrateApprovedRevs::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
