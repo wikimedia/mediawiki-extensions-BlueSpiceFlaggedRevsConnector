@@ -257,5 +257,5 @@ class BSBatchReview extends Maintenance {
 
 }
 
-$maintClass = "BSBatchReview";
+$maintClass = BSBatchReview::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
