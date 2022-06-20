@@ -130,5 +130,7 @@
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Le processus est supprimé automatiquement et un nouveau processus pourra être démarré.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Définit le droit d’accès aux versions en brouillon. Si aucun groupe n’est listé, même un administrateur ne verra aucun état visuel dans la zone de titre. Les administrateurs peuvent toutefois toujours accéder à un brouillon depuis  l’historique des versions.",
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Les versions en brouillon sont exclues des résultats de recherche. Si une page n’a aucune version stable, elle n’est pas affichée dans les résultats de recherche.",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "L’utilisat{{GENDER:$1|eur|rice}} « $1 » doit avoir {{PLURAL:$2|le droit « $3 » pour terminer la tâche demandée|les droits suivants pour terminer la tâche demandée : $3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "L’utilisat{{GENDER:$1|eur|rice}} « $1 » doit avoir {{PLURAL:$2|le droit « $3 » pour terminer la tâche demandée|les droits suivants pour terminer la tâche demandée : $3}}",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utilisateur spécifié non valide : $1",
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Aucun utilisateur valide ne peut être affirmé pour effectuer l’approbation"
 }
