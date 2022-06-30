@@ -104,5 +104,5 @@ class BSImportStableFlags extends BSBatchFileProcessorBase {
 
 }
 
-$maintClass = 'BSImportStableFlags';
+$maintClass = BSImportStableFlags::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

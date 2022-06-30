@@ -182,7 +182,7 @@ class FRCUEModulePDF {
 	 * @return bool
 	 */
 	public static function onArticleViewHeader( &$article, &$outputDone, &$pcache ) {
-		if ( !class_exists( 'FlaggablePageView', true ) ) {
+		if ( !class_exists( FlaggablePageView::class, true ) ) {
 			return true;
 		}
 		// Clear FlaggablePageView instance,
