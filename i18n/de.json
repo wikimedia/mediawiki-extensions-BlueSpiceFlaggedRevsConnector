@@ -135,5 +135,7 @@
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Der Workflow wird automatisch gelöscht und ein neuer Workflow kann gestartet werden.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Setzt die Zugriffsrechte für Entwurfsversionen. Wenn keine Gruppe angegeben ist, wird selbst für Sysop-Nutzer keine Status im Titelbereich angezeigt. Sysop-Nutzer können die Entwurfsversion jedoch immer noch über die Versionsgeschichte erreichen.",
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Entwurfsversionen werden aus der Suche ausgeschlossen. Wenn eine Seite keine freigegebene Version hat, wird sie in der Suche generell nicht angezeigt.",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Benutzer „$1“ {{GENDER:$1|muss}} {{PLURAL:$2|die Berechtigung „$3“ haben, um die angeforderte Aufgabe zu erfüllen|die folgenden Berechtigungen haben um die angeforderte Aufgabe zu erfüllen: $3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Benutzer „$1“ {{GENDER:$1|muss}} {{PLURAL:$2|die Berechtigung „$3“ haben, um die angeforderte Aufgabe zu erfüllen|die folgenden Berechtigungen haben um die angeforderte Aufgabe zu erfüllen: $3}}",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informationen über geänderte Ressourcen",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Geänderte Ressourcen:"
 }

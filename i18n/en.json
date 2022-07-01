@@ -134,5 +134,7 @@
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Draft versions are excluded from search results. If a page has no stable version, it is not shown in the search results.",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "User \"$1\" {{GENDER:$1|must have}} {{PLURAL:$2|permission \"$3\" to complete required task|the following permissions to complete required task: $3}}",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Invalid user specified: $1",
-	"bs-flaggedrevsconnector-wfactivity-error-no-user": "No valid user can be asserted to perform the approval"
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "No valid user can be asserted to perform the approval",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Information about changed resources",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Changed resources:"
 }
