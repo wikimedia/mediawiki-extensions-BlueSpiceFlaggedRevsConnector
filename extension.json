@@ -317,6 +317,20 @@
 				"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable",
 				"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft"
 			]
+		},
+		"ext.bluespice.flaggedrevsconnector.alert.styles": {
+			"styles": [
+				"bluespice.flaggedrevsconnector.alert.css"
+			]
+		},
+		"ext.bluespice.flaggedrevsconnector.alert": {
+			"scripts": [
+				"bluespice.flaggedrevsconnector.alert.js"
+			],
+			"messages": [
+				"bs-flaggedrevsconnector-state-draft-info-btn-title",
+				"bs-flaggedrevsconnector-state-draft-info-btn-popup-title"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
