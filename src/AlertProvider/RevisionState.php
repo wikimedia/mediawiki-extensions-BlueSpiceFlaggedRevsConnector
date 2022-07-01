@@ -12,7 +12,11 @@ use FlaggedRevision;
 use Language;
 use MediaWiki\MediaWikiServices;
 use Message;
+use OOUI\ButtonWidget;
+use OOUI\HorizontalLayout;
+use OOUI\LabelWidget;
 use Skin;
+use Title;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class RevisionState extends AlertProviderBase {
@@ -62,7 +66,14 @@ class RevisionState extends AlertProviderBase {
 	 * @return string
 	 */
 	public function getHTML() {
-		return $this->getStateMessage() ? $this->getStateMessage()->parse() : '';
+		$html = $this->getStateMessage();
+		if ( is_object( $html ) && $html ) {
+			return ( $html )->toString();
+		}
+		if ( $html ) {
+			return $html->parse();
+		}
+		return '';
 	}
 
 	/**
@@ -133,7 +144,6 @@ class RevisionState extends AlertProviderBase {
 		$showingStable = $this->utils->isShowingStable( $this->skin->getContext() );
 		$inSync = $this->utils->getFlaggableWikiPage( $this->skin->getContext() )->stableVersionIsSynced();
 		$pendingCount = (int)$this->utils->getFlaggableWikiPage( $this->skin->getContext() )->getPendingRevCount();
-		$userCanSeeDrafts = $this->utils->userCanAccessDrafts( $this->getUser() );
 
 		if ( !$hasStable ) {
 			$message = $this->skin->msg( 'bs-flaggedrevsconnector-state-unmarked-desc' );
@@ -141,17 +151,8 @@ class RevisionState extends AlertProviderBase {
 		}
 
 		if ( $showingStable ) {
-			if ( !$inSync && $pendingCount === 0 && $userCanSeeDrafts ) {
-				$message = $this->skin->msg(
-					'bs-flaggedrevsconnector-state-implicit-draft-desc'
-				);
-				$implicitDraft = true;
-			} else {
-				$message = $this->skin->msg( 'bs-flaggedrevsconnector-state-stable-desc' );
-			}
-			$type = IAlertProvider::TYPE_SUCCESS;
+			return;
 		}
-
 		if ( !$showingStable ) {
 			if ( $pendingCount > 0 ) {
 				$message = $this->skin->msg(
@@ -163,11 +164,26 @@ class RevisionState extends AlertProviderBase {
 				);
 				$type = IAlertProvider::TYPE_WARNING;
 			} elseif ( !$inSync ) {
+				$out = $this->skin->getOutput();
+				$out->addModuleStyles( 'ext.bluespice.flaggedrevsconnector.alert.styles' );
+				$out->addModules( 'ext.bluespice.flaggedrevsconnector.alert' );
+
 				$message = $this->skin->msg(
 					'bs-flaggedrevsconnector-state-draft-resources-desc'
 				);
 				$type = IAlertProvider::TYPE_WARNING;
 				$implicitDraft = true;
+
+				$labelWidget = new LabelWidget( [ 'label' => $message->parse() ] );
+				$infoBtn = new ButtonWidget( [
+					'icon' => 'info',
+					'id' => 'bs-flagged-info-btn',
+					'infusable' => true,
+					'framed' => false,
+					'data' => $this->getChangedFiles()
+				] );
+				$items['items'] = [ $labelWidget, $infoBtn ];
+				$this->revisionStateMessage = new HorizontalLayout( $items );
 			}
 		}
 
@@ -175,7 +191,9 @@ class RevisionState extends AlertProviderBase {
 			return;
 		}
 
-		$this->revisionStateMessage = $message;
+		if ( !$implicitDraft ) {
+			$this->revisionStateMessage = $message;
+		}
 		$this->revisionStateMessageType = $type;
 	}
 
@@ -213,5 +231,43 @@ class RevisionState extends AlertProviderBase {
 		}
 
 		return false;
+	}
+
+	/**
+	 *
+	 * @return array
+	 */
+	protected function getChangedFiles() {
+		$links = [];
+		$flaggablePage = $this->utils->getFlaggableWikiPage( $this->skin->getContext() );
+		if ( $flaggablePage->onlyTemplatesOrFilesPending() ) {
+			$lastRevID = $flaggablePage->getTitle()->getLatestRevID();
+
+			$services = MediaWikiServices::getInstance();
+			$this->loadBalancer = $services->getDBLoadBalancer();
+			$this->linkRenderer = $services->getLinkRenderer();
+			$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+			$res = $dbr->select( 'flaggedimages', [
+				'fi_name', 'fi_img_timestamp'
+			], [
+				'fi_rev_id' => $lastRevID
+			], __METHOD__ );
+
+			foreach ( $res as $row ) {
+				$title = Title::makeTitle( NS_FILE, $row->fi_name );
+				$rev = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
+					$title->getLatestRevID()
+				);
+				if ( $rev === null ) {
+					continue;
+				}
+				if ( $rev->getTimestamp() === $row->fi_img_timestamp ) {
+					continue;
+				}
+				array_push( $links, $this->linkRenderer->makeLink( $title ) );
+			}
+		}
+
+		return $links;
 	}
 }
