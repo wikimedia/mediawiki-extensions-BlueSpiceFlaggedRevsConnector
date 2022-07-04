@@ -4,6 +4,7 @@
 			"Avengium",
 			"DiegoAmbrocio",
 			"Fewasser Traduce",
+			"Francodiaz7",
 			"Whovian Biologist"
 		]
 	},
@@ -53,6 +54,7 @@
 	"bs-flaggedrevsconnector-approval-date-sesp-alias": "QM /Fecha de aprobación",
 	"bs-flaggedrevsconnector-approval-user-sesp-alias": "QM / Aprobación por",
 	"bs-flaggedrevsconnector-document-version-sesp-alias": "QM/Versión del documento",
+	"bs-flaggedrevsconnector-document-state-sesp-desc": "El estado de la página. Puede ser 'Aprobado' (la última versión se ha revisado con éxito), 'En revisión' (hay una versión preliminar de esa página) o 'Aprobación solicitada' (se ha iniciado un flujo de trabajo de revisión en la versión preliminar existente).",
 	"bs-flaggedrevsconnector-approval-date-sesp-desc": "La fecha y la hora de la revisión exitosa de esa página",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "El usuario que revisó la página",
 	"bs-flaggedrevsconnector-document-version-sesp-desc": "El número de revisiones aprobadas en el historial de la página",
@@ -114,6 +116,7 @@
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "No se ha podido aprobar la página",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "La revisión especificada no coincide con el título especificado",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\" debe estar presente en DefinitionContext",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "\"pageId\" proporcionado no coincide con ningún objeto título válido",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Estado de aprobación de la página",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Aprobado",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Borrador",
@@ -123,5 +126,8 @@
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime la marca de tiempo de las últimas versiones aceptadas y de los borradores debajo del título del PDF.",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "El flujo de trabajo se elimina automáticamente y se puede iniciar un nuevo flujo de trabajo.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Establece el derecho de acceso a las versiones borrador. Si no hay ningún grupo en la lista, incluso los usuarios sysop no ven un estado visual en el área del título. Sin embargo, los usuarios sysop pueden acceder al borrador en el historial de versiones.",
-	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Las versiones borrador se excluyen de los resultados de la búsqueda. Si una página no tiene una versión estable, no se muestra en los resultados de la búsqueda."
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Las versiones borrador se excluyen de los resultados de la búsqueda. Si una página no tiene una versión estable, no se muestra en los resultados de la búsqueda.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Usuario \"$1\" {{GENDER:$1|debe tener}} {{PLURAL:$2|permiso \"$3\" para completar la tarea requerida|los siguientes permisos para completar la tarea requerida: $3}}",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Usuario no válido especificado: $1",
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "No se puede afirmar ningún usuario válido para realizar la aprobación."
 }
