@@ -133,5 +133,7 @@
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Description for config variable \"FlaggedRevsConnectorIndexStableOnly\"",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Exception text when user is not a valid reviewer\n$1 - username\n$2 - count of require permission\n$3 - required permissions",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Workflow error when user specified cannot be resolved to a valid User object.\n$1 - provided username",
-	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Workflow error when no valid user can be set to perform the action"
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Workflow error when no valid user can be set to perform the action",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Title of button to show more information about changed resources",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Title of popup which shows list of changed resources"
 }

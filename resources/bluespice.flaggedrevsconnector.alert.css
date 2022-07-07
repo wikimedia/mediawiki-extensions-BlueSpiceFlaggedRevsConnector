@@ -1,0 +1,12 @@
+/* stylelint-disable selector-max-id */
+#bs-flagged-info-btn {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate( 0, -50% );
+}
+/* stylelint-enable selector-max-id */
+
+.bsfrc-files-list a {
+	text-decoration: none;
+}
