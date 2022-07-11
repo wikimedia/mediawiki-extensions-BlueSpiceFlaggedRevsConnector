@@ -132,5 +132,7 @@
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Les versions en brouillon sont exclues des résultats de recherche. Si une page n’a aucune version stable, elle n’est pas affichée dans les résultats de recherche.",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "L’utilisat{{GENDER:$1|eur|rice}} « $1 » doit avoir {{PLURAL:$2|le droit « $3 » pour terminer la tâche demandée|les droits suivants pour terminer la tâche demandée : $3}}",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utilisateur spécifié non valide : $1",
-	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Aucun utilisateur valide ne peut être affirmé pour effectuer l’approbation"
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Aucun utilisateur valide ne peut être affirmé pour effectuer l’approbation",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informations concernant les ressources modifiées",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Ressources modifiées :"
 }
