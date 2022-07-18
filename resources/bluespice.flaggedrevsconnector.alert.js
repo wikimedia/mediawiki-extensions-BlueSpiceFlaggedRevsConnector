@@ -10,7 +10,7 @@
 
 		var infoBtn = new OO.ui.PopupButtonWidget( {
 			framed: false,
-			icon: 'info',
+			icon: 'infoFilled',
 			title: mw.message( 'bs-flaggedrevsconnector-state-draft-info-btn-title' ).text(),
 			popup: {
 				$content: getPopupContent( btn.data ),
