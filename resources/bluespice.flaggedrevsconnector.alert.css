@@ -1,9 +1,10 @@
 /* stylelint-disable selector-max-id */
 #bs-flagged-info-btn {
 	position: absolute;
-	right: 0;
+	right: 10px;
 	top: 50%;
 	transform: translate( 0, -50% );
+	z-index: 100;
 }
 /* stylelint-enable selector-max-id */
 
