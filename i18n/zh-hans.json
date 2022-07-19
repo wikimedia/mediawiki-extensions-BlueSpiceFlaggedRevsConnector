@@ -91,5 +91,7 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "页面审批状态",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已批准",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}",
+	"bs-flaggedrevsconnector-approval-user-sesp-desc": "复核页面的用户",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "冻结版本"
 }
