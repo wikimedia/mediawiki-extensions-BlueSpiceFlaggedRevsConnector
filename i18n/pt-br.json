@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Duke of Wikipädia",
 			"Eduardoaddad",
 			"Juan90264"
 		]
@@ -129,5 +130,9 @@
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "O fluxo de trabalho é excluído automaticamente e um novo fluxo de trabalho pode ser iniciado.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Define o direito de acesso às versões de rascunho. Se nenhum grupo estiver listado, mesmo o usuário sysop não verá um status visual na área de título. Os usuários de Sysop ainda podem acessar o rascunho no histórico de versões, no entanto.",
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "As versões de rascunho são excluídas dos resultados da pesquisa. Se uma página não tiver uma versão estável, ela não será exibida nos resultados da pesquisa.",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Usuário \"$1\" {{GENDER:$1|deve ter}} {{PLURAL:$2|permissão \"$3\" para completar a tarefa requerida|as seguintes permissões para completar a tarefa requerida: $3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Usuário \"$1\" {{GENDER:$1|deve ter}} {{PLURAL:$2|permissão \"$3\" para completar a tarefa requerida|as seguintes permissões para completar a tarefa requerida: $3}}",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Usuário inválido especificado: $1",
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Nenhum usuário válido pode ser declarado para realizar a aprovação.",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informações sobre recursos alterados",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Recursos alterados:"
 }
