@@ -2,11 +2,11 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Data\FlaggedPages;
 
-use BlueSpice\Data\Filter;
 use BlueSpice\Data\Page\PrimaryDataProvider as PageDataProvider;
 use BlueSpice\FlaggedRevsConnector\Data\Record;
 use BlueSpice\FlaggedRevsConnector\Extension as FlaggedRevsConnector;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\Filter;
 use Title;
 
 class PrimaryDataProvider extends PageDataProvider {
