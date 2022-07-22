@@ -176,7 +176,7 @@ class RevisionState extends AlertProviderBase {
 
 				$labelWidget = new LabelWidget( [ 'label' => $message->parse() ] );
 				$infoBtn = new ButtonWidget( [
-					'icon' => 'info',
+					'icon' => 'infoFilled',
 					'id' => 'bs-flagged-info-btn',
 					'infusable' => true,
 					'framed' => false,
