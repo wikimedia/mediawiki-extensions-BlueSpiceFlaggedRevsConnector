@@ -18,5 +18,6 @@
 	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Vuõssmõs häämas",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Čuäʹjet muttsid",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Čuäʹjet muttsid",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Häämas"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Häämas",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Priim"
 }
