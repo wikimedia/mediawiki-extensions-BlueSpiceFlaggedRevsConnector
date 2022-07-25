@@ -13,6 +13,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Häämasversio",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "vuõssmõs häämas",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "Vuõssmõs häämasversio",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Priim",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategoria",
 	"bs-flaggedrevsconnector-collection-var-draftpages": "Häämas",
 	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Vuõssmõs häämas",
