@@ -26,7 +26,10 @@ class GetStableFile implements DrawioGetFileHook {
 	/**
 	 * @inheritDoc
 	 */
-	public function onDrawioGetFile( File &$file, &$latestIsStable, User $user ) {
+	public function onDrawioGetFile(
+		File &$file, &$latestIsStable, User $user,
+		bool &$isNotApproved, File &$displayFile
+	) {
 		if ( !$this->utils->isFlaggableNamespace( $file->getTitle() ) ) {
 			return true;
 		}
