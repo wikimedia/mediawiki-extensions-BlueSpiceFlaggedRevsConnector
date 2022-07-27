@@ -134,5 +134,6 @@
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utilisateur spécifié non valide : $1",
 	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Aucun utilisateur valide ne peut être affirmé pour effectuer l’approbation",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informations concernant les ressources modifiées",
-	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Ressources modifiées :"
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Ressources modifiées :",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Espace de noms"
 }
