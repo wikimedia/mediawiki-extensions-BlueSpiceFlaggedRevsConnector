@@ -133,6 +133,9 @@
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Setzt die Zugriffsrechte für Entwurfsversionen. Wenn keine Gruppe angegeben ist, wird selbst für Sysop-Nutzer keine Status im Titelbereich angezeigt. Sysop-Nutzer können die Entwurfsversion jedoch immer noch über die Versionsgeschichte erreichen.",
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Entwurfsversionen werden aus der Suche ausgeschlossen. Wenn eine Seite keine freigegebene Version hat, wird sie in der Suche generell nicht angezeigt.",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Benutzer „$1“ {{GENDER:$1|muss}} {{PLURAL:$2|die Berechtigung „$3“ haben, um die angeforderte Aufgabe zu erfüllen|die folgenden Berechtigungen haben um die angeforderte Aufgabe zu erfüllen: $3}}",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Ungültiger Benutzer angegeben: $1",
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Es kann kein gültiger Benutzer angegeben werden, um die Freigabe durchzuführen",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informationen über geänderte Ressourcen",
-	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Geänderte Ressourcen:"
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Geänderte Ressourcen:",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Namensraum"
 }

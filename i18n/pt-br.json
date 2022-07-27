@@ -134,5 +134,6 @@
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Usuário inválido especificado: $1",
 	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Nenhum usuário válido pode ser declarado para realizar a aprovação.",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informações sobre recursos alterados",
-	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Recursos alterados:"
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Recursos alterados:",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Espaço nominal"
 }

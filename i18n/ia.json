@@ -132,5 +132,6 @@
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Le usator specificate non es valide: $1",
 	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Nulle usator valide pote esser asserite pro effectuar le approbation",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Information sur ressources cambiate",
-	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Ressources cambiate:"
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Ressources cambiate:",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Spatio de nomines"
 }
