@@ -68,5 +68,6 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versioni congelate",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versioni stabili",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "La versione specificata non coincide con il titolo specificato",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Bozza"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Bozza",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Namespace"
 }
