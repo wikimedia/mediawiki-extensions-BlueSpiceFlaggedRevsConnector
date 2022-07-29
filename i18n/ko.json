@@ -82,5 +82,6 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "초안",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "\"$1\" 사용자는 {{PLURAL:$2|요청 작업을 마치기 위해 \"$3\" 권한이 필요합니다|요청 작업을 마치기 위해 다음의 권한이 필요합니다: $3}}",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "변경된 리소스에 관한 정보",
-	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "변경된 리소스:"
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "변경된 리소스:",
+	"bs-flaggedrevsconnector-grid-page-namespace": "이름공간"
 }
