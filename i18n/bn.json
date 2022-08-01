@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"আজিজ",
 			"আফতাবুজ্জামান"
 		]
 	},
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "অনুমোদিত",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "খসড়া"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "খসড়া",
+	"bs-flaggedrevsconnector-grid-page-namespace": "নামস্থান"
 }
