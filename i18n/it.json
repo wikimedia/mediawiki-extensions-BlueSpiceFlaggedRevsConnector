@@ -68,6 +68,10 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versioni congelate",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versioni stabili",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "La versione specificata non coincide con il titolo specificato",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Stato di approvazione della pagina",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Approvato",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Bozza",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Il flusso di lavoro viene automaticamente cancellato ed è possibile avviare un nuovo flusso di lavoro.",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utente specificato non valido: $1",
 	"bs-flaggedrevsconnector-grid-page-namespace": "Namespace"
 }
