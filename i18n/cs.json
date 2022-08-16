@@ -3,6 +3,7 @@
 		"authors": [
 			"Emmanuel Fernandess",
 			"Fraxinus.cs",
+			"Kareyac",
 			"Matěj Suchánek",
 			"Want"
 		]
@@ -25,5 +26,6 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Zobrazit rozdíly",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Aktuální verze",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Stav schválení stránky",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Schváleno"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Schváleno",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Jmenný prostor"
 }
