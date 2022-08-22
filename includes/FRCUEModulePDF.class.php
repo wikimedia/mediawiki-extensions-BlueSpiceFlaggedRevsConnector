@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCUEModulePDF {
@@ -105,9 +106,10 @@ class FRCUEModulePDF {
 			: $oTitle->getLatestRevID();
 
 		$oFlaggedRevision = FlaggedRevision::newFromId( $iRevId );
-		$oRevison = Revision::newFromId( $iRevId );
+		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+		$oRevison = $revisionLookup->getRevisionById( $iRevId );
 
-		if ( $oRevison instanceof Revision === false ) {
+		if ( $oRevison instanceof RevisionRecord === false ) {
 			return true;
 		}
 
