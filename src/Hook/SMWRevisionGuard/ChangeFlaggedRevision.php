@@ -4,7 +4,7 @@ namespace BlueSpice\FlaggedRevsConnector\Hook\SMWRevisionGuard;
 use BlueSpice\FlaggedRevsConnector\Utils;
 use BlueSpice\SMWConnector\Hook\SMWRevisionGuard\ChangeRevision;
 use MediaWiki\MediaWikiServices;
-use Revision;
+use MediaWiki\Revision\RevisionRecord;
 
 class ChangeFlaggedRevision extends ChangeRevision {
 
@@ -29,8 +29,9 @@ class ChangeFlaggedRevision extends ChangeRevision {
 			if ( $latestApprovedRevisionId === -1 ) {
 				return;
 			}
-			$approvedRev = Revision::newFromId( $latestApprovedRevisionId );
-			if ( $approvedRev instanceof Revision ) {
+			$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+			$approvedRev = $revisionLookup->getRevisionById( $latestApprovedRevisionId );
+			if ( $approvedRev instanceof RevisionRecord ) {
 				$this->revision = $approvedRev;
 			}
 		}

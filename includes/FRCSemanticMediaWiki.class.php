@@ -45,10 +45,11 @@ class FRCSemanticMediaWiki {
 	 */
 	protected function getTitleFromAPIParam( $oWebRequest ) {
 		$iRevId = $oWebRequest->getVal( 'revid', -1 );
-		$oRevision = Revision::newFromId( $iRevId );
+		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+		$oRevision = $revisionLookup->getRevisionById( $iRevId );
 		if ( $oRevision === null ) {
 			return null;
 		}
-		return $oRevision->getTitle();
+		return $oRevision->getPageAsLinkTarget();
 	}
 }
