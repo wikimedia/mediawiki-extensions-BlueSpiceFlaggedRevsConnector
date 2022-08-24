@@ -128,5 +128,10 @@
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "O fluxo de trabalho é eliminado automaticamente e pode ser iniciado um novo fluxo de trabalho.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Define o direito de acesso às versões de rascunho. Se nenhum grupo estiver listado, nem mesmo um administrador verá um estado visual na área do título. No entanto, os administradores podem ainda assim aceder ao rascunho no historial de versões.",
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "As versões de rascunho são excluídas dos resultados da pesquisa. Se uma página não tiver nenhuma versão estável não aparece nos resultados da pesquisa.",
-	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "{{GENDER:$1|O utilizador|A utilizadora}} \"$1\" tem de ter {{PLURAL:$2|a permissão \"$3\" para executar a tarefa requerida|as seguintes permissões para executar a tarefa requerida: $3}}"
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "{{GENDER:$1|O utilizador|A utilizadora}} \"$1\" tem de ter {{PLURAL:$2|a permissão \"$3\" para executar a tarefa requerida|as seguintes permissões para executar a tarefa requerida: $3}}",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utilizador inválido especificado: $1",
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Não é possível definir nenhum utilizador válido para realizar a aprovação",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informações sobre os recursos alterados",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Recursos alterados:",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Espaço nominal"
 }
