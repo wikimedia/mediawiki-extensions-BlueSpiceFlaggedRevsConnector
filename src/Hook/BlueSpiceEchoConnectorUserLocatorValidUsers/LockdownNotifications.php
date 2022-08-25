@@ -73,7 +73,7 @@ class LockdownNotifications extends BlueSpiceEchoConnectorUserLocatorValidUsers 
 		foreach ( $this->users as $key => $user ) {
 			$groupInters = array_intersect(
 				$this->getGroupWhitelist(),
-				$userGroupManager->getEffectiveGroups(
+				$userGroupManager->getUserEffectiveGroups(
 					$user,
 					UserGroupManager::READ_NORMAL,
 					true
