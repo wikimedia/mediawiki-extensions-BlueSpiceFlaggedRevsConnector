@@ -3,6 +3,7 @@
 namespace BlueSpice\FlaggedRevsConnector\Workflows\Activity;
 
 use BlueSpice\FlaggedRevsConnector\Utils;
+use BlueSpice\SecondaryDataUpdater;
 use BlueSpice\UtilityFactory;
 use Exception;
 use MediaWiki\Extension\Workflows\Activity\ExecutionStatus;
@@ -40,6 +41,8 @@ class ApprovePageActivity extends GenericActivity {
 	private $maintenanceUser;
 	/** @var User */
 	private $user;
+	/** @var SecondaryDataUpdater */
+	private $dataUpdater;
 
 	/**
 	 *
@@ -47,18 +50,22 @@ class ApprovePageActivity extends GenericActivity {
 	 * @param RevisionStore $revisionStore
 	 * @param UtilityFactory $utilityFactory
 	 * @param UserFactory $userFactory
+	 * @param SecondaryDataUpdater $dataUpdater
 	 * @param ITask $task
+	 *
 	 * @throws \MWException
 	 */
 	public function __construct(
 		Utils $utils, RevisionStore $revisionStore,
-		UtilityFactory $utilityFactory, UserFactory $userFactory, ITask $task
+		UtilityFactory $utilityFactory, UserFactory $userFactory,
+		SecondaryDataUpdater $dataUpdater, ITask $task
 	) {
 		parent::__construct( $task );
 		$this->util = $utils;
 		$this->revisionStore = $revisionStore;
 		$this->userFactory = $userFactory;
 		$this->maintenanceUser = $utilityFactory->getMaintenanceUser()->getUser();
+		$this->dataUpdater = $dataUpdater;
 	}
 
 	/**
@@ -170,6 +177,8 @@ class ApprovePageActivity extends GenericActivity {
 					'bs-flaggedrevsconnector-wfactivity-error-cannot-approve'
 				)->text() );
 			}
+			$this->title->invalidateCache();
+			$this->dataUpdater->run( $this->title );
 		} catch ( Exception $ex ) {
 			throw new WorkflowExecutionException( $ex->getMessage(), $this->task );
 		}
