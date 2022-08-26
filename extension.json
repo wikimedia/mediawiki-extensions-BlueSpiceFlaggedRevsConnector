@@ -145,7 +145,8 @@
 							"BSFlaggedRevsConnectorUtils",
 							"RevisionStore",
 							"BSUtilityFactory",
-							"UserFactory"
+							"UserFactory",
+							"BSSecondaryDataUpdater"
 						]
 					}
 				}
