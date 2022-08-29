@@ -73,5 +73,20 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Stato di approvazione della pagina",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Approvato",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Il flusso di lavoro viene automaticamente cancellato ed è possibile avviare un nuovo flusso di lavoro.",
-	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utente specificato non valido: $1"
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utente specificato non valido: $1",
+	"bs-flaggedrevsconnector-extension-description": "Aggiunge il supporto per FlaggedRevs a una gamma di altre estensioni.",
+	"bs-flaggedrevsconnector-pref-autoreview": "Imposta automaticamente la pagina su stabile, quando il flusso di lavoro è stato completato correttamente",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "Elimina automaticamente il flusso di lavoro, quando una pagina è stata contrassegnata come stabile",
+	"bs-flaggedrevsconnector-state-stable": "Approvato",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable": "Libreria: elenca il registro delle versioni approvate",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable": "Libreria: elenca le pagine senza versione stabile",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approval-requested": "Approvazione richiesta",
+	"bs-flaggedrevsconnector-flyout-state-intro": "Stato di approvazione per questa pagina:",
+	"qmoverview": "Panoramica sulla gestione della qualità",
+	"bs-qmoverview-desc": "Riepilogo pagine in fase di approvazione",
+	"bs-flaggedrevsconnector-admin-tool-overview": "Panoramica sulla gestione della qualità",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "ha una versione in bozza",
+	"bs-flaggedrevsconnector-collection-var-approvedpages": "Approvato",
+	"bs-flaggedrevsconnector-pref-handleincludes-help": "Determina quale versione delle risorse deve essere utilizzata durante il rendering della versione stabile di una pagina",
+	"bs-flaggedrevsconnector-resource-changes": "Modifiche alle risorse incluse dall'ultima approvazione della pagina"
 }
