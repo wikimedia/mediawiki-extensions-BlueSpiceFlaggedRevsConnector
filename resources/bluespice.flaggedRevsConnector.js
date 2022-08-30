@@ -2,14 +2,10 @@
  * FlaggedRevsConnector extension
  */
 
-$( document ).on( 'click', '#bs-frc-flagnow, .bs-frc-review', function ( e ) {
-	e.preventDefault();
-	e.stopPropagation();
-
-	var $sbtItem = $( this ).parents( '*[data-user-can-review]' ),
-		allowed = $sbtItem.length > 0 &&
-			$sbtItem.data( 'user-can-review' ) !== false &&
-			$sbtItem.data( 'user-can-review' ) !== 0;
+function openReviewDialog ( $sbtItem ) {
+	var allowed = $sbtItem.length > 0 &&
+		$sbtItem.data( 'user-can-review' ) !== false &&
+		$sbtItem.data( 'user-can-review' ) !== 0;
 	if ( !allowed ) {
 		return false;
 	}
@@ -26,7 +22,25 @@ $( document ).on( 'click', '#bs-frc-flagnow, .bs-frc-review', function ( e ) {
 	} );
 
 	return false;
-} );
+}
+
+$( '#bs-frc-review-link' ).on( 'click', function( e ) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	return openReviewDialog( $( this ) );
+});
+
+$( document ).on( 'keydown', function( e ) {
+	e.preventDefault();
+	e.stopPropagation();
+	var $el = $( '#bs-frc-review-link' );
+	if ( $el.length !== 0 && $el.is( ':visible' ) ) {
+		if ( e.keyCode === 13 ) {
+			return openReviewDialog( $( '#bs-frc-review-link' ) );
+		}
+	}
+});
 
 mw.hook( 'readconfirmation.check.request.before' ).add( function ( data ) {
 	data.isStableRevision = true;

@@ -160,7 +160,9 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 * @return string
 	 */
 	public function makeMenu() {
-		$html = Html::openElement( 'ul' );
+		$html = Html::openElement( 'ul', [
+			'class' => 'bs-frc-review-actions'
+		] );
 
 		$html .= Html::openElement( 'li' );
 		$html .= $this->makeApproveLink();
@@ -184,7 +186,8 @@ class PageStatusDropdown extends FlaggedPageElement {
 		$html = Html::openElement( 'a', [
 			'href' => '#',
 			'data-user-can-review' => $canReview,
-			'class' => 'dropdown-item'
+			'class' => 'dropdown-item',
+			'id' => 'bs-frc-review-link'
 		] );
 
 		$html .= Html::element(
