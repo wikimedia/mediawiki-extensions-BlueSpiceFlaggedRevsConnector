@@ -58,13 +58,15 @@ class Flagging extends BsReviewProcess {
 			$action === static::ACTION_VOTE &&
 			$this->isFinished() === 'status'
 		) {
+			$services = MediaWikiServices::getInstance();
 			/** @var \BlueSpice\NotificationManager $notificationsManager */
-			$notificationsManager = MediaWikiServices::getInstance()->getService( 'BSNotificationManager' );
+			$notificationsManager = $services->getService( 'BSNotificationManager' );
 			$notifier = $notificationsManager->getNotifier();
+			$userFactory = $services()->getUserFactory();
 			$notification = new Notifications\ReviewFinishAndAutoflag(
 				$context->getUser(),
 				Title::newFromID( $this->getPid() ),
-				User::newFromId( $this->getOwner() ),
+				$userFactory->newFromId( $this->getOwner() ),
 				$data['comment']
 			);
 			$notifier->notify( $notification );
