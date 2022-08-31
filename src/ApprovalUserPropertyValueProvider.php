@@ -4,8 +4,8 @@ namespace BlueSpice\FlaggedRevsConnector;
 
 use BlueSpice\SMWConnector\PropertyValueProvider;
 use FlaggedRevision;
+use MediaWiki\MediaWikiServices;
 use SMW\DIWikiPage;
-use User;
 
 class ApprovalUserPropertyValueProvider extends PropertyValueProvider {
 
@@ -49,11 +49,10 @@ class ApprovalUserPropertyValueProvider extends PropertyValueProvider {
 	public function addAnnotation( $appFactory, $property, $semanticData ) {
 		$flaggedRevision = FlaggedRevision::newFromStable( $semanticData->getSubject()->getTitle() );
 		if ( $flaggedRevision !== null ) {
-			$semanticData->addPropertyObjectValue(
-				$property, DIWikiPage::newFromTitle(
-					User::newFromId( $flaggedRevision->getUser() )->getUserPage()
-				)
-			);
+			$title = MediaWikiServices::getInstance()->getUserFactory()
+				->newFromId( $flaggedRevision->getUser() )
+				->getUserPage();
+			$semanticData->addPropertyObjectValue( $property, DIWikiPage::newFromTitle( $title ) );
 		}
 	}
 }
