@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Avengium",
+			"DarkGames26",
 			"DiegoAmbrocio",
 			"Fewasser Traduce",
 			"Francodiaz7",
@@ -129,5 +130,6 @@
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Las versiones borrador se excluyen de los resultados de la búsqueda. Si una página no tiene una versión estable, no se muestra en los resultados de la búsqueda.",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Usuario \"$1\" {{GENDER:$1|debe tener}} {{PLURAL:$2|permiso \"$3\" para completar la tarea requerida|los siguientes permisos para completar la tarea requerida: $3}}",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Usuario no válido especificado: $1",
-	"bs-flaggedrevsconnector-wfactivity-error-no-user": "No se puede afirmar ningún usuario válido para realizar la aprobación."
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "No se puede afirmar ningún usuario válido para realizar la aprobación.",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Espacio de nombres"
 }
