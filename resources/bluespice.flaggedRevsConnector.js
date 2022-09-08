@@ -32,8 +32,6 @@ $( '#bs-frc-review-link' ).on( 'click', function( e ) {
 });
 
 $( document ).on( 'keydown', function( e ) {
-	e.preventDefault();
-	e.stopPropagation();
 	var $el = $( '#bs-frc-review-link' );
 	if ( $el.length !== 0 && $el.is( ':visible' ) ) {
 		if ( e.keyCode === 13 ) {
