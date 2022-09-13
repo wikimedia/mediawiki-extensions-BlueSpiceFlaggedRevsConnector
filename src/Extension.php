@@ -243,7 +243,7 @@ class Extension extends ExtensionBase {
 		$bResult = false;
 		if ( !in_array( $oCurrentTitle->getNamespace(), $wgFlaggedRevsNamespaces )
 			|| FRCReview::onCheckPageIsReviewable( $oCurrentTitle, $bResult ) === false ) {
-			MediaWikiServices::getInstance()->getHookContainer()->run(
+			$this->services->getHookContainer()->run(
 				'BSFlaggedRevsConnectorCollectFlagInfo',
 				[
 					$oCurrentTitle,
@@ -254,7 +254,7 @@ class Extension extends ExtensionBase {
 			return $aFlagInfo;
 		}
 
-		$userCan = MediaWikiServices::getInstance()->getPermissionManager()->userCan(
+		$userCan = $this->services->getPermissionManager()->userCan(
 			'review',
 			RequestContext::getMain()->getUser(),
 			$oCurrentTitle
@@ -273,7 +273,7 @@ class Extension extends ExtensionBase {
 
 		if ( $res === false ) {
 			$aFlagInfo[ 'state' ] = 'unmarked';
-			MediaWikiServices::getInstance()->getHookContainer()->run(
+			$this->services->getHookContainer()->run(
 				'BSFlaggedRevsConnectorCollectFlagInfo',
 				[
 					$oCurrentTitle,
@@ -300,7 +300,7 @@ class Extension extends ExtensionBase {
 				}
 			}
 
-			MediaWikiServices::getInstance()->getHookContainer()->run(
+			$this->services->getHookContainer()->run(
 				'BSFlaggedRevsConnectorCollectFlagInfo',
 				[
 					$oCurrentTitle,
@@ -313,7 +313,7 @@ class Extension extends ExtensionBase {
 
 		$aFlagInfo[ 'state' ] = 'draft';
 
-		MediaWikiServices::getInstance()->getHookContainer()->run(
+		$this->services->getHookContainer()->run(
 			'BSFlaggedRevsConnectorCollectFlagInfo',
 			[
 				$oCurrentTitle,
