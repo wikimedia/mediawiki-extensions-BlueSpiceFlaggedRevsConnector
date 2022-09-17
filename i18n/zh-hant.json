@@ -4,6 +4,7 @@
 			"Ericliu1912",
 			"Madeleinemcc",
 			"Weather Top Wizard",
+			"Willy1018",
 			"Winston Sung"
 		]
 	},
@@ -34,5 +35,17 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "顯示差異",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "目前版本",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "穩定版本",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "等待批准",
+	"bs-flaggedrevsconnector-column-last-stable": "已審核",
+	"bs-flaggedrevsconnector-no-stable": "未審核",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1已審核$3",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-body": "$1已審核頁面$2 。",
+	"bs-flaggedrevsconnector-approval-date-sesp-alias": "質量管理／批准日期",
+	"bs-flaggedrevsconnector-grid-rev-state": "狀態",
+	"bs-flaggedrevsconnector-grid-page-categories": "頁面分類",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "草稿",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "草稿版本",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "已批准",
+	"bs-flaggedrevsconnector-grid-page-namespace": "命名空間"
 }
