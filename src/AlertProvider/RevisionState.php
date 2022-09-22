@@ -28,7 +28,7 @@ class RevisionState extends AlertProviderBase {
 	protected $lang = null;
 	/**
 	 *
-	 * @var FlaggableWikiPage
+	 * @var FlaggableWikiPage|null
 	 */
 	protected $flaggableWikiPage = null;
 
@@ -52,7 +52,7 @@ class RevisionState extends AlertProviderBase {
 	 * @param Skin $skin
 	 * @param LoadBalancer $loadBalancer
 	 * @param Config $config
-	 * @param FlaggableWikiPage $flaggableWikiPage
+	 * @param FlaggableWikiPage|null $flaggableWikiPage
 	 * @param Utils $utils
 	 */
 	public function __construct( $skin, $loadBalancer, $config, $flaggableWikiPage, $utils ) {
@@ -116,7 +116,14 @@ class RevisionState extends AlertProviderBase {
 		$loadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 		$utils = new Utils( $config );
-		$flaggableWikiPage = $utils->getFlaggableWikiPage( $skin->getContext() );
+		$flaggableWikiPage = null;
+		$context = $skin->getContext();
+		$title = $context->getTitle();
+		if ( $title ) {
+			if ( !$title->isSpecialPage() ) {
+				$flaggableWikiPage = $utils->getFlaggableWikiPage( $context );
+			}
+		}
 
 		return new static(
 			$skin,
@@ -239,6 +246,10 @@ class RevisionState extends AlertProviderBase {
 	 * @return array
 	 */
 	protected function getChangedFiles() {
+		if ( !$this->utils->isFlaggableNamespace( $this->skin->getTitle() ) ) {
+			return [];
+		}
+
 		$links = [];
 		$flaggablePage = $this->utils->getFlaggableWikiPage( $this->skin->getContext() );
 		if ( $flaggablePage->onlyTemplatesOrFilesPending() ) {
