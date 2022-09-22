@@ -135,7 +135,7 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 				'revid' => $revId,
 				'flag_accuracy' => 1,
 				'comment' => "Autoreviewd by " . __CLASS__,
-				'token' => $this->context->getUser()->getEditToken()
+				'token' => $this->context->getCsrfTokenSet()->getToken()->toString()
 			]
 		);
 	}
