@@ -30,5 +30,8 @@
 	"bs-flaggedrevsconnector-collection-var-namespacename": "النطاق",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "تصنيف",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "أظهر الفروق",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "مقبول"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "مقبول",
+	"bs-flaggedrevsconnector-state-draft": "مسودة",
+	"bs-flaggedrevsconnector-smw-prop-document-state-in-revision": "قيد المراجعة",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "مسودة"
 }
