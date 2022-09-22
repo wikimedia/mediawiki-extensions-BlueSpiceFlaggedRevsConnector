@@ -9,6 +9,9 @@ use FlaggableWikiPage;
 class ChangeRevisionForEdit extends BeforePageDisplay {
 
 	protected function skipProcessing() {
+		if ( $this->out->getTitle()->isSpecialPage() ) {
+			return true;
+		}
 		if ( !$this->hasDrafts() ) {
 			return true;
 		}
