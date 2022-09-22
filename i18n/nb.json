@@ -3,7 +3,8 @@
 		"authors": [
 			"Abuluntu",
 			"Jon Harald Søby",
-			"Vukky"
+			"Vukky",
+			"EdoAug"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Legger til støtte for FlaggedRevs i en rekke andre utvidelser.",
@@ -79,9 +80,12 @@
 	"bs-flaggedrevsconnector-grid-page-title": "Sidetittel",
 	"bs-flaggedrevsconnector-grid-rev-state": "Status",
 	"bs-flaggedrevsconnector-grid-page-categories": "Sidekategorier",
+	"bs-flaggedrevsconnector-global-actions-entry": "Kvalitetssikring",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "Vis godkjent versjon",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "en kladd",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Kladdeversjon",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "et førsteutkast",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "Første utkast-versjon",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "godkjent",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Godkjent versjon",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Godkjenn",
@@ -90,10 +94,19 @@
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Navnerom",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategori",
 	"bs-flaggedrevsconnector-collection-var-draftpages": "Kladd",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Første utkast",
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "Godkjent",
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Ikke aktivert",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Vis forskjell",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Vis forskjell",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "Nåværende versjoner",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Frys versjoner",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabile versjoner",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Kunne ikke godkjenne siden",
+	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Angitte revisjon samsvarer ikke med den angitte tittelen",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Status for godkjennelse av siden",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Godkjent",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Kladd"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Kladd",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Endrede ressurser:",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Navnerom"
 }
