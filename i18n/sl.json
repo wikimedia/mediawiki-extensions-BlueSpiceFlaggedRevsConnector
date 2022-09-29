@@ -4,5 +4,10 @@
 			"Eleassar"
 		]
 	},
+	"bs-flaggedrevsconnector-review-heading": "Odobritev",
+	"bs-flaggedrevsconnector-label-flaggedrevs": "Odobritev",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Odobrena",
+	"bs-flaggedrevsconnector-nav-link-title": "Odobritev",
+	"bs-flaggedrevsconnector-review-type-flagging": "Odobritev",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Imenski prostor"
 }
