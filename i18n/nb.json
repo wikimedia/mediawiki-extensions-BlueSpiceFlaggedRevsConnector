@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Abuluntu",
+			"EdoAug",
 			"Jon Harald Søby",
-			"Vukky",
-			"EdoAug"
+			"Vukky"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Legger til støtte for FlaggedRevs i en rekke andre utvidelser.",
