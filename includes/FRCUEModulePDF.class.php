@@ -105,7 +105,7 @@ class FRCUEModulePDF {
 			? $aParams['oldid']
 			: $oTitle->getLatestRevID();
 
-		$oFlaggedRevision = FlaggedRevision::newFromId( $iRevId );
+		$oFlaggedRevision = FlaggedRevision::newFromTitle( $oTitle, $iRevId );
 		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
 		$oRevison = $revisionLookup->getRevisionById( $iRevId );
 
