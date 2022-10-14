@@ -82,6 +82,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versioni stabili",
 	"bs-flaggedrevsconnector-pref-handleincludes-help": "Determina quale versione delle risorse deve essere utilizzata durante il rendering della versione stabile di una pagina",
 	"bs-flaggedrevsconnector-resource-changes": "Modifiche alle risorse incluse dall'ultima approvazione della pagina",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Impossibile approvare la pagina",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "La versione specificata non coincide con il titolo specificato",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Stato di approvazione della pagina",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Approvato",
