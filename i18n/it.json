@@ -67,6 +67,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "Mostra la versione approvata",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "una bozza",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Versione in bozza",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "approvato",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Versione approvata",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Approva",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Namespace",
