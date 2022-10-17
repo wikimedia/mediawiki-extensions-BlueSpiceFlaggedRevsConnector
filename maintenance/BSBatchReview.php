@@ -26,10 +26,8 @@ class BSBatchReview extends Maintenance {
 	 */
 	private $errors = [];
 
-	/**
-	 * @var MediaWikiServices
-	 */
-	private $services;
+	/** @var MediaWikiServices */
+	protected $services;
 
 	/**
 	 *
@@ -49,12 +47,11 @@ class BSBatchReview extends Maintenance {
 			'Id of namespace to flag entirely', false, true );
 		$this->addOption( 'flag',
 			'Which flags to apply? quality|pristine|checked', false, true );
+		$this->services = MediaWikiServices::getInstance();
 	}
 
 	public function execute() {
-		$user = User::newFromName( $this->getOption( 'username' ) );
-
-		$this->services = MediaWikiServices::getInstance();
+		$user = $this->services->getUserFactory()->newFromName( $this->getOption( 'username' ) );
 
 		$this->autoreview_current( $user );
 	}

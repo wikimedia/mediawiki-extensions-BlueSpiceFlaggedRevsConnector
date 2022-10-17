@@ -157,12 +157,12 @@ class ApiMigrateApprovedRevs extends LoggedUpdateMaintenance {
 		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		if ( $id > 0 ) {
 			if ( !(bool)$this->getOption( 'preferOriginalActor' ) ) {
-				$user = User::newFromName( $actor );
+				$user = $userFactory->newFromName( $actor );
 			} else {
 				$user = $userFactory->newFromId( $id );
 			}
 		} elseif ( $actor ) {
-			$user = User::newFromName( $actor );
+			$user = $userFactory->newFromName( $actor );
 		}
 
 		if ( !$user || $user->getId() === 0 ) {

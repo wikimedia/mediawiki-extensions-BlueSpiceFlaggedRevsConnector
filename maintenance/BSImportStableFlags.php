@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 $maintPath = ( getenv( 'MW_INSTALL_PATH' ) !== false
 			  ? getenv( 'MW_INSTALL_PATH' )
 			  : __DIR__ . '/../..' ) . '/BlueSpiceMaintenance/maintenance/BSBatchFileProcessorBase.php';
@@ -24,7 +26,8 @@ class BSImportStableFlags extends BSBatchFileProcessorBase {
 
 	public function execute() {
 		$this->context = new DerivativeContext( \RequestContext::getMain() );
-		$dummyUser = User::newFromName( 'WikiSysop' );
+		$dummyUser = MediaWikiServices::getInstance()->getUserFactory()
+			->newFromName( 'WikiSysop' );
 		$this->context->setUser( $dummyUser );
 		// FlaggedRevs uses $wgUser ...
 		$GLOBALS['wgUser'] = $dummyUser;
