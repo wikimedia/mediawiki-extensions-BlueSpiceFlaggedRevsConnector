@@ -1,10 +1,47 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"שוקו מוקה"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "דף",
 	"bs-flaggedrevsconnector-state-unmarked": "טיוטה ראשונה",
-	"bs-flaggedrevsconnector-state-draft": "טיוטה"
+	"bs-flaggedrevsconnector-state-draft": "טיוטה",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "גרסת טיוטה",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "לעבור לגרסת הטיוטה האחרונה של הדף הזה",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "גרסה מאושרת",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-title": "לעבור לגרסה המאושרת של הדף הזה",
+	"bs-flaggedrevsconnector-review-type-flagging": "אישור",
+	"bs-flaggedrevsconnector-grid-page-id": "מזהה הדף",
+	"bs-flaggedrevsconnector-grid-page-title": "כותרת הדף",
+	"bs-flaggedrevsconnector-grid-rev-state": "מצב",
+	"bs-flaggedrevsconnector-grid-pending-revs": "גרסאות מאז הגדרה בתור יציב",
+	"bs-flaggedrevsconnector-grid-page-categories": "קטגוריות הדף",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "יש גרסת טיוטה",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "הצגת גרסת טיוטה",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "יש גרסה מאושרת",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "הצגת הגרסה המאושרת",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "טיוטה",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "גרסת טיוטה",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "טיוטה ראשונה",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "גרסת טיוטה ראשונה",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "מאושר",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "גרסה מאושרת",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "לאשר",
+	"bs-flaggedrevsconnector-collection-type-flaggedpages-cat": "אישור לפי קטגוריה",
+	"bs-flaggedrevsconnector-collection-type-flaggedpages-ns": "אישור לפי מרחב שם",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "מרחב שם",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "קטגוריה",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "טיוטה",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "טיוטה ראשונה",
+	"bs-flaggedrevsconnector-collection-var-approvedpages": "מאושר",
+	"bs-flaggedrevsconnector-collection-var-notenabledpages": "לא מופעל",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "גרסאות נוכחיות",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "הקפאת גרסאות",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "גרסאות יציבות",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "מאושר",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "טיוטה",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "צוין משתמש לא תקין: $1",
+	"bs-flaggedrevsconnector-grid-page-namespace": "מרחב שם"
 }

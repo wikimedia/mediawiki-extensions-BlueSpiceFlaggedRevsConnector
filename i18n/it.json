@@ -89,5 +89,6 @@
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "Approvato",
 	"bs-flaggedrevsconnector-pref-handleincludes-help": "Determina quale versione delle risorse deve essere utilizzata durante il rendering della versione stabile di una pagina",
 	"bs-flaggedrevsconnector-resource-changes": "Modifiche alle risorse incluse dall'ultima approvazione della pagina",
-	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Impossibile approvare la pagina"
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Impossibile approvare la pagina",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "approvato"
 }
