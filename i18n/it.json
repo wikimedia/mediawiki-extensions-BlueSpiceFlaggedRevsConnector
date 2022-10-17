@@ -89,5 +89,6 @@
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Il flusso di lavoro viene automaticamente cancellato ed è possibile avviare un nuovo flusso di lavoro.",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utente specificato non valido: $1",
 	"bs-flaggedrevsconnector-grid-page-namespace": "Namespace",
-	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Impossibile approvare la pagina"
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Impossibile approvare la pagina",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "approvato"
 }
