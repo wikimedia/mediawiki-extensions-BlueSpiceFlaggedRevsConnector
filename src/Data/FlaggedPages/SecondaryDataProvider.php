@@ -4,14 +4,16 @@ namespace BlueSpice\FlaggedRevsConnector\Data\FlaggedPages;
 
 use BlueSpice\FlaggedRevsConnector\Data\Record;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\ISecondaryDataProvider;
+use MWStake\MediaWiki\Component\DataStore\Record as DataStoreRecord;
 use Title;
 
-class SecondaryDataProvider implements \BlueSpice\Data\ISecondaryDataProvider {
+class SecondaryDataProvider implements ISecondaryDataProvider {
 
 	/**
 	 *
-	 * @param \BlueSpice\Data\Record[] $dataSets
-	 * @return \BlueSpice\Data\Record[]
+	 * @param DataStoreRecord[] $dataSets
+	 * @return DataStoreRecord[]
 	 */
 	public function extend( $dataSets ) {
 		foreach ( $dataSets as $record ) {

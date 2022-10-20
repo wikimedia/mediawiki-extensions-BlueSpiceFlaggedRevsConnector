@@ -2,7 +2,7 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Data;
 
-class Record extends \BlueSpice\Data\Record {
+class Record extends \MWStake\MediaWiki\Component\DataStore\Record {
 	public const PAGE_ID = 'page_id';
 	public const PAGE_NAMESPACE = 'page_namespace';
 	public const PAGE_TITLE = 'page_title';
