@@ -2,9 +2,11 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Data\FlaggedPages;
 
+use Exception;
+use MWStake\MediaWiki\Component\DataStore\IStore;
 use Wikimedia\Rdbms\ILoadBalancer;
 
-class Store implements \BlueSpice\Data\IStore {
+class Store implements IStore {
 	/**
 	 *
 	 * @var \IContextSource
