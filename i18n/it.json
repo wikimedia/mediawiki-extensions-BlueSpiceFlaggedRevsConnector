@@ -90,5 +90,9 @@
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utente specificato non valido: $1",
 	"bs-flaggedrevsconnector-grid-page-namespace": "Namespace",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Impossibile approvare la pagina",
-	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "approvato"
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "approvato",
+	"bs-flaggedrevsconnector-approval-date-sesp-desc": "La data e l'ora della corretta revisione di quella pagina",
+	"bs-flaggedrevsconnector-draft-lockdown-reason": "L'azione \"$1\" per la versione bozza di questa pagina è disponibile solo per {{PLURAL:$2|gruppo|gruppi}} $3",
+	"bs-flaggedrevsconnector-collection-type-flaggedpages-cat": "Approvazione per categoria",
+	"bs-flaggedrevsconnector-collection-type-flaggedpages-ns": "Approvazione per namespace"
 }
