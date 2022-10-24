@@ -3,11 +3,11 @@
 namespace BlueSpice\FlaggedRevsConnector\PageInfoElement;
 
 use BlueSpice\FlaggedRevsConnector\Utils;
-use BlueSpice\PageInfoElement;
 use Config;
 use IContextSource;
+use PageHeader\PageInfo;
 
-abstract class FlaggedPageElement extends PageInfoElement {
+abstract class FlaggedPageElement extends PageInfo {
 
 	/** @var Utils|null */
 	public $utils = null;
