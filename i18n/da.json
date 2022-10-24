@@ -11,5 +11,7 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Sidekategorier",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Navnerum",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategori",
-	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Vis forskel"
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Vis forskel",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Ændrede ressourcer:",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Navnerum"
 }
