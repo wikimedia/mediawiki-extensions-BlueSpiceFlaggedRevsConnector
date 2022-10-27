@@ -165,6 +165,7 @@ class RevisionState extends AlertProviderBase {
 				$type = IAlertProvider::TYPE_WARNING;
 			} elseif ( !$inSync ) {
 				$out = $this->skin->getOutput();
+				$out->enableOOUI();
 				$out->addModuleStyles( 'ext.bluespice.flaggedrevsconnector.alert.styles' );
 				$out->addModules( 'ext.bluespice.flaggedrevsconnector.alert' );
 
