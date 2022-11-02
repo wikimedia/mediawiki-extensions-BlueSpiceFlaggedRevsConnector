@@ -3,6 +3,7 @@
 		"authors": [
 			"Ericliu1912",
 			"Madeleinemcc",
+			"Seikan Tunnel",
 			"Weather Top Wizard",
 			"Willy1018",
 			"Winston Sung"
@@ -47,5 +48,6 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "草稿",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "草稿版本",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "已批准",
-	"bs-flaggedrevsconnector-grid-page-namespace": "命名空間"
+	"bs-flaggedrevsconnector-grid-page-namespace": "命名空間",
+	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "已批准修訂"
 }
