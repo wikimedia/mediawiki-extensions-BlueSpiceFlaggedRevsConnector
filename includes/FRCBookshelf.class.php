@@ -55,8 +55,6 @@ class FRCBookshelf {
 		// Let's get all page_ids from the collections array and build a the
 		//IN clause for the SQL statement.
 		foreach ( $aArticles as $aArticle ) {
-			$sArticleTitle = $aArticle[ 'display-title' ];
-
 			$oTitle = Title::newFromText( $aArticle[ 'title' ] );
 			if ( $oTitle instanceof Title == false ) {
 				wfDebugLog(
@@ -66,6 +64,8 @@ class FRCBookshelf {
 				);
 				continue;
 			}
+
+			$sArticleTitle = $this->getDisplayTitle( $oTitle );
 
 			// If the articles namespace is not registered with FlaggedRevs, we skip it
 			if ( !in_array( $oTitle->getNamespace(), $wgFlaggedRevsNamespaces ) ) {
@@ -255,5 +255,26 @@ class FRCBookshelf {
 		}
 
 		return true;
+	}
+
+	/**
+	 * @param Title $title
+	 * @return string
+	 */
+	private function getDisplayTitle( Title $title ): string {
+		$pageProperties = [];
+		$pageProps = PageProps::getInstance()->getAllProperties( $title );
+
+		$id = $title->getArticleID();
+
+		if ( isset( $pageProps[$id] ) ) {
+			$pageProperties = $pageProps[$id];
+		}
+
+		if ( isset( $pageProperties['displaytitle'] ) ) {
+			return $pageProperties['displaytitle'];
+		}
+
+		return $title->getPrefixedText();
 	}
 }
