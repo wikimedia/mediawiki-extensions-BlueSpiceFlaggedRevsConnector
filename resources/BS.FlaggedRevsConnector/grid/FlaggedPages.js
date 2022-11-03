@@ -175,7 +175,7 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 			$row.append( $cell );
 
 			$table.append( $row );
-			namespaces = mw.config.get( 'wgFormattedNamespaces' );
+			var namespaces = mw.config.get( 'wgFormattedNamespaces' );
 			for( var rid = 0; rid < records.length; rid++ ) {
 				var record = records[rid];
 				$row = $( '<tr>' );
