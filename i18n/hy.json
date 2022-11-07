@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Էջ",
+	"bs-flaggedrevsconnector-column-last-stable": "Վերանայված",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Տեղեկություններ փոփոխված ռեսուրսների մասին",
 	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Փոփոխված ռեսուրսներ.",
 	"bs-flaggedrevsconnector-grid-page-namespace": "Անվանատարածք"

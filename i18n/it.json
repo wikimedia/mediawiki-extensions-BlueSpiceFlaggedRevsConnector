@@ -69,6 +69,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "Mostra la versione approvata",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "una bozza",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Versione in bozza",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "Prima bozza di versione",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "approvato",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Versione approvata",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Approva",
@@ -82,6 +83,8 @@
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Non attivato",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Mostra le differenze",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Mostra le differenze",
+	"bs-flaggedrevsconnector-state-implicit-draft-desc": "La pagina è stata approvata, ma sono state apportate modifiche alle risorse incluse",
+	"bs-flaggedrevsconnector-state-draft-resources-desc": "La pagina è una bozza a causa di modifiche alle risorse incluse",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Versioni attuale",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "Versioni congelate",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Versioni stabili",
@@ -94,5 +97,7 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Bozza",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Il flusso di lavoro viene automaticamente cancellato ed è possibile avviare un nuovo flusso di lavoro.",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Utente specificato non valido: $1",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informazioni sulle risorse modificate",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Risorse modificate:",
 	"bs-flaggedrevsconnector-grid-page-namespace": "Namespace"
 }
