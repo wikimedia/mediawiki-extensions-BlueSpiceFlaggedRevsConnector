@@ -4,8 +4,8 @@ $IP = dirname( dirname( dirname( __DIR__ ) ) );
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\RevisionLookup;
-use MediaWiki\Storage\RevisionRecord;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class BSFixReadConfirmations extends Maintenance {

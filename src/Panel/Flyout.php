@@ -8,6 +8,7 @@ use BlueSpice\FlaggedRevsConnector\Utils;
 use FlaggableWikiPage;
 use FormatJson;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use Message;
 use QuickTemplate;
 use Title;
@@ -182,7 +183,7 @@ class Flyout extends BasePanel implements IFlyout {
 	}
 
 	/**
-	 * @var \MediaWiki\Storage\RevisionRecord
+	 * @var RevisionRecord
 	 */
 	protected $draftRevisionsAfterCurrentStable = [];
 
