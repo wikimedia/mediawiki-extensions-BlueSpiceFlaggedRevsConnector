@@ -94,5 +94,10 @@
 	"bs-flaggedrevsconnector-approval-date-sesp-desc": "La data e l'ora della corretta revisione di quella pagina",
 	"bs-flaggedrevsconnector-draft-lockdown-reason": "L'azione \"$1\" per la versione bozza di questa pagina è disponibile solo per {{PLURAL:$2|gruppo|gruppi}} $3",
 	"bs-flaggedrevsconnector-collection-type-flaggedpages-cat": "Approvazione per categoria",
-	"bs-flaggedrevsconnector-collection-type-flaggedpages-ns": "Approvazione per namespace"
+	"bs-flaggedrevsconnector-collection-type-flaggedpages-ns": "Approvazione per namespace",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "Prima bozza di versione",
+	"bs-flaggedrevsconnector-state-implicit-draft-desc": "La pagina è stata approvata, ma sono state apportate modifiche alle risorse incluse",
+	"bs-flaggedrevsconnector-state-draft-resources-desc": "La pagina è una bozza a causa di modifiche alle risorse incluse",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informazioni sulle risorse modificate",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Risorse modificate:"
 }
