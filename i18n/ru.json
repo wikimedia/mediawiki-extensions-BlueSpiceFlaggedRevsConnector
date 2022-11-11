@@ -25,5 +25,13 @@
 	"bs-flaggedrevsconnector-collection-var-draftpages": "Черновик",
 	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "Первый черновик",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Черновик",
-	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Вставляет журнал публикации в начало PDF-файла. Этот журнал показывает, когда страница была принята. Если при принятии комментариев не было добавлено, поле комментария пусто."
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Вставляет журнал публикации в начало PDF-файла. Этот журнал показывает, когда страница была принята. Если при принятии комментариев не было добавлено, поле комментария пусто.",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Черновая версия",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "Первая черновая версия",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Подтверждённая версия",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Показать отличия",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Показать отличия",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "Текущие версии",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Стабильные версии",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Пространство имён"
 }
