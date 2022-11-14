@@ -6,6 +6,7 @@
 			"DiegoAmbrocio",
 			"Fewasser Traduce",
 			"Francodiaz7",
+			"SpikeShroom",
 			"Whovian Biologist"
 		]
 	},
@@ -131,5 +132,6 @@
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Usuario \"$1\" {{GENDER:$1|debe tener}} {{PLURAL:$2|permiso \"$3\" para completar la tarea requerida|los siguientes permisos para completar la tarea requerida: $3}}",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Usuario no válido especificado: $1",
 	"bs-flaggedrevsconnector-wfactivity-error-no-user": "No se puede afirmar ningún usuario válido para realizar la aprobación.",
-	"bs-flaggedrevsconnector-grid-page-namespace": "Espacio de nombres"
+	"bs-flaggedrevsconnector-grid-page-namespace": "Espacio de nombres",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Recursos modificados:"
 }
