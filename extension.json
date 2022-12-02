@@ -157,19 +157,6 @@
 					"services": [ "UserFactory", "PermissionManager" ]
 				}
 			}
-		},
-		"BlueSpiceExtendedStatistics": {
-			"SnapshotProviders": {
-				"frc-flaggedpages": {
-					"class": "\\BlueSpice\\FlaggedRevsConnector\\Statistics\\SnapshotProvider\\FlaggedPages",
-					"services": [ "DBLoadBalancer", "MainConfig" ]
-				}
-			},
-			"Reports": {
-				"frc-flaggedpages": {
-					"class": "\\BlueSpice\\FlaggedRevsConnector\\Statistics\\Report\\FlaggedPages"
-				}
-			}
 		}
 	},
 	"ServiceWiringFiles": [
@@ -305,20 +292,6 @@
 		},
 		"ext.bluespice.flaggedRevsConnector.filepage.styles": {
 			"styles": "ext.bluespice.flaggedRevsConnector.filepage.styles.css"
-		},
-		"ext.bluespice.flaggedrevsconnector.statistics": {
-			"scripts": [
-				"statistics/FlaggedPagesReport.js"
-			],
-			"dependencies": [
-				"ext.bluespice",
-				"ext.oOJSPlus.widgets"
-			],
-			"messages": [
-				"bs-flaggedrevsconnector-statistics-report-flagged-pages",
-				"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable",
-				"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft"
-			]
 		},
 		"ext.bluespice.flaggedrevsconnector.alert.styles": {
 			"styles": [
