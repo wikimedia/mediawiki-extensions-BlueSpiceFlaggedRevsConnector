@@ -1,4 +1,3 @@
-/* stylelint-disable selector-max-id */
 #bs-flagged-info-btn {
 	position: absolute;
 	right: 10px;
@@ -6,7 +5,6 @@
 	transform: translate( 0, -50% );
 	z-index: 100;
 }
-/* stylelint-enable selector-max-id */
 
 .bsfrc-files-list a {
 	text-decoration: none;
