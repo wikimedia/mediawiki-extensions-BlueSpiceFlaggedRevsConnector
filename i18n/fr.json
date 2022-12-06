@@ -77,7 +77,7 @@
 	"bs-flaggedrevsconnector-review-type-flagging": "Approbation",
 	"qmoverview": "Vue générale de la gestion de la qualité",
 	"bs-qmoverview-desc": "Vue générale des pages en processus d’approbation",
-	"bs-flaggedrevsconnector-grid-page-id": "ID de la page",
+	"bs-flaggedrevsconnector-grid-page-id": "Identifiant de la page",
 	"bs-flaggedrevsconnector-grid-page-title": "Titre de la page",
 	"bs-flaggedrevsconnector-grid-rev-state": "État",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Révisions depuis la version stable",
