@@ -43,5 +43,19 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "מאושר",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "טיוטה",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "צוין משתמש לא תקין: $1",
-	"bs-flaggedrevsconnector-grid-page-namespace": "מרחב שם"
+	"bs-flaggedrevsconnector-grid-page-namespace": "מרחב שם",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "תאריך הגדרת יציבות",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "הערת הגדרת יציבות",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "דפים יציבים",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "דפים לא יציבים",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "לא מרחב שם של FlaggedRevs",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "לא יציב",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "יציב",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "גרסה",
+	"bs-flaggedrevsconnector-state-stable": "מאושר",
+	"bs-flaggedrevsconnector-state-notenabled": "לא מופעל",
+	"bs-flaggedrevsconnector-review-heading": "אישור",
+	"bs-flaggedrevsconnector-review-comment-label": "הערה",
+	"bs-flaggedrevsconnector-label-flaggedrevs": "אישור",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "אושר"
 }
