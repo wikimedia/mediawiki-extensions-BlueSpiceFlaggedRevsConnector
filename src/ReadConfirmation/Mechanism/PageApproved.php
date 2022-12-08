@@ -207,10 +207,6 @@ class PageApproved implements IMechanism {
 	 * @return bool
 	 */
 	public function canConfirm( Title $title, User $user, $revId = null ) {
-		if ( !$title instanceof Title ) {
-			return false;
-		}
-
 		if ( !$revId ) {
 			return false;
 		}
@@ -320,10 +316,6 @@ class PageApproved implements IMechanism {
 	 * @return bool
 	 */
 	public function mustRead( Title $title ) {
-		if ( !$title instanceof Title ) {
-			return false;
-		}
-
 		if ( !isset( $this->enabledNamespaces[$title->getNamespace()] ) ||
 			!$this->enabledNamespaces[$title->getNamespace()] ) {
 			return false;

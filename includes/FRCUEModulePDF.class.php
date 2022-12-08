@@ -115,7 +115,6 @@ class FRCUEModulePDF {
 
 		$aDates = [
 			'laststabledate' => '',
-			'stablerevisiondate' => ''
 		];
 
 		$aDates['stablerevisiondate'] = $wgLang->sprintfDate(

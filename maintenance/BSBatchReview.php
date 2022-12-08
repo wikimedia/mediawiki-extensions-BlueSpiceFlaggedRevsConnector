@@ -21,7 +21,6 @@ require_once "$IP/maintenance/Maintenance.php";
 class BSBatchReview extends Maintenance {
 
 	/**
-	 *
 	 * @var array
 	 */
 	private $errors = [];
@@ -32,7 +31,6 @@ class BSBatchReview extends Maintenance {
 	private $services;
 
 	/**
-	 *
 	 * @var int
 	 */
 	private $processed = 0;
@@ -47,8 +45,6 @@ class BSBatchReview extends Maintenance {
 			'Flat file containing page names separated by line break', false, true );
 		$this->addOption( 'namespace',
 			'Id of namespace to flag entirely', false, true );
-		$this->addOption( 'flag',
-			'Which flags to apply? quality|pristine|checked', false, true );
 	}
 
 	public function execute() {
@@ -83,18 +79,8 @@ class BSBatchReview extends Maintenance {
 		$this->output( "Reviewer username: " . $user->getName() . "\n" );
 		$GLOBALS['wgUser'] = $user;
 
-		$flag = $this->getOption( 'flag', 'quality' );
-		$tier = FR_CHECKED;
-		if ( $flag === 'quality' ) {
-			$tier = FR_QUALITY;
-		}
-		if ( $flag === 'pristine' ) {
-			$tier = FR_PRISTINE;
-		}
-		$flags = FlaggedRevs::quickTags( $tier );
-		$this->outputFlags( $flags, $tier );
-
-		$db = wfGetDB( DB_PRIMARY );
+		$flags = FlaggedRevs::quickTags();
+		$this->outputFlags( $flags );
 
 		$ids = $this->getPageIds();
 		sort( $ids );
@@ -193,11 +179,10 @@ class BSBatchReview extends Maintenance {
 	/**
 	 *
 	 * @param array $flags
-	 * @param string $tier
 	 */
-	private function outputFlags( $flags, $tier ) {
+	private function outputFlags( $flags ) {
 		$tags = FlaggedRevision::flattenRevisionTags( $flags );
-		$this->output( "Using tier '$tier' with tags:\n$tags\n" );
+		$this->output( "Using tier 'quality' with tags:\n$tags\n" );
 	}
 
 	/**
@@ -213,31 +198,20 @@ class BSBatchReview extends Maintenance {
 		$form = new \RevisionReviewForm( $user );
 		$form->setPage( $title );
 		$form->setOldId( $title->getLatestRevID() );
-		$form->setApprove( true );
-		$form->setUnapprove( false );
+		$form->setAction( RevisionReviewForm::ACTION_APPROVE );
 
 		foreach ( $flags as $tag => $level ) {
 			$form->setDim( $tag, $level );
 		}
 
 		$article = new \FlaggableWikiPage( $title );
-		// Get the file version used for File: pages
-		$file = $article->getFile();
-		if ( $file ) {
-			$fileVer = [ 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() ];
-		} else {
-			$fileVer = null;
-		}
 		// Now get the template and image parameters needed
 		list( $templateIds, $fileTimeKeys ) =
 			\FRInclusionCache::getRevIncludes( $article, $deprecatedRevision, $user );
 		// Get version parameters for review submission (flat strings)
-		list( $templateParams, $imageParams, $fileParam ) =
-			\RevisionReviewForm::getIncludeParams( $templateIds, $fileTimeKeys, $fileVer );
+		$templateParams = \RevisionReviewForm::getIncludeParams( $templateIds );
 		// Set the version parameters...
 		$form->setTemplateParams( $templateParams );
-		$form->setFileParams( $imageParams );
-		$form->setFileVersion( $fileParam );
 		// always OK; uses current templates/files
 		$form->bypassValidationKey();
 

@@ -276,7 +276,7 @@ class RevisionState extends AlertProviderBase {
 				if ( $rev->getTimestamp() === $row->fi_img_timestamp ) {
 					continue;
 				}
-				array_push( $links, $this->linkRenderer->makeLink( $title ) );
+				$links[] = $this->linkRenderer->makeLink( $title );
 			}
 		}
 

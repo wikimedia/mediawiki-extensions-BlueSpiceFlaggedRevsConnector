@@ -140,8 +140,7 @@ class Utils {
 		$form = new PermissionLessReviewForm( $user );
 		$form->setPage( $title );
 		$form->setOldId( $revision->getId() );
-		$form->setApprove( true );
-		$form->setUnapprove( false );
+		$form->setAction( RevisionReviewForm::ACTION_APPROVE );
 		$form->setComment( $comment );
 		// The flagging parameters have the form 'flag_$name'.
 		// Extract them and put the values into $form->dims
@@ -152,19 +151,12 @@ class Utils {
 		}
 
 		$article = new FlaggableWikiPage( $title );
-		// Get the file version used for File: pages
-		$file = $article->getFile();
-		if ( $file ) {
-			$fileVer = [ 'time' => $file->getTimestamp(), 'sha1' => $file->getSha1() ];
-		} else {
-			$fileVer = null;
-		}
 		// Now get the template and image parameters needed
 		list( $templateIds, $fileTimeKeys ) =
 			FRInclusionCache::getRevIncludes( $article, $revision, $user );
 		// Get version parameters for review submission (flat strings)
 		list( $templateParams, $imageParams, $fileParam ) =
-			RevisionReviewForm::getIncludeParams( $templateIds, $fileTimeKeys, $fileVer );
+			RevisionReviewForm::getIncludeParams( $templateIds );
 		// Set the version parameters...
 		$form->setTemplateParams( $templateParams );
 		$form->setFileParams( $imageParams );

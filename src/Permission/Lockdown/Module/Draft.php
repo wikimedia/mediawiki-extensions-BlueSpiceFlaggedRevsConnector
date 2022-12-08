@@ -122,16 +122,11 @@ class Draft extends \BlueSpice\Permission\Lockdown\Module {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @return bool
 	 */
 	public function applies( Title $title, User $user ) {
-		if ( $title instanceof Title === false ) {
-			// I.e. CLI
-			return false;
-		}
 		if ( !$title->exists() ) {
 			return false;
 		}

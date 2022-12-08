@@ -196,9 +196,8 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 	}
 
 	/**
-	 *
-	 * @param string[type] $i18nKeySuffix
-	 * @return void
+	 * @param string $i18nKeySuffix
+	 * @return string
 	 */
 	private function makeValue( $i18nKeySuffix ) {
 		// Give `grep` a chance
