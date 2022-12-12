@@ -34,6 +34,7 @@
 	"bs-flaggedrevsconnector-state-unmarked-desc": "此页面没有经过批准的版本。",
 	"bs-flaggedrevsconnector-state-pending": "待定更改",
 	"bs-flaggedrevsconnector-state-stable-desc": "该版本已获批准。",
+	"bs-flaggedrevsconnector-state-notenabled-desc": "此页面未启用FlaggedRevs",
 	"bs-flaggedrevsconnector-review-heading": "批准",
 	"bs-flaggedrevsconnector-review-comment-label": "评论",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "批准",
