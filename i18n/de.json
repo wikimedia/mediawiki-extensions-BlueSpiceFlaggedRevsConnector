@@ -5,7 +5,8 @@
 			"Mschlindwein",
 			"Stephan Muggli <muggli@hallowelt.biz>",
 			"Umherirrender",
-			"Umlaut"
+			"Umlaut",
+			"Brettchenweber"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Stattet andere Erweiterungen mit Kompatibilität zu FlaggedRevs aus.",
@@ -59,7 +60,7 @@
 	"bs-flaggedrevsconnector-document-version-sesp-alias": "QM/Dokumentenversion",
 	"bs-flaggedrevsconnector-document-state-sesp-desc": "Der Status der Seite. Möglich sind 'Freigegeben' (die letzte Version wurde freigegeben), 'Überarbeitung' (es gibt eine Entwurfsversion) oder 'Bitte um Freigabe' (ein Begutachtungsprozess wurde auf der Entwurfsversion gestartet).",
 	"bs-flaggedrevsconnector-approval-date-sesp-desc": "Datum und Uhrzeit der Freigabe dieser Seite",
-	"bs-flaggedrevsconnector-approval-user-sesp-desc": "Benutzer der die Seite freigegeben hat",
+	"bs-flaggedrevsconnector-approval-user-sesp-desc": "Benutzer, der die Seite freigegeben hat",
 	"bs-flaggedrevsconnector-document-version-sesp-desc": "Anzahl der freigegebenen Versionen in der Versionsgeschichte der Seite",
 	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "Nicht freigegeben",
 	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "Freigegeben",
