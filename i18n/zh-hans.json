@@ -7,6 +7,7 @@
 			"GuoPC",
 			"Lakejason0",
 			"LaoShuBaby",
+			"LittlePaw365",
 			"Si109",
 			"TsuyaMarisa",
 			"Wzl19371",
@@ -96,5 +97,7 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}",
 	"bs-flaggedrevsconnector-grid-page-namespace": "命名空间",
-	"bs-flaggedrevsconnector-state-notenabled-desc": "此页面未启用FlaggedRevs"
+	"bs-flaggedrevsconnector-state-notenabled-desc": "此页面未启用FlaggedRevs",
+	"bs-flaggedrevsconnector-admin-tool-overview": "质量管理概览",
+	"bs-flaggedrevsconnector-global-actions-entry": "质量保证"
 }
