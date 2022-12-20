@@ -14,7 +14,8 @@
 			"列维劳德",
 			"孟天皓",
 			"沈澄心",
-			"落花有意12138"
+			"落花有意12138",
+			"LittlePaw365"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "稳定日期",
@@ -65,6 +66,8 @@
 	"bs-flaggedrevsconnector-grid-page-title": "页面标题",
 	"bs-flaggedrevsconnector-grid-rev-state": "状态",
 	"bs-flaggedrevsconnector-grid-page-categories": "页面分类",
+	"bs-flaggedrevsconnector-admin-tool-overview": "质量管理概览",
+	"bs-flaggedrevsconnector-global-actions-entry": "质量保证",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "有草稿版本",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "展示草稿版本",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "有被核准的版本",
