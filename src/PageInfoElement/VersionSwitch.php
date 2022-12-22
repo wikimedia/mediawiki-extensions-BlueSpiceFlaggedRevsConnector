@@ -3,7 +3,6 @@
 namespace BlueSpice\FlaggedRevsConnector\PageInfoElement;
 
 use BlueSpice\FlaggedRevsConnector\Utils;
-use BlueSpice\IPageInfoElement;
 use Config;
 use FlaggableWikiPage;
 use FlaggedRevision;
@@ -11,6 +10,7 @@ use Html;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use Message;
+use PageHeader\IPageInfo;
 
 class VersionSwitch extends FlaggedPageElement {
 
@@ -50,13 +50,13 @@ class VersionSwitch extends FlaggedPageElement {
 	 */
 	public function getLabelMessage() {
 		if ( $this->hasSwitchToDraft ) {
-			$label = $this->msg(
-					'bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text'
-				);
+			$label = $this->context->msg(
+				'bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text'
+			);
 		} elseif ( $this->hasSwitchToStable ) {
-			$label = $this->msg(
-					'bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text'
-				);
+			$label = $this->context->msg(
+				'bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text'
+			);
 		}
 
 		return $label;
@@ -68,11 +68,11 @@ class VersionSwitch extends FlaggedPageElement {
 	 */
 	public function getTooltipMessage() {
 		if ( $this->hasSwitchToDraft ) {
-			return $this->msg(
+			return $this->context->msg(
 				'bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title'
 			);
 		} elseif ( $this->hasSwitchToStable ) {
-			return $this->msg(
+			return $this->context->msg(
 				'bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title'
 			);
 		}
@@ -125,10 +125,10 @@ class VersionSwitch extends FlaggedPageElement {
 	}
 
 	/**
-	 * @return string Can be one of IPageInfoElement::TYPE_*
+	 * @return string Can be one of IPageInfo::TYPE_*
 	 */
 	public function getType() {
-		return IPageInfoElement::TYPE_MENU;
+		return IPageInfo::TYPE_MENU;
 	}
 
 	/**
@@ -167,7 +167,7 @@ class VersionSwitch extends FlaggedPageElement {
 	 * @return string Can be one of IPageInfoElement::ITEMCLASS_*
 	 */
 	public function getItemClass() {
-		return IPageInfoElement::ITEMCLASS_PRO;
+		return IPageInfo::ITEMCLASS_PRO;
 	}
 
 	/**
@@ -209,15 +209,17 @@ class VersionSwitch extends FlaggedPageElement {
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 
 		return $linkRenderer->makeLink(
-				$this->context->getTitle(),
-				$this->msg( 'bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label' ),
-				[
-					'title' => $this->msg( 'bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip' ),
-				],
-				[
-					'oldid' => $flaggableWikiPage->getStable(),
-					'diff' => $flaggableWikiPage->getLatest()
-				]
-			);
+			$this->context->getTitle(),
+			$this->context->msg( 'bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label' ),
+			[
+				'title' => $this->context->msg(
+					'bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip'
+				)
+			],
+			[
+				'oldid' => $flaggableWikiPage->getStable(),
+				'diff' => $flaggableWikiPage->getLatest()
+			]
+		);
 	}
 }
