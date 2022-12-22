@@ -2,10 +2,9 @@
 
 namespace BlueSpice\FlaggedRevsConnector\Data\DataCollector\FlaggedPages;
 
-use BlueSpice\Data\Record as BaseRecord;
 use BlueSpice\FlaggedRevsConnector\Entity\Collection\FlaggedPages;
 
-abstract class Record extends BaseRecord {
+abstract class Record extends \MWStake\MediaWiki\Component\DataStore\Record {
 	public const DRAFT = FlaggedPages::ATTR_DRAFT_PAGES;
 	public const FIRST_DRAFT = FlaggedPages::ATTR_FIRST_DRAFT_PAGES;
 	public const APPROVED = FlaggedPages::ATTR_APPROVED_PAGES;
