@@ -3,13 +3,13 @@
 namespace BlueSpice\FlaggedRevsConnector\PageInfoElement;
 
 use BlueSpice\FlaggedRevsConnector\Utils;
-use BlueSpice\IPageInfoElement;
 use Config;
 use FlaggedRevision;
 use Html;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use Message;
+use PageHeader\IPageInfo;
 
 class PageStatusDropdown extends FlaggedPageElement {
 	/** @var string */
@@ -44,7 +44,9 @@ class PageStatusDropdown extends FlaggedPageElement {
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text
-		return $this->msg( 'bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-' . $this->state . '-text' );
+		return $this->context->msg(
+			'bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-' . $this->state . '-text'
+		);
 	}
 
 	/**
@@ -63,7 +65,9 @@ class PageStatusDropdown extends FlaggedPageElement {
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title
 		// bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title
-		return $this->msg( 'bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-' . $this->state . '-title' );
+		return $this->context->msg(
+			'bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-' . $this->state . '-title'
+		);
 	}
 
 	/**
@@ -103,11 +107,11 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 */
 	public function getItemClass() {
 		if ( $this->state === 'stable' ) {
-			return IPageInfoElement::ITEMCLASS_CONTRA;
+			return IPageInfo::ITEMCLASS_CONTRA;
 		}
 
 		if ( ( $this->state === 'draft' ) || ( $this->state === 'first-draft' ) ) {
-			return IPageInfoElement::ITEMCLASS_CONTRA;
+			return IPageInfo::ITEMCLASS_CONTRA;
 		}
 	}
 
@@ -125,9 +129,9 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 */
 	public function getType() {
 		if ( $this->needApproval ) {
-			return IPageInfoElement::TYPE_MENU;
+			return IPageInfo::TYPE_MENU;
 		} else {
-			return IPageInfoElement::TYPE_TEXT;
+			return IPageInfo::TYPE_TEXT;
 		}
 	}
 
@@ -136,7 +140,7 @@ class PageStatusDropdown extends FlaggedPageElement {
 	 * @return string
 	 */
 	public function getMenu() {
-		if ( $this->getType() === IPageInfoElement::TYPE_TEXT ) {
+		if ( $this->getType() === IPageInfo::TYPE_TEXT ) {
 			return '';
 		}
 
@@ -195,7 +199,7 @@ class PageStatusDropdown extends FlaggedPageElement {
 				[
 					'class' => 'bs-frc-review'
 				],
-				$this->msg( 'bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept' )->plain()
+				$this->context->msg( 'bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept' )->plain()
 				);
 
 		$html .= Html::closeElement( 'a' );
