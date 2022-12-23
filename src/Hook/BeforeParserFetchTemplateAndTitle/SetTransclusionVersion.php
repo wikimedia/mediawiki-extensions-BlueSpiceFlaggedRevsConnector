@@ -36,7 +36,7 @@ class SetTransclusionVersion extends BeforeParserFetchTemplateAndTitle {
 			return true;
 		}
 
-		$fr = FlaggedRevision::newFromId( $revid );
+		$fr = FlaggedRevision::newFromTitle( $title, $revid );
 		if ( $fr === null ) {
 			return true;
 		}
