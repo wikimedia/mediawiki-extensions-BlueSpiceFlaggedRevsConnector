@@ -26,10 +26,11 @@ class FRCHistoryView {
 		);
 
 		if ( $frRow ) {
-			$oUser = User::newFromId( $frRow->fr_user );
+			$services = MediaWikiServices::getInstance();
+			$oUser = $services->getUserFactory()->newFromId( $frRow->fr_user );
 			$sUserLink = '';
 			if ( $oUser instanceof User ) {
-				$sUserLink = '| ' . MediaWikiServices::getInstance()->getLinkRenderer()->makeLink(
+				$sUserLink = '| ' . $services->getLinkRenderer()->makeLink(
 					$oUser->getUserPage(),
 					new HtmlArmor( $oUser->getName() )
 				);
