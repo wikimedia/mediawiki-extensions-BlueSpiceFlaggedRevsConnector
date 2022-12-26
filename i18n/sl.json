@@ -11,5 +11,6 @@
 	"bs-flaggedrevsconnector-review-type-flagging": "Odobritev",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Imenski prostor",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Redakcija",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Osnutek"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Osnutek",
+	"bs-flaggedrevsconnector-flyout-form-title": "Odobritev strani"
 }
