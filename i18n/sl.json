@@ -12,5 +12,6 @@
 	"bs-flaggedrevsconnector-review-type-flagging": "Odobritev",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Redakcija",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Osnutek",
-	"bs-flaggedrevsconnector-flyout-form-title": "Odobritev strani"
+	"bs-flaggedrevsconnector-flyout-form-title": "Odobritev strani",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Spremenjeni viri:"
 }
