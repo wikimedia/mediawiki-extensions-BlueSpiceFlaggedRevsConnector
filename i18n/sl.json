@@ -12,5 +12,6 @@
 	"bs-flaggedrevsconnector-flyout-form-title": "Odobritev strani",
 	"bs-flaggedrevsconnector-review-type-flagging": "Odobritev",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Imenski prostor",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Osnutek"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Osnutek",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Spremenjeni viri:"
 }
