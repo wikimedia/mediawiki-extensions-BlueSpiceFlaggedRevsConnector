@@ -83,7 +83,7 @@
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Stran $1 (redakcijo $2 ) ste $3 označili [ $4 ]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Pregled ravnanja s kakovostjo",
 	"bs-flaggedrevsconnector-global-actions-entry": "Zagotavljanje kakovosti",
-	"bs-flaggedrevsconnector-draft-lockdown-reason": "Dejanje »$2« za osnutek te strani je na voljo samo za {{PLURAL:$2|skupina|skupini|skupine}} $3",
+	"bs-flaggedrevsconnector-draft-lockdown-reason": "Dejanje »$1« za osnutek te strani je na voljo samo za {{PLURAL:$2|skupino|skupini|skupine}} $3",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "ima osnutek",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Pokaži osnutek",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "ima odobreno redakcijo",
