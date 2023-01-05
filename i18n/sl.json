@@ -126,6 +126,12 @@
 	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Na začetek PDF-ja vstavi dnevniški zapis. Ta dnevniški zapis prikazuje vse strani PDF iz imenskih prostorov brez aktivirane funkcionalnosti pregleda.",
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Pod naslovom PDF-ja natisne časovni žig za zadnje sprejete redakcije in osnutke.",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "Delovni tok se samodejno izbriše in lahko se začne nov delovni tok.",
+	"bs-flaggedrevsconnector-pref-draftgroups-help": "Nastavi pravico dostopa do osnutkov. Če ni navedena nobena skupina, vizualnega stanja v naslovnem območju ne vidi niti administrator. Toda administratorji lahko do osnutka še vedno dostopajo v zgodovini redakcij.",
+	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "Osnutki so izključeni iz iskalnih zadetkov. Če stran nima stabilne redakcije, ni prikazana med iskalnimi zadetki.",
+	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "Uporabnik »$1« {{GENDER:$1|mora imeti}} za dokončanje zahtevanega opravila {{PLURAL:$2|dovoljenje »$3«|naslednja dovoljenja: $3}}",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "Naveden je neveljaven uporabnik: $1",
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "Za izvedbo odobritve ni mogoče uporabiti nobenega veljavnega uporabnika",
+	"bs-flaggedrevsconnector-state-draft-info-btn-title": "Informacije o spremenjenih virih",
 	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Spremenjeni viri:",
 	"bs-flaggedrevsconnector-grid-page-namespace": "Imenski prostor"
 }
