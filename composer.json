@@ -31,5 +31,11 @@
 	},
 	"extra": {
 		"installer-name": "BlueSpiceFlaggedRevsConnector"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
+
 }
