@@ -62,7 +62,7 @@ class Flagging extends BsReviewProcess {
 			/** @var \BlueSpice\NotificationManager $notificationsManager */
 			$notificationsManager = $services->getService( 'BSNotificationManager' );
 			$notifier = $notificationsManager->getNotifier();
-			$userFactory = $services()->getUserFactory();
+			$userFactory = $services->getUserFactory();
 			$notification = new Notifications\ReviewFinishAndAutoflag(
 				$context->getUser(),
 				Title::newFromID( $this->getPid() ),
