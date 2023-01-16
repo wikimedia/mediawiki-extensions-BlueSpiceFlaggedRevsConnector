@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"ערן",
 			"שוקו מוקה"
 		]
 	},
@@ -57,5 +58,9 @@
 	"bs-flaggedrevsconnector-review-heading": "אישור",
 	"bs-flaggedrevsconnector-review-comment-label": "הערה",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "אישור",
-	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "אושר"
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "אושר",
+	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "לא אושר",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "מאושר",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "הצגת שינויים",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "הצגת שינויים"
 }
