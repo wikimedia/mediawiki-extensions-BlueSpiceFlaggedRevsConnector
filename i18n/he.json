@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"ערן",
 			"שוקו מוקה"
 		]
 	},
@@ -22,6 +23,8 @@
 	"bs-flaggedrevsconnector-review-comment-label": "הערה",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "אישור",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "אושר",
+	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "לא אושר",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "מאושר",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "גרסת טיוטה",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "לעבור לגרסת הטיוטה האחרונה של הדף הזה",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "גרסה מאושרת",
@@ -51,6 +54,8 @@
 	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "טיוטה ראשונה",
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "מאושר",
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "לא מופעל",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "הצגת שינויים",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "הצגת שינויים",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "גרסאות נוכחיות",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "הקפאת גרסאות",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "גרסאות יציבות",
