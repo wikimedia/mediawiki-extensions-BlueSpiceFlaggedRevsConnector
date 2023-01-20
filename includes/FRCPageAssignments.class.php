@@ -148,6 +148,8 @@ class FRCPageAssignments {
 		if ( $oRevision === null ) {
 			return null;
 		}
-		return $oRevision->getPageAsLinkTarget();
+		$revTarget = $oRevision->getPageAsLinkTarget();
+
+		return Title::castFromLinkTarget( $revTarget );
 	}
 }
