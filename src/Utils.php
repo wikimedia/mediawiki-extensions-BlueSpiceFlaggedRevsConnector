@@ -58,6 +58,10 @@ class Utils {
 	public function isFlaggableNamespace( Title $title ) {
 		global $wgFlaggedRevsNamespaces;
 
+		if ( $title->isSpecialPage() ) {
+			return false;
+		}
+
 		$frc = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' )->getExtension(
 			'BlueSpiceFlaggedRevsConnector'
 		);
