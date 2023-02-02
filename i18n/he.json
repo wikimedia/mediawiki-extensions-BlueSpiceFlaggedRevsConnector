@@ -62,5 +62,18 @@
 	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "לא אושר",
 	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "מאושר",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "הצגת שינויים",
-	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "הצגת שינויים"
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "הצגת שינויים",
+	"bs-flaggedrevsconnector-state-pending": "שינויים ממתינים",
+	"bs-flaggedrevsconnector-state-stable-desc": "הגרסה הזאת מאושרת.",
+	"bs-flaggedrevsconnector-column-last-stable": "נסקר",
+	"bs-flaggedrevsconnector-no-stable": "לא נסקר",
+	"bs-flaggedrevsconnector-smw-prop-document-state-in-revision": "בגרסה",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approval-requested": "התבקש אישור",
+	"bs-flaggedrevsconnector-flyout-title": "אישור דף",
+	"bs-flaggedrevsconnector-nav-link-title": "אישור",
+	"bs-flaggedrevsconnector-flyout-state-intro": "מצב האישור לדף הזה:",
+	"bs-flaggedrevsconnector-flyout-form-title": "לאשר את הדף",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft": "{{PLURAL:$1|טיוטה אחת|$1 טיוטות}} ($2)",
+	"bs-flaggedrevsconnector-global-actions-entry": "אבטחת איכות",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "מצב אישור דף"
 }
