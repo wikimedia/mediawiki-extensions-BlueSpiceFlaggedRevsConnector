@@ -75,5 +75,13 @@
 	"bs-flaggedrevsconnector-flyout-form-title": "לאשר את הדף",
 	"bs-flaggedrevsconnector-flyout-body-hint-draft": "{{PLURAL:$1|טיוטה אחת|$1 טיוטות}} ($2)",
 	"bs-flaggedrevsconnector-global-actions-entry": "אבטחת איכות",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "מצב אישור דף"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "מצב אישור דף",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "תאריך האישור",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "בהמתנה לאישור",
+	"bs-flaggedrevsconnector-response-failure": "אירעה שגיאה. נא ליצור קשר עם המפעיל שלך.",
+	"bs-flaggedrevsconnector-invalid-namespaces": "{{PLURAL:$1|מרחב השם שצוין אינו תקין|מרחבי השם שצוינו אינם תקינים}}: $2.",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "$1 {{GENDER:$1|סקר|סקרה}} את $3",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-subject": "סקירה של הדף $2",
+	"bs-flaggedrevsconnector-approval-date-sesp-alias": "QM/תאריך האישור",
+	"bs-flaggedrevsconnector-approval-user-sesp-desc": "המשתמש שסקר את הדף"
 }
