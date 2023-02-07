@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Patric Wirth",
 			"Umherirrender",
 			"Verdy p"
@@ -48,8 +49,8 @@
 	"bs-flaggedrevsconnector-invalid-namespaces": "Error message when given namespace or multiple given namespaces are invalid.\n* $1 - number of namespaces given, that are invalid. Use PLURAL.\n* $2 - Comma seperated list of namespaces given, that are invalid. Use PLURAL",
 	"bs-flaggedrevsconnector-column-last-stable": "Column header that lists approval dates of pages.\n{{Identical|Reviewed}}",
 	"bs-flaggedrevsconnector-no-stable": "Column content that shows the default information, when the page is not approved yet.\n{{Identical|not reviewed}}",
-	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "Notification summary that describes who approved what page.\n* $1 - username of the user that approved the page.\n* $2 - Name of the page, that was approved\n* $3 - Name of the page, that was approved",
-	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-subject": "Notification subject that describes, what page was approved.\n* $1 - username of the user that approved the page.\n* $2 - Name of the page, that was approved\n* $3 - Name of the page, that was approved",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "Notification summary that describes who approved what page.\n* $1 - username of the user that approved the page.\n* $3 - Name of the page, that was approved",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-subject": "Notification subject that describes, what page was approved.\n* $2 - Name of the page, that was approved",
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-body": "Notification body that describes, who approved what page.\n* $1 - username of the user that approved the page.\n* $2 - Name of the page, that was approved\n* $3 - Name of the page, that was approved",
 	"bs-flaggedrevsconnector-document-state-sesp-alias": "Alias for semantic property \"QM/Document state\" that carries the information of the approval status of the page. Must use prefix \"QM/\".\n{{Identical|QM/Document state}}",
 	"bs-flaggedrevsconnector-approval-date-sesp-alias": "Alias for semantic property \"QM/Approval date\" that carries the information of the approval date of the page. Must use prefix \"QM/\".\n{{Identical|QM/Approval date}}",
