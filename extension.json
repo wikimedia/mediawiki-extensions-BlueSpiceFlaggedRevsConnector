@@ -290,7 +290,10 @@
 			]
 		},
 		"ext.bluespice.flaggedRevsConnector.filepage.styles": {
-			"styles": "ext.bluespice.flaggedRevsConnector.filepage.styles.css"
+			"styles": "bluespice.flaggedrevsconnector.filepage.styles.css"
+		},
+		"ext.bluespice.flaggedrevsconnector.warningbox": {
+			"styles": "bluespice.flaggedrevsconnector.warningbox.css"
 		},
 		"ext.bluespice.flaggedrevsconnector.alert.styles": {
 			"styles": [
@@ -405,7 +408,8 @@
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\AddResources::callback",
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\ChangeRevisionForEdit::callback",
 			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\HideFileDraftResources::callback",
-			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\ChangeRevisionForEdit::callback"
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\ChangeRevisionForEdit::callback",
+			"\\BlueSpice\\FlaggedRevsConnector\\Hook\\BeforePageDisplay\\HideWarningBoxWithPendingChanges::callback"
 		],
 		"SMW::RevisionGuard::IsApprovedRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SMWRevisionGuard\\IsApprovedFlaggedRevision::callback",
 		"SMW::RevisionGuard::ChangeRevision": "\\BlueSpice\\FlaggedRevsConnector\\Hook\\SMWRevisionGuard\\ChangeFlaggedRevision::callback",
