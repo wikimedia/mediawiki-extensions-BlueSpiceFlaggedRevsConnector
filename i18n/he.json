@@ -85,6 +85,6 @@
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-subject": "סקירה של הדף $2",
 	"bs-flaggedrevsconnector-approval-date-sesp-alias": "QM/תאריך האישור",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "המשתמש שסקר את הדף",
-	"bs-flaggedrevsconnector-history-row-fr-info": "נבדקו: $1 $2 $3",
-	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-body": "$1 {{gender:$1|בדק|בדקה}} את הדף $2 ."
+	"bs-flaggedrevsconnector-history-row-fr-info": "נסקרו: $1 $2 $3",
+	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-body": "$1 {{gender:$1|סקר|סקרה}} את הדף $2."
 }
