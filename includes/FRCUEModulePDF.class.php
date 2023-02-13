@@ -35,21 +35,36 @@ class FRCUEModulePDF {
 		}
 
 		// If this function gets called from BookshelfUI export we may not
-		// have a 'article-id'. But we always have a 'title'
+		//have a 'article-id'. But we always have a 'title'
 		$oTitle = Title::newFromText( $aParams[ 'title' ] );
 		if ( !isset( $aParams[ 'article-id' ] ) ) {
 			if ( $oTitle instanceof Title ) {
-				$oFlaggableWikiPage = FlaggableWikiPage::getTitleInstance( $oTitle );
-				$aParams[ 'article-id' ] = $oFlaggableWikiPage->getStableRev();
+				$aParams[ 'article-id' ] = $oTitle->getArticleID();
 			}
 		}
+		$dbr = wfGetDB( DB_REPLICA );
+		$res = $dbr->selectRow(
+			'flaggedpages',
+			'fp_stable',
+			[ 'fp_page_id' => $aParams[ 'article-id' ] ],
+			__METHOD__
+		);
 
-		$aParams['stable'] = 1;
+		if ( !isset( $res->fp_stable ) || $res->fp_stable === null ) {
+			return true;
+		}
 
-		// let everyone know, that the current request was changed to the stable
+		$aParams['stableid'] = (int)$res->fp_stable;
+
+		// Let everyone know, that the current request was changed to the stable
 		// version!
-		$wgRequest->setVal( 'pdfstablepageid', $aParams[ 'article-id' ] );
+		$aParams['stabilized'] = true;
 		$wgRequest->setVal( 'stable', 1 );
+
+		wfDebugLog(
+			'BS::FlaggedRevsConnector',
+			__METHOD__ . ': Fetched old revision ' . $res->fp_stable . ' for page_id ' . $aParams[ 'article-id' ]
+		);
 
 		return true;
 	}
@@ -88,27 +103,12 @@ class FRCUEModulePDF {
 		if ( !$oFlaggableWikiPage->isReviewable() ) {
 			return true;
 		}
+		$iRevId = isset( $aParams['oldid'] ) && $aParams['oldid'] !== 0
+			? $aParams['oldid']
+			: $oTitle->getLatestRevID();
 
-		$iRevId = $oTitle->getLatestRevID();
-		if ( isset( $aParams['stable'] ) && $aParams['stable'] === 1 ) {
-			$stableRev = $oFlaggableWikiPage->getStableRev();
-			if ( $stableRev	) {
-				$iRevId = $stableRev->getRevId();
-			}
-		}
-
-		if ( isset( $aParams['stableid'] ) && $aParams['stableid'] !== 0 ) {
-			$iRevId = $aParams['stableid'];
-		}
-
-		if ( isset( $aParams['oldid'] ) && $aParams['oldid'] !== 0 ) {
-			$iRevId = $aParams['oldid'];
-		}
-
-		$oFlaggedRevision = FlaggedRevision::newFromTitle( $oTitle, $iRevId );
 		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
 		$oRevison = $revisionLookup->getRevisionById( $iRevId );
-
 		if ( $oRevison instanceof RevisionRecord === false ) {
 			return true;
 		}
@@ -124,12 +124,30 @@ class FRCUEModulePDF {
 		);
 
 		// Is the requested revision id a flagged revision?
-		if ( $oFlaggedRevision instanceof FlaggedRevision ) {
-			// No...
-			$aDates['laststabledate'] = $wgLang->sprintfDate(
-				'd.m.Y - H:i',
-				$wgLang->userAdjust( $oFlaggedRevision->getTimestamp() )
-			);
+		if ( $oRevison instanceof RevisionRecord ) {
+			$pageId = $oRevison->getPageId();
+			$title = Title::newFromID( $pageId );
+
+			if ( $title->getLatestRevID() > $iRevId ) {
+				// No...
+				$aDates['laststabledate'] = $wgLang->sprintfDate(
+					'd.m.Y - H:i',
+					$wgLang->userAdjust( $oRevison->getTimestamp() )
+				);
+			}
+		}
+
+		$isStabilized = ( isset( $aParams['stabilized'] ) && $aParams['stabilized'] === true ) ? true : false;
+		if ( $isStabilized ) {
+			if ( $this->hasUnreviewedTemplates( $iRevId ) ) {
+				// If some template which is in a flaggable namespace has changed the we reset this key
+				$aDates[ 'laststabledate' ] = '';
+			} else {
+				$aDates['laststabledate'] = $wgLang->sprintfDate(
+					'd.m.Y - H:i',
+					$wgLang->userAdjust( $oRevison->getTimestamp() )
+				);
+			}
 		}
 
 		$aPage['meta']['laststabledate']     = $aDates[ 'laststabledate' ];
@@ -141,9 +159,9 @@ class FRCUEModulePDF {
 				'bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text'
 			)->plain() . ': '
 		);
-		$oStableTag->setAttribute( 'class', 'bs-flaggedrevshistorypage-laststable-tag' );
 
-		if ( empty( $aDates[ 'laststabledate' ] ) ) {
+		$oStableTag->setAttribute( 'class', 'bs-flaggedrevshistorypage-laststable-tag' );
+		if ( $aDates[ 'laststabledate' ] === '' ) {
 			$sDateNode = $aPage[ 'dom' ]->createElement(
 				'span',
 				wfMessage(
@@ -174,6 +192,45 @@ class FRCUEModulePDF {
 		);
 
 		return true;
+	}
+
+	/**
+	 * @param int $iRevId
+	 * @return bool
+	 */
+	private function hasUnreviewedTemplates( int $iRevId ) {
+		$dbr = wfGetDB( DB_REPLICA );
+		$res = $dbr->selectRow(
+			'flaggedtemplates',
+			[ 'ft_tmp_rev_id' ],
+			[ 'ft_rev_id' => $iRevId ],
+			__METHOD__
+		);
+
+		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+
+		foreach ( $res as $row ) {
+			/** @var RevisionRecord */
+			$oRevison = $revisionLookup->getRevisionById( $row->ft_tmp_rev_id );
+
+			if ( !$oRevison ) {
+				continue;
+			}
+
+			$pageId = $oRevison->getPageId();
+			$title = Title::newFromID( $pageId );
+
+			$flaggableWikiPage = FlaggableWikiPage::getTitleInstance( $title );
+			if ( !$flaggableWikiPage->isReviewable() ) {
+				continue;
+			}
+
+			if ( $title->getLatestRevID() !== $row->ft_tmp_rev_id ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**
