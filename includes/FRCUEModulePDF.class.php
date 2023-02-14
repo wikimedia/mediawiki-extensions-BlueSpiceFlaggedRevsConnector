@@ -18,6 +18,8 @@ class FRCUEModulePDF {
 		// RV(04.02.2015): Still ugly, but works so far
 		// PW(04.02.2021): Still very ugly, but still seems to work
 		// DS(30.06.2021): Still incredibly ugly, but afraid to remove it at this point
+		// DV(02.01.2023): Most of the stabilisation is done by FlaggedRevs. A patch is required.
+		//                 See ERM 29748
 		if ( $wgRequest->getInt( 'stable', 1 ) === 0 ) {
 			return true;
 		}
@@ -33,36 +35,21 @@ class FRCUEModulePDF {
 		}
 
 		// If this function gets called from BookshelfUI export we may not
-		//have a 'article-id'. But we always have a 'title'
+		// have a 'article-id'. But we always have a 'title'
+		$oTitle = Title::newFromText( $aParams[ 'title' ] );
 		if ( !isset( $aParams[ 'article-id' ] ) ) {
-			$oTitle = Title::newFromText( $aParams[ 'title' ] );
 			if ( $oTitle instanceof Title ) {
-				$aParams[ 'article-id' ] = $oTitle->getArticleID();
+				$oFlaggableWikiPage = FlaggableWikiPage::getTitleInstance( $oTitle );
+				$aParams[ 'article-id' ] = $oFlaggableWikiPage->getStableRev();
 			}
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
-		$res = $dbr->selectRow(
-			'flaggedpages',
-			'fp_stable',
-			[ 'fp_page_id' => $aParams[ 'article-id' ] ],
-			__METHOD__
-		);
+		$aParams['stable'] = 1;
 
-		if ( !isset( $res->fp_stable ) || $res->fp_stable === null ) {
-			return true;
-		}
-
-		$aParams[ 'oldid' ] = $res->fp_stable;
 		// let everyone know, that the current request was changed to the stable
 		// version!
-		$wgRequest->setVal( 'stable', 1 );
 		$wgRequest->setVal( 'pdfstablepageid', $aParams[ 'article-id' ] );
-
-		wfDebugLog(
-			'BS::FlaggedRevsConnector',
-			__METHOD__ . ': Fetched old revision ' . $res->fp_stable . ' for page_id ' . $aParams[ 'article-id' ]
-		);
+		$wgRequest->setVal( 'stable', 1 );
 
 		return true;
 	}
@@ -101,9 +88,22 @@ class FRCUEModulePDF {
 		if ( !$oFlaggableWikiPage->isReviewable() ) {
 			return true;
 		}
-		$iRevId = isset( $aParams['oldid'] ) && $aParams['oldid'] !== 0
-			? $aParams['oldid']
-			: $oTitle->getLatestRevID();
+
+		$iRevId = $oTitle->getLatestRevID();
+		if ( isset( $aParams['stable'] ) && $aParams['stable'] === 1 ) {
+			$stableRev = $oFlaggableWikiPage->getStableRev();
+			if ( $stableRev	) {
+				$iRevId = $stableRev->getRevId();
+			}
+		}
+
+		if ( isset( $aParams['stableid'] ) && $aParams['stableid'] !== 0 ) {
+			$iRevId = $aParams['stableid'];
+		}
+
+		if ( isset( $aParams['oldid'] ) && $aParams['oldid'] !== 0 ) {
+			$iRevId = $aParams['oldid'];
+		}
 
 		$oFlaggedRevision = FlaggedRevision::newFromId( $iRevId );
 		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
