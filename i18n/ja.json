@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"MathXplore",
+			"もなー(偽物)",
 			"背番号4のエース"
 		]
 	},
@@ -75,5 +76,13 @@
 	"bs-flaggedrevsconnector-grid-page-title": "ページ名",
 	"bs-flaggedrevsconnector-grid-rev-state": "都道府県・州",
 	"bs-flaggedrevsconnector-grid-pending-revs": "安定版以降のリビジョン",
-	"bs-flaggedrevsconnector-global-actions-entry": "品質保証"
+	"bs-flaggedrevsconnector-global-actions-entry": "品質保証",
+	"bs-flaggedrevsconnector-state-pending-desc": "承認待ちの保留中の変更があります。 [ $1今すぐ見る]。",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "ドラフト版があります",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "ドラフト版を表示",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "承認されたバージョンがあります",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "承認されたバージョンを表示",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "ドラフト",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "ドラフト版",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "初稿"
 }
