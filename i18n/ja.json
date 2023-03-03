@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"MathXplore",
+			"もなー(偽物)",
 			"背番号4のエース"
 		]
 	},
@@ -28,6 +29,7 @@
 	"bs-flaggedrevsconnector-state-pending": "査読待ちの変更",
 	"bs-flaggedrevsconnector-state-stable-desc": "このバージョンは承認されています。",
 	"bs-flaggedrevsconnector-state-notenabled-desc": "このページではFlaggedRevsが有効になっていません",
+	"bs-flaggedrevsconnector-state-pending-desc": "承認待ちの保留中の変更があります。 [ $1今すぐ見る]。",
 	"bs-flaggedrevsconnector-review-heading": "承認",
 	"bs-flaggedrevsconnector-review-help": "承認されると、このドラフトバージョンがページの現在の安定版に置き換わります。ドラフト版を承認しますか?",
 	"bs-flaggedrevsconnector-review-comment-label": "コメント",
@@ -75,5 +77,12 @@
 	"bs-flaggedrevsconnector-grid-pending-revs": "安定版以降のリビジョン",
 	"bs-flaggedrevsconnector-grid-page-categories": "ページのカテゴリ",
 	"bs-flaggedrevsconnector-global-actions-entry": "品質保証",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "ドラフト版があります",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "ドラフト版を表示",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "承認されたバージョンがあります",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "承認されたバージョンを表示",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "ドラフト",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "ドラフト版",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "初稿",
 	"bs-flaggedrevsconnector-grid-page-namespace": "名前空間"
 }
