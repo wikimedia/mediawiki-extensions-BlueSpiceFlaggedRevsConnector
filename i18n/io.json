@@ -8,5 +8,7 @@
 	"bs-flaggedrevsconnector-label-flaggedrevs": "Aprobar",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Aprobita",
 	"bs-flaggedrevsconnector-nav-link-title": "Aprobar",
-	"bs-flaggedrevsconnector-review-type-flagging": "Aprobo"
+	"bs-flaggedrevsconnector-review-type-flagging": "Aprobo",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Montrez difero",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Montrez difero"
 }
