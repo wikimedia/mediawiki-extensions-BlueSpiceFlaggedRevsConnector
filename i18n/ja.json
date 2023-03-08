@@ -104,5 +104,9 @@
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "有効になっていません",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "差分を表示",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "差分を表示",
-	"bs-flaggedrevsconnector-state-implicit-draft-desc": "ページは承認されましたが、含まれているリソースに変更があります"
+	"bs-flaggedrevsconnector-state-implicit-draft-desc": "ページは承認されましたが、含まれているリソースに変更があります",
+	"bs-flaggedrevsconnector-pref-handleinclude-current": "現在の版",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "版を凍結する",
+	"bs-flaggedrevsconnector-pref-handleinclude-stable": "公開版",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "無効なユーザー \"$1\" が指定されました"
 }
