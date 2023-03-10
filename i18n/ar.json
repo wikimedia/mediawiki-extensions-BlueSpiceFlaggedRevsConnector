@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AA800",
 			"FiberAhmed",
 			"أَحمد",
 			"محمد أحمد عبد الفتاح"
@@ -33,5 +34,7 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "مقبول",
 	"bs-flaggedrevsconnector-state-draft": "مسودة",
 	"bs-flaggedrevsconnector-smw-prop-document-state-in-revision": "قيد المراجعة",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "مسودة"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "مسودة",
+	"bs-flaggedrevsconnector-history-row-fr-info": "تَمَّت مُراجَعة: $1 $2 $3",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "مسودة"
 }
