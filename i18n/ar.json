@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AA800",
 			"FiberAhmed",
 			"أَحمد",
 			"محمد أحمد عبد الفتاح"
@@ -17,6 +18,7 @@
 	"bs-flaggedrevsconnector-review-comment-label": "تعليق",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "مقبول",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "تاريخ الموافقة",
+	"bs-flaggedrevsconnector-history-row-fr-info": "تَمَّت مُراجَعة: $1 $2 $3",
 	"bs-flaggedrevsconnector-column-last-stable": "المراجعة",
 	"bs-flaggedrevsconnector-no-stable": "غير مراجعة",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "المستخدم الذي راجع الصفحة",
@@ -31,6 +33,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "نسخة مسودة",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "النطاق",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "تصنيف",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "مسودة",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "أظهر الفروق",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "مقبول",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "مسودة"
