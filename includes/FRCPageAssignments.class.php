@@ -1,7 +1,6 @@
 <?php
 
 use BlueSpice\FlaggedRevsConnector\Notifications\PageReview;
-
 use MediaWiki\MediaWikiServices;
 
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch

@@ -114,8 +114,7 @@ class FRCInfobox {
 			$aNamespaceIds = BsNamespaceHelper::getNamespaceIdsFromAmbiguousCSVString( $args['namespaces'] );
 			$aConditions[] = '(SELECT page_namespace FROM ' . $dbr->tableName( 'page' )
 				. ' WHERE page_id = fr_page_id) IN (' . implode( ',', $aNamespaceIds ) . ')';
-		}
-		catch ( BsInvalidNamespaceException $ex ) {
+		} catch ( BsInvalidNamespaceException $ex ) {
 			$sInvalidNamespaces = implode( ', ', $ex->getListOfInvalidNamespaces() );
 			$oErrorListView->addItem( new ViewTagError(
 				wfMessage(
