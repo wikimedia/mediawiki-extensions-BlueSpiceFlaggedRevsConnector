@@ -4,6 +4,7 @@
 			"AYZ04",
 			"Dianliang233",
 			"DreamerBlue",
+			"Evesiesta",
 			"GuoPC",
 			"Lakejason0",
 			"LaoShuBaby",
@@ -99,5 +100,8 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已批准",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}",
-	"bs-flaggedrevsconnector-grid-page-namespace": "命名空间"
+	"bs-flaggedrevsconnector-grid-page-namespace": "命名空间",
+	"bs-flaggedrevsconnector-pref-autoreview": "当工作流程完成时，自动将页面设置为稳定状态",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "当页面被标记为稳定时自动删除工作流",
+	"bs-flaggedrevsconnector-pref-indexingstableonly": "仅索引稳定版本"
 }
