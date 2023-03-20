@@ -4,6 +4,7 @@
 			"AYZ04",
 			"Dianliang233",
 			"DreamerBlue",
+			"Evesiesta",
 			"GuoPC",
 			"Lakejason0",
 			"LaoShuBaby",
@@ -99,5 +100,8 @@
 	"bs-flaggedrevsconnector-grid-page-namespace": "命名空间",
 	"bs-flaggedrevsconnector-state-notenabled-desc": "此页面未启用FlaggedRevs",
 	"bs-flaggedrevsconnector-admin-tool-overview": "质量管理概览",
-	"bs-flaggedrevsconnector-global-actions-entry": "质量保证"
+	"bs-flaggedrevsconnector-global-actions-entry": "质量保证",
+	"bs-flaggedrevsconnector-pref-autoreview": "当工作流程完成时，自动将页面设置为稳定状态",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "当页面被标记为稳定时自动删除工作流",
+	"bs-flaggedrevsconnector-pref-indexingstableonly": "仅索引稳定版本"
 }

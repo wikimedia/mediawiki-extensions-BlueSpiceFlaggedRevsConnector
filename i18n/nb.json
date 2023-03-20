@@ -108,5 +108,6 @@
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Angitte revisjon samsvarer ikke med den angitte tittelen",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Status for godkjennelse av siden",
 	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "Endrede ressurser:",
-	"bs-flaggedrevsconnector-grid-page-namespace": "Navnerom"
+	"bs-flaggedrevsconnector-grid-page-namespace": "Navnerom",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Vis utkast"
 }
