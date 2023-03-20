@@ -4,6 +4,7 @@
 			"AYZ04",
 			"Dianliang233",
 			"DreamerBlue",
+			"Evesiesta",
 			"GuoPC",
 			"Lakejason0",
 			"LaoShuBaby",
@@ -18,6 +19,9 @@
 			"落花有意12138"
 		]
 	},
+	"bs-flaggedrevsconnector-pref-autoreview": "当工作流程完成时，自动将页面设置为稳定状态",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "当页面被标记为稳定时自动删除工作流",
+	"bs-flaggedrevsconnector-pref-indexingstableonly": "仅索引稳定版本",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "稳定日期",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "页面",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "稳定的评论",
