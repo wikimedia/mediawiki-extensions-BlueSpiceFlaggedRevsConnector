@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"850710247liu",
 			"AYZ04",
 			"Dianliang233",
 			"DreamerBlue",
@@ -99,6 +100,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "当前版本",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "冻结版本",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "稳定版本",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "“pageId”必须存在于 DefinitionContext 中",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "页面审批状态",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已批准",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
