@@ -117,7 +117,7 @@
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Strani ni bilo mogoče odobriti",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "Navedena redakcija se ne ujema z navedenim naslovom",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "V DefinitionContext mora biti prisoten »pageID«",
-	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Podani »pageID« se ne ujema z nobenim veljavnim objektom naslova",
+	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "Predloženi »pageID« se ne ujema z nobenim veljavnim objektom naslova",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "Stanje odobritve strani",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Odobreno",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Osnutek",
