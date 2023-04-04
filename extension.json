@@ -195,7 +195,6 @@
 		"BlueSpice\\FlaggedRevsConnector\\": "src/"
 	},
 	"AutoloadClasses": {
-		"FlaggedRevsConnector": "BlueSpiceFlaggedRevsConnector.php",
 		"FRCBookshelf": "includes/FRCBookshelf.class.php",
 		"FRCInfobox": "includes/FRCInfobox.class.php",
 		"FRCNamespaceManager": "includes/FRCNamespaceManager.class.php",
