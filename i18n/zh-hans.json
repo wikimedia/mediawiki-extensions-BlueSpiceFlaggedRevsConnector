@@ -15,9 +15,14 @@
 			"列维劳德",
 			"孟天皓",
 			"沈澄心",
-			"落花有意12138"
+			"落花有意12138",
+			"850710247liu",
+			"Evesiesta"
 		]
 	},
+	"bs-flaggedrevsconnector-pref-autoreview": "当工作流程完成时，自动将页面设置为稳定状态",
+	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "当页面被标记为稳定时自动删除工作流",
+	"bs-flaggedrevsconnector-pref-indexingstableonly": "仅索引稳定版本",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stabledate": "稳定日期",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "页面",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "稳定的评论",
@@ -95,6 +100,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "当前版本",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "冻结版本",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "稳定版本",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "“pageId”必须存在于 DefinitionContext 中",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "页面审批状态",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已批准",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",

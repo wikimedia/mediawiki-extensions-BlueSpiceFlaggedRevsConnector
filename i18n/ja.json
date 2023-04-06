@@ -107,6 +107,8 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "現在の版",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "版を凍結する",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "公開版",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "下書き",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "無効なユーザー \"$1\" が指定されました",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "変更されたリソース:",
 	"bs-flaggedrevsconnector-grid-page-namespace": "名前空間"
 }
