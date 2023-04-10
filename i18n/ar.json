@@ -36,5 +36,6 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "مقبول",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "مسودة",
 	"bs-flaggedrevsconnector-history-row-fr-info": "تَمَّت مُراجَعة: $1 $2 $3",
-	"bs-flaggedrevsconnector-collection-var-draftpages": "مسودة"
+	"bs-flaggedrevsconnector-collection-var-draftpages": "مسودة",
+	"bs-flaggedrevsconnector-grid-page-namespace": "نطاق"
 }
