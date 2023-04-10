@@ -7,6 +7,7 @@
 			"DreamerBlue",
 			"Evesiesta",
 			"GuoPC",
+			"Kishinsagi",
 			"Lakejason0",
 			"LaoShuBaby",
 			"LittlePaw365",
@@ -105,5 +106,6 @@
 	"bs-flaggedrevsconnector-pref-autoreview": "当工作流程完成时，自动将页面设置为稳定状态",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "当页面被标记为稳定时自动删除工作流",
 	"bs-flaggedrevsconnector-pref-indexingstableonly": "仅索引稳定版本",
-	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "“pageId”必须存在于 DefinitionContext 中"
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "“pageId”必须存在于 DefinitionContext 中",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "指定的用户无效：$1"
 }
