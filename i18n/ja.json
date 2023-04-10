@@ -110,5 +110,9 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "公開版",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "無効なユーザー \"$1\" が指定されました",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "下書き",
-	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "変更されたリソース:"
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "変更されたリソース:",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "ページを承認できませんでした",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "承認済",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "PDF の先頭に公開ログを挿入します。このログは、ページが承認されたときに表示されます。承認時にコメントが追加されなかった場合、コメント欄は空白になります。",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "PDF の先頭にログを挿入します。このログには、ステータスが「下書き」のすべての PDF ページが表示されます。"
 }
