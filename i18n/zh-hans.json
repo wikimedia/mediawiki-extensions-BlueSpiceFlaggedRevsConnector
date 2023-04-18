@@ -43,6 +43,7 @@
 	"bs-flaggedrevsconnector-state-stable-desc": "该版本已获批准。",
 	"bs-flaggedrevsconnector-state-notenabled-desc": "此页面未启用FlaggedRevs",
 	"bs-flaggedrevsconnector-review-heading": "批准",
+	"bs-flaggedrevsconnector-review-help": "批准后，此草案版本将取代当前版本。你愿意接受这个草案吗？",
 	"bs-flaggedrevsconnector-review-comment-label": "评论",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "批准",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "已批准",
