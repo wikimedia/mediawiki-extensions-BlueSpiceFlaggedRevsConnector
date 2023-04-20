@@ -36,5 +36,6 @@
 	"bs-flaggedrevsconnector-collection-var-draftpages": "مسودة",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "أظهر الفروق",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "مقبول",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "مسودة"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "مسودة",
+	"bs-flaggedrevsconnector-grid-page-namespace": "نطاق"
 }

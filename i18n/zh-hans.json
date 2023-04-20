@@ -17,7 +17,8 @@
 			"沈澄心",
 			"落花有意12138",
 			"850710247liu",
-			"Evesiesta"
+			"Evesiesta",
+			"Kishinsagi"
 		]
 	},
 	"bs-flaggedrevsconnector-pref-autoreview": "当工作流程完成时，自动将页面设置为稳定状态",
@@ -42,6 +43,7 @@
 	"bs-flaggedrevsconnector-state-stable-desc": "该版本已获批准。",
 	"bs-flaggedrevsconnector-state-notenabled-desc": "此页面未启用FlaggedRevs",
 	"bs-flaggedrevsconnector-review-heading": "批准",
+	"bs-flaggedrevsconnector-review-help": "批准后，此草案版本将取代当前版本。你愿意接受这个草案吗？",
 	"bs-flaggedrevsconnector-review-comment-label": "评论",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "批准",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "已批准",
@@ -105,5 +107,6 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已批准",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "草稿",
 	"bs-flaggedrevsconnector-workflows-property-validator-valid-reviewer-error": "用户“$1”{{GENDER:$1|必须拥有}}{{PLURAL:$2|权限“$3”才能完成要求的任务|以下权限才能完成要求的任务：$3}}",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "指定的用户无效：$1",
 	"bs-flaggedrevsconnector-grid-page-namespace": "命名空间"
 }

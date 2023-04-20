@@ -55,7 +55,7 @@
 	"bs-flaggedrevsconnector-approval-date-sesp-alias": "QM/Date d’approbation",
 	"bs-flaggedrevsconnector-approval-user-sesp-alias": "QM/Approuvé par",
 	"bs-flaggedrevsconnector-document-version-sesp-alias": "QM/Version du document",
-	"bs-flaggedrevsconnector-document-state-sesp-desc": "L’état de la page. Peut être « Approuvé » (la dernière version a été relue avec succès), « En révision » (il y a une version brouillon de la page) ou « Approubation demandée » (un processus de relecture a démarré sur une version brouillon existante).",
+	"bs-flaggedrevsconnector-document-state-sesp-desc": "L’état de la page. Peut être « Approuvé » (la dernière version a été relue avec succès), « En révision » (il y a une version brouillon de la page) ou « Approbation demandée » (un processus de relecture a démarré sur une version brouillon existante).",
 	"bs-flaggedrevsconnector-approval-date-sesp-desc": "La date et l’heure de la dernière relecture réussie de la page",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "L’utilisateur qui a relu la page",
 	"bs-flaggedrevsconnector-document-version-sesp-desc": "Le nombre de versions approuvées dans l’historique de la page",
