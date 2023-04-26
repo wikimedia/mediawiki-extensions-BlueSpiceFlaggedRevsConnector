@@ -101,6 +101,7 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 					limit: 25
 				}
 			},
+
 			remoteSort: true,
 			pageSize: 25,
 			listeners: {
@@ -127,11 +128,11 @@ Ext.define( 'BS.FlaggedRevsConnector.grid.FlaggedPages', {
 
 	getHTMLTable: function() {
 		var dfd = $.Deferred();
-		var store = this.makeStore();
-		var proxy = store.getProxy();
+		var newStore = Object.create(this.store);
+		var proxy = newStore.getProxy();
 		proxy.extraParams.limit = 999999;
-		store.setProxy( proxy );
-		store.load( { callback: function( records, operation, success ) {
+		newStore.setProxy( proxy );
+		newStore.load( { callback: function( records, operation, success ) {
 			if ( !operation.success ) {
 				return dfd.reject ( operation );
 			}
