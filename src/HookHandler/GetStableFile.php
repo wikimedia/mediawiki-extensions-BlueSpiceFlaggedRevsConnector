@@ -39,14 +39,14 @@ class GetStableFile implements DrawioGetFileHook {
 
 		$stable = $this->utils->getApprovedRevisionId( $file->getTitle() );
 		if ( !$stable ) {
-			$file = null;
+			$isNotApproved = true;
 			$latestIsStable = false;
 			return true;
 		}
 
 		$stableRevision = $this->revisionStore->getRevisionById( $stable );
 		if ( !$stableRevision ) {
-			$file = null;
+			$isNotApproved = true;
 			$latestIsStable = false;
 			return true;
 		}
@@ -59,7 +59,7 @@ class GetStableFile implements DrawioGetFileHook {
 		$oldFiles = $file->getHistory();
 		foreach ( $oldFiles as $oldFile ) {
 			if ( $oldFile->getTimestamp() === $stableRevision->getTimestamp() ) {
-				$file = $oldFile;
+				$displayFile = $oldFile;
 				$latestIsStable = false;
 				return true;
 			}
