@@ -2,7 +2,7 @@
 	"name": "BlueSpiceFlaggedRevsConnector",
 	"version": "4.2.0-alpha",
 	"license-name": "GPL-3.0-only",
-	"url": "https://en.wiki.bluespice.com/wiki/Reference:FlaggedRevsConnector",
+	"url": "https://en.wiki.bluespice.com/wiki/Reference:BlueSpiceFlaggedRevsConnector",
 	"author": [
 		"Patric Wirth",
 		"Robert Vogel"
