@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"StanProg"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Страница",
+	"bs-flaggedrevsconnector-grid-page-title": "Заглавие на страницата",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "одобрено",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Именно пространство",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Категория"
