@@ -181,7 +181,7 @@ class RevisionState extends AlertProviderBase {
 					'id' => 'bs-flagged-info-btn',
 					'infusable' => true,
 					'framed' => false,
-					'data' => $this->getChangedFiles()
+					'data' => $this->getChangedInclusions()
 				] );
 				$items['items'] = [ $labelWidget, $infoBtn ];
 				$this->revisionStateMessage = new HorizontalLayout( $items );
@@ -238,37 +238,80 @@ class RevisionState extends AlertProviderBase {
 	 *
 	 * @return array
 	 */
-	protected function getChangedFiles() {
+	protected function getChangedInclusions() {
 		$links = [];
 		$flaggablePage = $this->utils->getFlaggableWikiPage( $this->skin->getContext() );
 		if ( $flaggablePage->onlyTemplatesOrFilesPending() ) {
 			$lastRevID = $flaggablePage->getTitle()->getLatestRevID();
-
-			$services = MediaWikiServices::getInstance();
-			$this->loadBalancer = $services->getDBLoadBalancer();
-			$this->linkRenderer = $services->getLinkRenderer();
-			$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-			$res = $dbr->select( 'flaggedimages', [
-				'fi_name', 'fi_img_timestamp'
-			], [
-				'fi_rev_id' => $lastRevID
-			], __METHOD__ );
-
-			foreach ( $res as $row ) {
-				$title = Title::makeTitle( NS_FILE, $row->fi_name );
-				$rev = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
-					$title->getLatestRevID()
-				);
-				if ( $rev === null ) {
-					continue;
-				}
-				if ( $rev->getTimestamp() === $row->fi_img_timestamp ) {
-					continue;
-				}
-				array_push( $links, $this->linkRenderer->makeLink( $title ) );
+			$files = $this->getChangedFilePages( $lastRevID, );
+			$templates = $this->getChangedTemplatePages( $lastRevID );
+			$changed = array_merge( $files, $templates );
+			foreach ( $changed as $title ) {
+				$links[] = MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $title );
 			}
 		}
 
 		return $links;
+	}
+
+	/**
+	 * @param int $lastRevId
+	 *
+	 * @return array
+	 */
+	private function getChangedFilePages( int $lastRevId ): array {
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$res = $dbr->select( 'flaggedimages', [
+			'fi_name', 'fi_img_timestamp'
+		], [
+			'fi_rev_id' => $lastRevId
+		], __METHOD__ );
+
+		$filePages = [];
+		foreach ( $res as $row ) {
+			$title = Title::makeTitle( NS_FILE, $row->fi_name );
+			$rev = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
+				$title->getLatestRevID()
+			);
+			if ( $rev === null ) {
+				continue;
+			}
+			if ( $rev->getTimestamp() === $row->fi_img_timestamp ) {
+				continue;
+			}
+			$filePages[$title->getArticleID()] = $title;
+		}
+
+		return $filePages;
+	}
+
+	/**
+	 * @param int $lastRevID
+	 *
+	 * @return array
+	 */
+	private function getChangedTemplatePages( int $lastRevID ): array {
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
+		$res = $dbr->select( 'flaggedtemplates', [
+			'ft_namespace', 'ft_title', 'ft_tmp_rev_id'
+		], [
+			'ft_rev_id' => $lastRevID
+		], __METHOD__ );
+
+		$templatePages = [];
+		foreach ( $res as $row ) {
+			$title = Title::makeTitle( $row->ft_namespace, $row->ft_title );
+			$rev = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
+				$title->getLatestRevID()
+			);
+			if ( $rev === null ) {
+				continue;
+			}
+			if ( $rev->getId() <= (int)$row->ft_tmp_rev_id ) {
+				continue;
+			}
+			$templatePages[$title->getArticleID()] = $title;
+		}
+		return $templatePages;
 	}
 }
