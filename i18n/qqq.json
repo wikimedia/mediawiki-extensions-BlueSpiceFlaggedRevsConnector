@@ -75,7 +75,7 @@
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "Title/hint for link that allowes the user to switch to the draft version of this page.",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "Text for link that allowes the user to switch to the approved version of this page.\n{{Identical|Approved version}}",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-title": "Title/hint for link that allowes the user to switch to the approved version of this page.",
-	"bs-flaggedrevsconnector-pipe-separator": "Seperator in history view that seperates the commat from the other approval data\n{{notranslate}}",
+	"bs-flaggedrevsconnector-pipe-separator": "Separator in history view to separate the comment from the other approval data.\n{{notranslate}}",
 	"bs-flaggedrevsconnector-review-type-flagging": "Workflow type \"flagging\" alias.\n{{Identical|Approval}}",
 	"qmoverview": "Special page name for [[Special:QMOverview]] special page\n{{Identical|Quality management overview}}",
 	"bs-qmoverview-desc": "Description of [[Special:QMOverview]] special page, that has an overview of pages in approval process",
