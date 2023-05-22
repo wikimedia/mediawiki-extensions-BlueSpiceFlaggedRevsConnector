@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"MathXplore",
+			"Shirayuki",
 			"もなー(偽物)",
 			"背番号4のエース"
 		]
@@ -54,7 +55,7 @@
 	"bs-flaggedrevsconnector-approval-user-sesp-alias": "QM/承認者",
 	"bs-flaggedrevsconnector-document-version-sesp-alias": "QM/ドキュメントのバージョン",
 	"bs-flaggedrevsconnector-approval-date-sesp-desc": "そのページのレビューが成功した日時",
-	"bs-flaggedrevsconnector-approval-user-sesp-desc": "ページをレビューしたユーザー",
+	"bs-flaggedrevsconnector-approval-user-sesp-desc": "ページをレビューした利用者",
 	"bs-flaggedrevsconnector-document-version-sesp-desc": "ページ履歴で承認されたリビジョンの数",
 	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "却下",
 	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "承認",
@@ -108,7 +109,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "現在の版",
 	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "版を凍結する",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "公開版",
-	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "無効なユーザー \"$1\" が指定されました",
+	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "無効な利用者が指定されました: $1",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "下書き",
 	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "変更されたリソース:",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "ページを承認できませんでした",
@@ -127,6 +128,6 @@
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "ワークフローは自動的に削除され、新しいワークフローを開始できます。",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "ドラフト バージョンへのアクセス権を設定します。グループがリストされていない場合、管理者でもタイトル領域に視覚的なステータスが表示されません。ただし、管理者は引き続きバージョン履歴でドラフトにアクセスできます。",
 	"bs-flaggedrevsconnector-pref-indexingstableonly-help": "下書きバージョンは検索結果から除外されます。ページに安定版がない場合、そのページは検索結果に表示されません。",
-	"bs-flaggedrevsconnector-wfactivity-error-no-user": "承認を実行する有効なユーザーをアサートできません",
+	"bs-flaggedrevsconnector-wfactivity-error-no-user": "承認を実行する有効な利用者をアサートできません",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "変更されたリソースに関する情報"
 }
