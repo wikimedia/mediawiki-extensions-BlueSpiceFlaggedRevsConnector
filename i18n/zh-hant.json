@@ -69,5 +69,7 @@
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "已核准",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "頁面核准狀態",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已核准",
-	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "已變更資源："
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "已變更資源：",
+	"bs-flaggedrevsconnector-state-implicit-draft": "隱式草稿",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "核准日期"
 }

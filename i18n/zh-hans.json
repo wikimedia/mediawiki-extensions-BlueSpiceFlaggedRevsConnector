@@ -13,6 +13,7 @@
 			"LittlePaw365",
 			"Si109",
 			"TsuyaMarisa",
+			"Vikarna",
 			"Wzl19371",
 			"Xiplus",
 			"列维劳德",
@@ -108,5 +109,7 @@
 	"bs-flaggedrevsconnector-pref-indexingstableonly": "仅索引稳定版本",
 	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "“pageId”必须存在于 DefinitionContext 中",
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "指定的用户无效：$1",
-	"bs-flaggedrevsconnector-review-help": "批准后，此草案版本将取代当前版本。你愿意接受这个草案吗？"
+	"bs-flaggedrevsconnector-review-help": "批准后，此草案版本将取代当前版本。你愿意接受这个草案吗？",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1份{{PLURAL:$1|草稿}}（$2）",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft-implicit": "资源变更"
 }
