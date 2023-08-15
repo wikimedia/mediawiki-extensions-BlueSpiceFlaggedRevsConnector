@@ -70,8 +70,4 @@ class ApprovePageActivityTest extends MediaWikiIntegrationTestCase {
 		// Broken: Utils fail to retrieve latest stable version
 		$this->assertEquals( $this->title->getLatestRevID(), $this->utils->getApprovedRevisionId( $this->title ) );
 	}
-
-	public function needsDB() {
-		return true;
-	}
 }
