@@ -18,7 +18,8 @@
 			"落花有意12138",
 			"850710247liu",
 			"Evesiesta",
-			"Kishinsagi"
+			"Kishinsagi",
+			"Vikarna"
 		]
 	},
 	"bs-flaggedrevsconnector-pref-autoreview": "当工作流程完成时，自动将页面设置为稳定状态",
@@ -66,6 +67,8 @@
 	"bs-flaggedrevsconnector-nav-link-title": "批准",
 	"bs-flaggedrevsconnector-flyout-state-intro": "这个页面的批准状态：",
 	"bs-flaggedrevsconnector-flyout-form-title": "批准此页",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1份{{PLURAL:$1|草稿}}（$2）",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft-implicit": "资源变更",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "草稿版本",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "被批准版本",
 	"bs-flaggedrevsconnector-review-type-flagging": "批准",
