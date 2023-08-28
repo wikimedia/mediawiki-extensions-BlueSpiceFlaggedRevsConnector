@@ -53,7 +53,7 @@
 	"bs-flaggedrevsconnector-approval-date-sesp-alias": "QM/Data de approbation",
 	"bs-flaggedrevsconnector-approval-user-sesp-alias": "QM/Approbate per",
 	"bs-flaggedrevsconnector-document-version-sesp-alias": "QM/Version del documento",
-	"bs-flaggedrevsconnector-document-state-sesp-desc": "Le stato del pagina. Pote esser 'approbate' (le ultime version ha essite revidite con successo), 'in revision' (existe un version provisori de ille pagina) o 'approbation requestate' (un processo de revision del version provisori existente ha comenciate).",
+	"bs-flaggedrevsconnector-document-state-sesp-desc": "Le stato del pagina. Pote esser ‘approbate’ (le ultime version ha essite revidite con successo), ‘in revision’ (existe un version provisori de ille pagina) o ‘approbation requestate’ (un processo de revision del version provisori existente ha comenciate).",
 	"bs-flaggedrevsconnector-approval-date-sesp-desc": "Le data e hora del approbation de ille pagina",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "Le usator que ha revidite le pagina",
 	"bs-flaggedrevsconnector-document-version-sesp-desc": "Le numero de versiones approbate in le historia del pagina",
