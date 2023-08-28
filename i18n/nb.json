@@ -113,5 +113,8 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "har en utkastversjon",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "har en godkjent versjon",
 	"bs-flaggedrevsconnector-grid-pending-revs": "Sideversjoner siden stabil",
-	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Du markerte side $1 (sideversjon $2) den $3 [$4]"
+	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Du markerte side $1 (sideversjon $2) den $3 [$4]",
+	"bs-flaggedrevsconnector-document-state-sesp-desc": "Sidens tilstand. Kan være «Godkjent» (siste versjon er gjennomgått), «Avventer gjennomgang» (det er et utkast av siden) eller «Godkjenning forespurt» (en gjennomgangsarbeidsflyt er startet på et eksisterende utkast).",
+	"qmoverview": "Kvalitetsstyringsoversikt",
+	"bs-flaggedrevsconnector-admin-tool-overview": "Kvalitetsstyringsoversikt"
 }
