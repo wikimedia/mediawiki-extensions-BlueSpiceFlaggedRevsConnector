@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"M1660661",
 			"MathXplore",
 			"Shirayuki",
 			"もなー(偽物)",
@@ -29,6 +30,7 @@
 	"bs-flaggedrevsconnector-state-unmarked-desc": "このページの承認済みバージョンはありません。",
 	"bs-flaggedrevsconnector-state-pending": "査読待ちの変更",
 	"bs-flaggedrevsconnector-state-stable-desc": "このバージョンは承認されています。",
+	"bs-flaggedrevsconnector-state-draft-desc": "これはドラフト版であり、[{{fullurl:{{FULLPAGENAMEE}}|action=history}} レビュー中$1の変更] が含まれています。対応する [{{fullurl:{{FULLPAGENAMEE}}|stable=1}} 安定版] が$2で承認されました。",
 	"bs-flaggedrevsconnector-state-notenabled-desc": "このページではFlaggedRevsが有効になっていません",
 	"bs-flaggedrevsconnector-state-pending-desc": "承認待ちの保留中の変更があります。 [ $1今すぐ見る]。",
 	"bs-flaggedrevsconnector-review-heading": "承認",
@@ -68,6 +70,7 @@
 	"bs-flaggedrevsconnector-nav-link-title": "承認",
 	"bs-flaggedrevsconnector-flyout-state-intro": "このページの承認状況:",
 	"bs-flaggedrevsconnector-flyout-form-title": "このページを改善",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1個の{{PLURAL:$1|下書き}}",
 	"bs-flaggedrevsconnector-flyout-body-hint-draft-implicit": "リソースの変更",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "ドラフト版",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "このページの最新の下書きバージョンに切り替える",
