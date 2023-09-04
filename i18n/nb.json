@@ -116,5 +116,8 @@
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: Du markerte side $1 (sideversjon $2) den $3 [$4]",
 	"bs-flaggedrevsconnector-document-state-sesp-desc": "Sidens tilstand. Kan være «Godkjent» (siste versjon er gjennomgått), «Avventer gjennomgang» (det er et utkast av siden) eller «Godkjenning forespurt» (en gjennomgangsarbeidsflyt er startet på et eksisterende utkast).",
 	"qmoverview": "Kvalitetsstyringsoversikt",
-	"bs-flaggedrevsconnector-admin-tool-overview": "Kvalitetsstyringsoversikt"
+	"bs-flaggedrevsconnector-admin-tool-overview": "Kvalitetsstyringsoversikt",
+	"bs-flaggedrevsconnector-draft-lockdown-reason": "Handlingen «$1» for utkastet til denne siden er kun tilgjengenlig for {{PLURAL:$2|gruppa|gruppene}} $3",
+	"bs-flaggedrevsconnector-state-implicit-draft-desc": "Siden er godkjent, men det er endringer i de inkluderte ressursene",
+	"bs-flaggedrevsconnector-state-draft-resources-desc": "Siden er et utkast på grunn av endringer i inkluderte ressurser"
 }
