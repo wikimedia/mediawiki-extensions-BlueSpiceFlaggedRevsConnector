@@ -111,5 +111,7 @@
 	"bs-flaggedrevsconnector-wfactivity-error-provided-user": "指定的用户无效：$1",
 	"bs-flaggedrevsconnector-review-help": "批准后，此草案版本将取代当前版本。你愿意接受这个草案吗？",
 	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1份{{PLURAL:$1|草稿}}（$2）",
-	"bs-flaggedrevsconnector-flyout-body-hint-draft-implicit": "资源变更"
+	"bs-flaggedrevsconnector-flyout-body-hint-draft-implicit": "资源变更",
+	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "页面审核失败",
+	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "已变更资源："
 }
