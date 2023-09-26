@@ -71,5 +71,9 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "已核准",
 	"bs-flaggedrevsconnector-state-draft-info-btn-popup-title": "已變更資源：",
 	"bs-flaggedrevsconnector-state-implicit-draft": "隱式草稿",
-	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "核准日期"
+	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "核准日期",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approval-requested": "已申請核准",
+	"bs-flaggedrevsconnector-flyout-title": "頁面核准",
+	"bs-flaggedrevsconnector-flyout-state-intro": "此頁面的核准狀態：",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "顯示已核准的版本"
 }
