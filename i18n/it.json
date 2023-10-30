@@ -11,7 +11,7 @@
 	"bs-flaggedrevsconnector-pref-autoreview": "Imposta automaticamente la pagina su stabile, quando il flusso di lavoro è stato completato correttamente",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "Elimina automaticamente il flusso di lavoro, quando una pagina è stata contrassegnata come stabile",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Pagina",
-	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Revisione",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Versione",
 	"bs-flaggedrevsconnector-state-unmarked": "Prima bozza",
 	"bs-flaggedrevsconnector-state-stable": "Approvato",
 	"bs-flaggedrevsconnector-state-draft": "Bozza",
