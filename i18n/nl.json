@@ -42,7 +42,7 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "Paginacategorieën",
 	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: je hebt pagina $1 gemarkeerd (revisie $2) op $3 [$4]",
 	"bs-flaggedrevsconnector-admin-tool-overview": "Overzicht kwaliteitsbeheer",
-	"bs-flaggedrevsconnector-draft-lockdown-reason": "De actie \"$1\" voor de conceptversie van deze pagina is alleen beschikbaar voor de {{PLURAL:$2| groep|groepen}} $3",
+	"bs-flaggedrevsconnector-draft-lockdown-reason": "De handeling “$1” voor de conceptversie van deze pagina is alleen beschikbaar voor de groep{{PLURAL:$2||en}} $3",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "heeft een conceptversie",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Toon conceptversie",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "heeft een goedgekeurde versie",
