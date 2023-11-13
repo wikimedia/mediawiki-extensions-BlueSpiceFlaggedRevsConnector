@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Adriendelucca"
+		]
+	},
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "aprouet",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Aprouiñ",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Rummad",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "Brouilhed",
+	"bs-flaggedrevsconnector-collection-var-approvedpages": "Aprouet",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Diskouez ar c'hemmoù",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Diskouez ar c'hemmoù",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Aprouet",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Brouilhed"
+}
