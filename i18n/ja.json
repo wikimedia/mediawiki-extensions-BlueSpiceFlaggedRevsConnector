@@ -133,5 +133,6 @@
 	"bs-flaggedrevsconnector-wfactivity-error-no-user": "承認を実行する有効な利用者をアサートできません",
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "変更されたリソースに関する情報",
 	"bs-flaggedrevsconnector-state-draft-desc": "これはドラフト版であり、[{{fullurl:{{FULLPAGENAMEE}}|action=history}} $1件のレビュー中変更]が含まれています。対応する[{{fullurl:{{FULLPAGENAMEE}}|stable=1}} 安定版]が$2で承認されました。",
-	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1個の{{PLURAL:$1|下書き}}（$2）"
+	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1個の{{PLURAL:$1|下書き}}（$2）",
+	"apihelp-bs-flaggedpages-store-summary": "承認管理下にあるページのデータを提供します"
 }
