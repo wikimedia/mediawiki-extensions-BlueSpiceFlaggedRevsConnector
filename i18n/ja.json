@@ -116,6 +116,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "公開版",
 	"bs-flaggedrevsconnector-pref-handleincludes-help": "ページの安定バージョンをレンダリングするときに使用する必要があるリソースのバージョンを決定します",
 	"bs-flaggedrevsconnector-resource-changes": "最後のページ承認以降に含まれるリソースへの変更",
+	"apihelp-bs-flaggedpages-store-summary": "承認管理下にあるページのデータを提供します",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "ページを承認できませんでした",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "指定されたリビジョンは、指定されたタイトルと一致しません",
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "提供された「pageId」は有効なタイトル オブジェクトと一致しません",
