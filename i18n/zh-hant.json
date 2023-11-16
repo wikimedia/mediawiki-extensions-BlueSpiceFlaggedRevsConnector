@@ -75,5 +75,8 @@
 	"bs-flaggedrevsconnector-smw-prop-document-state-approval-requested": "已申請核准",
 	"bs-flaggedrevsconnector-flyout-title": "頁面核准",
 	"bs-flaggedrevsconnector-flyout-state-intro": "此頁面的核准狀態：",
-	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "顯示已核准的版本"
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "顯示已核准的版本",
+	"bs-flaggedrevsconnector-approval-user-sesp-alias": "品管/核准者",
+	"bs-flaggedrevsconnector-document-version-sesp-alias": "品管/文件版本",
+	"bs-flaggedrevsconnector-pref-handleinclude-freeze": "凍結版本"
 }
