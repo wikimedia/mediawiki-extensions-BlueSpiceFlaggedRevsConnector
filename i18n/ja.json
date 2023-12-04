@@ -6,6 +6,7 @@
 			"MathXplore",
 			"Shirayuki",
 			"もなー(偽物)",
+			"翻訳者a",
 			"背番号4のエース"
 		]
 	},
@@ -134,5 +135,6 @@
 	"bs-flaggedrevsconnector-state-draft-info-btn-title": "変更されたリソースに関する情報",
 	"bs-flaggedrevsconnector-state-draft-desc": "これはドラフト版であり、[{{fullurl:{{FULLPAGENAMEE}}|action=history}} $1件のレビュー中変更]が含まれています。対応する[{{fullurl:{{FULLPAGENAMEE}}|stable=1}} 安定版]が$2で承認されました。",
 	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1個の{{PLURAL:$1|下書き}}（$2）",
-	"apihelp-bs-flaggedpages-store-summary": "承認管理下にあるページのデータを提供します"
+	"apihelp-bs-flaggedpages-store-summary": "承認管理下にあるページのデータを提供します",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\"はDefinitionContextに存在する必要があります"
 }
