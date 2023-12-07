@@ -6,7 +6,8 @@
 			"背番号4のエース",
 			"Shirayuki",
 			"M1660661",
-			"LaMagiaaa"
+			"LaMagiaaa",
+			"翻訳者a"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "FlaggedRevsのサポートを他のさまざまな拡張機能に追加します。",
@@ -119,6 +120,7 @@
 	"apihelp-bs-flaggedpages-store-summary": "承認管理下にあるページのデータを提供します",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "ページを承認できませんでした",
 	"bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch": "指定されたリビジョンは、指定されたタイトルと一致しません",
+	"bs-flaggedrevsconnector-wfactivity-error-context-data-missing": "\"pageId\"はDefinitionContextに存在する必要があります",
 	"bs-flaggedrevsconnector-wfactivity-error-context-invalid-title": "提供された「pageId」は有効なタイトル オブジェクトと一致しません",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages": "ページの承認状況",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "承認済",
