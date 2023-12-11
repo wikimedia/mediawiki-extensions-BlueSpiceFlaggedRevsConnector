@@ -86,6 +86,7 @@
 	"bs-flaggedrevsconnector-grid-rev-state": "都道府県・州",
 	"bs-flaggedrevsconnector-grid-pending-revs": "安定版以降のリビジョン",
 	"bs-flaggedrevsconnector-grid-page-categories": "ページのカテゴリ",
+	"bs-flaggedrevsconnector-privacy-transparency-working-flagging": "FlaggedRevs: $3にページ$1 (版 $2 ) にフラグ [ $4 ] を立てました",
 	"bs-flaggedrevsconnector-admin-tool-overview": "品質管理の概要",
 	"bs-flaggedrevsconnector-global-actions-entry": "品質保証",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "ドラフト版があります",
