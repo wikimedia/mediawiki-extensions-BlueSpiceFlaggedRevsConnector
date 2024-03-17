@@ -68,7 +68,7 @@ class FRCInfobox {
 		$sUlPrefix = '';
 		$sUlSuffix = '';
 
-		$this->iFRInfoboxElementCounter ++;
+		$this->iFRInfoboxElementCounter++;
 		$sULLastPrefix = $args['count'] == $this->iFRInfoboxElementCounter ? '</ul>' : '';
 
 		if ( substr( $res->fr_timestamp, 0, 8 ) != $this->iFREntryDate ) {

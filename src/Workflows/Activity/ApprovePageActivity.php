@@ -95,7 +95,7 @@ class ApprovePageActivity extends GenericActivity {
 			throw new WorkflowExecutionException(
 				Message::newFromKey(
 					'bs-flaggedrevsconnector-wfactivity-error-context-data-missing'
-				)->text(),  $this->getTask()
+				)->text(), $this->getTask()
 			);
 		}
 
@@ -108,7 +108,7 @@ class ApprovePageActivity extends GenericActivity {
 			throw new WorkflowExecutionException(
 				Message::newFromKey(
 					'bs-flaggedrevsconnector-wfactivity-error-context-invalid-title'
-				)->text(),  $this->getTask()
+				)->text(), $this->getTask()
 			);
 		}
 		$this->title = $title;
@@ -121,7 +121,7 @@ class ApprovePageActivity extends GenericActivity {
 			throw new WorkflowExecutionException(
 				Message::newFromKey(
 					'bs-flaggedrevsconnector-wfactivity-error-title-rev-mismatch'
-				)->text(),  $this->getTask()
+				)->text(), $this->getTask()
 			);
 		}
 		$this->revision = $revision;
@@ -134,7 +134,7 @@ class ApprovePageActivity extends GenericActivity {
 				throw new WorkflowExecutionException(
 					Message::newFromKey(
 						'bs-flaggedrevsconnector-wfactivity-error-provided-user', $data['user']
-					)->text(),  $this->getTask()
+					)->text(), $this->getTask()
 				);
 			}
 		} elseif ( $context->isRunningAsBot() ) {
@@ -146,7 +146,7 @@ class ApprovePageActivity extends GenericActivity {
 			throw new WorkflowExecutionException(
 				Message::newFromKey(
 					'bs-flaggedrevsconnector-wfactivity-error-no-user'
-				)->text(),  $this->getTask()
+				)->text(), $this->getTask()
 			);
 		}
 	}

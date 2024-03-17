@@ -219,7 +219,7 @@ class PrimaryDataProvider extends PageDataProvider {
 			$state = FlaggedRevsConnector::STATE_NOT_ENABLED;
 			$revisionsSinceStable = 0;
 		} else {
-			list( $state, $revisionsSinceStable ) = $this->getFlaggedRevsOutput( $title );
+			[ $state, $revisionsSinceStable ] = $this->getFlaggedRevsOutput( $title );
 		}
 
 		// Give grep a chance:

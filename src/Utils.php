@@ -152,10 +152,10 @@ class Utils {
 
 		$article = new FlaggableWikiPage( $title );
 		// Now get the template and image parameters needed
-		list( $templateIds, $fileTimeKeys ) =
+		[ $templateIds, $fileTimeKeys ] =
 			FRInclusionCache::getRevIncludes( $article, $revision, $user );
 		// Get version parameters for review submission (flat strings)
-		list( $templateParams, $imageParams, $fileParam ) =
+		[ $templateParams, $imageParams, $fileParam ] =
 			RevisionReviewForm::getIncludeParams( $templateIds );
 		// Set the version parameters...
 		$form->setTemplateParams( $templateParams );

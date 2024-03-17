@@ -94,7 +94,8 @@ class FRCSuperList {
 		if ( array_key_exists( 'flaggedrevs_state', $aFilters ) ) {
 			if ( !$aFilters['flaggedrevs_state'][0]['value'] ) {
 				$aFilters['flaggedrevs_state'][0]['value'] = 0;
-			} else { $aFilters['flaggedrevs_state'][0]['value'] = 1;
+			} else {
+				$aFilters['flaggedrevs_state'][0]['value'] = 1;
 			}
 			$aConditions[] = "IF(ISNULL(fp.fp_stable), 0, 1) = "
 				. intval( $aFilters['flaggedrevs_state'][0]['value'] );
@@ -109,7 +110,8 @@ class FRCSuperList {
 		if ( array_key_exists( 'flaggedrevs_is_new_available', $aFilters ) ) {
 			if ( !$aFilters['flaggedrevs_is_new_available'][0]['value'] ) {
 				$aFilters['flaggedrevs_is_new_available'][0]['value'] = 0;
-			} else { $aFilters['flaggedrevs_is_new_available'][0]['value'] = 1;
+			} else {
+				$aFilters['flaggedrevs_is_new_available'][0]['value'] = 1;
 			}
 
 			$aConditions[] = "(fp.fp_stable<=>{$sTablePrefix}page.page_latest) != "

@@ -105,11 +105,10 @@ class BSFixReadConfirmations extends Maintenance {
 
 					return $nextRevisionId;
 				}
-			}
- else {
+			} else {
 				// End of revision history reached
 				return null;
- }
+			}
 
 			$revision = $nextRevision;
 		}
@@ -133,11 +132,10 @@ class BSFixReadConfirmations extends Maintenance {
 
 					return $prevRevisionId;
 				}
-			}
- else {
+			} else {
 				// End of revision history reached
 				return null;
- }
+			}
 
 			$revision = $prevRevision;
 		}

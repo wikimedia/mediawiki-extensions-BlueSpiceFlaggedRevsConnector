@@ -163,14 +163,13 @@ class Flyout extends BasePanel implements IFlyout {
 			$hint = Message::newFromKey(
 				'bs-flaggedrevsconnector-flyout-body-hint-draft-implicit'
 			)->text();
-		}
- else {
+		} else {
 			$hint = Message::newFromKey(
 				'bs-flaggedrevsconnector-flyout-body-hint-draft',
 				count( $this->draftRevisionsAfterCurrentStable ),
 				implode( ', ', $links )
-			)->text();
- }
+				   )->text();
+		}
 
 		return \Html::rawElement(
 			'div',
