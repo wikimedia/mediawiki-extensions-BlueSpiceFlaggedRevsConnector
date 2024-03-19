@@ -206,7 +206,7 @@ class BSBatchReview extends Maintenance {
 
 		$article = new \FlaggableWikiPage( $title );
 		// Now get the template and image parameters needed
-		list( $templateIds, $fileTimeKeys ) =
+		[ $templateIds, $fileTimeKeys ] =
 			\FRInclusionCache::getRevIncludes( $article, $deprecatedRevision, $user );
 		// Get version parameters for review submission (flat strings)
 		$templateParams = \RevisionReviewForm::getIncludeParams( $templateIds );

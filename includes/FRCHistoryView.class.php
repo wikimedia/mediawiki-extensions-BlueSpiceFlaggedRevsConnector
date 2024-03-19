@@ -56,7 +56,7 @@ class FRCHistoryView {
 	protected static function getComment( $timestamp, $pageId ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$logRow = $dbr->selectRow(
-			[ 'logging' , 'comment' ],
+			[ 'logging', 'comment' ],
 			'comment_text',
 			[
 				'log_page' => $pageId,

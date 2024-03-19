@@ -129,15 +129,14 @@ class DocumentStatePropertyValueProvider extends PropertyValueProvider {
 		$value = $this->makeValue( 'unapproved' );
 		if ( $this->latestRevisionIsApproved() ) {
 			$value = $this->makeValue( 'approved' );
-		}
- elseif ( $this->someRevisionIsApproved() ) {
+		} elseif ( $this->someRevisionIsApproved() ) {
 			$value = $this->makeValue( 'in-revision' );
 
 			// This is ugly, but we need to do this somewhere... And better here than in Review extension
 			if ( $this->reviewWorkflowInProgess() ) {
 				$value = $this->makeValue( 'approval-requested' );
 			}
- }
+		}
 
 		$semanticData->addPropertyObjectValue(
 			$property, new SMWDIBlob( $value )
