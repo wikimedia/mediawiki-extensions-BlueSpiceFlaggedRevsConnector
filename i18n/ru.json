@@ -4,13 +4,21 @@
 			"DDPAT",
 			"Ice bulldog",
 			"Kareyac",
-			"Okras"
+			"Okras",
+			"Yurina Tatiana"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Страница",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "Стабильные страницы",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "Не стабильные страницы",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Версия",
+	"bs-flaggedrevsconnector-state-unmarked": "Первый черновик",
+	"bs-flaggedrevsconnector-state-stable": "Одобрено",
 	"bs-flaggedrevsconnector-state-draft": "Черновик",
 	"bs-flaggedrevsconnector-review-comment-label": "Комментарий",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Одобрено",
+	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "Не одобрено",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "Одобрено",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "Черновая версия",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-title": "Перейти на последнюю черновую версию этой страницы",
 	"bs-flaggedrevsconnector-grid-page-id": "Идентификатор страницы",
@@ -22,6 +30,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Черновая версия",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "первый черновик",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-title": "Первая черновая версия",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "одобрено",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Подтверждённая версия",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Пространство имён",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Категория",
@@ -31,6 +40,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Показать отличия",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Текущие версии",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Стабильные версии",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Одобрено",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Черновик",
 	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Вставляет журнал публикации в начало PDF-файла. Этот журнал показывает, когда страница была принята. Если при принятии комментариев не было добавлено, поле комментария пусто.",
 	"bs-flaggedrevsconnector-grid-page-namespace": "Пространство имён"
