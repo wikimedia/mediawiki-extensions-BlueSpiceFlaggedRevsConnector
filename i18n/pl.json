@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Kareyac",
-			"Chrumps"
+			"Chrumps",
+			"WaldiSt"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Strona",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Wersja",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "Zatwierdzona wersja",
+	"bs-flaggedrevsconnector-grid-page-title": "Tytuł strony",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Zatwierdzona wersja",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Przestrzeń nazw",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategoria",

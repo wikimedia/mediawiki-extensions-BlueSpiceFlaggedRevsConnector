@@ -4,9 +4,14 @@
 			"Joquliina",
 			"MITO",
 			"Rönttönen",
-			"Silvonen"
+			"Silvonen",
+			"Pyscowicz"
 		]
 	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Sivu",
+	"bs-flaggedrevsconnector-state-unmarked": "Ensimmäinen luonnos",
+	"bs-flaggedrevsconnector-state-stable": "Hyväksytty",
+	"bs-flaggedrevsconnector-state-draft": "Luonnos",
 	"bs-flaggedrevsconnector-response-success": "Sivu arvioitiin onnistuneesti. Sivu uudelleenladataan nyt.",
 	"bs-flaggedrevsconnector-response-failure": "Tapahtui virhe. Ole hyvä ja ota yhteyttä ylläpitäjääsi.",
 	"bs-flaggedrevsconnector-history-row-fr-info": "Arvioitu: $1 $2 $3",
@@ -20,12 +25,10 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "luonnos",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "Luonnosversio",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Nimiavaruus",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Luokka",
 	"bs-flaggedrevsconnector-collection-var-approvedpages": "Hyväksytty",
 	"bs-flaggedrevsconnector-wfactivity-error-cannot-approve": "Sivun hyväksyminen epäonnistui",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Hyväksytty",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Luonnos",
-	"bs-flaggedrevsconnector-state-unmarked": "Ensimmäinen luonnos",
-	"bs-flaggedrevsconnector-state-stable": "Hyväksytty",
-	"bs-flaggedrevsconnector-state-draft": "Luonnos",
 	"bs-flaggedrevsconnector-grid-page-namespace": "Nimiavaruus"
 }
