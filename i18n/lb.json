@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Säit",
@@ -13,11 +14,13 @@
 	"bs-flaggedrevsconnector-review-comment-label": "Bemierkung",
 	"bs-flaggedrevsconnector-grid-page-title": "Titel vun der Säit",
 	"bs-flaggedrevsconnector-grid-page-categories": "Kategorie vu Säiten",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "Nummraum",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategorie",
 	"bs-flaggedrevsconnector-collection-var-draftpages": "Virbereedung",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Ënnerscheed weisen",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Ënnerscheed weisen",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabil Versiounen",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Akzeptéiert",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Virbereedung"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Virbereedung",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Nummraum"
 }
