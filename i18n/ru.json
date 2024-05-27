@@ -11,6 +11,8 @@
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Страница",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "Стабильные страницы",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "Не стабильные страницы",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "Нестабильная",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "Стабильная",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Версия",
 	"bs-flaggedrevsconnector-state-unmarked": "Первый черновик",
 	"bs-flaggedrevsconnector-state-stable": "Одобрено",
