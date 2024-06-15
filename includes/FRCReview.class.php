@@ -7,10 +7,10 @@ use MediaWiki\MediaWikiServices;
 
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCReview {
+	/** @var array */
 	public static $reviewablePages = [];
 
 	/**
-	 *
 	 * @param Title $oTitle
 	 * @param bool &$bResult
 	 * @return bool
