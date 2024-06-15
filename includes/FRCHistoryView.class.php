@@ -8,7 +8,7 @@ class FRCHistoryView {
 	/**
 	 * Show date of flagging in history view
 	 * @param HistoryPager $pager
-	 * @param object &$row
+	 * @param stdClass &$row
 	 * @param string &$s
 	 * @param array &$classes
 	 * @return bool
