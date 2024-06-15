@@ -48,7 +48,7 @@ class ChangeRevisionForEdit extends BeforePageDisplay {
 		return $revShown === $latestRev;
 	}
 
-	private function isEdit() {
+	private function isEdit(): bool {
 		$req = $this->out->getRequest();
 		$hasVeAction = (bool)$req->getVal( 'veaction', false );
 		$isNormalEdit = $req->getVal( 'action', 'view' ) === 'edit';
