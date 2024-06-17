@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cabal"
+		]
+	},
+	"bs-flaggedrevsconnector-state-unmarked": "ਪਹਿਲਾ ਖਰੜਾ",
+	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1 {{PLURAL:$1|ਖਰੜਾ|ਖਰੜੇ}} ($2)",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "ਇੱਕ ਖਰੜਾ",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "ਇੱਕ ਪਹਿਲਾ ਖਰੜਾ",
+	"bs-flaggedrevsconnector-collection-var-draftpages": "ਖਰੜਾ",
+	"bs-flaggedrevsconnector-collection-var-firstdraftpages": "ਪਹਿਲਾ ਖਰੜਾ",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "ਖਰੜਾ"
+}
