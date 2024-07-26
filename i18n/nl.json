@@ -3,11 +3,12 @@
 		"authors": [
 			"Mainframe98",
 			"McDutchie",
-			"Romaine"
+			"Romaine",
+			"Siebrand"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Voegt ondersteuning voor FlaggedRevs toe aan een reeks andere uitbreidingen.",
-	"bs-flaggedrevsconnector-pref-draftgroups": "Onstabiele pagina's tonen voor volgende groepen",
+	"bs-flaggedrevsconnector-pref-draftgroups": "Onstabiele pagina's weergeven voor volgende groepen",
 	"bs-flaggedrevsconnector-pref-autoreview": "De pagina automatisch als stabiel aanmerken wanneer het werkproces met succes is voltooid",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow": "Het werkproces automatisch verwijderen wanneer een pagina als stabiel is aangemerkt",
 	"bs-flaggedrevsconnector-pref-indexingstableonly": "Alleen stabiele versies indexeren",
@@ -35,10 +36,10 @@
 	"bs-flaggedrevsconnector-review-help": "Bij goedkeuring vervangt deze voorlopige versie de huidige stabiele versie van de pagina. Wilt u de voorlopige versie accepteren?",
 	"bs-flaggedrevsconnector-review-comment-label": "Opmerking",
 	"bs-flaggedrevsconnector-label-flaggedrevs": "Goedkeuring",
-	"bs-flaggedrevsconnector-pref-bookshelfshowstable": "Boekenplank: Logboek met goedgekeurde versies tonen",
-	"bs-flaggedrevsconnector-pref-bookshelfshownostable": "Boekenplank: Pagina's zonder stabiele versie tonen",
-	"bs-flaggedrevsconnector-pref-bookshelfshownofr": "Boekenplank: Pagina's zonder FlaggedRevs tonen",
-	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag": "UEModulePDF: FlaggedRevs-info tonen onder de hoofdkop",
+	"bs-flaggedrevsconnector-pref-bookshelfshowstable": "Boekenplank: Logboek met goedgekeurde versies weergeven",
+	"bs-flaggedrevsconnector-pref-bookshelfshownostable": "Boekenplank: Pagina's zonder stabiele versie weergeven",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr": "Boekenplank: Pagina's zonder FlaggedRevs weergeven",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag": "UEModulePDF: FlaggedRevs-info weergeven onder de hoofdkop",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Goedgekeurd",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "Datum van goedkeuring",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "In afwachting van goedkeuring",
