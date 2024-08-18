@@ -5,8 +5,8 @@ namespace BlueSpice\FlaggedRevsConnector\Hook\BlueSpiceEchoConnectorUserLocatorV
 use BlueSpice\EchoConnector\Hook\BlueSpiceEchoConnectorUserLocatorValidUsers;
 use DateTime;
 use DateTimeZone;
+use IDBAccessObject;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\User\UserGroupManager;
 use Title;
 
 class LockdownNotifications extends BlueSpiceEchoConnectorUserLocatorValidUsers {
@@ -75,7 +75,7 @@ class LockdownNotifications extends BlueSpiceEchoConnectorUserLocatorValidUsers 
 				$this->getGroupWhitelist(),
 				$userGroupManager->getUserEffectiveGroups(
 					$user,
-					UserGroupManager::READ_NORMAL,
+					IDBAccessObject::READ_NORMAL,
 					true
 				)
 			);

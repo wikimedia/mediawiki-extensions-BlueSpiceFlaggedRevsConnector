@@ -6,8 +6,8 @@ use BlueSpice\Hook\ImagePageFileHistoryLine;
 use DateTime;
 use DateTimeZone;
 use File;
+use IDBAccessObject;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\User\UserGroupManager;
 
 class HideDraftVersions extends ImagePageFileHistoryLine {
 	/**
@@ -85,7 +85,7 @@ class HideDraftVersions extends ImagePageFileHistoryLine {
 					->getUserGroupManager()
 					->getUserEffectiveGroups(
 						$this->getContext()->getUser(),
-						UserGroupManager::READ_NORMAL,
+						IDBAccessObject::READ_NORMAL,
 						true
 					)
 			)
