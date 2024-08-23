@@ -6,8 +6,8 @@ use BlueSpice\Hook\ImgAuthBeforeStream;
 use DateTime;
 use DateTimeZone;
 use File;
+use IDBAccessObject;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\User\UserGroupManager;
 use Title;
 
 class LockdownDraft extends ImgAuthBeforeStream {
@@ -29,7 +29,7 @@ class LockdownDraft extends ImgAuthBeforeStream {
 			$this->getGroupWhitelist(),
 			$services->getUserGroupManager()->getUserEffectiveGroups(
 				$this->getContext()->getUser(),
-				UserGroupManager::READ_NORMAL,
+				IDBAccessObject::READ_NORMAL,
 				true
 			)
 		);
