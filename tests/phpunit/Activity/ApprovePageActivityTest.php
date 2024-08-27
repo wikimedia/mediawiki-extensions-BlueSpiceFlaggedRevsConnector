@@ -9,7 +9,6 @@ use MediaWiki\Extension\Workflows\Definition\DefinitionContext;
 use MediaWiki\Extension\Workflows\Definition\Element\Task;
 use MediaWiki\Extension\Workflows\WorkflowContext;
 use MediaWiki\Extension\Workflows\WorkflowContextMutable;
-use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 use Title;
 
@@ -31,9 +30,7 @@ class ApprovePageActivityTest extends MediaWikiIntegrationTestCase {
 		$this->title = $res['title'];
 
 		// Broken: this does not actually set the global
-		$this->setMwGlobals( [
-			'wgFlaggedRevsNamespaces' => [ NS_MAIN ]
-		] );
+		$this->overrideConfigValue( 'FlaggedRevsNamespaces', [ NS_MAIN ] );
 		$this->utils = $this->createMock( Utils::class );
 	}
 
@@ -43,14 +40,14 @@ class ApprovePageActivityTest extends MediaWikiIntegrationTestCase {
 	 *
 	 */
 	public function testExecute() {
-		$mutable = new WorkflowContextMutable( MediaWikiServices::getInstance()->getTitleFactory() );
+		$services = $this->getServiceContainer();
+		$mutable = new WorkflowContextMutable( $services->getTitleFactory() );
 		$mutable->setDefinitionContext( new DefinitionContext( [
 			'pageId' => $this->title->getArticleID(),
 			'revision' => $this->title->getLatestRevID()
 		] ) );
 		$context = new WorkflowContext( $mutable );
 		$task = new Task( 'Approve1', 'Approve page', [], [], 'automaticTask' );
-		$services = MediaWikiServices::getInstance();
 		$activity = new ApprovePageActivity(
 			$services->getService( 'BSFlaggedRevsConnectorUtils' ),
 			$services->getRevisionStore(),
