@@ -33,7 +33,7 @@ class FRCPageAssignments {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'flaggedpages',
 			[ 'fp_page_id', 'fp_stable' ],

@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class FRCInfobox {
 
@@ -26,7 +28,7 @@ class FRCInfobox {
 		$sPrefixedText = $aData['PREFIXEDTITLE'];
 		$iPageId = Title::newFromText( $sPrefixedText )->getArticleId();
 
-		$dbr         = wfGetDB( DB_REPLICA );
+		$dbr         = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$sOrderSQL   = 'rc_timestamp DESC';
 		$aConditions = [
 			'rc_cur_id = ' . $iPageId,
@@ -104,7 +106,7 @@ class FRCInfobox {
 		$args['showpending'] = BsCore::sanitizeArrayEntry( $args, 'showpending', true, BsPARAMTYPE::BOOL );
 		$args['namespaces'] = BsCore::sanitizeArrayEntry( $args, 'namespaces', 'all', BsPARAMTYPE::SQL_STRING );
 
-		$dbr         = wfGetDB( DB_REPLICA );
+		$dbr         = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$sOrderSQL   = 'max(fr_timestamp) DESC';
 		$aConditions = [];
 

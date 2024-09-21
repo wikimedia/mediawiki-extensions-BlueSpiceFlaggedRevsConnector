@@ -76,7 +76,7 @@ class FRCSuperList {
 	 */
 	public function onSuperListQueryPagesWithFilter( $aFilters, &$aTables, &$aFields, &$aConditions,
 		&$aJoinConditions ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$sTablePrefix = $dbr->tablePrefix();
 
 		$aTables[] = "{$sTablePrefix}flaggedpages AS fp";
@@ -136,7 +136,7 @@ class FRCSuperList {
 
 		$aPageIds = array_keys( $aRows );
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$aTables = [
 			'page', 'flaggedpages', 'flaggedrevs'
 		];

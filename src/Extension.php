@@ -263,7 +263,7 @@ class Extension extends ExtensionBase {
 			$aFlagInfo[ 'user-can-review' ] = true;
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->selectRow(
 			'flaggedpages',
 			'*',

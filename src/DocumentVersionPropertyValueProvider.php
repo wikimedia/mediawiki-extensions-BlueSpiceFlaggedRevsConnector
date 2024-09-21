@@ -4,6 +4,7 @@ namespace BlueSpice\FlaggedRevsConnector;
 
 use BlueSpice\SMWConnector\PropertyValueProvider;
 use FlaggedRevs;
+use MediaWiki\MediaWikiServices;
 use SMWDataItem;
 use SMWDINumber;
 
@@ -60,7 +61,7 @@ class DocumentVersionPropertyValueProvider extends PropertyValueProvider {
 		if ( !FlaggedRevs::inReviewNamespace( $title ) ) {
 			return;
 		}
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'flaggedrevs',
 			'*',

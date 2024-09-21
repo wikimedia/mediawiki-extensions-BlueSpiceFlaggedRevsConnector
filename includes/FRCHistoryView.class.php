@@ -15,7 +15,7 @@ class FRCHistoryView {
 	 */
 	public static function onPageHistoryLineEnding( $pager, &$row, &$s, &$classes ) {
 		global $wgLang;
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$frRow = $dbr->selectRow(
 			'flaggedrevs',
 			'*',
@@ -54,7 +54,7 @@ class FRCHistoryView {
 	 * @return string
 	 */
 	protected static function getComment( $timestamp, $pageId ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$logRow = $dbr->selectRow(
 			[ 'logging', 'comment' ],
 			'comment_text',

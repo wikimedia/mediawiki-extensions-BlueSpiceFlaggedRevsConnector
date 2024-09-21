@@ -92,7 +92,7 @@ class FRCBookshelf {
 				'onBSBookshelfExportBeforeArticles: No articles provided.'
 			);
 		} else {
-			$dbr = wfGetDB( DB_REPLICA );
+			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 			// We only want the last 2 years comments
 			$sDateLimit = '\'' . $dbr->timestamp( time() - 2 * 365 * 24 * 60 * 60 ) . '\'';

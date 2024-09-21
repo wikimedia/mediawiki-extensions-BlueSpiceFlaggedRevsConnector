@@ -42,7 +42,7 @@ class FRCUEModulePDF {
 				$aParams[ 'article-id' ] = $oTitle->getArticleID();
 			}
 		}
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->selectRow(
 			'flaggedpages',
 			'fp_stable',
@@ -198,7 +198,7 @@ class FRCUEModulePDF {
 	 * @return bool
 	 */
 	private function hasUnreviewedTemplates( int $iRevId ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->selectRow(
 			'flaggedtemplates',
 			[ 'ft_tmp_rev_id' ],
