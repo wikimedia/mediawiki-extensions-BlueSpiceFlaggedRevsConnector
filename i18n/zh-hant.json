@@ -7,7 +7,8 @@
 			"Weather Top Wizard",
 			"Willy1018",
 			"Winston Sung",
-			"Arielyurusova"
+			"Arielyurusova",
+			"Kly"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "為一系列其他擴充功能添加對 FlaggedRevs 的支援。",
@@ -20,7 +21,7 @@
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "評論穩定",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "穩定頁面",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "不穩定頁面",
-	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "未標記Revs 命名空間",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "非 FlaggedRevs 命名空間",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "不穩定",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "穩定",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "修訂",
@@ -33,7 +34,7 @@
 	"bs-flaggedrevsconnector-state-pending": "待審查的變更",
 	"bs-flaggedrevsconnector-state-stable-desc": "這個版本已被批准",
 	"bs-flaggedrevsconnector-state-draft-desc": "這是草稿版本，[{{fullurl:{{FULLPAGENAMEE}}|action=history}} 審核中有$1更改]。對應的 [{{fullurl:{{FULLPAGENAMEE}}|stable=1}} 穩定版本] 已於$2獲得批准。",
-	"bs-flaggedrevsconnector-state-notenabled-desc": "該頁面未啟用 FlaggedRevs",
+	"bs-flaggedrevsconnector-state-notenabled-desc": "此頁面未啟用 FlaggedRevs",
 	"bs-flaggedrevsconnector-state-pending-desc": "有待批准的變更。 [ $1立即查看]。",
 	"bs-flaggedrevsconnector-review-heading": "核准",
 	"bs-flaggedrevsconnector-review-help": "獲得批准後，此草稿版本將取代該頁面目前的穩定版本。您想接受草稿版本嗎？",
@@ -42,7 +43,7 @@
 	"bs-flaggedrevsconnector-pref-bookshelfshowstable": "書架：列出核准的修訂日誌",
 	"bs-flaggedrevsconnector-pref-bookshelfshownostable": "書架：列出沒有穩定版本的頁面",
 	"bs-flaggedrevsconnector-pref-bookshelfshownofr": "書架：列出沒有 FlaggedRevs 的頁面",
-	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag": "UEModulePDF：在主標題下方顯示 FlaggedRevs 訊息",
+	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag": "UEModulePDF：在主標頭下顯示 FlaggedRevs 資訊",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "已核准",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-date": "核准日期",
 	"bs-flaggedrevsconnector-sl-flaggedrevs-is-new-available": "等待批准",
