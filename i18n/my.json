@@ -5,10 +5,10 @@
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "စာမျက်နှာ",
-	"bs-flaggedrevsconnector-grid-page-title": "စာမျက်နှာ ခေါင်းစဉ်",
-	"bs-flaggedrevsconnector-collection-var-categoryname": "ကဏ္ဍ",
-	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "ကွဲပြားမှုကို ပြရန်",
 	"bs-flaggedrevsconnector-review-comment-label": "မှတ်ချက်",
 	"bs-flaggedrevsconnector-response-failure": "အမှားတစ်ခု ဖြစ်ပွားခဲ့သည်။ သင်၏စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။",
-	"bs-flaggedrevsconnector-grid-page-categories": "စာမျက်နှာ ကဏ္ဍများ"
+	"bs-flaggedrevsconnector-grid-page-title": "စာမျက်နှာ ခေါင်းစဉ်",
+	"bs-flaggedrevsconnector-grid-page-categories": "စာမျက်နှာ ကဏ္ဍများ",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "ကဏ္ဍ",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "ကွဲပြားမှုကို ပြရန်"
 }

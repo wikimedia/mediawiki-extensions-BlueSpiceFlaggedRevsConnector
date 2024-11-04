@@ -4,7 +4,6 @@
 			"Умар"
 		]
 	},
-	"bs-flaggedrevsconnector-collection-var-namespacename": "ЦӀерийн меттиг",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "АгӀо",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Верси",
 	"bs-flaggedrevsconnector-review-comment-label": "Коммент",
@@ -13,6 +12,7 @@
 	"bs-flaggedrevsconnector-grid-rev-state": "Статус",
 	"bs-flaggedrevsconnector-grid-page-categories": "АгӀонан категореш",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "Бакъйина верси",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "ЦӀерийн меттиг",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "Категори",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-label": "Схьагайта башхаллаш",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Схьагайта башхаллаш",
