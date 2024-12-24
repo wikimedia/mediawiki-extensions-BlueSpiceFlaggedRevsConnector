@@ -9,6 +9,7 @@
 	"bs-flaggedrevsconnector-state-draft": "Häämas",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-draft-text": "Häämasversio",
 	"bs-flaggedrevsconnector-pagetool-switchtodraft-stable-text": "Primmum versio",
+	"bs-flaggedrevsconnector-grid-page-title": "Seiddnõmm",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "Čuäʹjet häämasversio",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "Čuäʹjet primmum versio",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "häämas",
