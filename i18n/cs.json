@@ -3,6 +3,7 @@
 		"authors": [
 			"Emmanuel Fernandess",
 			"Fraxinus.cs",
+			"Jrobicek",
 			"Kareyac",
 			"Matěj Suchánek",
 			"Want"
@@ -12,7 +13,9 @@
 	"bs-flaggedrevsconnector-state-stable-desc": "Tato verze je schválena.",
 	"bs-flaggedrevsconnector-column-last-stable": "Zkontrolováno",
 	"bs-flaggedrevsconnector-no-stable": "není zkontrolováno",
+	"qmoverview": "Přehled řízení kvality",
 	"bs-flaggedrevsconnector-grid-page-title": "Název stránky",
+	"bs-flaggedrevsconnector-admin-tool-overview": "Přehled řízení kvality",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "schváleno",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "Schválit",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Jmenný prostor",
