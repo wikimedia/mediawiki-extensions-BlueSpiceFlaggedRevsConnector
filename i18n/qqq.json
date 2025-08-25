@@ -4,7 +4,8 @@
 			"Amire80",
 			"Patric Wirth",
 			"Umherirrender",
-			"Verdy p"
+			"Verdy p",
+			"Toliño"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "{{desc|name=BlueSpiceFlaggedRevsConnector}}",
@@ -56,7 +57,7 @@
 	"bs-flaggedrevsconnector-approval-date-sesp-alias": "Alias for semantic property \"QM/Approval date\" that carries the information of the approval date of the page. Must use prefix \"QM/\".\n{{Identical|QM/Approval date}}",
 	"bs-flaggedrevsconnector-approval-user-sesp-alias": "Alias for semantic property \"QM/Approval by\" that carries the information about the user, that approved the page. Must use prefix \"QM/\".\n{{Identical|QM/Approval by}}",
 	"bs-flaggedrevsconnector-document-version-sesp-alias": "Alias for semantic property \"QM/Document version\" that carries the number of approved versions of the page. Must use prefix \"QM/\".\n{{Identical|QM/Document version}}",
-	"bs-flaggedrevsconnector-document-state-sesp-desc": "Description for semantic property \"QM/Document state\" that carries the information of the approval status of the page. Possible values are:\n* <nowiki>{{int:bs-flaggedrevsconnector-smw-prop-document-state-unapproved}}</nowiki>(there is no approved versions of this page)\n* <nowiki>{{int:bs-flaggedrevsconnector-smw-prop-document-state-approved}}</nowiki>(latest version has been approved)\n* <nowiki>{{int:bs-flaggedrevsconnector-smw-prop-document-state-in-revision}}</nowiki>(latest revision is a draft version of that page)\n* <nowiki>{{int:bs-flaggedrevsconnector-smw-prop-document-state-approval-requested}}</nowiki>(a review workflow has been started on the existing draft version).",
+	"bs-flaggedrevsconnector-document-state-sesp-desc": "Description for semantic property \"QM/Document state\" that carries the information of the approval status of the page. Possible values are:\n* {{msg-bluespice|bs-flaggedrevsconnector-smw-prop-document-state-unapproved}} (there is no approved versions of this page)\n* {{msg-bluespice|bs-flaggedrevsconnector-smw-prop-document-state-approved}} (latest version has been approved)\n* {{msg-bluespice|bs-flaggedrevsconnector-smw-prop-document-state-in-revision}} (latest revision is a draft version of that page)\n* {{msg-bluespice|bs-flaggedrevsconnector-smw-prop-document-state-approval-requested}} (a review workflow has been started on the existing draft version).",
 	"bs-flaggedrevsconnector-approval-date-sesp-desc": "Description for semantic property \"QM/Approval date\" that carries the information of the approval date and time of the successful review of that page.",
 	"bs-flaggedrevsconnector-approval-user-sesp-desc": "Alias for semantic property \"QM/Approval by\" that carries the information about the user, that approved the page.",
 	"bs-flaggedrevsconnector-document-version-sesp-desc": "Description for semantic property \"QM/Document version\" that carries the number of approved versions of the page.",
