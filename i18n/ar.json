@@ -5,7 +5,8 @@
 			"Alshamiri1",
 			"FiberAhmed",
 			"أَحمد",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Hubaishan"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "يضيف دعمًا لـ FlaggedRevs إلى نطاق من الملحقات الأخرى.",
@@ -18,7 +19,7 @@
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "تعليق مستقر",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "صفحات مستقرة",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "صفحات غير مستقرة",
-	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "مساحة الاسم Not FlaggedRevs",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "النطاق ليس ضمن التعديلات المعلمة",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "غير مستقرة",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "مستقرة",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "مراجعة",
@@ -47,7 +48,7 @@
 	"bs-flaggedrevsconnector-response-success": "تمت مراجعة الصفحة بنجاح. سيتم إعادة تحميل الصفحة الآن.",
 	"bs-flaggedrevsconnector-response-failure": "حدث خطأ. الرجاء الاتصال بالمسؤول الخاص بك.",
 	"bs-flaggedrevsconnector-history-row-fr-info": "تَمَّت مُراجَعة: $1 $2 $3",
-	"bs-flaggedrevsconnector-invalid-namespaces": "المعطى {{PLURAL:$1| مساحة الاسم | مساحات الأسماء}} غير صالحة: $2 .",
+	"bs-flaggedrevsconnector-invalid-namespaces": " {{PLURAL:$1||النطاق المعطى غير صالح|النطاقات المعطاة غير صالحة}}: $2.",
 	"bs-flaggedrevsconnector-column-last-stable": "المراجعة",
 	"bs-flaggedrevsconnector-no-stable": "غير مراجعة",
 	"bs-flaggedrevsconnector-notification-pageassignments-pagereview-summary": "استعرض $1 $3",
@@ -100,7 +101,7 @@
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-title": "النسخة المعتمدة",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-accept": "يعتمد",
 	"bs-flaggedrevsconnector-collection-type-flaggedpages-cat": "الموافقة حسب الفئة",
-	"bs-flaggedrevsconnector-collection-type-flaggedpages-ns": "الموافقة حسب مساحة الاسم",
+	"bs-flaggedrevsconnector-collection-type-flaggedpages-ns": "الموافقة حسب النطاق",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "النطاق",
 	"bs-flaggedrevsconnector-collection-var-categoryname": "تصنيف",
 	"bs-flaggedrevsconnector-collection-var-draftpages": "مسودة",
