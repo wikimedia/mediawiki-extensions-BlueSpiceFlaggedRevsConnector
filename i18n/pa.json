@@ -4,8 +4,13 @@
 			"Cabal"
 		]
 	},
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "ਵਰਕਾ",
 	"bs-flaggedrevsconnector-state-unmarked": "ਪਹਿਲਾ ਖਰੜਾ",
+	"bs-flaggedrevsconnector-flyout-title": "ਵਰਕਾ ਪ੍ਰਵਾਨਗੀ",
 	"bs-flaggedrevsconnector-flyout-body-hint-draft": "$1 {{PLURAL:$1|ਖਰੜਾ|ਖਰੜੇ}} ($2)",
+	"bs-flaggedrevsconnector-grid-page-id": "ਵਰਕਾ ਪਛਾਣ",
+	"bs-flaggedrevsconnector-grid-page-title": " ਵਰਕੇ ਦਾ ਸਿਰਲੇਖ",
+	"bs-flaggedrevsconnector-grid-page-categories": "ਵਰਕਾ ਵੰਨਗੀਆਂ",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "ਇੱਕ ਖਰੜਾ",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "ਇੱਕ ਪਹਿਲਾ ਖਰੜਾ",
 	"bs-flaggedrevsconnector-collection-var-draftpages": "ਖਰੜਾ",
