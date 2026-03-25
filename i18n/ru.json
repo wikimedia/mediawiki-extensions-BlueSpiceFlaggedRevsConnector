@@ -4,7 +4,8 @@
 			"DDPAT",
 			"Ice bulldog",
 			"Kareyac",
-			"Okras"
+			"Okras",
+			"Yurina Tatiana"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Страница",
@@ -33,5 +34,16 @@
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-show-diff-tooltip": "Показать отличия",
 	"bs-flaggedrevsconnector-pref-handleinclude-current": "Текущие версии",
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Стабильные версии",
-	"bs-flaggedrevsconnector-grid-page-namespace": "Пространство имён"
+	"bs-flaggedrevsconnector-grid-page-namespace": "Пространство имён",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "Стабильные страницы",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "Не стабильные страницы",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "Нестабильная",
+	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "Стабильная",
+	"bs-flaggedrevsconnector-state-unmarked": "Первый черновик",
+	"bs-flaggedrevsconnector-state-stable": "Одобрено",
+	"bs-flaggedrevsconnector-sl-flaggedrevs-state": "Одобрено",
+	"bs-flaggedrevsconnector-smw-prop-document-state-unapproved": "Не одобрено",
+	"bs-flaggedrevsconnector-smw-prop-document-state-approved": "Одобрено",
+	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-stable-text": "одобрено",
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Одобрено"
 }

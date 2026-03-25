@@ -3,6 +3,7 @@
 		"authors": [
 			"DreZhsh",
 			"Gomoko",
+			"SleaY",
 			"Verdy p"
 		]
 	},
@@ -26,7 +27,7 @@
 	"bs-flaggedrevsconnector-state-implicit-draft": "Brouillon implicite",
 	"bs-flaggedrevsconnector-state-notenabled": "Non activé",
 	"bs-flaggedrevsconnector-state-unmarked-desc": "Il n’y a aucune version approuvée de cette page.",
-	"bs-flaggedrevsconnector-state-pending": "Changements en attente",
+	"bs-flaggedrevsconnector-state-pending": "Modifications en attente",
 	"bs-flaggedrevsconnector-state-stable-desc": "Cette version est approuvée.",
 	"bs-flaggedrevsconnector-state-draft-desc": "Ceci est une version en brouillon avec [{{fullurl:{{FULLPAGENAMEE}}|action=history}} $1 changements en attente de relecture]. La [{{fullurl:{{FULLPAGENAMEE}}|stable=1}} version stable correspondante] a été approuvée le $2.",
 	"bs-flaggedrevsconnector-state-notenabled-desc": "FlaggedRevs n’est pas activé pour cette page",

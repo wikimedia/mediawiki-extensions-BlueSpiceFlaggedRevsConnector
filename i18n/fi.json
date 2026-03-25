@@ -3,6 +3,7 @@
 		"authors": [
 			"Joquliina",
 			"MITO",
+			"Pyscowicz",
 			"Rönttönen",
 			"Silvonen"
 		]
@@ -27,5 +28,7 @@
 	"bs-flaggedrevsconnector-state-unmarked": "Ensimmäinen luonnos",
 	"bs-flaggedrevsconnector-state-stable": "Hyväksytty",
 	"bs-flaggedrevsconnector-state-draft": "Luonnos",
-	"bs-flaggedrevsconnector-grid-page-namespace": "Nimiavaruus"
+	"bs-flaggedrevsconnector-grid-page-namespace": "Nimiavaruus",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Sivu",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Luokka"
 }

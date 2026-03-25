@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "Säit",
@@ -19,5 +20,7 @@
 	"bs-flaggedrevsconnector-pref-handleinclude-stable": "Stabil Versiounen",
 	"bs-flaggedrevsconnector-grid-page-categories": "Kategorie vu Säiten",
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-stable": "Akzeptéiert",
-	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Virbereedung"
+	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Virbereedung",
+	"bs-flaggedrevsconnector-collection-var-namespacename": "Nummraum",
+	"bs-flaggedrevsconnector-grid-page-namespace": "Nummraum"
 }

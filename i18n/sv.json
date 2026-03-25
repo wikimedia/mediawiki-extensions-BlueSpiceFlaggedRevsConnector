@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sabelöga",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Yupik"
 		]
 	},
 	"bs-flaggedrevsconnector-extension-description": "Ger stöd för FlaggedRevs till en rad andra tillägg.",
@@ -11,5 +12,6 @@
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Sidversion",
 	"bs-flaggedrevsconnector-state-stable": "Godkänd",
 	"bs-flaggedrevsconnector-state-draft": "Utkast",
-	"bs-flaggedrevsconnector-grid-page-categories": "Sidkategorier"
+	"bs-flaggedrevsconnector-grid-page-categories": "Sidkategorier",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Kategori"
 }
