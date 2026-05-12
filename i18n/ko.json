@@ -4,7 +4,8 @@
 			"Underbaaar",
 			"Ykhwong",
 			"Yunbj",
-			"YeBoy371"
+			"YeBoy371",
+			"Tensama0415"
 		]
 	},
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-title": "페이지",
@@ -53,7 +54,10 @@
 	"bs-flaggedrevsconnector-grid-page-categories": "문서 분류",
 	"bs-flaggedrevsconnector-admin-tool-overview": "품질 관리 개요",
 	"bs-flaggedrevsconnector-global-actions-entry": "품질 보증",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-text": "은(는) 초안 판이 있습니다",
 	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-draft-title": "초안 판 표시",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-text": "은(는) 승인된 판이 있습니다",
+	"bs-flaggedrevsconnector-pageinfoelement-versionswitch-has-stable-title": "승인된 판 표시",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-text": "초안",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-draft-title": "초안 판",
 	"bs-flaggedrevsconnector-pageinfoelement-pagestatus-is-first-draft-text": "최초 초안",
