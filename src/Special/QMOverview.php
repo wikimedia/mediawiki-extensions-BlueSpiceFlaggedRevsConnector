@@ -7,7 +7,12 @@ use BlueSpice\FlaggedRevsConnector\Extension as FlaggedRevsConnector;
 class QMOverview extends \BlueSpice\SpecialPage {
 
 	public function __construct() {
-		parent::__construct( 'QMOverview', 'read' );
+		parent::__construct( 'QMOverview' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'read';
 	}
 
 	/**
