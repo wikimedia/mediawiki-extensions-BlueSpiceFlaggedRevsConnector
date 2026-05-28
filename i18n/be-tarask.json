@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ucukor"
+			"Ucukor",
+			"Red Winged Duck"
 		]
 	},
 	"bs-flaggedrevsconnector-state-notenabled": "Не ўвамкнёна",
 	"bs-flaggedrevsconnector-grid-rev-state": "Стан",
-	"bs-flaggedrevsconnector-collection-var-categoryname": "Катэґорыя",
+	"bs-flaggedrevsconnector-collection-var-categoryname": "Катэгорыя",
 	"bs-flaggedrevsconnector-collection-var-notenabledpages": "Не ўвамкнёна"
 }
