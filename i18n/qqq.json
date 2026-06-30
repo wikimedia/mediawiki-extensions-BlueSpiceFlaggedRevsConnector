@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"EGobi",
 			"Patric Wirth",
 			"Toliño",
 			"Umherirrender",
@@ -18,7 +19,7 @@
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "Label for the comment that was given when the page was set to stable.\n{{Identical|Stable comment}}",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "Label for the list of page titles that have been stable.\n{{Identical|Stable pages}}",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "Label for the list of page titles that have not been stable.\n{{Identical|Not stable pages}}Not stable pages",
-	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "Label for the page title that is not in a namepsace with approval control.\n{{Identical|Not FlaggedRevs namespace}}",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "Label for the page title that is not in a namespace with approval control.\n{{Identical|Not FlaggedRevs namespace}}",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "Status message for a page, that is not approved.\n{{Identical|Not stable}}",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "Status message for a page, that is approved.\n{{Identical|Stable}}",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Label for the revision timestamp.\n{{Identical|Revision}}",

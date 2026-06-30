@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Duke of Wikipädia",
+			"EGobi",
 			"Eduardoaddad",
 			"Juan90264"
 		]
@@ -16,7 +17,7 @@
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-comment": "Comentário estável",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-stableversionstabletitle": "Páginas estáveis",
 	"bs-flaggedrevsconnector-flaggedrevshistorypage-nostableversionstabletitle": "Páginas não estáveis",
-	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "namespace Not FlaggedRevs",
+	"bs-flaggedrevsconnector-flaggedrevshistorypage-noflaggedrevstitle": "Espaço nominal externo às FlaggedRevs",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-no-stable-date": "Instável",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-laststable-tag-text": "Estável",
 	"bs-flaggedrevsconnector-addstabledatetochapterheadlinesmodifier-stablerevisiondate-tag-text": "Revisão",
@@ -125,7 +126,7 @@
 	"bs-flaggedrevsconnector-statistics-report-flagged-pages-axis-draft": "Esboço",
 	"bs-flaggedrevsconnector-pref-bookshelfshowstable-help": "Insere um registro de publicação no início do PDF. Este registro mostra quando uma página foi aceita. Se nenhum comentário foi adicionado durante a aceitação, o campo de comentário está vazio.",
 	"bs-flaggedrevsconnector-pref-bookshelfshownostable-help": "Insere um registro no início do PDF. Este registro mostra todas as páginas PDF com status \"rascunho\".",
-	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Insere um registro no início do PDF. Este registro mostra todas as páginas PDF de namespaces sem a funcionalidade de revisão ativada.",
+	"bs-flaggedrevsconnector-pref-bookshelfshownofr-help": "Insere um registro no início do PDF. Este registro mostra todas as páginas de PDF a partir de espaços nominais sem a funcionalidade de revisão ativada.",
 	"bs-flaggedrevsconnector-pref-uemodulepdfshowfrtag-help": "Imprime o carimbo de data/hora das versões aceitas e de rascunho mais recentes abaixo do título no PDF.",
 	"bs-flaggedrevsconnector-pref-autodeleteworkflow-help": "O fluxo de trabalho é excluído automaticamente e um novo fluxo de trabalho pode ser iniciado.",
 	"bs-flaggedrevsconnector-pref-draftgroups-help": "Define o direito de acesso às versões de rascunho. Se nenhum grupo estiver listado, mesmo o usuário sysop não verá um status visual na área de título. Os usuários de Sysop ainda podem acessar o rascunho no histórico de versões, no entanto.",
