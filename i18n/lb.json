@@ -13,6 +13,7 @@
 	"bs-flaggedrevsconnector-state-notenabled": "net aktivéiert",
 	"bs-flaggedrevsconnector-review-comment-label": "Bemierkung",
 	"bs-flaggedrevsconnector-invalid-namespaces": "{{PLURAL:$1|Den Nummraum, deen ugi gouf, ass|D'Nummraim, déi ugi goufen, sinn}} ongülteg: $2.",
+	"bs-flaggedrevsconnector-grid-page-id": "Säiten-ID",
 	"bs-flaggedrevsconnector-grid-page-title": "Titel vun der Säit",
 	"bs-flaggedrevsconnector-grid-page-categories": "Kategorie vu Säiten",
 	"bs-flaggedrevsconnector-collection-var-namespacename": "Nummraum",
